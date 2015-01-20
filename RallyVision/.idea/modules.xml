@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/rallyvision.iml" filepath="$PROJECT_DIR$/rallyvision.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RallyVision.iml" filepath="$PROJECT_DIR$/RallyVision.iml" />
     </modules>
   </component>
 </project>

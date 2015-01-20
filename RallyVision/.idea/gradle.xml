@@ -9,8 +9,6 @@
         <option name="gradleHome" value="$PROJECT_DIR$" />
       </GradleProjectSettings>
     </option>
-    <option name="serviceDirectoryPath" value="$USER_HOME$/.gradle" />
-    <option name="offlineWork" value="true" />
   </component>
 </project>
 

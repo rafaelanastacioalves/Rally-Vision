@@ -16,7 +16,6 @@ import com.google.android.vending.licensing.AESObfuscator;
 import com.google.android.vending.licensing.LicenseChecker;
 import com.google.android.vending.licensing.LicenseCheckerCallback;
 import com.google.android.vending.licensing.ServerManagedPolicy;
-
 import com.ubertesters.common.models.LockingMode;
 import com.ubertesters.sdk.Ubertesters;
 
@@ -31,7 +30,6 @@ import anastasoft.rallyvision.activity.MenuPrincipal;
 public class Controller extends Application {
 
 
-
     //checking license purposes
 
     private LicenseCheckerCallback mLicenseCheckerCallback;
@@ -40,7 +38,7 @@ public class Controller extends Application {
     private static final String BASE64_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwsUvY54xrzoeuyTlFg8gVvY6/Uu5HyIQnK4lKiPwC2dQC34D0wQ8JkiXClovkgY4xmxV8jtTufgAV971yqHESLB7KP68sYNM1eMm7JAl1aL4hiw2qakBWsosbUbOnS0NyYMu5Rkt5m2irVdVGdsqnfXaoRChEh7auqhik5ZOxRZKaml2g2pYUx5Nw3cGA2wM0EbXlb0pVuMXuKcK0mo9YXGODm9TfA7NhvzAaVBSqjR5cyFJ9ZWiqIgBX+843auM6TYYXrKE8pEZSr+TVs4g3gfi40E6aWfzD5xhDyZ0eIBvfCVE0VeV55h4v9B4imQWUTwYO6YXre+y+9NsipD5qwIDAQAB";
 
     // Generate your own 20 random bytes, and put them here.
-    private static final byte[] SALT = new byte[] {
+    private static final byte[] SALT = new byte[]{
             -46, 65, 30, -128, -103, -57, 74, -64, 51, 88, -95, -45, 77, -117, -36, -113, -11, 32, -64,
             89
     };
@@ -56,7 +54,7 @@ public class Controller extends Application {
 
     private static final int APLICATION_DISCONECTED = 0;
     private static final int APLICATION_CONECTING = 1;
-    private static final int APLICATION_CONECTED =2;
+    private static final int APLICATION_CONECTED = 2;
     private static int appState = APLICATION_DISCONECTED;
 
     // Google Analytics
@@ -263,11 +261,11 @@ public class Controller extends Application {
         }
 
     }
-    public boolean shouldCreateNotification(){
-        if(getAppState() == APLICATION_CONECTED){
+
+    public boolean shouldCreateNotification() {
+        if (getAppState() == APLICATION_CONECTED) {
             return true;
-        }
-        else
+        } else
             return false;
     }
 
@@ -280,7 +278,7 @@ public class Controller extends Application {
 
         // ------------ubertesters      -------------//
 
-        if( uberON) {
+        if (uberON) {
             Ubertesters.initialize(this,
                     LockingMode.LockApplication);
         }
@@ -303,25 +301,22 @@ public class Controller extends Application {
         doCheck();
 
 
-
-
-
         // -------- other components --------//
-        if (aObervable == null){
+        if (aObervable == null) {
             aObervable = new Observable(this);
 
         }
 
-        if(aPrefAdapter == null){
+        if (aPrefAdapter == null) {
             aPrefAdapter = new PreferencesAdapter(this, aObervable);
 
         }
 
-        ((MenuPrincipal)getCurrentActiviy()).keepScreenOn(aPrefAdapter.getScreenOnStatus());
+        ((MenuPrincipal) getCurrentActiviy()).keepScreenOn(aPrefAdapter.getScreenOnStatus());
 
         aObervable.Attach(aPrefAdapter);
 
-        if(aBTManager == null){
+        if (aBTManager == null) {
             aBTManager = new BTManager(this, mHandler);
 
         }
@@ -358,30 +353,31 @@ public class Controller extends Application {
 
 
         // ConnectMediator
-        if(mConnMediator == null){
+        if (mConnMediator == null) {
             mConnMediator = new ConnectMediator(this);
         }
         mConnMediator.update(this);
 
 
-        if(FIRST_RUN == false){
+        if (FIRST_RUN == false) {
             aObervable.Notify();
         }
         FIRST_RUN = false;
 
     }
 
-    public int getAppState(){
+    public int getAppState() {
         return appState;
     }
-    public void setAppState(int appState){
+
+    public void setAppState(int appState) {
         this.appState = appState;
         notifY();
     }
-    private void notifY(){
+
+    private void notifY() {
         mConnMediator.update(this);
     }
-
 
 
     private boolean isRatioDefault(float ratio2) {
@@ -393,11 +389,11 @@ public class Controller extends Application {
         }
     }
 
-    private void doCheck(){
+    private void doCheck() {
         mChecker.checkAccess(mLicenseCheckerCallback);
     }
 
-    public void checkAccess(){
+    public void checkAccess() {
         mChecker.checkAccess(mLicenseCheckerCallback);
 
     }
@@ -455,7 +451,7 @@ public class Controller extends Application {
 
     }
 
-    public boolean isTestOn(){
+    public boolean isTestOn() {
         return testON;
     }
 
@@ -474,7 +470,7 @@ public class Controller extends Application {
         Intent serverIntent = new Intent(currentAct, DeviceListActivity.class);
 
         // analytics
-            analyticsAdpater.sendScreen();
+        analyticsAdpater.sendScreen();
 
         // finishing
         currentAct.startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE);
@@ -483,7 +479,8 @@ public class Controller extends Application {
     public Activity getCurrentActiviy() {
         return currentAct;
     }
-    public Handler getHandler(){
+
+    public Handler getHandler() {
         return this.mHandler;
     }
 
@@ -501,8 +498,7 @@ public class Controller extends Application {
                     String address = data.getExtras().getString(
                             DeviceListActivity.EXTRA_DEVICE_ADDRESS);
                     aBTManager.connectToDeviceWith(address);
-                }
-                else{
+                } else {
                     stopCommunication();
                     setAppState(APLICATION_DISCONECTED);
                 }
@@ -586,9 +582,6 @@ public class Controller extends Application {
 
 
     }
-
-
-
 
 
     public class CounterAndConverter extends Thread {
@@ -678,17 +671,6 @@ public class Controller extends Application {
 
         }
 
-        // not used anymore...
-//		protected void update(int newPulse) {
-//
-//			aVelEng.updateEnd(newPulse);
-//
-//			// are this both synchronous?
-//			aObservable.setValues(aVelEng.getValues(), this);
-//
-//			STATE = STATE_READY;
-//
-//		}
 
         protected void update(int newPulse) {
 
@@ -720,25 +702,24 @@ public class Controller extends Application {
         }
 
 
-
     }
 
     private class MyLicenseCheckerCallback implements LicenseCheckerCallback {
         public void allow(int reason) {
-            if (((MenuPrincipal)getCurrentActiviy()).isFinishing()) {
+            if (((MenuPrincipal) getCurrentActiviy()).isFinishing()) {
                 // Don't update UI if Activity is finishing.
                 return;
             }
             // Should allow user access.
-            ((MenuPrincipal)getCurrentActiviy()).displayResult(getString(R.string.allow));
+            ((MenuPrincipal) getCurrentActiviy()).displayResult(getString(R.string.allow));
         }
 
         public void dontAllow(int reason) {
-            if (((MenuPrincipal)getCurrentActiviy()).isFinishing()) {
+            if (((MenuPrincipal) getCurrentActiviy()).isFinishing()) {
                 // Don't update UI if Activity is finishing.
                 return;
             }
-            ((MenuPrincipal)getCurrentActiviy()).displayResult(getString(R.string.dont_allow));
+            ((MenuPrincipal) getCurrentActiviy()).displayResult(getString(R.string.dont_allow));
             // Should not allow access. In most cases, the app should assume
             // the user has access unless it encounters this. If it does,
             // the app should inform the user of their unlicensed ways
@@ -748,11 +729,11 @@ public class Controller extends Application {
             // If the reason for the lack of license is that the service is
             // unavailable or there is another problem, we display a
             // retry button on the dialog and a different message.
-           // ((MenuPrincipal)getCurrentActiviy()).displayDialog(reason == Policy.RETRY);
+            // ((MenuPrincipal)getCurrentActiviy()).displayDialog(reason == Policy.RETRY);
         }
 
         public void applicationError(int errorCode) {
-            if (((MenuPrincipal)getCurrentActiviy()).isFinishing()) {
+            if (((MenuPrincipal) getCurrentActiviy()).isFinishing()) {
                 // Don't update UI if Activity is finishing.
                 return;
             }
@@ -760,7 +741,7 @@ public class Controller extends Application {
             // while setting up or calling the license checker library.
             // Please examine the error code and fix the error.
             String result = String.format(getString(R.string.application_error), errorCode);
-            ((MenuPrincipal)getCurrentActiviy()).displayResult(result);
+            ((MenuPrincipal) getCurrentActiviy()).displayResult(result);
         }
     }
 
