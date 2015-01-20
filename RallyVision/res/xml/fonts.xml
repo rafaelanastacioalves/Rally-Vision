@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<familyset xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <family>
+        <nameset>
+            <name>dig7Reg</name>
+        </nameset>
+        <fileset>
+            <file>digital_7_regular.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <nameset>
+            <name>digdream</name>
+        </nameset>
+        <fileset>
+            <file>DSEG7Classic-BoldItalic.ttf</file>
+        </fileset>
+    </family>
+
+</familyset>

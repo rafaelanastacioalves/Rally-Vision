@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Rally Vision</string>
+    <string name="action_settings">Configurações</string>
+    <string name="vel_media">Vel. média</string>
+    <string name="vel">Velocidade</string>
+    <string name="executar"> Exec </string>
+    <string name="zera">Zerar</string>
+    <string name="are_you_sure">Tem certeza?</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+    <string name="change_odometer">Novo Valor</string>
+    <string name="config_ratio">Aferição de prova</string>
+    <string name="not_valid">Não processado: número não válido </string>
+    <string name="OK">OK</string>
+    <string name="cancelar">Cancelar </string>
+    <string name="config_ratio_zero">Impossível calibrar: Odometro Zerado</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+
+
+    <string name="settings_title_main"> Configurações</string>
+    <string name="settings_title_calibragem">Novo Valor</string>
+    <string name="settings_title_category_calibragem">Calibragem</string>
+    <string name="settings_message_calibragem">Mude somente se souber o valor certo de seu veículo. Caso contrário, realize a aferição de prova.</string>
+
+
+    <string name="editar">Editar</string>
+    <string name="editar_odometro_message">Digite um novo valor para o odômetro:
+        </string>
+
+
+    <string name="title_reset_ratio"> Resetar </string>
+    <string name="dialog_reset_ratio_text">Será necessário realizar a aferição de prova novamente para o correto funcionamento </string>
+    <string name="dialog_reset_ratio_title_ask">Deseja resetar a calibragem?</string>
+
+
+    <string name="dialog_Keep_ratio_ask_text">Deseja manter as configurações de calibragem da última vez?</string>
+    <string name="dialog_keep_ratio_title"> Manter Calibragem?</string>
+
+
+    <string name="dialog_zerar_title"> Zerar</string>
+    <string name="dialog_zerar_text">Os valores do odômetro e do velocímetro serão zerados</string>
+
+
+    <string name="dialog_not_configured_title">Não calibrado</string>
+    <string name="dialog_not_configured_message">Para calibrar, acesse Aferição de Prova para proceder com a calibração</string>
+
+
+    <string name="pref_title_ratio"> Razão</string>
+    <string name="pref_default_ratio_number">0.28248</string>
+
+    <!-- Preference Keys -->
+
+    <string name="ratio_key"> example_ratio</string>
+    <string name="reset_ratio_key"> reset_ratio</string>
+    <string name="descanso_key">descanso</string>
+
+    <!-- Preferences     -->
+    <string name="pref_comportamento">Comportamento</string>
+
+    <string name="pref_comportamento_descanso">Desativar Bloqueio de Tela do Android</string>
+    <string name="pref_comportamento_descanso_on">Status: Bloqueio ativado</string>
+    <string name="pref_comportamento_descanso_off">Status: Bloqueio desativado</string>
+
+
+    <!--  Bluetooth -->
+    <string name="send">Enviar</string>
+    <string name="not_connected">Você não está conectado a um dispositivo</string>
+    <string name="bt_not_enabled_leaving">Bluetooth não ativado. Deixando a aplicação.</string>
+    <string name="title_connecting">conectando...</string>
+    <string name="title_connected">conectado: </string>
+    <string name="message_connected_to">Conectado a  </string>
+    <string name="message_unable_connect">Impossível conectar </string>
+    <string name="message_connection_failed">Rally Vision: desconectado </string>
+    <string name="title_not_connected">não conectado</string>
+    <string name="title_BT_not_connected">Bluetooth precisa estar ativado</string>
+    <string name="message_device_has_no_BT">O dispositivo não possui Bmluetooh</string>
+
+
+    <!--  Escolha de dispositivo -->
+    <string name="scanning">Buscando dispositivos...</string>
+    <string name="select_device">Escolha o dispositivo</string>
+    <string name="none_paired">Nenhum dispositivo foi pareado</string>
+    <string name="none_found">Nenhum dispositivo encontrado</string>
+    <string name="title_paired_devices">Dispositivos Pareados</string>
+    <string name="title_other_devices">Outros Dispositicos Disponíveis</string>
+    <string name="button_scan">Buscar por dispositivos</string>
+
+    <!-- License checking status messages -->
+    <string name="check_license">Check license</string>
+    <string name="checking_license">Checking license...</string>
+    <string name="dont_allow">Don\'t allow the user access</string>
+    <string name="allow">Allow the user access</string>
+    <string name="application_error">Application error: %1$s</string>
+
+    <!-- Unlicensed dialog messages -->
+    <string name="unlicensed_dialog_title">Application not licensed</string>
+    <string name="unlicensed_dialog_body">This application is not licensed. Please purchase it from Android Market.</string>
+    <string name="unlicensed_dialog_retry_body">Unable to validate license. Check to see if a network connection is available.</string>
+    <string name="buy_button">Buy app</string>
+    <string name="retry_button">Retry</string>
+    <string name="quit_button">Exit</string>
+
+    <!-- Notifications-->
+
+    <string name="notification_title">Ainda em execução</string>
+    <string name="notification_text">Toque para reabrir</string>
+    <string name="notification_ticker">O aplicativo ainda está em execução</string>
+
+
+
+
+
+
+</resources>

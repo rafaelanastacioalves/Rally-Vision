@@ -1,0 +1,34 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/settings_title_main">
+
+    <PreferenceCategory android:title="@string/settings_title_category_calibragem">
+        <EditTextPreference
+            android:defaultValue="@string/pref_default_ratio_number"
+            android:dialogMessage="@string/settings_message_calibragem"
+            android:dialogTitle="@string/settings_title_calibragem"
+            android:inputType="numberDecimal"
+            android:key="@string/ratio_key"
+            android:maxLines="1"
+            android:numeric="decimal"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/pref_title_ratio" />
+        <anastasoft.rallyvision.activity.dialog.ZerarRatioDialog
+
+            android:dialogMessage="@string/dialog_reset_ratio_text"
+            android:dialogTitle="@string/dialog_reset_ratio_title_ask"
+            android:key="@string/reset_ratio_key"
+            android:title="@string/title_reset_ratio" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_comportamento">
+
+        <CheckBoxPreference
+            android:title="@string/pref_comportamento_descanso"
+            android:key="@string/descanso_key"
+            android:summaryOn="@string/pref_comportamento_descanso_on"
+            android:summaryOff="@string/pref_comportamento_descanso_off"
+
+            />
+    </PreferenceCategory>
+
+</PreferenceScreen>

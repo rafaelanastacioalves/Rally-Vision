@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="anastasoft.rallyvision"
+    android:versionCode="10"
+    android:versionName="1.99" >
+
+    <uses-sdk
+        android:minSdkVersion="6"
+        android:targetSdkVersion="20" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <application
+        android:name="anastasoft.rallyvision.controller.Controller"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppBaseTheme" >
+        <activity
+            android:name="anastasoft.rallyvision.activity.MenuPrincipal"
+            android:label="@string/app_name" 
+           >
+        
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="anastasoft.rallyvision.activity.SettingsActivity"
+            android:label="@string/settings_title_main"
+            android:parentActivityName="anastasoft.rallyvision.activity.MenuPrincipal" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="anastasoft.rallyvision.activity.MenuPrincipal" />
+        </activity>
+        <activity android:name="anastasoft.rallyvision.activity.DeviceListActivity"
+                  android:label="@string/select_device"
+                  android:theme="@style/Dialog"
+                  android:configChanges="orientation|keyboardHidden" />
+    </application>
+
+</manifest>

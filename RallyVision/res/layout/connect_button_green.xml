@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ToggleButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/executar"
+
+    android:layout_alignBaseline="@+id/editar"
+    android:layout_alignBottom="@+id/editar"
+    android:layout_alignRight="@+id/RelativeLayout2"
+    android:onClick="stopCom"
+    android:text="@string/executar"
+    android:textOff="@string/executar"
+    android:textOn="@string/executar"
+    style="@style/letra_botão.verde"
+     />

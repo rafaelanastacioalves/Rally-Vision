@@ -1,0 +1,18 @@
+<resources>
+
+    <!--
+        Base application theme for API 14+. This theme completely replaces
+        AppBaseTheme from BOTH res/values/styles.xml and
+        res/values-v11/styles.xml on API 14+ devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.Base.AppCompat">
+        <!-- API 14 theme customizations can go here. -->
+    </style>
+
+    <style name="Dialog" parent="@android:style/Theme.DeviceDefault.Dialog"></style>
+
+    <style name="velocimetro_vermelho" parent="@style/velocimetro_preto">
+        <item name="android:textColor">#f00</item>
+        <item name="android:textColorHighlight">@android:color/holo_blue_light</item>
+    </style>
+</resources>

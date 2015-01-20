@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Fonts">
+        <attr name="font" format="string|reference" />
+        <attr name="android:textStyle" />
+        <attr name="borderColor" format="color|reference" />
+        <attr name="borderWidth" format="dimension|reference" />
+    </declare-styleable>
+
+    <item type="id" name="fonts_extra_data" />
+
+</resources>

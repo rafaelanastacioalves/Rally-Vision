@@ -1,0 +1,138 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/iron_texture"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".activity.MenuPrincipal" >
+
+    <Button
+        android:id="@+id/zera"
+        
+        android:layout_alignBaseline="@+id/editar"
+        android:layout_alignBottom="@+id/editar"
+        android:layout_alignLeft="@+id/RelativeLayout2"
+        style="@style/letra_2"
+        android:text="@string/zera" />
+
+      <ToggleButton
+        android:id="@+id/executar"
+        
+        android:layout_alignBaseline="@+id/editar"
+        android:layout_alignBottom="@+id/editar"
+        android:layout_alignRight="@+id/RelativeLayout2"
+        style="@style/letra_2"
+        android:onClick="startProcedure"
+       	android:text="@string/executar"
+       	android:textOn="@string/executar"
+       	android:textOff="@string/executar"
+        />
+
+    <Button
+        android:id="@+id/editar"
+        style="@style/letra_2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/editar" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/ODdig05"
+            style="@style/velocimetro_preto" />
+
+        <TextView
+            android:id="@+id/ODdig04"
+            style="@style/velocimetro_preto" />
+
+        <TextView
+            android:id="@+id/ODdig03"
+            style="@style/velocimetro_vermelho" />
+
+        <TextView
+            android:id="@+id/ODdig02"
+            style="@style/velocimetro_vermelho" />
+
+        <TextView
+            android:id="@+id/ODdig01"
+            style="@style/velocimetro_vermelho" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/vel"
+            style="@style/letra_1"
+            android:layout_alignBaseline="@+id/vel_media"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/vel" />
+
+        <TextView
+            android:id="@+id/vel_media"
+            style="@style/letra_1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/vel_media" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayout02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/vel_media"
+            android:layout_below="@+id/vel_media"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/AVRGVelDig03"
+                style="@style/velocimetro_pequeno" />
+
+            <TextView
+                android:id="@+id/AVRGVelDig02"
+                style="@style/velocimetro_pequeno" />
+
+            <TextView
+                android:id="@+id/AVRGVelDig01"
+                style="@style/velocimetro_pequeno" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/LinearLayout02"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/InstVelDig03"
+                style="@style/velocimetro_pequeno" />
+
+            <TextView
+                android:id="@+id/InstVelDig02"
+                style="@style/velocimetro_pequeno" />
+
+            <TextView
+                android:id="@+id/InstVelDig01"
+                style="@style/velocimetro_pequeno" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

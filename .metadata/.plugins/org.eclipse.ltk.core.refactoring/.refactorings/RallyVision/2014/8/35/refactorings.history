@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;anastasoft.navegaotimo&apos; to &apos;anastasoft.rallyvision&apos;&#x0A;- Original project: &apos;NavegaOtimo&apos;&#x0A;- Original element: &apos;NavegaOtimo/src/anastasoft.navegaotimo&apos;&#x0A;- Renamed element: &apos;NavegaOtimo/src/anastasoft.rallyvision&apos;&#x0A;- Update references to refactored element&#x0A;- Update fully qualified names in &apos;*&apos; files&#x0A;- Update textual occurrences in comments and strings&#x0A;- Rename subpackages of the package" description="Rename package &apos;anastasoft.navegaotimo&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;anastasoft.navegaotimo" name="anastasoft.rallyvision" patterns="*" qualified="true" references="true" stamp="1408952859296" textual="true" version="1.0"/>
+</session>

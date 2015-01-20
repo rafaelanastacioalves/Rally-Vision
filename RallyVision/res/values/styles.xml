@@ -1,0 +1,102 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat">
+
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="Dialog" parent="@android:style/Theme.Dialog">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+
+    <style name="letra_1">
+        <item name="android:textColor">@android:color/primary_text_dark</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:layout_marginRight">2dp</item>
+    </style>
+
+    <style name="letra_botão">
+
+        <item name="android:textColor">@android:color/primary_text_dark</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:padding">20dp</item>
+    </style>
+    <style name="letra_botão.amarelo" parent="letra_botão">
+        <item name="android:background">@drawable/btn_yellow</item>
+
+    </style>
+
+    <style name="letra_botão.verde" parent="letra_botão">
+        <item name="android:background">@drawable/btn_green</item>
+    </style>
+    <style name="letra_botão.laranja" parent="letra_botão">
+        <item name="android:background">@drawable/btn_orange</item>
+    </style>
+    <style name="letra_botão.red" parent="letra_botão">
+        <item name="android:background">@drawable/btn_red</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+    </style>
+    <style name="letra_botão.azul" parent="letra_botão">
+        <item name="android:background">@drawable/btn_blue</item>
+    </style>
+
+    <style name="painel">
+        <item name="android:background">@drawable/btn_black</item>
+    </style>
+
+    <style name="velocimetro_preto">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:bottomLeftRadius">30dp</item>
+        <item name="android:bottomRightRadius">30dp</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:text">0</item>
+        <!--<item name="android:background">@android:drawable/btn_default</item>-->
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:textColor">#ff00dbff</item>
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:textSize">100sp</item>
+        <item name="android:topLeftRadius">30dp</item>
+        <item name="android:topRightRadius">30dp</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:inputType">number</item>
+        <item name="font">digdream</item>
+
+    </style>
+
+    <style name="velocimetro_pequeno" parent="@style/velocimetro_preto">
+
+        <item name="android:textSize">60sp</item>
+    </style>
+
+    <style name="velocimetro_vermelho" parent="@style/velocimetro_preto">
+        <item name="android:textColor">#f00</item>
+        <item name="android:textColorHighlight">@color/abc_search_url_text_pressed</item>
+    </style>
+
+
+</resources>

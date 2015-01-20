@@ -1,0 +1,362 @@
+package anastasoft.rallyvision.activity;
+
+import java.util.List;
+
+import anastasoft.rallyvision.R;
+import anastasoft.rallyvision.activity.dialog.ConfigureDialog;
+import anastasoft.rallyvision.activity.dialog.EditDialog;
+import anastasoft.rallyvision.activity.dialog.KeepRatioDialog;
+import anastasoft.rallyvision.activity.dialog.NotConfigureDialog;
+import anastasoft.rallyvision.activity.dialog.ZerarDialog;
+import anastasoft.rallyvision.command.Command;
+import anastasoft.rallyvision.command.startCommand;
+import anastasoft.rallyvision.command.stopCommunicationCommand;
+import anastasoft.rallyvision.controller.Controller;
+import anastasoft.rallyvision.controller.Observable;
+import android.annotation.SuppressLint;
+import android.app.ActionBar;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnLongClickListener;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.ToggleButton;
+
+@SuppressLint("NewApi")
+public class MenuPrincipal extends ActionBarActivity {
+	
+	private static final int RESULT_SETTINGS = 1;
+	
+	private static final int DISTANCE = 0;
+	private static final int INST_VEL = 1;
+	private static final int AVRG_VEL = 2;
+	
+	private static final String TAG = "Menu Principal";
+	private static final boolean D = true;
+	
+	public odometer mOdom;
+	public AVRGvelocimeter mAVGveloc;
+	public INSTvelocimeter mINSTveloc;
+	
+	protected Observable aObervable;
+	
+	Controller aController;
+	
+	private Command cmd;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		aController = (Controller) getApplicationContext();
+		
+		
+		
+		
+		setContentView(R.layout.activity_menu_principal);
+		aController.setup(this);
+		
+		setupViews();
+		
+	}
+	
+	
+	
+	public void warnNotCalibrated() {
+		NotConfigureDialog dFrag = new NotConfigureDialog();
+		dFrag.show(getSupportFragmentManager(), "not_calibrated");
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.menu_principal, menu);
+		return true;
+	}
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		
+		aController.actionAfterBlueTooth(requestCode, resultCode, data);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			Intent i = new Intent(this, SettingsActivity.class);
+			startActivityForResult(i, RESULT_SETTINGS);
+			return true;
+		}
+		if (id == R.id.action_config) {
+			ConfigureDialog dFrag = new ConfigureDialog();
+			dFrag.show(getSupportFragmentManager(), "change");
+		}
+		return super.onOptionsItemSelected(item);
+		
+	}
+	
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		Command cmd = new stopCommunicationCommand(aController);
+		cmd.Execute();
+	}
+	
+	public void update() {
+		
+		List<Float> lstValues;
+		lstValues = aObervable.getValues();
+		float a, b, c;
+		a = lstValues.get(DISTANCE);
+		b = lstValues.get(INST_VEL);
+		c = lstValues.get(AVRG_VEL);
+		updateDistance((int) a);
+		updateInstVel((int) b);
+		updateAvrgVel((int) c);
+		
+	}
+	
+	public void updateDistance(int distance) {
+		if (D) {
+			Log.e(TAG, " +++ updateDistance +++ ");
+		}
+		
+		String number = String.valueOf(distance);
+		
+		switch (number.length()) {
+			case 1:
+				number = "0000" + number;
+				break;
+			case 2:
+				number = "000" + number;
+				break;
+			case 3:
+				number = "00" + number;
+				break;
+			case 4:
+				number = "0" + number;
+				break;
+			default:
+				break;
+		}
+		char[] digit = number.toCharArray();
+		
+		mOdom.TVdig1.setText(String.valueOf(digit[4]));
+		mOdom.TVdig2.setText(String.valueOf(digit[3]));
+		mOdom.TVdig3.setText(String.valueOf(digit[2]));
+		mOdom.TVdig4.setText(String.valueOf(digit[1]));
+		mOdom.TVdig5.setText(String.valueOf(digit[0]));
+		
+	}
+	
+	public void updateAvrgVel(Integer av) {
+		if (D) {
+			Log.e(TAG, " +++ updateAvrgVel +++ ");
+		}
+		
+		String number = String.valueOf(av);
+		
+		switch (number.length()) {
+			case 1:
+				number = "00" + number;
+				break;
+			case 2:
+				number = "0" + number;
+				break;
+			default:
+				break;
+		}
+		char[] digit = number.toCharArray();
+		
+		mAVGveloc.TVdig1.setText(String.valueOf(digit[2]));
+		mAVGveloc.TVdig2.setText(String.valueOf(digit[1]));
+		mAVGveloc.TVdig3.setText(String.valueOf(digit[0]));
+	}
+	
+	public void updateInstVel(Integer iv) {
+		if (D) {
+			Log.e(TAG, " +++ updateInstVel +++ ");
+		}
+		
+		String number = String.valueOf(iv);
+		
+		switch (number.length()) {
+			case 1:
+				number = "00" + number;
+				break;
+			case 2:
+				number = "0" + number;
+				break;
+			default:
+				break;
+		}
+		char[] digit = number.toCharArray();
+		
+		mINSTveloc.TVdig1.setText(String.valueOf(digit[2]));
+		mINSTveloc.TVdig2.setText(String.valueOf(digit[1]));
+		mINSTveloc.TVdig3.setText(String.valueOf(digit[0]));
+	}
+	
+	public void setObservable(Observable observable) {
+		
+		this.aObervable = observable;
+		
+		aObervable.Attach(this);
+	}
+	
+	public void startProcedure(View v) {
+		// Is the toggle on?
+		boolean light_not_on = ((ToggleButton) v).isChecked();
+		
+		if (light_not_on) {
+			cmd = new startCommand(this, getOdometerValue());
+			cmd.Execute();
+		} else {
+			
+			cmd = new stopCommunicationCommand(this);
+			cmd.Execute();
+			
+		}
+		
+	}
+	
+	public void zerar(View v) {
+		ZerarDialog dFrag = new ZerarDialog();
+		dFrag.show(getSupportFragmentManager(), "change");
+	}
+	
+	public void editar(View v) {
+		EditDialog dFrag = new EditDialog();
+		dFrag.show(getSupportFragmentManager(), "change");
+	}
+	
+	public int getOdometerValue() {
+		String sValue = "";
+		sValue += mOdom.TVdig5.getText();
+		sValue += mOdom.TVdig4.getText();
+		sValue += mOdom.TVdig3.getText();
+		sValue += mOdom.TVdig2.getText();
+		sValue += mOdom.TVdig1.getText();
+		
+		int intValue = Integer.parseInt(sValue);
+		return intValue;
+	}
+	
+	private void setupViews() {
+		
+		mOdom = new odometer();
+		mINSTveloc = new INSTvelocimeter();
+		mAVGveloc = new AVRGvelocimeter();
+		
+		// odometer
+		mOdom.TVdig1 = (TextView) findViewById(R.id.ODdig01);
+		mOdom.TVdig2 = (TextView) findViewById(R.id.ODdig02);
+		mOdom.TVdig3 = (TextView) findViewById(R.id.ODdig03);
+		mOdom.TVdig4 = (TextView) findViewById(R.id.ODdig04);
+		mOdom.TVdig5 = (TextView) findViewById(R.id.ODdig05);
+		
+		// instant velocimeter
+		
+		mINSTveloc.TVdig1 = (TextView) findViewById(R.id.InstVelDig01);
+		mINSTveloc.TVdig2 = (TextView) findViewById(R.id.InstVelDig02);
+		mINSTveloc.TVdig3 = (TextView) findViewById(R.id.InstVelDig03);
+		
+		// average velocimeter
+		mAVGveloc.TVdig1 = (TextView) findViewById(R.id.AVRGVelDig01);
+		mAVGveloc.TVdig2 = (TextView) findViewById(R.id.AVRGVelDig02);
+		mAVGveloc.TVdig3 = (TextView) findViewById(R.id.AVRGVelDig03);
+		
+		// edit button
+		
+		Button edButton = (Button) findViewById(R.id.editar);
+			edButton.setOnLongClickListener(new OnLongClickListener() {
+				
+				@Override
+				public boolean onLongClick(View v) {
+					// TODO Auto-generated method stub
+					editar(v);
+					return true;
+				}
+			});
+		Button zeraButton = (Button) findViewById(R.id.zera);
+			zeraButton.setOnLongClickListener(new OnLongClickListener() {
+				
+				@Override
+				public boolean onLongClick(View v) {
+					// TODO Auto-generated method stub
+					zerar(v);
+					return true;
+				}
+			});
+		Button startProcView = (Button) findViewById(R.id.executar);
+		startProcView.setOnLongClickListener(new OnLongClickListener() {
+			
+			@Override
+			public boolean onLongClick(View v) {
+				// TODO Auto-generated method stub
+				startProcedure(v);
+				return true;
+			}
+		});
+		
+	}
+	
+	public void askKeepRatio() {
+		// TODO Auto-generated method stub
+		KeepRatioDialog dFrag = new KeepRatioDialog();
+		dFrag.show(getSupportFragmentManager(), "keep");
+	}
+	private void hideActionBar(){
+		if (Build.VERSION.SDK_INT < 16) {
+			android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+			actionBar.hide();
+			
+        }else {
+        	
+
+        	
+        	
+        	// Remember that you should never show the action bar if the
+        	// status bar is hidden, so hide that too if necessary.
+        	ActionBar actionBar = getActionBar();
+        	actionBar.hide();
+		}
+	}
+	
+}
+
+class odometer {
+	
+	TextView TVdig1;
+	TextView TVdig2;
+	TextView TVdig3;
+	TextView TVdig4;
+	TextView TVdig5;
+	
+}
+
+class AVRGvelocimeter {
+	
+	TextView TVdig1;
+	TextView TVdig2;
+	TextView TVdig3;
+	
+}
+
+class INSTvelocimeter {
+	
+	TextView TVdig1;
+	TextView TVdig2;
+	TextView TVdig3;
+}
