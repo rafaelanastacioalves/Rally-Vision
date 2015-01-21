@@ -12,7 +12,7 @@ public class Trecho {
     private float       deltaTProva;
 
 
-    public float getDeltaS(){
+    public float getDeltaStrecho(){
         return (kf - ki)*1000;
     }
 
@@ -24,6 +24,7 @@ public class Trecho {
     public String getTipo(){
         return tipo;
     }
+
 
 
 

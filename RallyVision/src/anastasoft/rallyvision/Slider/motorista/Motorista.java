@@ -6,10 +6,12 @@ import anastasoft.rallyvision.Slider.Prova_Trecho.Trecho;
  * Created by rafaelanastacioalves on 20/01/15.
  */
 public class Motorista {
-    private float   deltaSPercorrido;
+    private float   deltaSTrechoPercorrido;
     private float   percentualPercorrido;
     private float   deltaSTrechoTotal;
     private Trecho  trechoAtual;
+    private float   deltaSTotalPercorrido;
+    private float   deltaTacumuladoTrecho;
 
 
 
@@ -27,6 +29,10 @@ public class Motorista {
 
     public void setPercentualPercorrido(float percent){
         percentualPercorrido = percent;
+    }
+
+    public void setTrecho(Trecho trecho) {
+        this.trechoAtual = trecho;
     }
 }
 
