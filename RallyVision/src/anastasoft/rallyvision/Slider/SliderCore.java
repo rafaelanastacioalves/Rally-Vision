@@ -70,8 +70,8 @@ public class SliderCore {
 
         aMotoristaIdeal.incrementaDTacumuladoTrecho(dTfinal);
 
-        percentual = aMotoristaIdeal.getDTacumuladoTrecho()/aMotoristaIdeal.getDTtoralTrecho();
-        aMotoristaIdeal.atualizaPercentual(percentual);
+        percentual = aMotoristaIdeal.getDTacumuladoTrecho()/aMotoristaIdeal.getDTtotalTrecho();
+        aMotoristaIdeal.setPercentualPercorrido(percentual);
 
 
 

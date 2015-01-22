@@ -1,39 +1,35 @@
 package anastasoft.rallyvision.Slider.motorista;
 
-import anastasoft.rallyvision.Slider.Prova_Trecho.Trecho;
+import anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho;
 
 /**
  * Created by rafaelanastacioalves on 20/01/15.
  */
-public class Motorista {
-    private float   deltaSTrechoPercorrido;
-    private float   percentualPercorrido;
-    private float   deltaSTrechoTotal;
-    private Trecho  trechoAtual;
-    private float   deltaSTotalPercorrido;
-    private float   deltaTacumuladoTrecho;
+public abstract class Motorista {
+    protected   Trecho  trechoAtual;
+//    protected float   deltaSTrechoPercorrido;
+      protected float   percentualPercorrido;
+//    protected float   deltaSTrechoTotal;
+//    protected float   deltaTacumuladoTrecho;
 
-
+    public Motorista(){
+        percentualPercorrido = 0;
+    }
 
     public int getNumTrecho(){
         return trechoAtual.getNumTrecho();
     }
 
-    public String getTipo(){
-        return trechoAtual.getTipo();
-    }
 
-    public  void setDeltaSPercorrido(){
 
-    }
+
 
     public void setPercentualPercorrido(float percent){
         percentualPercorrido = percent;
     }
 
-    public void setTrecho(Trecho trecho) {
-        this.trechoAtual = trecho;
-    }
+    public abstract void setTrecho(Trecho trecho);
+
 }
 
 

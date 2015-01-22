@@ -1,26 +1,41 @@
 package anastasoft.rallyvision.Slider.motorista;
 
+import anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho;
+
 /**
  * Created by rafaelanastacioalves on 20/01/15.
  */
 public class MotoristaIdeal extends Motorista {
+    private float deltaTacumuladoTrecho;
+    private float deltaTTrechoTotal;
+
+    public MotoristaIdeal(){
+        super();
+        deltaTacumuladoTrecho = 0;
+    }
+
+    @Override
+    public void setTrecho(Trecho trecho) {
+        trechoAtual = trecho;
+        deltaTTrechoTotal = trechoAtual.getdTTrecho();
+    }
+
     public float getDTRemanescente() {
-        return 0;
+        return deltaTTrechoTotal - deltaTacumuladoTrecho;
     }
 
     public void incrementaDTacumuladoTrecho(float dTfinal) {
-
+        deltaTacumuladoTrecho =+ dTfinal;
     }
 
-    public void getDTacumuladoTrecho() {
-
+    public float getDTacumuladoTrecho() {
+        return deltaTacumuladoTrecho;
     }
 
-    public void atualizaPercentual(float percentual) {
 
+    public float getDTtotalTrecho() {
+         return  trechoAtual.getdTTrecho();
     }
 
-    public void getDTtoralTrecho() {
-        
-    }
+
 }
