@@ -23,6 +23,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.ipaulpro.afilechooser.FileChooserActivity;
+
 import java.util.List;
 
 import anastasoft.rallyvision.R;
@@ -70,6 +72,11 @@ public class MenuPrincipal extends ActionBarActivity {
 
     // Notification
     private static       int NOTIFICATION_ID = 10;
+
+
+    //FileChooserRequest
+
+    private static final int REQUEST_CHOOSER = 1234;
 
 
     @Override
@@ -134,7 +141,9 @@ public class MenuPrincipal extends ActionBarActivity {
         }
 
         if (id == R.id.action_slider_carregar_trecho){
-            
+            Intent i = new Intent(this, FileChooserActivity.class);
+            startActivityForResult (i, REQUEST_CHOOSER);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
