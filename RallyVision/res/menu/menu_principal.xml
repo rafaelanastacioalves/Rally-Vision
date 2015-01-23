@@ -13,6 +13,11 @@
         android:orderInCategory="99"
         android:title="@string/config_ratio"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_slider_carregar_trecho"
+        android:orderInCategory="99"
+        android:title="@string/slider_carregar_prova"
+        app:showAsAction="never" />
 
 
 </menu>

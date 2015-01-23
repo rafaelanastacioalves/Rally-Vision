@@ -108,10 +108,7 @@
     <string name="notification_title">Ainda em execução</string>
     <string name="notification_text">Toque para reabrir</string>
     <string name="notification_ticker">O aplicativo ainda está em execução</string>
-
-
-
-
+    <string name="slider_carregar_prova">Carregar Arquivo de Prova</string>
 
 
 </resources>

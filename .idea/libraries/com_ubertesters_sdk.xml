@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="com.ubertesters.sdk">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/RallyVision/libs/com.ubertesters.sdk.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

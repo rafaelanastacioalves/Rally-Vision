@@ -133,6 +133,10 @@ public class MenuPrincipal extends ActionBarActivity {
             return true;
         }
 
+        if (id == R.id.action_slider_carregar_trecho){
+            
+        }
+
         return super.onOptionsItemSelected(item);
 
     }

@@ -21,6 +21,7 @@ import com.ubertesters.sdk.Ubertesters;
 
 import anastasoft.rallyvision.BTManager.BTManager;
 import anastasoft.rallyvision.R;
+import anastasoft.rallyvision.Slider.SliderCore;
 import anastasoft.rallyvision.activity.ConnectMediator;
 import anastasoft.rallyvision.activity.DeviceListActivity;
 import anastasoft.rallyvision.activity.MenuPrincipal;
@@ -600,6 +601,7 @@ public class Controller extends Application {
         private VelocityEng aVelEng;
         private Clock aClock;
         private Observable aObservable;
+        private SliderCore aSliderCore;
 
         public CounterAndConverter(Controller ac, Observable aObservable) {
 
@@ -674,9 +676,14 @@ public class Controller extends Application {
 
         protected void update(int newPulse) {
 
-            aVelEng.updateEnd(newPulse);
+            aVelEng.updateEnd(newPulse); // are this  synchronous? I think so...
 
-            // are this both synchronous?
+            // for slider
+            if (aSliderCore !=null){
+                aSliderCore.update(aVelEng.getDeltaT(), aVelEng.getDeltaS());
+                aObervable.setValues(aSliderCore.getStatus());
+            }
+
             aObservable.setValues(aVelEng.getValues(), this);
 
             STATE = STATE_READY;
@@ -685,6 +692,10 @@ public class Controller extends Application {
         protected void cancel() {
             STATE = STATE_STOPPED;
             aClock.cancel();
+        }
+
+        public void  setSliderCore(SliderCore aSliderCore){
+            this.aSliderCore = aSliderCore;
         }
 
         public void update() {

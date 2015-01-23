@@ -1,5 +1,9 @@
 package anastasoft.rallyvision.Slider;
 
+import android.database.Cursor;
+
+import java.util.ArrayList;
+
 import anastasoft.rallyvision.Slider.Prova_Trecho.Prova;
 import anastasoft.rallyvision.Slider.motorista.Motorista;
 import anastasoft.rallyvision.Slider.motorista.MotoristaIdeal;
@@ -15,11 +19,12 @@ public class SliderCore {
     private Prova               aProva;
 
     // para alguns calculos rotineiros
-    private float               dSTrechoRestante;
-    private float               dSFinal;
-    private float               dTRemanescente;
-    private float               dTfinal;
-    private float               percentual;
+    private float                   dSTrechoRestante;
+    private float                   dSFinal;
+    private float                   dTRemanescente;
+    private float                   dTfinal;
+    private float                   percentual;
+    private  ArrayList<Motorista>    listaMotorista = new ArrayList<Motorista>(2);
 
 
     public void setProva(Prova aProva){
@@ -39,7 +44,24 @@ public class SliderCore {
 
     }
 
+    public SliderCore (){
 
+
+        // deixando logo para sempre nesse array para não ter que ficar atribuindo eles na hora de exportar os dois objetos...
+        listaMotorista.set(0,aMotoristaUsuario);
+        listaMotorista.set(1,aMotoristaIdeal);
+
+    }
+
+    public ArrayList<Motorista> getStatus(){
+        return listaMotorista;
+    }
+
+    public void carregarProva(Cursor c){
+        setProva(new Prova(c));
+    }
+
+    //
     public void update(float dT, float dS){
 
         //atualizando status motorista usuario

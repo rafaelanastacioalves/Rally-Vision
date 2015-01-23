@@ -108,6 +108,12 @@ class VelocityEng {
 
     }
 
+
+    // retorna em milissegundos
+    public float getDeltaT(){
+        return (float)aClock.getDeltaT();
+    }
+
     private float convert(int pulse) {
         return pulse * ratio;
     }
@@ -119,5 +125,9 @@ class VelocityEng {
     protected void setDeltaSTotal(int value) {
         // TODO Auto-generated method stub
         this.deltaStot = value;
+    }
+
+    public float getDeltaS() {
+        return deltaS;
     }
 }

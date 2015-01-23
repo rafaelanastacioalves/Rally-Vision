@@ -22,6 +22,7 @@ public class Prova {
     private static final String KEY_TI = "ti";
     private ArrayList<Trecho> listaDeTrechos;
 
+
     public Trecho getTrecho(int numTrecho){
         return listaDeTrechos.get(numTrecho -1);
     }

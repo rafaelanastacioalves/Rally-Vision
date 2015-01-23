@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import anastasoft.rallyvision.Slider.motorista.Motorista;
 import anastasoft.rallyvision.activity.MenuPrincipal;
 import anastasoft.rallyvision.controller.Controller.CounterAndConverter;
 
@@ -27,6 +28,7 @@ public class Observable {
     private static List<Float> listValues;
     private  Controller aController;
     float ratio;
+    private ArrayList<Motorista> motoristasStatus;
 
     public Observable(Controller aController) {
         // TODO Auto-generated constructor stub
@@ -203,4 +205,23 @@ public class Observable {
         Notify();
     }
 
+    public void setValues(ArrayList<Motorista> motoristasStatus) {
+        this.motoristasStatus = motoristasStatus;
+        Notify(motoristasStatus);
+    }
+
+    private void Notify(ArrayList<Motorista> motoristasStatus) {
+        for (int i = 0; i < aObservers.size(); i++) {
+            Object array_element = aObservers.get(i);
+
+            if (array_element != null) {
+                if (array_element.getClass() == MenuPrincipal.class) {
+                    ((MenuPrincipal) array_element).update(motoristasStatus);
+
+                }
+
+            }
+
+        }
+    }
 }
