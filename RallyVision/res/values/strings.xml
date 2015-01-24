@@ -111,4 +111,8 @@
     <string name="slider_carregar_prova">Carregar Arquivo de Prova</string>
 
 
+    <!--Slider-->
+    <string name="slider_carregar_arquivo_invalido">Arquivo inválido</string>
+
+
 </resources>

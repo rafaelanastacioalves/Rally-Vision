@@ -49,17 +49,23 @@ public class FileParser {
 
             private ArrayList<String[]> loadFromPath( String path) {
                 this.pathAccessed = path;
-                new Thread(new Runnable() {
+                try{
+                    loadWords();
 
-
-                    public void run() {
-                        try {
-                            loadWords();
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                    }
-                }).start();
+                }catch (IOException e){
+                    throw new RuntimeException(e);
+                }
+//                new Thread(new Runnable() {
+//
+//
+//                    public void run() {
+//                        try {
+//                            loadWords();
+//                        } catch (IOException e) {
+//                            throw new RuntimeException(e);
+//                        }
+//                    }
+//                }).start();
 
                 return finalList;
 
@@ -81,12 +87,13 @@ public class FileParser {
                 try {
                     String line;
                     while ((line = reader.readLine()) != null) {
+                        line = line.trim();
                         String[] strings = line.split("\\s+");
                         if (estaTudoNosConformes(strings)){
                             strings =separaTipoNumero(strings);
+                            finalList.add(strings);
 
                         }
-                        finalList.add(strings);
 
                     }
                 } finally {
@@ -109,7 +116,14 @@ public class FileParser {
 
 
     private boolean estaTudoNosConformes(String[] strings) {
-            return true;
+            String sTest = new String(strings[0].substring(0,1).trim());
+
+           if(sTest.contains("D") || sTest.contains("N") || sTest.contains("V")){
+               return true;
+           }
+
+
+            return false;
     }
 
     private MatrixCursor convertToCursor(ArrayList<String[]> string){

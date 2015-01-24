@@ -46,10 +46,12 @@ public class SliderCore {
 
     public SliderCore (){
 
+        aMotoristaIdeal = new MotoristaIdeal();
+        aMotoristaUsuario = new MotoristaUsuario();
 
         // deixando logo para sempre nesse array para não ter que ficar atribuindo eles na hora de exportar os dois objetos...
-        listaMotorista.set(0,aMotoristaUsuario);
-        listaMotorista.set(1,aMotoristaIdeal);
+        listaMotorista.add(aMotoristaUsuario);
+        listaMotorista.add(aMotoristaIdeal);
 
     }
 

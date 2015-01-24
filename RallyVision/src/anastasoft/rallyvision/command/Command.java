@@ -18,6 +18,8 @@ public abstract class Command {
         aController = (Controller) controller;
     }
 
-    public abstract void Execute();
+    public  void Execute(){
+
+    }
 
 }

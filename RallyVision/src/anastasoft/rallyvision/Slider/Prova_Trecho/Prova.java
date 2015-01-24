@@ -2,12 +2,13 @@ package anastasoft.rallyvision.Slider.Prova_Trecho;
 
 import android.database.Cursor;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho;
 import anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.TrechoD;
-import anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.TrechoN;
-import anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.TrechoV;
 
 /**
  * Created by rafaelanastacioalves on 20/01/15.
@@ -28,10 +29,16 @@ public class Prova {
     }
 
     public Prova(Cursor c){
+        DateFormat fmtSemMilisegundos = new SimpleDateFormat("hh:mm:ss");
+        DateFormat fmtComMilisegundos = new SimpleDateFormat("hh:mm:ss.SS");
+        Date aDate1;
+        Date aDate2;
 
         listaDeTrechos = new ArrayList<Trecho>();
 
         String tipo;
+
+        c.moveToFirst();
         tipo = c.getString(c.getColumnIndex(KEY_TIPO));
 
         try {
@@ -40,18 +47,33 @@ public class Prova {
 
 
             do {
-                if (tipo.equals("d")) {
-                    aTrecho = new TrechoD(c.getInt(c.getColumnIndex(KEY_NUM)), c.getFloat(c.getColumnIndex(KEY_KI)), c.getFloat(c.getColumnIndex(KEY_KF)), c.getFloat(c.getColumnIndex(KEY_DTTRECHO_VMEDIO)), c.getFloat(c.getColumnIndex(KEY_TI)));
+                if (tipo.equalsIgnoreCase("d")) {
+
+                    aDate1 =  fmtSemMilisegundos.parse(c.getString(c.getColumnIndex(KEY_DTTRECHO_VMEDIO)));
+                    aDate2 =  fmtComMilisegundos.parse(c.getString(c.getColumnIndex(KEY_TI)));
+
+                    aTrecho = new TrechoD(c.getInt(c.getColumnIndex(KEY_NUM)), c.getFloat(c.getColumnIndex(KEY_KI)), c.getFloat(c.getColumnIndex(KEY_KF)),(float)aDate1.getTime()   ,  (float)aDate2.getTime());
+
+                    listaDeTrechos.add(aTrecho);
+
                 }
 
-                if (tipo.equals("n")) {
-                    aTrecho = new TrechoN(c.getInt(c.getColumnIndex(KEY_NUM)), c.getFloat(c.getColumnIndex(KEY_KI)), c.getFloat(c.getColumnIndex(KEY_KF)), c.getFloat(c.getColumnIndex(KEY_DTTRECHO_VMEDIO)), c.getFloat(c.getColumnIndex(KEY_TI)));
+                if (tipo.equalsIgnoreCase("n")) {
+                    aDate1 =  fmtSemMilisegundos.parse(c.getString(c.getColumnIndex(KEY_DTTRECHO_VMEDIO)));
+                    aDate2 =  fmtComMilisegundos.parse(c.getString(c.getColumnIndex(KEY_TI)));
+                    aTrecho = new TrechoD(c.getInt(c.getColumnIndex(KEY_NUM)), c.getFloat(c.getColumnIndex(KEY_KI)), c.getFloat(c.getColumnIndex(KEY_KF)),(float)aDate1.getTime()   ,  (float)aDate2.getTime());
+
+                    listaDeTrechos.add(aTrecho);
+
                 }
-                if (tipo.equals("v")) {
-                    aTrecho = new TrechoV(c.getInt(c.getColumnIndex(KEY_NUM)), c.getFloat(c.getColumnIndex(KEY_KI)), c.getFloat(c.getColumnIndex(KEY_KF)), c.getFloat(c.getColumnIndex(KEY_DTTRECHO_VMEDIO)), c.getFloat(c.getColumnIndex(KEY_TI)));
+                if (tipo.equalsIgnoreCase("v")) {
+                    aDate2 =  fmtComMilisegundos.parse(c.getString(c.getColumnIndex(KEY_TI)));
+
+                    aTrecho = new TrechoD(c.getInt(c.getColumnIndex(KEY_NUM)), c.getFloat(c.getColumnIndex(KEY_KI)), c.getFloat(c.getColumnIndex(KEY_KF)),c.getFloat(c.getColumnIndex(KEY_DTTRECHO_VMEDIO))  ,  (float)aDate2.getTime());
+                    listaDeTrechos.add(aTrecho);
+
                 }
 
-                listaDeTrechos.add(aTrecho);
 
             } while (c.moveToNext());
 
@@ -59,7 +81,7 @@ public class Prova {
             
         }
 
-
     }
+
 
 }

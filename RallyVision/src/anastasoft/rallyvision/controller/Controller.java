@@ -25,6 +25,7 @@ import anastasoft.rallyvision.Slider.SliderCore;
 import anastasoft.rallyvision.activity.ConnectMediator;
 import anastasoft.rallyvision.activity.DeviceListActivity;
 import anastasoft.rallyvision.activity.MenuPrincipal;
+import anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer;
 
 // licensing
 
@@ -88,6 +89,9 @@ public class Controller extends Application {
     private static String RATIO = "example_ratio";
     private static PreferencesAdapter aPrefAdapter;
     private static Observable aObervable;
+
+
+    private static SliderChoreographer aSliderChoreographer;
 
     // Resources
     BTManager aBTManager;
@@ -359,6 +363,16 @@ public class Controller extends Application {
         }
         mConnMediator.update(this);
 
+        // activating Slider
+
+        if(aSliderChoreographer == null && true){
+            try{
+                aSliderChoreographer = new SliderChoreographer(this,(MenuPrincipal)getCurrentActiviy(),aCountConv,aObervable );
+
+            }catch (Exception erro){
+
+            }
+        }
 
         if (FIRST_RUN == false) {
             aObervable.Notify();
@@ -582,6 +596,10 @@ public class Controller extends Application {
         }
 
 
+    }
+
+    public SliderChoreographer getChoreographer() {
+        return aSliderChoreographer;
     }
 
 

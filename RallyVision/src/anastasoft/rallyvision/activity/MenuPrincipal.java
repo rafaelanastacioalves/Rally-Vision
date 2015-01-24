@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
@@ -33,6 +34,7 @@ import anastasoft.rallyvision.activity.dialog.ConfigureDialog;
 import anastasoft.rallyvision.activity.dialog.EditDialog;
 import anastasoft.rallyvision.activity.dialog.KeepRatioDialog;
 import anastasoft.rallyvision.activity.dialog.NotConfigureDialog;
+import anastasoft.rallyvision.command.CarregarArquivoCommand;
 import anastasoft.rallyvision.command.Command;
 import anastasoft.rallyvision.command.Zerar;
 import anastasoft.rallyvision.command.startCommand;
@@ -120,6 +122,17 @@ public class MenuPrincipal extends ActionBarActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        switch (requestCode) {
+            case REQUEST_CHOOSER:
+                if (resultCode == RESULT_OK) {
+
+                    final Uri uri = data.getData();
+
+                    new CarregarArquivoCommand(aController,uri).Execute();
+                }
+                break;
+        }
+
         aController.actionAfterBlueTooth(requestCode, resultCode, data);
     }
 
@@ -142,7 +155,7 @@ public class MenuPrincipal extends ActionBarActivity {
 
         if (id == R.id.action_slider_carregar_trecho){
             Intent i = new Intent(this, FileChooserActivity.class);
-            startActivityForResult (i, REQUEST_CHOOSER);
+            startActivityForResult(i, REQUEST_CHOOSER);
             return true;
         }
 
