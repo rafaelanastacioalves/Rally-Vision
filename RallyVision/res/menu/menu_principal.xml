@@ -5,17 +5,17 @@
 
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="3"
         android:title="@string/action_settings"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_config"
-        android:orderInCategory="99"
+        android:orderInCategory="2"
         android:title="@string/config_ratio"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_slider_carregar_trecho"
-        android:orderInCategory="99"
+        android:orderInCategory="1"
         android:title="@string/slider_carregar_prova"
         app:showAsAction="never" />
 

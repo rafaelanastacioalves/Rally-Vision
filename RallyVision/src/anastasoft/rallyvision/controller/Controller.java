@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import com.google.android.vending.licensing.AESObfuscator;
 import com.google.android.vending.licensing.LicenseChecker;
-import com.google.android.vending.licensing.LicenseCheckerCallback;
 import com.google.android.vending.licensing.ServerManagedPolicy;
 import com.ubertesters.common.models.LockingMode;
 import com.ubertesters.sdk.Ubertesters;
@@ -34,7 +33,7 @@ public class Controller extends Application {
 
     //checking license purposes
 
-    private LicenseCheckerCallback mLicenseCheckerCallback;
+    private MylicenseChekerCallBack mLicenseCheckerCallBack;
     private LicenseChecker mChecker;
 
     private static final String BASE64_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwsUvY54xrzoeuyTlFg8gVvY6/Uu5HyIQnK4lKiPwC2dQC34D0wQ8JkiXClovkgY4xmxV8jtTufgAV971yqHESLB7KP68sYNM1eMm7JAl1aL4hiw2qakBWsosbUbOnS0NyYMu5Rkt5m2irVdVGdsqnfXaoRChEh7auqhik5ZOxRZKaml2g2pYUx5Nw3cGA2wM0EbXlb0pVuMXuKcK0mo9YXGODm9TfA7NhvzAaVBSqjR5cyFJ9ZWiqIgBX+843auM6TYYXrKE8pEZSr+TVs4g3gfi40E6aWfzD5xhDyZ0eIBvfCVE0VeV55h4v9B4imQWUTwYO6YXre+y+9NsipD5qwIDAQAB";
@@ -244,6 +243,7 @@ public class Controller extends Application {
         if (aCountConv == null) {
 
             aCountConv = new CounterAndConverter(this, aObervable);
+            
         }
 
         // if (isRatioDefault(aObervable.getRatio())){
@@ -293,7 +293,7 @@ public class Controller extends Application {
         String deviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 
         // Construct the LicenseCheckerCallback. The library calls this when done.
-        mLicenseCheckerCallback = new MyLicenseCheckerCallback();
+        mLicenseCheckerCallBack = new  MylicenseChekerCallBack(this);
 
 
         // Construct the LicenseChecker with a Policy.
@@ -405,11 +405,11 @@ public class Controller extends Application {
     }
 
     private void doCheck() {
-        mChecker.checkAccess(mLicenseCheckerCallback);
+        mChecker.checkAccess( mLicenseCheckerCallBack);
     }
 
     public void checkAccess() {
-        mChecker.checkAccess(mLicenseCheckerCallback);
+        mChecker.checkAccess( mLicenseCheckerCallBack);
 
     }
 
@@ -603,6 +603,7 @@ public class Controller extends Application {
     }
 
 
+
     public class CounterAndConverter extends Thread {
 
         protected static final int STATE_WAITING = 1;
@@ -635,6 +636,8 @@ public class Controller extends Application {
             aObservable.Attach(aClock);
             aVelEng = new VelocityEng(ratio, aClock);
             // TODO Auto-generated constructor stub
+
+            aSliderCore = null;
         }
 
         public void setOdometer(int value) {
@@ -731,47 +734,6 @@ public class Controller extends Application {
         }
 
 
-    }
-
-    private class MyLicenseCheckerCallback implements LicenseCheckerCallback {
-        public void allow(int reason) {
-            if (((MenuPrincipal) getCurrentActiviy()).isFinishing()) {
-                // Don't update UI if Activity is finishing.
-                return;
-            }
-            // Should allow user access.
-            ((MenuPrincipal) getCurrentActiviy()).displayResult(getString(R.string.allow));
-        }
-
-        public void dontAllow(int reason) {
-            if (((MenuPrincipal) getCurrentActiviy()).isFinishing()) {
-                // Don't update UI if Activity is finishing.
-                return;
-            }
-            ((MenuPrincipal) getCurrentActiviy()).displayResult(getString(R.string.dont_allow));
-            // Should not allow access. In most cases, the app should assume
-            // the user has access unless it encounters this. If it does,
-            // the app should inform the user of their unlicensed ways
-            // and then either shut down the app or limit the user to a
-            // restricted set of features.
-            // In this example, we show a dialog that takes the user to Market.
-            // If the reason for the lack of license is that the service is
-            // unavailable or there is another problem, we display a
-            // retry button on the dialog and a different message.
-            // ((MenuPrincipal)getCurrentActiviy()).displayDialog(reason == Policy.RETRY);
-        }
-
-        public void applicationError(int errorCode) {
-            if (((MenuPrincipal) getCurrentActiviy()).isFinishing()) {
-                // Don't update UI if Activity is finishing.
-                return;
-            }
-            // This is a polite way of saying the developer made a mistake
-            // while setting up or calling the license checker library.
-            // Please examine the error code and fix the error.
-            String result = String.format(getString(R.string.application_error), errorCode);
-            ((MenuPrincipal) getCurrentActiviy()).displayResult(result);
-        }
     }
 
 

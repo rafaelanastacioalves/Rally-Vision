@@ -35,6 +35,11 @@ public class SliderChoreographer {
 
         aCounterandConverter.setSliderCore(aSliderCore);
 
+        this.aMenuPrincipal.setCarregarProvaVisible(true);
+
+
+        this.aCounterandConverter.setSliderCore(aSliderCore);
+
 
 
 
@@ -53,6 +58,10 @@ public class SliderChoreographer {
         }catch(Exception erro){
             Toast.makeText(aController, aController.getResources().getString(R.string.slider_carregar_arquivo_invalido), Toast.LENGTH_SHORT).show();
         }
+
+    }
+
+    public void desactivate(){
 
     }
 }

@@ -20,6 +20,11 @@ public class TrechoD extends Trecho {
     public float getdTTrecho() {
         return dTTrecho;
     }
+
+    @Override
+    public String getTipo() {
+        return "D";
+    }
 }
 
 

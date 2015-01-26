@@ -216,7 +216,7 @@ public class Observable {
 
             if (array_element != null) {
                 if (array_element.getClass() == MenuPrincipal.class) {
-//                    ((MenuPrincipal) array_element).update(motoristasStatus);
+                    ((MenuPrincipal) array_element).update(motoristasStatus);
 
                 }
 

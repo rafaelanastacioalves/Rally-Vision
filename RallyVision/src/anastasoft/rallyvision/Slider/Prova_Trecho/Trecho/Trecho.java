@@ -25,4 +25,6 @@ public abstract class Trecho {
     public int getNumTrecho() {
         return numero;
     }
+
+    public abstract String getTipo();
 }

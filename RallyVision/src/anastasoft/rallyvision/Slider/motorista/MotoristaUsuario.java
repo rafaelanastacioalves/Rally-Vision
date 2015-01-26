@@ -27,4 +27,6 @@ public class MotoristaUsuario extends Motorista {
         deltaSTrechoPercorrido = deltaSTrechoPercorrido + dSFinal;
         
     }
+
+
 }

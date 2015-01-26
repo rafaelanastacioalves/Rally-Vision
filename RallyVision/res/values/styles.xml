@@ -88,6 +88,12 @@
 
     </style>
 
+    <style name="trecho" parent="velocimetro_pequeno">
+
+        <item name="android:textSize">20sp</item>
+
+    </style>
+
     <style name="velocimetro_pequeno" parent="@style/velocimetro_preto">
 
         <item name="android:textSize">60sp</item>

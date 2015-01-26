@@ -20,15 +20,20 @@ import android.view.View.OnLongClickListener;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.ipaulpro.afilechooser.FileChooserActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import anastasoft.rallyvision.R;
+import anastasoft.rallyvision.Slider.motorista.Motorista;
+import anastasoft.rallyvision.Slider.motorista.MotoristaIdeal;
+import anastasoft.rallyvision.Slider.motorista.MotoristaUsuario;
 import anastasoft.rallyvision.activity.customfontdemo.TypefaceManager;
 import anastasoft.rallyvision.activity.dialog.ConfigureDialog;
 import anastasoft.rallyvision.activity.dialog.EditDialog;
@@ -50,6 +55,9 @@ public class MenuPrincipal extends ActionBarActivity {
     private static final int DISTANCE = 0;
     private static final int INST_VEL = 1;
     private static final int AVRG_VEL = 2;
+
+    private static final int MOTORISTA_USUARIO = 0;
+    private static final int MOTORISTA_IDEAL = 1;
 
     private static final String TAG = "Menu Principal";
 
@@ -80,6 +88,11 @@ public class MenuPrincipal extends ActionBarActivity {
 
     private static final int REQUEST_CHOOSER = 1234;
 
+    //Menu Reference
+
+    boolean isSliderActive ;
+    private SliderMotoristaUsuario mSLDMotUsr;
+    private SliderMotoristaIdeal mSLDMotIdeal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +105,7 @@ public class MenuPrincipal extends ActionBarActivity {
 
 
         setupViews();
+
         aController.setup(this);
 
 
@@ -99,6 +113,8 @@ public class MenuPrincipal extends ActionBarActivity {
 
 
     }
+
+
 
     @Override
     protected void onRestart() {
@@ -115,7 +131,10 @@ public class MenuPrincipal extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.menu_principal, menu);
+        MenuItem aMenuItem = menu.findItem(R.id.action_slider_carregar_trecho);
+        aMenuItem.setVisible(isSliderActive);
         return true;
     }
 
@@ -415,6 +434,9 @@ public class MenuPrincipal extends ActionBarActivity {
         mINSTveloc = new INSTvelocimeter();
         mAVGveloc = new AVRGvelocimeter();
 
+        mSLDMotIdeal  = new SliderMotoristaIdeal();
+        mSLDMotUsr = new SliderMotoristaUsuario();
+
 
         // odometer
         mOdom.TVdig1 = (TextView) findViewById(R.id.ODdig01);
@@ -457,6 +479,13 @@ public class MenuPrincipal extends ActionBarActivity {
             }
         });
 
+        // Sliders
+
+        mSLDMotUsr.TVSliderTipoTrechoUsuário = (TextView) findViewById(R.id.tipoTrechoMotoristaUsuario);
+        mSLDMotUsr.PBSliderPercentUsuario = (ProgressBar) findViewById(R.id.progressBarMotoristaUsuário);
+
+        mSLDMotIdeal.TVSliderTipoTrechoIdeal = (TextView) findViewById(R.id.tipoTrechoMotoristaIdeal);
+        mSLDMotIdeal.PBSliderPercentIdeal = (ProgressBar) findViewById(R.id.progressBarMotoristaIdeal);
 
 
     }
@@ -502,6 +531,28 @@ public class MenuPrincipal extends ActionBarActivity {
     }
 
 
+
+
+    public void update(ArrayList<Motorista> motoristasStatus) {
+
+        mSLDMotUsr.TVSliderTipoTrechoUsuário.setText(
+                ((MotoristaUsuario)motoristasStatus.get(MOTORISTA_USUARIO))
+                    .getTipoTrechoAtual()
+        );
+        mSLDMotIdeal.TVSliderTipoTrechoIdeal.setText(
+                ((MotoristaUsuario)motoristasStatus.get(MOTORISTA_IDEAL))
+                        .getTipoTrechoAtual()
+        );
+
+        mSLDMotUsr.PBSliderPercentUsuario.setProgress(
+                ((int)((MotoristaUsuario)motoristasStatus.get(MOTORISTA_USUARIO)).getPercentPercorrido()));
+        mSLDMotIdeal.PBSliderPercentIdeal.setProgress(
+                ((int)((MotoristaIdeal)motoristasStatus.get(MOTORISTA_IDEAL)).getPercentPercorrido()));
+    }
+
+    public void setCarregarProvaVisible(boolean b) {
+        isSliderActive =true;
+    }
 }
 
 class odometer {
@@ -527,5 +578,16 @@ class INSTvelocimeter {
     TextView TVdig1;
     TextView TVdig2;
     TextView TVdig3;
+}
+
+class SliderMotoristaIdeal {
+
+    TextView            TVSliderTipoTrechoIdeal;
+    ProgressBar         PBSliderPercentIdeal;
+}
+
+class SliderMotoristaUsuario {
+    TextView            TVSliderTipoTrechoUsuário;
+    ProgressBar         PBSliderPercentUsuario;
 }
 

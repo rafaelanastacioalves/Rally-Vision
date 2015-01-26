@@ -24,4 +24,10 @@ public class TrechoV extends Trecho {
     public float getdTTrecho() {
         return getDeltaStrecho()/vMedio;
     }
+
+    @Override
+    public String getTipo() {
+        return "V";
+    }
+
 }

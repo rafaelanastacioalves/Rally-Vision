@@ -21,4 +21,9 @@ public class TrechoN extends Trecho {
     public float getdTTrecho() {
         return dTTrecho;
     }
+
+    @Override
+    public String getTipo() {
+        return "N";
+    }
 }
