@@ -1,5 +1,6 @@
 package anastasoft.rallyvision.command;
 
+import android.app.Application;
 import android.net.Uri;
 
 import anastasoft.rallyvision.controller.Controller;
@@ -13,9 +14,9 @@ public class CarregarArquivoCommand extends Command {
     private Uri aUri;
     private SliderChoreographer aSliderChoreographer;
 
-    public CarregarArquivoCommand(Controller aController, Uri aUri){
+    public CarregarArquivoCommand(Application aController, Uri aUri){
         super(aController);
-        this.aSliderChoreographer = aController.getChoreographer();
+        this.aSliderChoreographer =((Controller) aController).getChoreographer();
         this.aUri = aUri;
     }
 

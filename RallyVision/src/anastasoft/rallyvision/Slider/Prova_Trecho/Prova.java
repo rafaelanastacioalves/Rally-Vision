@@ -23,16 +23,22 @@ public class Prova {
     private static final String KEY_TI = "ti";
     private ArrayList<Trecho> listaDeTrechos;
 
+    /**
+     *
+     *Retorna o trecho referente à numero fornecido
+     *@param numTrecho >= 1
+     */
 
-    public Trecho getTrecho(int numTrecho){
+    public Trecho getTrecho(int numTrecho) throws IndexOutOfBoundsException {
         return listaDeTrechos.get(numTrecho -1);
     }
 
     public Prova(Cursor c){
-        DateFormat fmtSemMilisegundos = new SimpleDateFormat("hh:mm:ss");
-        DateFormat fmtComMilisegundos = new SimpleDateFormat("hh:mm:ss.SS");
+        DateFormat fmtSemMilisegundos = new SimpleDateFormat("HH:mm:ss");
+        DateFormat fmtComMilisegundos = new SimpleDateFormat("HH:mm:ss.SSS");
         Date aDate1;
         Date aDate2;
+        Date aDateBase;
 
         listaDeTrechos = new ArrayList<Trecho>();
 
@@ -43,6 +49,7 @@ public class Prova {
 
         try {
             Trecho aTrecho = null;
+            aDateBase = fmtSemMilisegundos.parse("00:00:00");// nao mexer, usado somente para calcular diferenças
 
 
 
@@ -52,7 +59,7 @@ public class Prova {
                     aDate1 =  fmtSemMilisegundos.parse(c.getString(c.getColumnIndex(KEY_DTTRECHO_VMEDIO)));
                     aDate2 =  fmtComMilisegundos.parse(c.getString(c.getColumnIndex(KEY_TI)));
 
-                    aTrecho = new TrechoD(c.getInt(c.getColumnIndex(KEY_NUM)), c.getFloat(c.getColumnIndex(KEY_KI)), c.getFloat(c.getColumnIndex(KEY_KF)),(float)aDate1.getTime()   ,  (float)aDate2.getTime());
+                    aTrecho = new TrechoD(c.getInt(c.getColumnIndex(KEY_NUM)), 1000* c.getFloat(c.getColumnIndex(KEY_KI)), 1000* c.getFloat(c.getColumnIndex(KEY_KF)),(float)(aDate1.getTime() - aDateBase.getTime())   ,  (float)(aDate2.getTime()- aDateBase.getTime()));
 
                     listaDeTrechos.add(aTrecho);
 
@@ -61,7 +68,7 @@ public class Prova {
                 if (tipo.equalsIgnoreCase("n")) {
                     aDate1 =  fmtSemMilisegundos.parse(c.getString(c.getColumnIndex(KEY_DTTRECHO_VMEDIO)));
                     aDate2 =  fmtComMilisegundos.parse(c.getString(c.getColumnIndex(KEY_TI)));
-                    aTrecho = new TrechoD(c.getInt(c.getColumnIndex(KEY_NUM)), c.getFloat(c.getColumnIndex(KEY_KI)), c.getFloat(c.getColumnIndex(KEY_KF)),(float)aDate1.getTime()   ,  (float)aDate2.getTime());
+                    aTrecho = new TrechoD(c.getInt(c.getColumnIndex(KEY_NUM)),1000* c.getFloat(c.getColumnIndex(KEY_KI)), 1000* c.getFloat(c.getColumnIndex(KEY_KF)),(float)(aDate1.getTime() - aDateBase.getTime())   ,  (float)(aDate2.getTime()- aDateBase.getTime()));
 
                     listaDeTrechos.add(aTrecho);
 
@@ -69,7 +76,7 @@ public class Prova {
                 if (tipo.equalsIgnoreCase("v")) {
                     aDate2 =  fmtComMilisegundos.parse(c.getString(c.getColumnIndex(KEY_TI)));
 
-                    aTrecho = new TrechoD(c.getInt(c.getColumnIndex(KEY_NUM)), c.getFloat(c.getColumnIndex(KEY_KI)), c.getFloat(c.getColumnIndex(KEY_KF)),c.getFloat(c.getColumnIndex(KEY_DTTRECHO_VMEDIO))  ,  (float)aDate2.getTime());
+                    aTrecho = new TrechoD(c.getInt(c.getColumnIndex(KEY_NUM)), 1000*c.getFloat(c.getColumnIndex(KEY_KI)), 1000*c.getFloat(c.getColumnIndex(KEY_KF)),c.getFloat(c.getColumnIndex(KEY_DTTRECHO_VMEDIO))  ,  (float)(aDate2.getTime()- aDateBase.getTime()));
                     listaDeTrechos.add(aTrecho);
 
                 }

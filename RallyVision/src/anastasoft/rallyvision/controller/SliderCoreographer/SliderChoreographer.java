@@ -40,10 +40,17 @@ public class SliderChoreographer {
 
         this.aCounterandConverter.setSliderCore(aSliderCore);
 
+        this.aObservable.Attach(this);
 
 
 
 
+
+    }
+
+    public void setaSliderCore(){
+        if(aCounterandConverter != null)
+            aCounterandConverter.setSliderCore(aSliderCore);
     }
 
     public void carregarArquivoProva(Uri aUri){
@@ -58,6 +65,8 @@ public class SliderChoreographer {
         }catch(Exception erro){
             Toast.makeText(aController, aController.getResources().getString(R.string.slider_carregar_arquivo_invalido), Toast.LENGTH_SHORT).show();
         }
+
+
 
     }
 

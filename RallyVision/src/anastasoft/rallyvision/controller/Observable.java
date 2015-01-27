@@ -211,8 +211,10 @@ public class Observable {
     }
 
     private void Notify(ArrayList<Motorista> motoristasStatus) {
+        Object array_element;
+
         for (int i = 0; i < aObservers.size(); i++) {
-            Object array_element = aObservers.get(i);
+            array_element = aObservers.get(i);
 
             if (array_element != null) {
                 if (array_element.getClass() == MenuPrincipal.class) {

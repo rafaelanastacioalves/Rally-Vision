@@ -25,6 +25,7 @@ public class MotoristaUsuario extends Motorista {
     public void atualizaDS(float dSFinal) {
 
         deltaSTrechoPercorrido = deltaSTrechoPercorrido + dSFinal;
+        setPercentualPercorrido(deltaSTrechoPercorrido/deltaSTrechoTotal);
         
     }
 

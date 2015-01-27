@@ -22,7 +22,7 @@ public abstract class Motorista {
 
 
     public String getTipoTrechoAtual(){
-        return trechoAtual.getTipo();
+        return  trechoAtual.getTipo();
     }
     public float getPercentPercorrido(){
         return percentualPercorrido;

@@ -41,6 +41,7 @@ import anastasoft.rallyvision.activity.dialog.KeepRatioDialog;
 import anastasoft.rallyvision.activity.dialog.NotConfigureDialog;
 import anastasoft.rallyvision.command.CarregarArquivoCommand;
 import anastasoft.rallyvision.command.Command;
+import anastasoft.rallyvision.command.StopAllCommand;
 import anastasoft.rallyvision.command.Zerar;
 import anastasoft.rallyvision.command.startCommand;
 import anastasoft.rallyvision.command.stopCommunicationCommand;
@@ -195,7 +196,7 @@ public class MenuPrincipal extends ActionBarActivity {
     public void onDestroy() {
         super.onDestroy();
 
-        Command cmd = new stopCommunicationCommand(aController);
+        Command cmd = new StopAllCommand(aController);
         cmd.Execute();
     }
 
@@ -535,19 +536,30 @@ public class MenuPrincipal extends ActionBarActivity {
 
     public void update(ArrayList<Motorista> motoristasStatus) {
 
+        try{
+
+
         mSLDMotUsr.TVSliderTipoTrechoUsuário.setText(
                 ((MotoristaUsuario)motoristasStatus.get(MOTORISTA_USUARIO))
                     .getTipoTrechoAtual()
         );
         mSLDMotIdeal.TVSliderTipoTrechoIdeal.setText(
-                ((MotoristaUsuario)motoristasStatus.get(MOTORISTA_IDEAL))
+                ((MotoristaIdeal)motoristasStatus.get(MOTORISTA_IDEAL))
                         .getTipoTrechoAtual()
         );
 
         mSLDMotUsr.PBSliderPercentUsuario.setProgress(
-                ((int)((MotoristaUsuario)motoristasStatus.get(MOTORISTA_USUARIO)).getPercentPercorrido()));
+                ((int)(((MotoristaUsuario)motoristasStatus.get(MOTORISTA_USUARIO)).
+                        getPercentPercorrido())*100));
         mSLDMotIdeal.PBSliderPercentIdeal.setProgress(
-                ((int)((MotoristaIdeal)motoristasStatus.get(MOTORISTA_IDEAL)).getPercentPercorrido()));
+                ((int)(((MotoristaIdeal)motoristasStatus.get(MOTORISTA_IDEAL)).
+                        getPercentPercorrido())*100));
+        }catch (Exception erro){
+            if (aController.isTestOn()) {
+                Log.e(TAG, erro.getMessage());
+            }
+        }
+
     }
 
     public void setCarregarProvaVisible(boolean b) {

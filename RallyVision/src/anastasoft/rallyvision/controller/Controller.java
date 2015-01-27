@@ -46,7 +46,7 @@ public class Controller extends Application {
 
     // Test switch
 
-    private boolean testON = false;
+    private boolean testON = true;
 
     private boolean uberON = false;
 
@@ -243,7 +243,7 @@ public class Controller extends Application {
         if (aCountConv == null) {
 
             aCountConv = new CounterAndConverter(this, aObervable);
-            
+
         }
 
         // if (isRatioDefault(aObervable.getRatio())){
@@ -546,7 +546,11 @@ public class Controller extends Application {
         aObervable.setRatio(ratio);
 
     }
+    public void stopAll(){
+        stopCommunication();
+        aCountConv = null;
 
+    }
 
     public void stopCommunication() {
         // Stop the Bluetooth chat services
@@ -556,7 +560,6 @@ public class Controller extends Application {
             Log.e(TAG, "--- stopCommunication ---");
         if (aCountConv != null)
             aCountConv.cancel();
-        aCountConv = null;
         setAppState(APLICATION_DISCONECTED);
 
         mChecker.onDestroy();

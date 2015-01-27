@@ -91,6 +91,7 @@
     <style name="trecho" parent="velocimetro_pequeno">
 
         <item name="android:textSize">20sp</item>
+        <item name="android:inputType">text</item>
 
     </style>
 

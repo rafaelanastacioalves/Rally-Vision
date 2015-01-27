@@ -29,6 +29,9 @@ public class SliderCore {
 
     public void setProva(Prova aProva){
         this.aProva = aProva;
+        for( Motorista aMotorista : listaMotorista){
+            aMotorista.setTrecho(aProva.getTrecho(1));
+        };
     }
 
     public MotoristaIdeal getStatusMotoristaIdeal(){
