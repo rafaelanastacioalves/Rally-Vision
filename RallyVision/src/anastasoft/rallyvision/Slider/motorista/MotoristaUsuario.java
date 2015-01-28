@@ -12,10 +12,18 @@ public class MotoristaUsuario extends Motorista {
         deltaSTrechoPercorrido =0;
     }
 
+
+    protected void zeraTrocandoTrecho() {
+        deltaSTrechoPercorrido = 0;
+        percentualPercorrido = 0;
+    }
+
     @Override
     public void setTrecho(Trecho trecho) {
         trechoAtual = trecho;
-        deltaSTrechoTotal = trecho.getdTTrecho();
+        zeraTrocandoTrecho();
+
+        deltaSTrechoTotal = trecho.getDeltaStrecho();
     }
 
     public float getDSTrechoRestante() {

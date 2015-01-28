@@ -15,10 +15,19 @@ public class MotoristaIdeal extends Motorista {
     }
 
     @Override
+    protected void zeraTrocandoTrecho() {
+        percentualPercorrido = 0;
+        deltaTacumuladoTrecho = 0;
+    }
+
+    @Override
     public void setTrecho(Trecho trecho) {
         trechoAtual = trecho;
+        zeraTrocandoTrecho();
+
         deltaTTrechoTotal = trechoAtual.getdTTrecho();
     }
+
 
     public float getDTRemanescente() {
         return deltaTTrechoTotal - deltaTacumuladoTrecho;

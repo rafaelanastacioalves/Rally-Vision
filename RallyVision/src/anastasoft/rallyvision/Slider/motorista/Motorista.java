@@ -20,15 +20,23 @@ public abstract class Motorista {
         return trechoAtual.getNumTrecho();
     }
 
+    protected abstract void zeraTrocandoTrecho();
 
     public String getTipoTrechoAtual(){
         return  trechoAtual.getTipo();
     }
+    /***
+     * @param
+     * @return float >= 0 ou <=1
+     */
+
     public float getPercentPercorrido(){
         return percentualPercorrido;
     }
 
-
+    /**
+     * @param percent 0<= percent <=1
+     */
     public void setPercentualPercorrido(float percent){
         percentualPercorrido = percent;
     }

@@ -13,7 +13,7 @@ public abstract class Trecho {
 
 
     public float getDeltaStrecho(){
-        return (kf - ki)*1000;
+        return (kf - ki);
     }
 
 

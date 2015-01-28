@@ -538,6 +538,8 @@ public class MenuPrincipal extends ActionBarActivity {
 
         try{
 
+            int progress;
+
 
         mSLDMotUsr.TVSliderTipoTrechoUsuário.setText(
                 ((MotoristaUsuario)motoristasStatus.get(MOTORISTA_USUARIO))
@@ -548,12 +550,14 @@ public class MenuPrincipal extends ActionBarActivity {
                         .getTipoTrechoAtual()
         );
 
-        mSLDMotUsr.PBSliderPercentUsuario.setProgress(
-                ((int)(((MotoristaUsuario)motoristasStatus.get(MOTORISTA_USUARIO)).
-                        getPercentPercorrido())*100));
-        mSLDMotIdeal.PBSliderPercentIdeal.setProgress(
-                ((int)(((MotoristaIdeal)motoristasStatus.get(MOTORISTA_IDEAL)).
-                        getPercentPercorrido())*100));
+        progress =  (int)  (((float)(((MotoristaUsuario)motoristasStatus.get(MOTORISTA_USUARIO)).
+                getPercentPercorrido()))*100.0);
+        mSLDMotUsr.PBSliderPercentUsuario.setProgress(progress);
+
+
+        progress = (int)  (((float)(((MotoristaIdeal)motoristasStatus.get(MOTORISTA_IDEAL)).
+                getPercentPercorrido()))*100.0);
+        mSLDMotIdeal.PBSliderPercentIdeal.setProgress(progress);
         }catch (Exception erro){
             if (aController.isTestOn()) {
                 Log.e(TAG, erro.getMessage());
