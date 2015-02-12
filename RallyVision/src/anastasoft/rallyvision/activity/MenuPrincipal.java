@@ -2,6 +2,7 @@ package anastasoft.rallyvision.activity;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
@@ -42,6 +43,7 @@ import anastasoft.rallyvision.activity.dialog.KeepRatioDialog;
 import anastasoft.rallyvision.activity.dialog.NotConfigureDialog;
 import anastasoft.rallyvision.command.CarregarArquivoCommand;
 import anastasoft.rallyvision.command.Command;
+import anastasoft.rallyvision.command.StopAllCommand;
 import anastasoft.rallyvision.command.Zerar;
 import anastasoft.rallyvision.command.startCommand;
 import anastasoft.rallyvision.command.stopCommunicationCommand;
@@ -219,14 +221,18 @@ public class MenuPrincipal extends ActionBarActivity {
     /***
      * Chamado quando:
      * - Mudamos a orientação da tela;
+     * - Fechamos o aplicativo;
      *TODO Se houver outro momento em que esta funcao eh chamada, anotar!
      */
     @Override
     public void onDestroy() {
+        cancelNotification();
+
         super.onDestroy();
 
-//        Command cmd = new StopAllCommand(aController);
-//        cmd.Execute();
+        Command cmd = new StopAllCommand(aController);
+        cmd.Execute();
+
     }
 
     @Override
@@ -261,13 +267,16 @@ public class MenuPrincipal extends ActionBarActivity {
                         .setContentTitle(getString(R.string.notification_title))
                         .setContentText(getString(R.string.notification_text))
                         .setContentInfo(getString(R.string.app_name))
+                        .setAutoCancel(true)
                         .setOngoing(true).setTicker(getString(R.string.notification_ticker));
 
         mBuilder.setContentIntent(resultPendingIntent);
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 // mId allows you to update the notification later on.
-        mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+        Notification notification = mBuilder.build();
+
+        mNotificationManager.notify(NOTIFICATION_ID, notification);
     }
     private void cancelNotification(){
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
