@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -25,7 +26,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import com.ipaulpro.afilechooser.FileChooserActivity;
+import com.ipaulpro.afilechooser.utils.FileUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,6 @@ import anastasoft.rallyvision.activity.dialog.KeepRatioDialog;
 import anastasoft.rallyvision.activity.dialog.NotConfigureDialog;
 import anastasoft.rallyvision.command.CarregarArquivoCommand;
 import anastasoft.rallyvision.command.Command;
-import anastasoft.rallyvision.command.StopAllCommand;
 import anastasoft.rallyvision.command.Zerar;
 import anastasoft.rallyvision.command.startCommand;
 import anastasoft.rallyvision.command.stopCommunicationCommand;
@@ -95,6 +95,12 @@ public class MenuPrincipal extends ActionBarActivity {
     private SliderMotoristaUsuario mSLDMotUsr;
     private SliderMotoristaIdeal mSLDMotIdeal;
 
+    /***
+     * Chamado quando:
+     * - O apliativo inicia;
+     * - Quando a tela muda de orientação;
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,7 +122,11 @@ public class MenuPrincipal extends ActionBarActivity {
     }
 
 
-
+    /***
+     * Chamado quando:
+     * - Retomamos o aplicativo;
+     * - Voltamos das opções;
+     */
     @Override
     protected void onRestart() {
         super.onRestart();
@@ -174,8 +184,16 @@ public class MenuPrincipal extends ActionBarActivity {
         }
 
         if (id == R.id.action_slider_carregar_trecho){
-            Intent i = new Intent(this, FileChooserActivity.class);
-            startActivityForResult(i, REQUEST_CHOOSER);
+            // Use the GET_CONTENT intent from the utility class
+            Intent target = FileUtils.createGetContentIntent();
+            // Create the chooser Intent
+            Intent intent = Intent.createChooser(
+                    target, getString(R.string.slider_carregar_prova_titulo));
+            try {
+                startActivityForResult(intent, REQUEST_CHOOSER);
+            } catch (ActivityNotFoundException e) {
+                // The reason for the existence of aFileChooser
+            }
             return true;
         }
 
@@ -183,6 +201,12 @@ public class MenuPrincipal extends ActionBarActivity {
 
     }
 
+    /***
+     * Chamado quando:
+     * - muda a orientação da tela;
+     * - quando aperta ESC;
+     * - quando chamamos as opções;
+     */
     @Override
     protected void onStop() {
         super.onStop();
@@ -192,12 +216,17 @@ public class MenuPrincipal extends ActionBarActivity {
         }
     }
 
+    /***
+     * Chamado quando:
+     * - Mudamos a orientação da tela;
+     *TODO Se houver outro momento em que esta funcao eh chamada, anotar!
+     */
     @Override
     public void onDestroy() {
         super.onDestroy();
 
-        Command cmd = new StopAllCommand(aController);
-        cmd.Execute();
+//        Command cmd = new StopAllCommand(aController);
+//        cmd.Execute();
     }
 
     @Override
@@ -542,11 +571,11 @@ public class MenuPrincipal extends ActionBarActivity {
 
 
         mSLDMotUsr.TVSliderTipoTrechoUsuário.setText(
-                ((MotoristaUsuario)motoristasStatus.get(MOTORISTA_USUARIO))
+                (motoristasStatus.get(MOTORISTA_USUARIO))
                     .getTipoTrechoAtual()
         );
         mSLDMotIdeal.TVSliderTipoTrechoIdeal.setText(
-                ((MotoristaIdeal)motoristasStatus.get(MOTORISTA_IDEAL))
+                (motoristasStatus.get(MOTORISTA_IDEAL))
                         .getTipoTrechoAtual()
         );
 

@@ -77,23 +77,21 @@ public class BTManager {
 
         // Get the BLuetoothDevice object
         BluetoothDevice device = mAdapter.getRemoteDevice(address);
+        connectedAddress = new String(address);
 
         // Verifica se o dispositivo já está conectado. Se estiver, nada faz.
         if (connectedAddress != null) {
-            if (connectedAddress.equals(address)) {
 
-                setState(STATE_CONNECTED);
-                return;
 
-            }
+
+
+            // Atualiza o atual dispositivo conectado
+
+            // Attempt to connect to the device
+            connect(device);
+//            setState(STATE_CONNECTED);
+
         }
-
-        // Atualiza o atual dispositivo conectado
-        connectedAddress = new String(address);
-
-        // Attempt to connect to the device
-        connect(device);
-
     }
 
     /**

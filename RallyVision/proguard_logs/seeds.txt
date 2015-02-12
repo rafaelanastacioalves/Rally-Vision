@@ -123,6 +123,8 @@ anastasoft.rallyvision.R$bool: int abc_config_actionMenuItemAllCaps
 anastasoft.rallyvision.R$bool: int abc_config_allowActionMenuItemTextWithIcon
 anastasoft.rallyvision.R$bool: int abc_config_showMenuShortcutsWhenKeyboardPresent
 anastasoft.rallyvision.R$bool: int abc_split_action_bar_is_narrow
+anastasoft.rallyvision.R$bool: int use_activity
+anastasoft.rallyvision.R$bool: int use_provider
 anastasoft.rallyvision.R$color: int abc_search_url_text_holo
 anastasoft.rallyvision.R$color: int abc_search_url_text_normal
 anastasoft.rallyvision.R$color: int abc_search_url_text_pressed
@@ -150,6 +152,8 @@ anastasoft.rallyvision.R$dimen: int dialog_fixed_height_major
 anastasoft.rallyvision.R$dimen: int dialog_fixed_height_minor
 anastasoft.rallyvision.R$dimen: int dialog_fixed_width_major
 anastasoft.rallyvision.R$dimen: int dialog_fixed_width_minor
+anastasoft.rallyvision.R$dimen: int list_item_padding
+anastasoft.rallyvision.R$dimen: int list_padding
 anastasoft.rallyvision.R$drawable: int abc_ab_bottom_solid_dark_holo
 anastasoft.rallyvision.R$drawable: int abc_ab_bottom_solid_light_holo
 anastasoft.rallyvision.R$drawable: int abc_ab_bottom_transparent_dark_holo
@@ -247,7 +251,11 @@ anastasoft.rallyvision.R$drawable: int btn_white
 anastasoft.rallyvision.R$drawable: int btn_yellow
 anastasoft.rallyvision.R$drawable: int carbon_fibre
 anastasoft.rallyvision.R$drawable: int carbon_fibre_texture
+anastasoft.rallyvision.R$drawable: int ic_chooser
+anastasoft.rallyvision.R$drawable: int ic_file
+anastasoft.rallyvision.R$drawable: int ic_folder
 anastasoft.rallyvision.R$drawable: int ic_launcher
+anastasoft.rallyvision.R$drawable: int ic_provider
 anastasoft.rallyvision.R$drawable: int ic_stat_notify
 anastasoft.rallyvision.R$drawable: int iron_texture
 anastasoft.rallyvision.R$drawable: int irongrip
@@ -262,6 +270,8 @@ anastasoft.rallyvision.R$id: int InstVelDig02
 anastasoft.rallyvision.R$id: int InstVelDig03
 anastasoft.rallyvision.R$id: int LinearLayout01
 anastasoft.rallyvision.R$id: int LinearLayout02
+anastasoft.rallyvision.R$id: int MotoristaIdealLayout
+anastasoft.rallyvision.R$id: int MotoristaUsuariolLayout
 anastasoft.rallyvision.R$id: int ODdig01
 anastasoft.rallyvision.R$id: int ODdig02
 anastasoft.rallyvision.R$id: int ODdig03
@@ -282,6 +292,7 @@ anastasoft.rallyvision.R$id: int action_menu_divider
 anastasoft.rallyvision.R$id: int action_menu_presenter
 anastasoft.rallyvision.R$id: int action_mode_close_button
 anastasoft.rallyvision.R$id: int action_settings
+anastasoft.rallyvision.R$id: int action_slider_carregar_trecho
 anastasoft.rallyvision.R$id: int activity_chooser_view_content
 anastasoft.rallyvision.R$id: int always
 anastasoft.rallyvision.R$id: int beginning
@@ -307,6 +318,7 @@ anastasoft.rallyvision.R$id: int homeAsUp
 anastasoft.rallyvision.R$id: int icon
 anastasoft.rallyvision.R$id: int ifRoom
 anastasoft.rallyvision.R$id: int image
+anastasoft.rallyvision.R$id: int linearLayout
 anastasoft.rallyvision.R$id: int linearLayout1
 anastasoft.rallyvision.R$id: int listMode
 anastasoft.rallyvision.R$id: int list_item
@@ -316,6 +328,8 @@ anastasoft.rallyvision.R$id: int new_devices
 anastasoft.rallyvision.R$id: int none
 anastasoft.rallyvision.R$id: int normal
 anastasoft.rallyvision.R$id: int paired_devices
+anastasoft.rallyvision.R$id: int progressBarMotoristaIdeal
+anastasoft.rallyvision.R$id: int progressBarMotoristaUsu‡rio
 anastasoft.rallyvision.R$id: int progress_circular
 anastasoft.rallyvision.R$id: int progress_horizontal
 anastasoft.rallyvision.R$id: int radio
@@ -334,10 +348,13 @@ anastasoft.rallyvision.R$id: int shortcut
 anastasoft.rallyvision.R$id: int showCustom
 anastasoft.rallyvision.R$id: int showHome
 anastasoft.rallyvision.R$id: int showTitle
+anastasoft.rallyvision.R$id: int slidersLayout
 anastasoft.rallyvision.R$id: int split_action_bar
 anastasoft.rallyvision.R$id: int status_text
 anastasoft.rallyvision.R$id: int submit_area
 anastasoft.rallyvision.R$id: int tabMode
+anastasoft.rallyvision.R$id: int tipoTrechoMotoristaIdeal
+anastasoft.rallyvision.R$id: int tipoTrechoMotoristaUsuario
 anastasoft.rallyvision.R$id: int title
 anastasoft.rallyvision.R$id: int title_new_devices
 anastasoft.rallyvision.R$id: int title_paired_devices
@@ -381,6 +398,7 @@ anastasoft.rallyvision.R$layout: int connect_button_orange
 anastasoft.rallyvision.R$layout: int connect_button_red
 anastasoft.rallyvision.R$layout: int device_list
 anastasoft.rallyvision.R$layout: int device_name
+anastasoft.rallyvision.R$layout: int file
 anastasoft.rallyvision.R$layout: int main
 anastasoft.rallyvision.R$layout: int support_simple_spinner_dropdown_item
 anastasoft.rallyvision.R$menu: int menu_principal
@@ -410,6 +428,7 @@ anastasoft.rallyvision.R$string: int cancelar
 anastasoft.rallyvision.R$string: int change_odometer
 anastasoft.rallyvision.R$string: int check_license
 anastasoft.rallyvision.R$string: int checking_license
+anastasoft.rallyvision.R$string: int choose_file
 anastasoft.rallyvision.R$string: int config_ratio
 anastasoft.rallyvision.R$string: int config_ratio_zero
 anastasoft.rallyvision.R$string: int descanso_key
@@ -424,7 +443,10 @@ anastasoft.rallyvision.R$string: int dialog_zerar_title
 anastasoft.rallyvision.R$string: int dont_allow
 anastasoft.rallyvision.R$string: int editar
 anastasoft.rallyvision.R$string: int editar_odometro_message
+anastasoft.rallyvision.R$string: int empty_directory
+anastasoft.rallyvision.R$string: int error_selecting_file
 anastasoft.rallyvision.R$string: int executar
+anastasoft.rallyvision.R$string: int internal_storage
 anastasoft.rallyvision.R$string: int message_connected_to
 anastasoft.rallyvision.R$string: int message_connection_failed
 anastasoft.rallyvision.R$string: int message_device_has_no_BT
@@ -457,6 +479,9 @@ anastasoft.rallyvision.R$string: int settings_title_calibragem
 anastasoft.rallyvision.R$string: int settings_title_category_calibragem
 anastasoft.rallyvision.R$string: int settings_title_main
 anastasoft.rallyvision.R$string: int sim
+anastasoft.rallyvision.R$string: int slider_carregar_arquivo_invalido
+anastasoft.rallyvision.R$string: int slider_carregar_prova
+anastasoft.rallyvision.R$string: int storage_removed
 anastasoft.rallyvision.R$string: int title_BT_not_connected
 anastasoft.rallyvision.R$string: int title_connected
 anastasoft.rallyvision.R$string: int title_connecting
@@ -612,6 +637,7 @@ anastasoft.rallyvision.R$style: int Widget_AppCompat_PopupMenu
 anastasoft.rallyvision.R$style: int Widget_AppCompat_ProgressBar
 anastasoft.rallyvision.R$style: int Widget_AppCompat_ProgressBar_Horizontal
 anastasoft.rallyvision.R$style: int Widget_AppCompat_Spinner_DropDown_ActionBar
+anastasoft.rallyvision.R$style: int fileChooserName
 anastasoft.rallyvision.R$style: int letra_1
 anastasoft.rallyvision.R$style: int letra_bot‹o
 anastasoft.rallyvision.R$style: int letra_bot‹o_amarelo
@@ -620,6 +646,7 @@ anastasoft.rallyvision.R$style: int letra_bot‹o_laranja
 anastasoft.rallyvision.R$style: int letra_bot‹o_red
 anastasoft.rallyvision.R$style: int letra_bot‹o_verde
 anastasoft.rallyvision.R$style: int painel
+anastasoft.rallyvision.R$style: int trecho
 anastasoft.rallyvision.R$style: int velocimetro_pequeno
 anastasoft.rallyvision.R$style: int velocimetro_preto
 anastasoft.rallyvision.R$style: int velocimetro_vermelho
@@ -740,6 +767,7 @@ anastasoft.rallyvision.R$styleable: int View_paddingEnd
 anastasoft.rallyvision.R$styleable: int View_paddingStart
 anastasoft.rallyvision.R$xml: int fonts
 anastasoft.rallyvision.R$xml: int global_tracker
+anastasoft.rallyvision.R$xml: int mimetypes
 anastasoft.rallyvision.R$xml: int pref_general
 anastasoft.rallyvision.activity.DeviceListActivity
 anastasoft.rallyvision.activity.DeviceListActivity: DeviceListActivity()
@@ -1047,17 +1075,9 @@ android.support.v4.widget.SlidingPaneLayout: void setCoveredFadeColor(int)
 android.support.v4.widget.SlidingPaneLayout: int getCoveredFadeColor()
 android.support.v4.widget.SlidingPaneLayout: void setPanelSlideListener(android.support.v4.widget.SlidingPaneLayout$PanelSlideListener)
 android.support.v4.widget.SlidingPaneLayout: void setShadowDrawable(android.graphics.drawable.Drawable)
-android.support.v4.widget.SlidingPaneLayout: void setShadowDrawableLeft(android.graphics.drawable.Drawable)
-android.support.v4.widget.SlidingPaneLayout: void setShadowDrawableRight(android.graphics.drawable.Drawable)
 android.support.v4.widget.SlidingPaneLayout: void setShadowResource(int)
-android.support.v4.widget.SlidingPaneLayout: void setShadowResourceLeft(int)
-android.support.v4.widget.SlidingPaneLayout: void setShadowResourceRight(int)
 android.support.v4.widget.SlidingPaneLayout$SavedState
 android.support.v4.widget.SlidingPaneLayout$SavedState: android.os.Parcelable$Creator CREATOR
-android.support.v4.widget.SwipeRefreshLayout: void setOnRefreshListener(android.support.v4.widget.SwipeRefreshLayout$OnRefreshListener)
-android.support.v4.widget.SwipeRefreshLayout: void setTriggerPercentage(float)
-android.support.v4.widget.SwipeRefreshLayout: void setRefreshing(boolean)
-android.support.v4.widget.SwipeRefreshLayout: void setTargetOffsetTopAndBottom(int)
 android.support.v7.app.ActionBarActivity: ActionBarActivity()
 android.support.v7.app.ActionBarActivity: void setContentView(android.view.View)
 android.support.v7.appcompat.R$anim: int abc_fade_in
@@ -33854,10 +33874,26 @@ com.google.android.gms.wearable.internal.z: z(int,int,android.os.ParcelFileDescr
 com.google.android.gms.wearable.internal.z: int describeContents()
 com.google.android.gms.wearable.internal.z: void writeToParcel(android.os.Parcel,int)
 com.google.android.gms.wearable.internal.z: void <clinit>()
+com.ipaulpro.afilechooser.FileChooserActivity
+com.ipaulpro.afilechooser.FileChooserActivity: FileChooserActivity()
+com.ipaulpro.afilechooser.R$bool: int use_activity
+com.ipaulpro.afilechooser.R$bool: int use_provider
+com.ipaulpro.afilechooser.R$dimen: int list_item_padding
+com.ipaulpro.afilechooser.R$dimen: int list_padding
+com.ipaulpro.afilechooser.R$drawable: int ic_chooser
+com.ipaulpro.afilechooser.R$drawable: int ic_file
+com.ipaulpro.afilechooser.R$drawable: int ic_folder
+com.ipaulpro.afilechooser.R$drawable: int ic_provider
+com.ipaulpro.afilechooser.R$layout: int file
+com.ipaulpro.afilechooser.R$string: int choose_file
+com.ipaulpro.afilechooser.R$string: int empty_directory
+com.ipaulpro.afilechooser.R$string: int error_selecting_file
+com.ipaulpro.afilechooser.R$string: int internal_storage
+com.ipaulpro.afilechooser.R$string: int storage_removed
+com.ipaulpro.afilechooser.R$style: int fileChooserName
+com.ipaulpro.afilechooser.R$xml: int mimetypes
 com.ubertesters.common.R$drawable: int ic_launcher
 com.ubertesters.common.R$string: int app_name
-com.ubertesters.common.R$style: int AppBaseTheme
-com.ubertesters.common.R$style: int AppTheme
 com.ubertesters.common.models.ActivationMode: com.ubertesters.common.models.ActivationMode[] values()
 com.ubertesters.common.models.ActivationMode: com.ubertesters.common.models.ActivationMode valueOf(java.lang.String)
 com.ubertesters.common.models.LockingMode: com.ubertesters.common.models.LockingMode[] values()
@@ -33880,8 +33916,6 @@ com.ubertesters.lib.R$id: int no_users
 com.ubertesters.lib.R$id: int select_category
 com.ubertesters.lib.R$id: int testId
 com.ubertesters.lib.R$string: int app_name
-com.ubertesters.lib.R$style: int AppBaseTheme
-com.ubertesters.lib.R$style: int AppTheme
 com.ubertesters.lib.R$style: int btn
 com.ubertesters.lib.R$style: int txt_value
 com.ubertesters.sdk.automation.TouchView: android.view.View getCircle()

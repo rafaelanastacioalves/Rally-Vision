@@ -50,6 +50,8 @@ public class Controller extends Application {
 
     private boolean uberON = false;
 
+    private boolean licenseON = false;
+
 
     // Aplication States
 
@@ -175,7 +177,9 @@ public class Controller extends Application {
                         i = (readBuf[0] & 0xff);
                         aCountConv.update(i);
                     } catch (Exception e) {
-
+                           if(testON){
+                               Toast.makeText(getApplicationContext() ,"Erro: " + e.toString(), Toast.LENGTH_SHORT).show();
+                           }
                     }
 
                     break;
@@ -242,8 +246,7 @@ public class Controller extends Application {
     public void startCommunication() {
         if (aCountConv == null) {
 
-            aCountConv = new CounterAndConverter(this, aObervable);
-
+            setupCountAndConverter();
         }
 
         // if (isRatioDefault(aObervable.getRatio())){
@@ -253,16 +256,25 @@ public class Controller extends Application {
         // }
 
         try {
-            if (aCountConv.isAlive()) {
-                aCountConv.resetState();
 
+                aCountConv.start();
+
+            }catch (Exception e) {
+
+            if (isTestOn()) {
+                Toast.makeText(getApplicationContext(), "Erro em startCommunication: " + e.toString(), Toast.LENGTH_SHORT).show();
             }
-            aCountConv.start();
-            if (isTestOn())
-                Log.e(TAG, " +++ START +++");
+
+        }
+        if (isTestOn())
+            Log.e(TAG, " +++ START +++");
+        try{
             setAppState(APLICATION_CONECTED);
-        } catch (Exception e) {
-            // TODO: handle exception
+
+        }catch (SecurityException e){
+            if (isTestOn()) {
+                Toast.makeText(getApplicationContext(), "Erro em startCommunication: " + e.toString(), Toast.LENGTH_SHORT).show();
+            }
         }
 
     }
@@ -289,21 +301,25 @@ public class Controller extends Application {
         }
 
         // ------------checking license -------------//
-        // Try to use more data here. ANDROID_ID is a single point of attack.
-        String deviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 
-        // Construct the LicenseCheckerCallback. The library calls this when done.
-        mLicenseCheckerCallBack = new  MylicenseChekerCallBack(this);
+        if(licenseON){
+            // Try to use more data here. ANDROID_ID is a single point of attack.
+            String deviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+
+            // Construct the LicenseCheckerCallback. The library calls this when done.
+            mLicenseCheckerCallBack = new  MylicenseChekerCallBack(this);
 
 
-        // Construct the LicenseChecker with a Policy.
-        mChecker = new LicenseChecker(
-                getCurrentActiviy(), new ServerManagedPolicy(getCurrentActiviy(),
-                new AESObfuscator(SALT, getPackageName(), deviceId)),
-                BASE64_PUBLIC_KEY  // Your public licensing key.
-        );
+            // Construct the LicenseChecker with a Policy.
+            mChecker = new LicenseChecker(
+                    getCurrentActiviy(), new ServerManagedPolicy(getCurrentActiviy(),
+                    new AESObfuscator(SALT, getPackageName(), deviceId)),
+                    BASE64_PUBLIC_KEY  // Your public licensing key.
+            );
 
-        doCheck();
+            doCheck();
+
+        }
 
 
         // -------- other components --------//
@@ -335,18 +351,11 @@ public class Controller extends Application {
 //			currentAct.finish();
 //			return;
 //		}
-//		
+//
         // setting the Ratio
         float ratio = aPrefAdapter.getRatio();
         aObervable.setRatio(ratio);
-
-        // setup Count and Converter
-
-        if (aCountConv == null) {
-
-            aCountConv = new CounterAndConverter(this, aObervable);
-            aObervable.Attach(aCountConv);
-        }
+        setupCountAndConverter();
 
 
         // setup Menu Principal
@@ -365,12 +374,14 @@ public class Controller extends Application {
 
         // activating Slider
 
-        if(aSliderChoreographer == null && true){
-            try{
-                aSliderChoreographer = new SliderChoreographer(this,(MenuPrincipal)getCurrentActiviy(),aCountConv,aObervable );
+        if(aSliderChoreographer == null ){
+            if(true) {
+                try {
+                    aSliderChoreographer = new SliderChoreographer(this, (MenuPrincipal) getCurrentActiviy(), aCountConv, aObervable);
 
-            }catch (Exception erro){
+                } catch (Exception erro) {
 
+                }
             }
         }
 
@@ -379,6 +390,19 @@ public class Controller extends Application {
         }
         FIRST_RUN = false;
 
+    }
+
+    private void setupCountAndConverter() {
+        // setup Count and Converter
+
+        if (aCountConv == null) {
+
+            aCountConv = new CounterAndConverter(this, aObervable);
+            aObervable.Attach(aCountConv);
+            if(aSliderChoreographer != null){
+                aSliderChoreographer.setupAConuntAndConverter(aCountConv);
+            }
+        }
     }
 
     public int getAppState() {
@@ -405,11 +429,20 @@ public class Controller extends Application {
     }
 
     private void doCheck() {
-        mChecker.checkAccess( mLicenseCheckerCallBack);
+        try{
+            mChecker.checkAccess( mLicenseCheckerCallBack);
+        }catch (NullPointerException erro){
+
+        }
     }
 
     public void checkAccess() {
-        mChecker.checkAccess( mLicenseCheckerCallBack);
+        try{
+            mChecker.checkAccess( mLicenseCheckerCallBack);
+
+        }catch (NullPointerException erro){
+
+        }
 
     }
 
@@ -546,6 +579,10 @@ public class Controller extends Application {
         aObervable.setRatio(ratio);
 
     }
+
+    /**
+     * Usar esse método somente quando tiver certeza de que a aplicação inteira irá encerrar
+     */
     public void stopAll(){
         stopCommunication();
         aCountConv = null;
@@ -559,12 +596,30 @@ public class Controller extends Application {
         if (testON)
             Log.e(TAG, "--- stopCommunication ---");
         if (aCountConv != null)
-            aCountConv.cancel();
+            destroyACountAndConverterSafely();
+            setupCountAndConverter();
+
         setAppState(APLICATION_DISCONECTED);
 
-        mChecker.onDestroy();
+        try{
+            mChecker.onDestroy();
+        }catch (NullPointerException erro){
+
+        }
 
 
+    }
+
+    /**
+     * Usar somente quando você encerra a conexão com o Bluetooth
+     */
+    private void destroyACountAndConverterSafely() {
+        if(aCountConv != null && aObervable !=null){
+            aCountConv.cancel();
+
+            aObervable.Detach(aCountConv);
+            aCountConv = null;
+        }
     }
 
     public void configureRatio(int deltaSAfericao) {
@@ -671,6 +726,8 @@ public class Controller extends Application {
             STATE = STATE_READY;
             CLOCK_STATE = CLOCK_STATE_COUNTING;
             aVelEng.setValues(aObservable.getValues());
+
+
             while (STATE != STATE_STOPPED) {
                 switch (STATE) {
                     case STATE_READY:
@@ -704,8 +761,17 @@ public class Controller extends Application {
 
             // for slider
             if (aSliderCore !=null){
-                aSliderCore.update(aVelEng.getDeltaT(), aVelEng.getDeltaS());
-                aObervable.setValues(aSliderCore.getStatus());
+                try{
+                    aSliderCore.update(aVelEng.getDeltaT(), aVelEng.getDeltaS());
+                    aObervable.setValues(aSliderCore.getStatus());
+                }catch (NullPointerException e){
+                    if(testON){
+                        Toast.makeText(getApplicationContext(), "Erro em " + "SliderCoreUpdate: " + e.toString(),Toast.LENGTH_SHORT ).show();
+
+                    }
+
+                }
+
             }
 
             aObservable.setValues(aVelEng.getValues(), this);

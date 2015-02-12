@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
     package="anastasoft.rallyvision"
-    android:versionCode="26"
-    android:versionName="1.997">
+    android:versionCode="27"
+    android:versionName="2.00">
 
     <uses-sdk
         android:minSdkVersion="7"
-        android:targetSdkVersion="21" />
+        android:targetSdkVersion="18" />
 
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -24,7 +25,7 @@
 
 
     <application
-        android:name="anastasoft.rallyvision.controller.Controller"
+        android:name=".controller.Controller"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -56,6 +57,7 @@
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/select_device"
             android:theme="@style/Dialog" />
+
         <activity
             android:name="com.ipaulpro.afilechooser.FileChooserActivity"
             android:icon="@drawable/ic_chooser"

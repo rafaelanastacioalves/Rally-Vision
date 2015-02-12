@@ -23,12 +23,12 @@ public class SliderChoreographer {
     private SliderCore aSliderCore;
     private FileParser aFileParser;
 
-    public SliderChoreographer(Controller aController, MenuPrincipal aMenuPrincipal, Controller.CounterAndConverter aCounterandConverter, Observable aObservable){
+    public  SliderChoreographer(Controller aController, MenuPrincipal aMenuPrincipal, Controller.CounterAndConverter aCounterandConverter, Observable aObservable){
 
 
         this.aController = aController;
         this.aMenuPrincipal = aMenuPrincipal;
-        this.aCounterandConverter = aCounterandConverter;
+        setupAConuntAndConverter(aCounterandConverter);
         this.aObservable = aObservable;
         this.aSliderCore = new SliderCore();
         aFileParser = new FileParser();
@@ -38,7 +38,7 @@ public class SliderChoreographer {
         this.aMenuPrincipal.setCarregarProvaVisible(true);
 
 
-        this.aCounterandConverter.setSliderCore(aSliderCore);
+
 
         this.aObservable.Attach(this);
 
@@ -46,6 +46,11 @@ public class SliderChoreographer {
 
 
 
+    }
+
+    public void setupAConuntAndConverter(Controller.CounterAndConverter aCounterandConverter) {
+        this.aCounterandConverter = aCounterandConverter;
+        this.aCounterandConverter.setSliderCore(aSliderCore);
     }
 
     public void setaSliderCore(){
