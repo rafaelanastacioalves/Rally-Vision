@@ -370,7 +370,7 @@ public class Controller extends Application {
         if (mConnMediator == null) {
             mConnMediator = new ConnectMediator(this);
         }
-        mConnMediator.update(this);
+//        mConnMediator.update(this);
 
         // activating Slider
 

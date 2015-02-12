@@ -595,7 +595,7 @@ public class MenuPrincipal extends ActionBarActivity {
 
         progress = (int)  (((float)(((MotoristaIdeal)motoristasStatus.get(MOTORISTA_IDEAL)).
                 getPercentPercorrido()))*100.0);
-        mSLDMotIdeal.PBSliderPercentIdeal.setProgress(progress);
+            mSLDMotIdeal.PBSliderPercentIdeal.setProgress(progress);
         }catch (Exception erro){
             if (aController.isTestOn()) {
                 Log.e(TAG, erro.getMessage());

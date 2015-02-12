@@ -33,16 +33,18 @@ public class ConnectMediator {
 
 
             appState = aController.getAppState();
+            Vibrator vb = (Vibrator) aController.getSystemService(Context.VIBRATOR_SERVICE);
+
             switch (appState) {
                 case APLICATION_DISCONECTED:
                     ((MenuPrincipal)aActivity).makeConnectBRed();
+                    vb.vibrate(2000);
                     break;
                 case APLICATION_CONNECTING:
                     break;
                 case APLICATION_CONNECTED:
                     ((MenuPrincipal)aActivity).makeConnectBGreen();
-                    Vibrator vb = (Vibrator) aController.getSystemService(Context.VIBRATOR_SERVICE);
-                    vb.vibrate(1000);
+                    vb.vibrate(500);
 
                     break;
             }

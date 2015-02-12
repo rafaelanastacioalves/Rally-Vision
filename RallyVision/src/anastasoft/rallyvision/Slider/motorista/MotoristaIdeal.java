@@ -34,7 +34,7 @@ public class MotoristaIdeal extends Motorista {
     }
 
     public void incrementaDTacumuladoTrecho(float dTfinal) {
-        deltaTacumuladoTrecho =+ dTfinal;
+        deltaTacumuladoTrecho += dTfinal;
     }
 
     public float getDTacumuladoTrecho() {
