@@ -58,7 +58,7 @@ public class PreferencesAdapter {
 
     public void update() {
         if (aController.isTestOn())
-            Log.e(TAG, " +++ update +++");
+            Log.e(TAG, " +++ setState +++");
         ArrayList<Float> tempArray = (ArrayList<Float>) aObservable.getValues();
         setRatio((tempArray.get(INDEX_RATIO)));
     }

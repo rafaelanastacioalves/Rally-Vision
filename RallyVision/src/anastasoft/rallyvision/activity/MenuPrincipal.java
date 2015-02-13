@@ -68,7 +68,9 @@ public class MenuPrincipal extends ActionBarActivity {
     private odometer mOdom;
     private AVRGvelocimeter mAVGveloc;
     private INSTvelocimeter mINSTveloc;
+
     private ToggleButton mConnect;
+    private ConnectMediator aConnectMediator;
 
     protected Observable aObervable;
 
@@ -98,6 +100,14 @@ public class MenuPrincipal extends ActionBarActivity {
     private SliderMotoristaUsuario mSLDMotUsr;
     private SliderMotoristaIdeal mSLDMotIdeal;
 
+
+//    slider
+    /**
+     * Usado para manter qual o layout será utilizado.
+     */
+    private static int layoutResID = R.layout.activity_menu_principal;
+
+
     /***
      * Chamado quando:
      * - O apliativo inicia;
@@ -111,12 +121,14 @@ public class MenuPrincipal extends ActionBarActivity {
 
         aController = (Controller) getApplicationContext();
 
-        setContentView(R.layout.activity_menu_principal_sliders);
 
 
-        setupViews();
 
         aController.setup(this);
+        setContentView(layoutResID);
+        setupViews();
+
+
 
 
 
@@ -127,8 +139,10 @@ public class MenuPrincipal extends ActionBarActivity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        setContentView(R.layout.activity_menu_principal_sliders);
-
+        setContentView(layoutResID);
+        setupViews();
+        aConnectMediator.update();
+        aObervable.Notify();
     }
 
     /***
@@ -280,7 +294,7 @@ public class MenuPrincipal extends ActionBarActivity {
         mBuilder.setContentIntent(resultPendingIntent);
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-// mId allows you to update the notification later on.
+// mId allows you to setState the notification later on.
         Notification notification = mBuilder.build();
 
         mNotificationManager.notify(NOTIFICATION_ID, notification);
@@ -476,31 +490,43 @@ public class MenuPrincipal extends ActionBarActivity {
 
     private void setupViews() {
 
-        mOdom = new odometer();
-        mINSTveloc = new INSTvelocimeter();
-        mAVGveloc = new AVRGvelocimeter();
-
-        mSLDMotIdeal  = new SliderMotoristaIdeal();
-        mSLDMotUsr = new SliderMotoristaUsuario();
 
 
-        // odometer
-        mOdom.TVdig1 = (TextView) findViewById(R.id.ODdig01);
-        mOdom.TVdig2 = (TextView) findViewById(R.id.ODdig02);
-        mOdom.TVdig3 = (TextView) findViewById(R.id.ODdig03);
-        mOdom.TVdig4 = (TextView) findViewById(R.id.ODdig04);
-        mOdom.TVdig5 = (TextView) findViewById(R.id.ODdig05);
+            mOdom = new odometer();
+            mINSTveloc = new INSTvelocimeter();
+            mAVGveloc = new AVRGvelocimeter();
 
-        // instant velocimeter
+            mSLDMotIdeal  = new SliderMotoristaIdeal();
+            mSLDMotUsr = new SliderMotoristaUsuario();
 
-        mINSTveloc.TVdig1 = (TextView) findViewById(R.id.InstVelDig01);
-        mINSTveloc.TVdig2 = (TextView) findViewById(R.id.InstVelDig02);
-        mINSTveloc.TVdig3 = (TextView) findViewById(R.id.InstVelDig03);
 
-        // average velocimeter
-        mAVGveloc.TVdig1 = (TextView) findViewById(R.id.AVRGVelDig01);
-        mAVGveloc.TVdig2 = (TextView) findViewById(R.id.AVRGVelDig02);
-        mAVGveloc.TVdig3 = (TextView) findViewById(R.id.AVRGVelDig03);
+            // odometer
+            mOdom.TVdig1 = (TextView) findViewById(R.id.ODdig01);
+            mOdom.TVdig2 = (TextView) findViewById(R.id.ODdig02);
+            mOdom.TVdig3 = (TextView) findViewById(R.id.ODdig03);
+            mOdom.TVdig4 = (TextView) findViewById(R.id.ODdig04);
+            mOdom.TVdig5 = (TextView) findViewById(R.id.ODdig05);
+
+            // instant velocimeter
+
+            mINSTveloc.TVdig1 = (TextView) findViewById(R.id.InstVelDig01);
+            mINSTveloc.TVdig2 = (TextView) findViewById(R.id.InstVelDig02);
+            mINSTveloc.TVdig3 = (TextView) findViewById(R.id.InstVelDig03);
+
+            // average velocimeter
+            mAVGveloc.TVdig1 = (TextView) findViewById(R.id.AVRGVelDig01);
+            mAVGveloc.TVdig2 = (TextView) findViewById(R.id.AVRGVelDig02);
+            mAVGveloc.TVdig3 = (TextView) findViewById(R.id.AVRGVelDig03);
+
+            // Sliders
+            mSLDMotUsr.TVSliderTipoTrechoUsuário = (TextView) findViewById(R.id.tipoTrechoMotoristaUsuario);
+            mSLDMotUsr.PBSliderPercentUsuario = (ProgressBar) findViewById(R.id.progressBarMotoristaUsuário);
+
+            mSLDMotIdeal.TVSliderTipoTrechoIdeal = (TextView) findViewById(R.id.tipoTrechoMotoristaIdeal);
+            mSLDMotIdeal.PBSliderPercentIdeal = (ProgressBar) findViewById(R.id.progressBarMotoristaIdeal);
+
+
+
 
         // edit button
 
@@ -525,13 +551,9 @@ public class MenuPrincipal extends ActionBarActivity {
             }
         });
 
-        // Sliders
 
-        mSLDMotUsr.TVSliderTipoTrechoUsuário = (TextView) findViewById(R.id.tipoTrechoMotoristaUsuario);
-        mSLDMotUsr.PBSliderPercentUsuario = (ProgressBar) findViewById(R.id.progressBarMotoristaUsuário);
 
-        mSLDMotIdeal.TVSliderTipoTrechoIdeal = (TextView) findViewById(R.id.tipoTrechoMotoristaIdeal);
-        mSLDMotIdeal.PBSliderPercentIdeal = (ProgressBar) findViewById(R.id.progressBarMotoristaIdeal);
+
 
 
     }
@@ -611,8 +633,12 @@ public class MenuPrincipal extends ActionBarActivity {
 
     }
 
-    public void setCarregarProvaVisible(boolean b) {
+    public void setUpSliders(boolean b) {
         isSliderActive =true;
+        layoutResID = R.layout.activity_menu_principal_sliders;
+    }
+    public void setaConnectMediator(ConnectMediator aCM){
+        this.aConnectMediator = aCM;
     }
 }
 

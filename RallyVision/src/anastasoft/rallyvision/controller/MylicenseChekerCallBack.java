@@ -15,7 +15,7 @@ public class MylicenseChekerCallBack implements LicenseCheckerCallback {
 
         public void allow(int reason) {
             if (((MenuPrincipal) controller.getCurrentActiviy()).isFinishing()) {
-                // Don't update UI if Activity is finishing.
+                // Don't setState UI if Activity is finishing.
                 return;
             }
             // Should allow user access.
@@ -24,7 +24,7 @@ public class MylicenseChekerCallBack implements LicenseCheckerCallback {
 
         public void dontAllow(int reason) {
             if (((MenuPrincipal) controller.getCurrentActiviy()).isFinishing()) {
-                // Don't update UI if Activity is finishing.
+                // Don't setState UI if Activity is finishing.
                 return;
             }
             ((MenuPrincipal) controller.getCurrentActiviy()).displayResult(controller.getString(R.string.dont_allow));
@@ -42,7 +42,7 @@ public class MylicenseChekerCallBack implements LicenseCheckerCallback {
 
         public void applicationError(int errorCode) {
             if (((MenuPrincipal) controller.getCurrentActiviy()).isFinishing()) {
-                // Don't update UI if Activity is finishing.
+                // Don't setState UI if Activity is finishing.
                 return;
             }
             // This is a polite way of saying the developer made a mistake

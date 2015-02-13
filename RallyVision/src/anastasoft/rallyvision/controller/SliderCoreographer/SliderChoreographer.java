@@ -35,7 +35,7 @@ public class SliderChoreographer {
 
         aCounterandConverter.setSliderCore(aSliderCore);
 
-        this.aMenuPrincipal.setCarregarProvaVisible(true);
+        this.aMenuPrincipal.setUpSliders(true);
 
 
 

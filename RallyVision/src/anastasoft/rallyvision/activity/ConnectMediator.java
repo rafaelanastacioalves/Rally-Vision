@@ -22,11 +22,31 @@ public class ConnectMediator {
         this.aController = aController;
     }
 
-    public void getState(){
 
+
+    public void update(){
+        int appState;
+        Activity aActivity = aController.getCurrentActiviy();
+        if(aActivity.getClass() == MenuPrincipal.class) {
+
+
+            appState = aController.getAppState();
+
+            switch (appState) {
+                case APLICATION_DISCONECTED:
+                    ((MenuPrincipal)aActivity).makeConnectBRed();
+                    break;
+                case APLICATION_CONNECTING:
+                    break;
+                case APLICATION_CONNECTED:
+                    ((MenuPrincipal)aActivity).makeConnectBGreen();
+
+                    break;
+            }
+        }
     }
 
-    public void update(Controller aController){
+    public void setState(Controller aController){
         int appState;
         Activity aActivity = aController.getCurrentActiviy();
         if(aActivity.getClass() == MenuPrincipal.class) {

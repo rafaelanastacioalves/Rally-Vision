@@ -369,8 +369,16 @@ public class Controller extends Application {
         // ConnectMediator
         if (mConnMediator == null) {
             mConnMediator = new ConnectMediator(this);
+            try {
+                ((MenuPrincipal) currentAct).setaConnectMediator(mConnMediator);
+            }catch (ClassCastException e){
+                if (isTestOn()) {
+                    Toast.makeText(getApplicationContext(), "Erro em setup: " + e.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+            
         }
-//        mConnMediator.update(this);
+//        mConnMediator.setState(this);
 
         // activating Slider
 
@@ -415,7 +423,7 @@ public class Controller extends Application {
     }
 
     private void notifY() {
-        mConnMediator.update(this);
+        mConnMediator.setState(this);
     }
 
 
