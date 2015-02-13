@@ -111,7 +111,7 @@ public class MenuPrincipal extends ActionBarActivity {
 
         aController = (Controller) getApplicationContext();
 
-        setContentView(R.layout.activity_menu_principal);
+        setContentView(R.layout.activity_menu_principal_sliders);
 
 
         setupViews();
@@ -127,7 +127,7 @@ public class MenuPrincipal extends ActionBarActivity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        setContentView(R.layout.activity_menu_principal);
+        setContentView(R.layout.activity_menu_principal_sliders);
 
     }
 
