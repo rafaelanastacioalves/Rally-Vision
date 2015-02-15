@@ -49,6 +49,7 @@ import anastasoft.rallyvision.command.Zerar;
 import anastasoft.rallyvision.command.startCommand;
 import anastasoft.rallyvision.command.stopCommunicationCommand;
 import anastasoft.rallyvision.controller.Controller;
+import anastasoft.rallyvision.controller.Data.DBHelper;
 import anastasoft.rallyvision.controller.Observable;
 
 @SuppressLint("NewApi")
@@ -122,9 +123,10 @@ public class MenuPrincipal extends ActionBarActivity {
         aController = (Controller) getApplicationContext();
 
 
-
-
-        aController.setup(this);
+        try {
+            aController.setup(this);
+        } catch (DBHelper.AfericaoExistenteException e) {
+        }
         setContentView(layoutResID);
         setupViews();
 
@@ -142,7 +144,11 @@ public class MenuPrincipal extends ActionBarActivity {
         setContentView(layoutResID);
         setupViews();
         aConnectMediator.update();
-        aObervable.Notify();
+        try {
+            aObervable.Notify();
+        } catch (DBHelper.AfericaoExistenteException e) {
+            e.printStackTrace();
+        }
     }
 
     /***

@@ -93,6 +93,10 @@ anastasoft.rallyvision.R$styleable -> anastasoft.rallyvision.b:
     int[] ActivityChooserView -> ActivityChooserView
     int ActivityChooserView_expandActivityOverflowButtonDrawable -> ActivityChooserView_expandActivityOverflowButtonDrawable
     int ActivityChooserView_initialActivityCount -> ActivityChooserView_initialActivityCount
+    int[] AdsAttrs -> AdsAttrs
+    int AdsAttrs_adSize -> AdsAttrs_adSize
+    int AdsAttrs_adSizes -> AdsAttrs_adSizes
+    int AdsAttrs_adUnitId -> AdsAttrs_adUnitId
     int[] CompatTextView -> CompatTextView
     int CompatTextView_textAllCaps -> CompatTextView_textAllCaps
     int[] Fonts -> Fonts
@@ -104,6 +108,27 @@ anastasoft.rallyvision.R$styleable -> anastasoft.rallyvision.b:
     int LinearLayoutICS_divider -> LinearLayoutICS_divider
     int LinearLayoutICS_dividerPadding -> LinearLayoutICS_dividerPadding
     int LinearLayoutICS_showDividers -> LinearLayoutICS_showDividers
+    int[] LoadingImageView -> LoadingImageView
+    int LoadingImageView_circleCrop -> LoadingImageView_circleCrop
+    int LoadingImageView_imageAspectRatio -> LoadingImageView_imageAspectRatio
+    int LoadingImageView_imageAspectRatioAdjust -> LoadingImageView_imageAspectRatioAdjust
+    int[] MapAttrs -> MapAttrs
+    int MapAttrs_cameraBearing -> MapAttrs_cameraBearing
+    int MapAttrs_cameraTargetLat -> MapAttrs_cameraTargetLat
+    int MapAttrs_cameraTargetLng -> MapAttrs_cameraTargetLng
+    int MapAttrs_cameraTilt -> MapAttrs_cameraTilt
+    int MapAttrs_cameraZoom -> MapAttrs_cameraZoom
+    int MapAttrs_liteMode -> MapAttrs_liteMode
+    int MapAttrs_mapType -> MapAttrs_mapType
+    int MapAttrs_uiCompass -> MapAttrs_uiCompass
+    int MapAttrs_uiMapToolbar -> MapAttrs_uiMapToolbar
+    int MapAttrs_uiRotateGestures -> MapAttrs_uiRotateGestures
+    int MapAttrs_uiScrollGestures -> MapAttrs_uiScrollGestures
+    int MapAttrs_uiTiltGestures -> MapAttrs_uiTiltGestures
+    int MapAttrs_uiZoomControls -> MapAttrs_uiZoomControls
+    int MapAttrs_uiZoomGestures -> MapAttrs_uiZoomGestures
+    int MapAttrs_useViewLifecycle -> MapAttrs_useViewLifecycle
+    int MapAttrs_zOrderOnTop -> MapAttrs_zOrderOnTop
     int[] MenuGroup -> MenuGroup
     int MenuGroup_android_checkableBehavior -> MenuGroup_android_checkableBehavior
     int MenuGroup_android_enabled -> MenuGroup_android_enabled
@@ -166,6 +191,23 @@ anastasoft.rallyvision.R$styleable -> anastasoft.rallyvision.b:
     int View_android_focusable -> View_android_focusable
     int View_paddingEnd -> View_paddingEnd
     int View_paddingStart -> View_paddingStart
+    int[] WalletFragmentOptions -> WalletFragmentOptions
+    int WalletFragmentOptions_appTheme -> WalletFragmentOptions_appTheme
+    int WalletFragmentOptions_environment -> WalletFragmentOptions_environment
+    int WalletFragmentOptions_fragmentMode -> WalletFragmentOptions_fragmentMode
+    int WalletFragmentOptions_fragmentStyle -> WalletFragmentOptions_fragmentStyle
+    int[] WalletFragmentStyle -> WalletFragmentStyle
+    int WalletFragmentStyle_buyButtonAppearance -> WalletFragmentStyle_buyButtonAppearance
+    int WalletFragmentStyle_buyButtonHeight -> WalletFragmentStyle_buyButtonHeight
+    int WalletFragmentStyle_buyButtonText -> WalletFragmentStyle_buyButtonText
+    int WalletFragmentStyle_buyButtonWidth -> WalletFragmentStyle_buyButtonWidth
+    int WalletFragmentStyle_maskedWalletDetailsBackground -> WalletFragmentStyle_maskedWalletDetailsBackground
+    int WalletFragmentStyle_maskedWalletDetailsButtonBackground -> WalletFragmentStyle_maskedWalletDetailsButtonBackground
+    int WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance -> WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance
+    int WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance -> WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance
+    int WalletFragmentStyle_maskedWalletDetailsLogoImageType -> WalletFragmentStyle_maskedWalletDetailsLogoImageType
+    int WalletFragmentStyle_maskedWalletDetailsLogoTextColor -> WalletFragmentStyle_maskedWalletDetailsLogoTextColor
+    int WalletFragmentStyle_maskedWalletDetailsTextAppearance -> WalletFragmentStyle_maskedWalletDetailsTextAppearance
 anastasoft.rallyvision.Slider.Prova_Trecho.Prova -> anastasoft.rallyvision.b.a.a:
     java.util.ArrayList listaDeTrechos -> a
     anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho getTrecho(int) -> a
@@ -235,7 +277,8 @@ anastasoft.rallyvision.activity.AVRGvelocimeter -> anastasoft.rallyvision.activi
     android.widget.TextView TVdig3 -> c
 anastasoft.rallyvision.activity.ConnectMediator -> anastasoft.rallyvision.activity.b:
     anastasoft.rallyvision.controller.Controller aController -> a
-    void update(anastasoft.rallyvision.controller.Controller) -> a
+    void update() -> a
+    void setState(anastasoft.rallyvision.controller.Controller) -> a
 anastasoft.rallyvision.activity.DeviceListActivity -> anastasoft.rallyvision.activity.DeviceListActivity:
     java.lang.String EXTRA_DEVICE_ADDRESS -> a
     android.widget.AdapterView$OnItemClickListener mDeviceClickListener -> b
@@ -266,14 +309,17 @@ anastasoft.rallyvision.activity.MenuPrincipal -> anastasoft.rallyvision.activity
     anastasoft.rallyvision.activity.odometer mOdom -> r
     anastasoft.rallyvision.activity.AVRGvelocimeter mAVGveloc -> s
     anastasoft.rallyvision.activity.INSTvelocimeter mINSTveloc -> t
+    anastasoft.rallyvision.activity.ConnectMediator aConnectMediator -> u
     anastasoft.rallyvision.controller.Observable aObervable -> a
     anastasoft.rallyvision.controller.Controller aController -> b
-    anastasoft.rallyvision.command.Command cmd -> u
-    int NOTIFICATION_ID -> v
+    anastasoft.rallyvision.command.Command cmd -> v
+    int NOTIFICATION_ID -> w
     boolean isSliderActive -> c
-    anastasoft.rallyvision.activity.SliderMotoristaUsuario mSLDMotUsr -> w
-    anastasoft.rallyvision.activity.SliderMotoristaIdeal mSLDMotIdeal -> x
+    anastasoft.rallyvision.activity.SliderMotoristaUsuario mSLDMotUsr -> x
+    anastasoft.rallyvision.activity.SliderMotoristaIdeal mSLDMotIdeal -> y
+    int layoutResID -> z
     void onCreate(android.os.Bundle) -> onCreate
+    void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
     void onRestart() -> onRestart
     boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
     void onActivityResult(int,int,android.content.Intent) -> onActivityResult
@@ -299,7 +345,8 @@ anastasoft.rallyvision.activity.MenuPrincipal -> anastasoft.rallyvision.activity
     void setupViews() -> o
     void displayResult(java.lang.String) -> a
     void update(java.util.ArrayList) -> a
-    void setCarregarProvaVisible(boolean) -> b
+    void setUpSliders(boolean) -> b
+    void setaConnectMediator(anastasoft.rallyvision.activity.ConnectMediator) -> a
 anastasoft.rallyvision.activity.MenuPrincipal$1 -> anastasoft.rallyvision.activity.g:
     anastasoft.rallyvision.activity.MenuPrincipal this$0 -> a
     boolean onLongClick(android.view.View) -> onLongClick
@@ -318,9 +365,10 @@ anastasoft.rallyvision.activity.SettingsActivity -> anastasoft.rallyvision.activ
     boolean isXLargeTablet(android.content.Context) -> a
     boolean isSimplePreferences(android.content.Context) -> b
     void onCreate(android.os.Bundle) -> onCreate
-    void setupActionBar() -> a
+    void loadAfericaoList() -> a
+    void setupActionBar() -> b
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    void setupSimplePreferencesScreen() -> b
+    void setupSimplePreferencesScreen() -> c
     boolean onIsMultiPane() -> onIsMultiPane
     void initSummary(android.preference.Preference) -> a
     void updatePrefSummary(android.preference.Preference) -> b
@@ -328,13 +376,14 @@ anastasoft.rallyvision.activity.SettingsActivity -> anastasoft.rallyvision.activ
     void onRestart() -> onRestart
     void onPause() -> onPause
     void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String) -> onSharedPreferenceChanged
+    void updateRatioSummary(android.content.SharedPreferences,java.lang.String) -> a
 anastasoft.rallyvision.activity.SettingsActivity$1 -> anastasoft.rallyvision.activity.j:
     boolean onPreferenceChange(android.preference.Preference,java.lang.Object) -> onPreferenceChange
 anastasoft.rallyvision.activity.SliderMotoristaIdeal -> anastasoft.rallyvision.activity.k:
     android.widget.TextView TVSliderTipoTrechoIdeal -> a
     android.widget.ProgressBar PBSliderPercentIdeal -> b
 anastasoft.rallyvision.activity.SliderMotoristaUsuario -> anastasoft.rallyvision.activity.l:
-    android.widget.TextView TVSliderTipoTrechoUsuï¿½rio -> a
+    android.widget.TextView TVSliderTipoTrechoUsu‡rio -> a
     android.widget.ProgressBar PBSliderPercentUsuario -> b
 anastasoft.rallyvision.activity.customfontdemo.FontTextView -> anastasoft.rallyvision.activity.customfontdemo.FontTextView:
     anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$DrawCallback drawCallback -> a
@@ -376,43 +425,39 @@ anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$ExtraFontData -> 
 anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$Font -> anastasoft.rallyvision.activity.customfontdemo.f:
     java.util.List names -> a
     java.util.Map styles -> b
-anastasoft.rallyvision.activity.dialog.ConfigureDialog -> anastasoft.rallyvision.activity.dialog.a:
+anastasoft.rallyvision.activity.dialog.ConfigureDialog -> anastasoft.rallyvision.activity.a.a:
     anastasoft.rallyvision.controller.Controller aController -> a
     android.content.res.Resources res -> b
     android.app.Dialog onCreateDialog(android.os.Bundle) -> onCreateDialog
     anastasoft.rallyvision.controller.Controller access$000(anastasoft.rallyvision.activity.dialog.ConfigureDialog) -> a
     android.content.res.Resources access$100(anastasoft.rallyvision.activity.dialog.ConfigureDialog) -> b
-anastasoft.rallyvision.activity.dialog.ConfigureDialog$1 -> anastasoft.rallyvision.activity.dialog.b:
-    android.widget.EditText val$userInput -> a
+anastasoft.rallyvision.activity.dialog.ConfigureDialog$1 -> anastasoft.rallyvision.activity.a.b:
+    android.widget.EditText val$userAfericaoInput -> a
     anastasoft.rallyvision.activity.dialog.ConfigureDialog this$0 -> b
     void afterTextChanged(android.text.Editable) -> afterTextChanged
     void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
     void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
-anastasoft.rallyvision.activity.dialog.ConfigureDialog$2 -> anastasoft.rallyvision.activity.dialog.c:
-    android.widget.EditText val$userInput -> a
-    anastasoft.rallyvision.activity.dialog.ConfigureDialog this$0 -> b
+anastasoft.rallyvision.activity.dialog.ConfigureDialog$2 -> anastasoft.rallyvision.activity.a.c:
+    android.widget.EditText val$userAfericaoInput -> a
+    android.widget.EditText val$userAfericaoName -> b
+    anastasoft.rallyvision.activity.dialog.ConfigureDialog this$0 -> c
     void onClick(android.content.DialogInterface,int) -> onClick
-anastasoft.rallyvision.activity.dialog.ConfigureDialog$3 -> anastasoft.rallyvision.activity.dialog.d:
+anastasoft.rallyvision.activity.dialog.ConfigureDialog$3 -> anastasoft.rallyvision.activity.a.d:
     anastasoft.rallyvision.activity.dialog.ConfigureDialog this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-anastasoft.rallyvision.activity.dialog.EditDialog -> anastasoft.rallyvision.activity.dialog.e:
+anastasoft.rallyvision.activity.dialog.EditDialog -> anastasoft.rallyvision.activity.a.e:
     anastasoft.rallyvision.controller.Controller aController -> a
     android.content.res.Resources res -> b
     android.app.Dialog onCreateDialog(android.os.Bundle) -> onCreateDialog
     anastasoft.rallyvision.controller.Controller access$000(anastasoft.rallyvision.activity.dialog.EditDialog) -> a
     android.content.res.Resources access$100(anastasoft.rallyvision.activity.dialog.EditDialog) -> b
-anastasoft.rallyvision.activity.dialog.EditDialog$1 -> anastasoft.rallyvision.activity.dialog.f:
+anastasoft.rallyvision.activity.dialog.EditDialog$1 -> anastasoft.rallyvision.activity.a.f:
     android.widget.EditText val$userInput -> a
     anastasoft.rallyvision.activity.dialog.EditDialog this$0 -> b
     void onClick(android.content.DialogInterface,int) -> onClick
-anastasoft.rallyvision.activity.dialog.EditDialog$2 -> anastasoft.rallyvision.activity.dialog.g:
+anastasoft.rallyvision.activity.dialog.EditDialog$2 -> anastasoft.rallyvision.activity.a.g:
     anastasoft.rallyvision.activity.dialog.EditDialog this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-anastasoft.rallyvision.activity.dialog.ZerarRatioDialog -> anastasoft.rallyvision.activity.dialog.ZerarRatioDialog:
-    anastasoft.rallyvision.controller.Controller aController -> a
-    anastasoft.rallyvision.command.Command cmd -> b
-    void onBindDialogView(android.view.View) -> onBindDialogView
-    void onDialogClosed(boolean) -> onDialogClosed
 anastasoft.rallyvision.activity.odometer -> anastasoft.rallyvision.activity.m:
     android.widget.TextView TVdig1 -> a
     android.widget.TextView TVdig2 -> b
@@ -427,25 +472,25 @@ anastasoft.rallyvision.command.Command -> anastasoft.rallyvision.c.b:
     anastasoft.rallyvision.controller.Controller aController -> a
     void Execute() -> a
 anastasoft.rallyvision.command.ConfigureRatioCommand -> anastasoft.rallyvision.c.c:
-    int afericao -> b
+    java.lang.String afericaoNome -> b
+    int afericaoValor -> c
     void Execute() -> a
 anastasoft.rallyvision.command.EditCommand -> anastasoft.rallyvision.c.d:
     int odomValue -> b
     void Execute() -> a
-anastasoft.rallyvision.command.ResetRatioCommand -> anastasoft.rallyvision.c.e:
+anastasoft.rallyvision.command.SetRatioCommand -> anastasoft.rallyvision.c.e:
+    java.lang.String aFericaoNome -> b
+    float aRatio -> c
     void Execute() -> a
-anastasoft.rallyvision.command.SetRatioCommand -> anastasoft.rallyvision.c.f:
-    float aRatio -> b
+anastasoft.rallyvision.command.StopAllCommand -> anastasoft.rallyvision.c.f:
     void Execute() -> a
-anastasoft.rallyvision.command.StopAllCommand -> anastasoft.rallyvision.c.g:
+anastasoft.rallyvision.command.Zerar -> anastasoft.rallyvision.c.g:
     void Execute() -> a
-anastasoft.rallyvision.command.Zerar -> anastasoft.rallyvision.c.h:
-    void Execute() -> a
-anastasoft.rallyvision.command.startCommand -> anastasoft.rallyvision.c.i:
+anastasoft.rallyvision.command.startCommand -> anastasoft.rallyvision.c.h:
     int aOdomValue -> b
     android.app.Activity currActivity -> c
     void Execute() -> a
-anastasoft.rallyvision.command.stopCommunicationCommand -> anastasoft.rallyvision.c.j:
+anastasoft.rallyvision.command.stopCommunicationCommand -> anastasoft.rallyvision.c.i:
     void Execute() -> a
 anastasoft.rallyvision.controller.AnalyticsAdpater -> anastasoft.rallyvision.controller.a:
     anastasoft.rallyvision.controller.Controller aController -> b
@@ -478,28 +523,33 @@ anastasoft.rallyvision.controller.Controller -> anastasoft.rallyvision.controlle
     byte[] SALT -> e
     boolean testON -> f
     boolean uberON -> g
-    int appState -> h
+    boolean licenseCheckON -> h
+    boolean sliderON -> i
+    int appState -> j
     anastasoft.rallyvision.controller.AnalyticsAdpater analyticsAdpater -> a
-    boolean FIRST_RUN -> i
-    android.content.res.Resources aResource -> j
-    java.lang.String RATIO -> k
-    anastasoft.rallyvision.controller.PreferencesAdapter aPrefAdapter -> l
-    anastasoft.rallyvision.controller.Observable aObervable -> m
-    anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer aSliderChoreographer -> n
+    boolean FIRST_RUN -> k
+    android.content.res.Resources aResource -> l
+    java.lang.String RATIO -> m
+    anastasoft.rallyvision.controller.PreferencesAdapter aPrefAdapter -> n
+    anastasoft.rallyvision.controller.Observable aObervable -> o
+    anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer aSliderChoreographer -> p
+    anastasoft.rallyvision.controller.Data.DBHelper dbHelper -> q
     anastasoft.rallyvision.BTManager.BTManager aBTManager -> b
-    anastasoft.rallyvision.controller.Controller$CounterAndConverter aCountConv -> o
-    android.app.Activity currentAct -> p
-    java.lang.String mConnectedDeviceName -> q
-    anastasoft.rallyvision.activity.ConnectMediator mConnMediator -> r
-    android.os.Handler mHandler -> s
-    void startCommunication() -> a
-    boolean shouldCreateNotification() -> b
+    anastasoft.rallyvision.controller.Controller$CounterAndConverter aCountConv -> r
+    android.app.Activity currentAct -> s
+    java.lang.String mConnectedDeviceName -> t
+    anastasoft.rallyvision.activity.ConnectMediator mConnMediator -> u
+    android.os.Handler mHandler -> v
+    anastasoft.rallyvision.controller.Data.DBHelper getDbHelper() -> a
+    void startCommunication() -> b
+    boolean shouldCreateNotification() -> c
     void setup(android.app.Activity) -> a
-    int getAppState() -> c
+    boolean jaExiste(anastasoft.rallyvision.controller.Data.model.Afericao) -> a
+    void setupCountAndConverter() -> q
+    int getAppState() -> d
     void setAppState(int) -> a
-    void notifY() -> o
-    void doCheck() -> p
-    void resetRatio() -> d
+    void notifY() -> r
+    void doCheck() -> s
     void setOdometer(int) -> b
     void zerar() -> e
     void enableBT(android.app.Activity) -> b
@@ -509,16 +559,21 @@ anastasoft.rallyvision.controller.Controller -> anastasoft.rallyvision.controlle
     android.app.Activity getCurrentActiviy() -> h
     android.os.Handler getHandler() -> i
     void actionAfterBlueTooth(int,int,android.content.Intent) -> a
-    void setRatio(float) -> a
+    void setRatio(float,java.lang.String) -> a
     void stopAll() -> j
     void stopCommunication() -> k
-    void configureRatio(int) -> c
+    void destroyACountAndConverterSafely() -> t
+    void configureRatio(int,java.lang.String) -> a
     anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer getChoreographer() -> l
+    java.util.List getListaAfericoes() -> m
+    anastasoft.rallyvision.controller.Data.model.Afericao getAfericao() -> n
+    int getIndexDeAfericao(anastasoft.rallyvision.controller.Data.model.Afericao,java.util.List) -> a
     anastasoft.rallyvision.controller.Controller$CounterAndConverter access$000(anastasoft.rallyvision.controller.Controller) -> a
-    java.lang.String access$102(anastasoft.rallyvision.controller.Controller,java.lang.String) -> a
-    android.content.res.Resources access$200() -> m
-    java.lang.String access$100(anastasoft.rallyvision.controller.Controller) -> b
-    anastasoft.rallyvision.controller.Observable access$300() -> n
+    boolean access$100(anastasoft.rallyvision.controller.Controller) -> b
+    java.lang.String access$202(anastasoft.rallyvision.controller.Controller,java.lang.String) -> a
+    android.content.res.Resources access$300() -> o
+    java.lang.String access$200(anastasoft.rallyvision.controller.Controller) -> c
+    anastasoft.rallyvision.controller.Observable access$400() -> p
 anastasoft.rallyvision.controller.Controller$1 -> anastasoft.rallyvision.controller.d:
     int i -> a
     anastasoft.rallyvision.controller.Controller this$0 -> b
@@ -534,12 +589,34 @@ anastasoft.rallyvision.controller.Controller$CounterAndConverter -> anastasoft.r
     anastasoft.rallyvision.controller.Observable aObservable -> i
     anastasoft.rallyvision.Slider.SliderCore aSliderCore -> j
     anastasoft.rallyvision.controller.Controller this$0 -> f
-    void resetState() -> a
     void run() -> run
     void update(int) -> a
-    void cancel() -> b
+    void cancel() -> a
     void setSliderCore(anastasoft.rallyvision.Slider.SliderCore) -> a
+    void update() -> b
+anastasoft.rallyvision.controller.Data.DBHelper -> anastasoft.rallyvision.controller.a.a:
+    anastasoft.rallyvision.controller.Observable aObservable -> a
+    void onCreate(android.database.sqlite.SQLiteDatabase) -> onCreate
+    void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int) -> onUpgrade
+    long createAfericao(anastasoft.rallyvision.controller.Data.model.Afericao) -> a
+    java.util.List getTodasAfericoes() -> a
+    int getAfericaoCount() -> b
     void update() -> c
+    anastasoft.rallyvision.controller.Data.model.Afericao getAfericaoByName(java.lang.String) -> a
+anastasoft.rallyvision.controller.Data.DBHelper$AfericaoExistenteException -> anastasoft.rallyvision.controller.a.b:
+    anastasoft.rallyvision.controller.Data.DBHelper this$0 -> a
+anastasoft.rallyvision.controller.Data.model.Afericao -> anastasoft.rallyvision.controller.a.a.a:
+    java.lang.String name -> b
+    float ratio -> c
+    java.lang.String getName() -> a
+    void setName(java.lang.String) -> a
+    void setRatio(float) -> a
+    java.lang.String toS() -> b
+    float getRatio() -> c
+anastasoft.rallyvision.controller.Data.model.Table -> anastasoft.rallyvision.controller.a.a.b:
+    int id -> a
+    int getId() -> d
+    void setId(int) -> a
 anastasoft.rallyvision.controller.MylicenseChekerCallBack -> anastasoft.rallyvision.controller.f:
     anastasoft.rallyvision.controller.Controller controller -> a
     void allow(int) -> a
@@ -556,10 +633,12 @@ anastasoft.rallyvision.controller.Observable -> anastasoft.rallyvision.controlle
     anastasoft.rallyvision.controller.Controller aController -> i
     float ratio -> a
     java.util.ArrayList motoristasStatus -> j
+    anastasoft.rallyvision.controller.Data.model.Afericao aFericao -> k
     java.util.List getValues() -> a
     float getRatio() -> b
-    void setRatio(float) -> a
+    void setAfericao(anastasoft.rallyvision.controller.Data.model.Afericao) -> a
     void Attach(java.lang.Object) -> a
+    void Detach(java.lang.Object) -> b
     void Notify() -> c
     void Notify(anastasoft.rallyvision.controller.Controller$CounterAndConverter) -> a
     long getStartTime() -> d
@@ -568,6 +647,7 @@ anastasoft.rallyvision.controller.Observable -> anastasoft.rallyvision.controlle
     void setOdometer(int) -> a
     void setValues(java.util.ArrayList) -> a
     void Notify(java.util.ArrayList) -> b
+    anastasoft.rallyvision.controller.Data.model.Afericao getAfericao() -> f
 anastasoft.rallyvision.controller.PreferencesAdapter -> anastasoft.rallyvision.controller.h:
     java.lang.String RATIO -> a
     java.lang.String SCREEN -> b
@@ -578,11 +658,13 @@ anastasoft.rallyvision.controller.PreferencesAdapter -> anastasoft.rallyvision.c
     anastasoft.rallyvision.controller.Controller aController -> g
     android.content.SharedPreferences$Editor editor -> h
     anastasoft.rallyvision.controller.Observable aObservable -> i
+    anastasoft.rallyvision.controller.Data.DBHelper dbHelper -> j
     float getRatio() -> a
     void setRatio(float) -> a
     void update() -> b
     boolean getScreenOnStatus() -> c
-anastasoft.rallyvision.controller.SliderCoreographer.FileParser -> anastasoft.rallyvision.controller.a.a:
+    anastasoft.rallyvision.controller.Data.model.Afericao getAfericao() -> d
+anastasoft.rallyvision.controller.SliderCoreographer.FileParser -> anastasoft.rallyvision.controller.b.a:
     java.lang.String[] listaColunas -> a
     java.lang.String pathAccessed -> b
     java.util.ArrayList finalList -> c
@@ -592,13 +674,14 @@ anastasoft.rallyvision.controller.SliderCoreographer.FileParser -> anastasoft.ra
     java.lang.String[] separaTipoNumero(java.lang.String[]) -> a
     boolean estaTudoNosConformes(java.lang.String[]) -> b
     android.database.MatrixCursor convertToCursor(java.util.ArrayList) -> a
-anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer -> anastasoft.rallyvision.controller.a.b:
+anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer -> anastasoft.rallyvision.controller.b.b:
     anastasoft.rallyvision.controller.Controller aController -> a
     anastasoft.rallyvision.activity.MenuPrincipal aMenuPrincipal -> b
     anastasoft.rallyvision.controller.Controller$CounterAndConverter aCounterandConverter -> c
     anastasoft.rallyvision.controller.Observable aObservable -> d
     anastasoft.rallyvision.Slider.SliderCore aSliderCore -> e
     anastasoft.rallyvision.controller.SliderCoreographer.FileParser aFileParser -> f
+    void setupAConuntAndConverter(anastasoft.rallyvision.controller.Controller$CounterAndConverter) -> a
     void carregarArquivoProva(android.net.Uri) -> a
 anastasoft.rallyvision.controller.VelocityEng -> anastasoft.rallyvision.controller.i:
     float instantVel -> a
@@ -1336,6 +1419,7 @@ android.support.v4.app.NotificationCompat$Builder -> android.support.v4.app.av:
     android.support.v4.app.NotificationCompat$Builder setContentIntent(android.app.PendingIntent) -> a
     android.support.v4.app.NotificationCompat$Builder setTicker(java.lang.CharSequence) -> d
     android.support.v4.app.NotificationCompat$Builder setOngoing(boolean) -> a
+    android.support.v4.app.NotificationCompat$Builder setAutoCancel(boolean) -> b
     void setFlag(int,boolean) -> a
     android.app.Notification build() -> a
 android.support.v4.app.NotificationCompat$InboxStyle -> android.support.v4.app.aw:
@@ -2018,15 +2102,15 @@ android.support.v4.view.ViewPager -> android.support.v4.view.ViewPager:
     boolean mCalledSuper -> U
     int mDecorChildCount -> V
     android.support.v4.view.ViewPager$OnPageChangeListener mOnPageChangeListener -> W
-    android.support.v4.view.ViewPager$OnPageChangeListener mInternalPageChangeListener -> Z
-    android.support.v4.view.ViewPager$OnAdapterChangeListener mAdapterChangeListener -> aa
-    android.support.v4.view.ViewPager$PageTransformer mPageTransformer -> ab
-    java.lang.reflect.Method mSetChildrenDrawingOrderEnabled -> ac
-    int mDrawingOrder -> ad
-    java.util.ArrayList mDrawingOrderedChildren -> ae
-    android.support.v4.view.ViewPager$ViewPositionComparator sPositionComparator -> af
-    java.lang.Runnable mEndScrollRunnable -> ag
-    int mScrollState -> ah
+    android.support.v4.view.ViewPager$OnPageChangeListener mInternalPageChangeListener -> aa
+    android.support.v4.view.ViewPager$OnAdapterChangeListener mAdapterChangeListener -> ab
+    android.support.v4.view.ViewPager$PageTransformer mPageTransformer -> ac
+    java.lang.reflect.Method mSetChildrenDrawingOrderEnabled -> ad
+    int mDrawingOrder -> ae
+    java.util.ArrayList mDrawingOrderedChildren -> af
+    android.support.v4.view.ViewPager$ViewPositionComparator sPositionComparator -> ag
+    java.lang.Runnable mEndScrollRunnable -> ah
+    int mScrollState -> ai
     void onDetachedFromWindow() -> onDetachedFromWindow
     void setScrollState(int) -> setScrollState
     void setAdapter(android.support.v4.view.PagerAdapter) -> setAdapter
@@ -5087,6 +5171,221 @@ com.google.ads.mediation.admob.AdMobAdapter$b -> com.google.a.a.a.c:
     void onAdOpened() -> onAdOpened
     void onAdClosed() -> onAdClosed
     void onAdLeftApplication() -> onAdLeftApplication
+com.google.android.gms.BuildConfig -> com.google.android.gms.BuildConfig:
+    boolean DEBUG -> DEBUG
+com.google.android.gms.R -> com.google.android.gms.R:
+com.google.android.gms.R$attr -> com.google.android.gms.R$attr:
+    int adSize -> adSize
+    int adSizes -> adSizes
+    int adUnitId -> adUnitId
+    int appTheme -> appTheme
+    int buyButtonAppearance -> buyButtonAppearance
+    int buyButtonHeight -> buyButtonHeight
+    int buyButtonText -> buyButtonText
+    int buyButtonWidth -> buyButtonWidth
+    int cameraBearing -> cameraBearing
+    int cameraTargetLat -> cameraTargetLat
+    int cameraTargetLng -> cameraTargetLng
+    int cameraTilt -> cameraTilt
+    int cameraZoom -> cameraZoom
+    int circleCrop -> circleCrop
+    int environment -> environment
+    int fragmentMode -> fragmentMode
+    int fragmentStyle -> fragmentStyle
+    int imageAspectRatio -> imageAspectRatio
+    int imageAspectRatioAdjust -> imageAspectRatioAdjust
+    int liteMode -> liteMode
+    int mapType -> mapType
+    int maskedWalletDetailsBackground -> maskedWalletDetailsBackground
+    int maskedWalletDetailsButtonBackground -> maskedWalletDetailsButtonBackground
+    int maskedWalletDetailsButtonTextAppearance -> maskedWalletDetailsButtonTextAppearance
+    int maskedWalletDetailsHeaderTextAppearance -> maskedWalletDetailsHeaderTextAppearance
+    int maskedWalletDetailsLogoImageType -> maskedWalletDetailsLogoImageType
+    int maskedWalletDetailsLogoTextColor -> maskedWalletDetailsLogoTextColor
+    int maskedWalletDetailsTextAppearance -> maskedWalletDetailsTextAppearance
+    int uiCompass -> uiCompass
+    int uiMapToolbar -> uiMapToolbar
+    int uiRotateGestures -> uiRotateGestures
+    int uiScrollGestures -> uiScrollGestures
+    int uiTiltGestures -> uiTiltGestures
+    int uiZoomControls -> uiZoomControls
+    int uiZoomGestures -> uiZoomGestures
+    int useViewLifecycle -> useViewLifecycle
+    int zOrderOnTop -> zOrderOnTop
+com.google.android.gms.R$color -> com.google.android.gms.R$color:
+    int common_action_bar_splitter -> common_action_bar_splitter
+    int common_signin_btn_dark_text_default -> common_signin_btn_dark_text_default
+    int common_signin_btn_dark_text_disabled -> common_signin_btn_dark_text_disabled
+    int common_signin_btn_dark_text_focused -> common_signin_btn_dark_text_focused
+    int common_signin_btn_dark_text_pressed -> common_signin_btn_dark_text_pressed
+    int common_signin_btn_default_background -> common_signin_btn_default_background
+    int common_signin_btn_light_text_default -> common_signin_btn_light_text_default
+    int common_signin_btn_light_text_disabled -> common_signin_btn_light_text_disabled
+    int common_signin_btn_light_text_focused -> common_signin_btn_light_text_focused
+    int common_signin_btn_light_text_pressed -> common_signin_btn_light_text_pressed
+    int common_signin_btn_text_dark -> common_signin_btn_text_dark
+    int common_signin_btn_text_light -> common_signin_btn_text_light
+    int wallet_bright_foreground_disabled_holo_light -> wallet_bright_foreground_disabled_holo_light
+    int wallet_bright_foreground_holo_dark -> wallet_bright_foreground_holo_dark
+    int wallet_bright_foreground_holo_light -> wallet_bright_foreground_holo_light
+    int wallet_dim_foreground_disabled_holo_dark -> wallet_dim_foreground_disabled_holo_dark
+    int wallet_dim_foreground_holo_dark -> wallet_dim_foreground_holo_dark
+    int wallet_dim_foreground_inverse_disabled_holo_dark -> wallet_dim_foreground_inverse_disabled_holo_dark
+    int wallet_dim_foreground_inverse_holo_dark -> wallet_dim_foreground_inverse_holo_dark
+    int wallet_highlighted_text_holo_dark -> wallet_highlighted_text_holo_dark
+    int wallet_highlighted_text_holo_light -> wallet_highlighted_text_holo_light
+    int wallet_hint_foreground_holo_dark -> wallet_hint_foreground_holo_dark
+    int wallet_hint_foreground_holo_light -> wallet_hint_foreground_holo_light
+    int wallet_holo_blue_light -> wallet_holo_blue_light
+    int wallet_link_text_light -> wallet_link_text_light
+    int wallet_primary_text_holo_light -> wallet_primary_text_holo_light
+    int wallet_secondary_text_holo_dark -> wallet_secondary_text_holo_dark
+com.google.android.gms.R$drawable -> com.google.android.gms.R$drawable:
+    int common_full_open_on_phone -> common_full_open_on_phone
+    int common_ic_googleplayservices -> common_ic_googleplayservices
+    int common_signin_btn_icon_dark -> common_signin_btn_icon_dark
+    int common_signin_btn_icon_disabled_dark -> common_signin_btn_icon_disabled_dark
+    int common_signin_btn_icon_disabled_focus_dark -> common_signin_btn_icon_disabled_focus_dark
+    int common_signin_btn_icon_disabled_focus_light -> common_signin_btn_icon_disabled_focus_light
+    int common_signin_btn_icon_disabled_light -> common_signin_btn_icon_disabled_light
+    int common_signin_btn_icon_focus_dark -> common_signin_btn_icon_focus_dark
+    int common_signin_btn_icon_focus_light -> common_signin_btn_icon_focus_light
+    int common_signin_btn_icon_light -> common_signin_btn_icon_light
+    int common_signin_btn_icon_normal_dark -> common_signin_btn_icon_normal_dark
+    int common_signin_btn_icon_normal_light -> common_signin_btn_icon_normal_light
+    int common_signin_btn_icon_pressed_dark -> common_signin_btn_icon_pressed_dark
+    int common_signin_btn_icon_pressed_light -> common_signin_btn_icon_pressed_light
+    int common_signin_btn_text_dark -> common_signin_btn_text_dark
+    int common_signin_btn_text_disabled_dark -> common_signin_btn_text_disabled_dark
+    int common_signin_btn_text_disabled_focus_dark -> common_signin_btn_text_disabled_focus_dark
+    int common_signin_btn_text_disabled_focus_light -> common_signin_btn_text_disabled_focus_light
+    int common_signin_btn_text_disabled_light -> common_signin_btn_text_disabled_light
+    int common_signin_btn_text_focus_dark -> common_signin_btn_text_focus_dark
+    int common_signin_btn_text_focus_light -> common_signin_btn_text_focus_light
+    int common_signin_btn_text_light -> common_signin_btn_text_light
+    int common_signin_btn_text_normal_dark -> common_signin_btn_text_normal_dark
+    int common_signin_btn_text_normal_light -> common_signin_btn_text_normal_light
+    int common_signin_btn_text_pressed_dark -> common_signin_btn_text_pressed_dark
+    int common_signin_btn_text_pressed_light -> common_signin_btn_text_pressed_light
+    int ic_plusone_medium_off_client -> ic_plusone_medium_off_client
+    int ic_plusone_small_off_client -> ic_plusone_small_off_client
+    int ic_plusone_standard_off_client -> ic_plusone_standard_off_client
+    int ic_plusone_tall_off_client -> ic_plusone_tall_off_client
+    int powered_by_google_dark -> powered_by_google_dark
+    int powered_by_google_light -> powered_by_google_light
+com.google.android.gms.R$id -> com.google.android.gms.R$id:
+    int adjust_height -> adjust_height
+    int adjust_width -> adjust_width
+    int book_now -> book_now
+    int buyButton -> buyButton
+    int buy_now -> buy_now
+    int buy_with_google -> buy_with_google
+    int classic -> classic
+    int donate_with_google -> donate_with_google
+    int grayscale -> grayscale
+    int holo_dark -> holo_dark
+    int holo_light -> holo_light
+    int hybrid -> hybrid
+    int match_parent -> match_parent
+    int monochrome -> monochrome
+    int none -> none
+    int normal -> normal
+    int production -> production
+    int sandbox -> sandbox
+    int satellite -> satellite
+    int selectionDetails -> selectionDetails
+    int strict_sandbox -> strict_sandbox
+    int terrain -> terrain
+    int wrap_content -> wrap_content
+com.google.android.gms.R$integer -> com.google.android.gms.R$integer:
+    int google_play_services_version -> google_play_services_version
+com.google.android.gms.R$raw -> com.google.android.gms.R$raw:
+    int gtm_analytics -> gtm_analytics
+com.google.android.gms.R$string -> com.google.android.gms.R$string:
+    int accept -> accept
+    int common_android_wear_notification_needs_update_text -> common_android_wear_notification_needs_update_text
+    int common_android_wear_update_text -> common_android_wear_update_text
+    int common_android_wear_update_title -> common_android_wear_update_title
+    int common_google_play_services_enable_button -> common_google_play_services_enable_button
+    int common_google_play_services_enable_text -> common_google_play_services_enable_text
+    int common_google_play_services_enable_title -> common_google_play_services_enable_title
+    int common_google_play_services_error_notification_requested_by_msg -> common_google_play_services_error_notification_requested_by_msg
+    int common_google_play_services_install_button -> common_google_play_services_install_button
+    int common_google_play_services_install_text_phone -> common_google_play_services_install_text_phone
+    int common_google_play_services_install_text_tablet -> common_google_play_services_install_text_tablet
+    int common_google_play_services_install_title -> common_google_play_services_install_title
+    int common_google_play_services_invalid_account_text -> common_google_play_services_invalid_account_text
+    int common_google_play_services_invalid_account_title -> common_google_play_services_invalid_account_title
+    int common_google_play_services_needs_enabling_title -> common_google_play_services_needs_enabling_title
+    int common_google_play_services_network_error_text -> common_google_play_services_network_error_text
+    int common_google_play_services_network_error_title -> common_google_play_services_network_error_title
+    int common_google_play_services_notification_needs_installation_title -> common_google_play_services_notification_needs_installation_title
+    int common_google_play_services_notification_needs_update_title -> common_google_play_services_notification_needs_update_title
+    int common_google_play_services_notification_ticker -> common_google_play_services_notification_ticker
+    int common_google_play_services_unknown_issue -> common_google_play_services_unknown_issue
+    int common_google_play_services_unsupported_text -> common_google_play_services_unsupported_text
+    int common_google_play_services_unsupported_title -> common_google_play_services_unsupported_title
+    int common_google_play_services_update_button -> common_google_play_services_update_button
+    int common_google_play_services_update_text -> common_google_play_services_update_text
+    int common_google_play_services_update_title -> common_google_play_services_update_title
+    int common_open_on_phone -> common_open_on_phone
+    int common_signin_button_text -> common_signin_button_text
+    int common_signin_button_text_long -> common_signin_button_text_long
+    int create_calendar_message -> create_calendar_message
+    int create_calendar_title -> create_calendar_title
+    int decline -> decline
+    int store_picture_message -> store_picture_message
+    int store_picture_title -> store_picture_title
+    int wallet_buy_button_place_holder -> wallet_buy_button_place_holder
+com.google.android.gms.R$style -> com.google.android.gms.R$style:
+    int Theme_IAPTheme -> Theme_IAPTheme
+    int WalletFragmentDefaultButtonTextAppearance -> WalletFragmentDefaultButtonTextAppearance
+    int WalletFragmentDefaultDetailsHeaderTextAppearance -> WalletFragmentDefaultDetailsHeaderTextAppearance
+    int WalletFragmentDefaultDetailsTextAppearance -> WalletFragmentDefaultDetailsTextAppearance
+    int WalletFragmentDefaultStyle -> WalletFragmentDefaultStyle
+com.google.android.gms.R$styleable -> com.google.android.gms.R$styleable:
+    int[] AdsAttrs -> AdsAttrs
+    int AdsAttrs_adSize -> AdsAttrs_adSize
+    int AdsAttrs_adSizes -> AdsAttrs_adSizes
+    int AdsAttrs_adUnitId -> AdsAttrs_adUnitId
+    int[] LoadingImageView -> LoadingImageView
+    int LoadingImageView_circleCrop -> LoadingImageView_circleCrop
+    int LoadingImageView_imageAspectRatio -> LoadingImageView_imageAspectRatio
+    int LoadingImageView_imageAspectRatioAdjust -> LoadingImageView_imageAspectRatioAdjust
+    int[] MapAttrs -> MapAttrs
+    int MapAttrs_cameraBearing -> MapAttrs_cameraBearing
+    int MapAttrs_cameraTargetLat -> MapAttrs_cameraTargetLat
+    int MapAttrs_cameraTargetLng -> MapAttrs_cameraTargetLng
+    int MapAttrs_cameraTilt -> MapAttrs_cameraTilt
+    int MapAttrs_cameraZoom -> MapAttrs_cameraZoom
+    int MapAttrs_liteMode -> MapAttrs_liteMode
+    int MapAttrs_mapType -> MapAttrs_mapType
+    int MapAttrs_uiCompass -> MapAttrs_uiCompass
+    int MapAttrs_uiMapToolbar -> MapAttrs_uiMapToolbar
+    int MapAttrs_uiRotateGestures -> MapAttrs_uiRotateGestures
+    int MapAttrs_uiScrollGestures -> MapAttrs_uiScrollGestures
+    int MapAttrs_uiTiltGestures -> MapAttrs_uiTiltGestures
+    int MapAttrs_uiZoomControls -> MapAttrs_uiZoomControls
+    int MapAttrs_uiZoomGestures -> MapAttrs_uiZoomGestures
+    int MapAttrs_useViewLifecycle -> MapAttrs_useViewLifecycle
+    int MapAttrs_zOrderOnTop -> MapAttrs_zOrderOnTop
+    int[] WalletFragmentOptions -> WalletFragmentOptions
+    int WalletFragmentOptions_appTheme -> WalletFragmentOptions_appTheme
+    int WalletFragmentOptions_environment -> WalletFragmentOptions_environment
+    int WalletFragmentOptions_fragmentMode -> WalletFragmentOptions_fragmentMode
+    int WalletFragmentOptions_fragmentStyle -> WalletFragmentOptions_fragmentStyle
+    int[] WalletFragmentStyle -> WalletFragmentStyle
+    int WalletFragmentStyle_buyButtonAppearance -> WalletFragmentStyle_buyButtonAppearance
+    int WalletFragmentStyle_buyButtonHeight -> WalletFragmentStyle_buyButtonHeight
+    int WalletFragmentStyle_buyButtonText -> WalletFragmentStyle_buyButtonText
+    int WalletFragmentStyle_buyButtonWidth -> WalletFragmentStyle_buyButtonWidth
+    int WalletFragmentStyle_maskedWalletDetailsBackground -> WalletFragmentStyle_maskedWalletDetailsBackground
+    int WalletFragmentStyle_maskedWalletDetailsButtonBackground -> WalletFragmentStyle_maskedWalletDetailsButtonBackground
+    int WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance -> WalletFragmentStyle_maskedWalletDetailsButtonTextAppearance
+    int WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance -> WalletFragmentStyle_maskedWalletDetailsHeaderTextAppearance
+    int WalletFragmentStyle_maskedWalletDetailsLogoImageType -> WalletFragmentStyle_maskedWalletDetailsLogoImageType
+    int WalletFragmentStyle_maskedWalletDetailsLogoTextColor -> WalletFragmentStyle_maskedWalletDetailsLogoTextColor
+    int WalletFragmentStyle_maskedWalletDetailsTextAppearance -> WalletFragmentStyle_maskedWalletDetailsTextAppearance
 com.google.android.gms.actions.ReserveIntents -> com.google.android.gms.actions.ReserveIntents:
     java.lang.String ACTION_RESERVE_TAXI_RESERVATION -> ACTION_RESERVE_TAXI_RESERVATION
 com.google.android.gms.actions.SearchIntents -> com.google.android.gms.actions.SearchIntents:
@@ -33725,7 +34024,7 @@ com.google.android.vending.licensing.util.Base64 -> com.google.android.a.a.a.a:
     byte[] decode(byte[],int,int) -> a
     byte[] decode(byte[],int,int,byte[]) -> a
 com.google.android.vending.licensing.util.Base64DecoderException -> com.google.android.a.a.a.b:
-com.ipaulpro.anastasoft.rallyvision.afilechooser.FileChooserActivity -> com.ipaulpro.anastasoft.rallyvision.afilechooser.FileChooserActivity:
+com.ipaulpro.afilechooser.FileChooserActivity -> com.ipaulpro.afilechooser.FileChooserActivity:
     java.lang.String EXTERNAL_BASE_PATH -> a
     boolean HAS_ACTIONBAR -> b
     android.support.v4.app.FragmentManager mFragmentManager -> c
@@ -33744,11 +34043,11 @@ com.ipaulpro.anastasoft.rallyvision.afilechooser.FileChooserActivity -> com.ipau
     void onFileSelected(java.io.File) -> a
     void registerStorageListener() -> c
     void unregisterStorageListener() -> d
-    void access$000(com.ipaulpro.anastasoft.rallyvision.afilechooser.FileChooserActivity,java.io.File) -> a
-com.ipaulpro.anastasoft.rallyvision.afilechooser.FileChooserActivity$1 -> com.ipaulpro.anastasoft.rallyvision.afilechooser.a:
-    com.ipaulpro.anastasoft.rallyvision.afilechooser.FileChooserActivity this$0 -> a
+    void access$000(com.ipaulpro.afilechooser.FileChooserActivity,java.io.File) -> a
+com.ipaulpro.afilechooser.FileChooserActivity$1 -> com.ipaulpro.afilechooser.a:
+    com.ipaulpro.afilechooser.FileChooserActivity this$0 -> a
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
-com.ipaulpro.anastasoft.rallyvision.afilechooser.FileListAdapter -> com.ipaulpro.anastasoft.rallyvision.afilechooser.b:
+com.ipaulpro.afilechooser.FileListAdapter -> com.ipaulpro.afilechooser.b:
     int ICON_FOLDER -> a
     int ICON_FILE -> b
     android.view.LayoutInflater mInflater -> c
@@ -33760,11 +34059,11 @@ com.ipaulpro.anastasoft.rallyvision.afilechooser.FileListAdapter -> com.ipaulpro
     void setListItems(java.util.List) -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
     java.lang.Object getItem(int) -> getItem
-com.ipaulpro.anastasoft.rallyvision.afilechooser.FileListFragment -> com.ipaulpro.anastasoft.rallyvision.afilechooser.c:
-    com.ipaulpro.anastasoft.rallyvision.afilechooser.FileListAdapter mAdapter -> i
+com.ipaulpro.afilechooser.FileListFragment -> com.ipaulpro.afilechooser.c:
+    com.ipaulpro.afilechooser.FileListAdapter mAdapter -> i
     java.lang.String mPath -> j
-    com.ipaulpro.anastasoft.rallyvision.afilechooser.FileListFragment$Callbacks mListener -> k
-    com.ipaulpro.anastasoft.rallyvision.afilechooser.FileListFragment newInstance(java.lang.String) -> a
+    com.ipaulpro.afilechooser.FileListFragment$Callbacks mListener -> k
+    com.ipaulpro.afilechooser.FileListFragment newInstance(java.lang.String) -> a
     void onAttach(android.app.Activity) -> onAttach
     void onCreate(android.os.Bundle) -> onCreate
     void onActivityCreated(android.os.Bundle) -> onActivityCreated
@@ -33773,9 +34072,9 @@ com.ipaulpro.anastasoft.rallyvision.afilechooser.FileListFragment -> com.ipaulpr
     void onLoadFinished(android.support.v4.content.Loader,java.util.List) -> a
     void onLoaderReset(android.support.v4.content.Loader) -> onLoaderReset
     void onLoadFinished(android.support.v4.content.Loader,java.lang.Object) -> onLoadFinished
-com.ipaulpro.anastasoft.rallyvision.afilechooser.FileListFragment$Callbacks -> com.ipaulpro.anastasoft.rallyvision.afilechooser.d:
+com.ipaulpro.afilechooser.FileListFragment$Callbacks -> com.ipaulpro.afilechooser.d:
     void onFileSelected(java.io.File) -> a
-com.ipaulpro.anastasoft.rallyvision.afilechooser.FileLoader -> com.ipaulpro.anastasoft.rallyvision.afilechooser.e:
+com.ipaulpro.afilechooser.FileLoader -> com.ipaulpro.afilechooser.e:
     android.os.FileObserver mFileObserver -> f
     java.util.List mData -> g
     java.lang.String mPath -> h
@@ -33789,24 +34088,24 @@ com.ipaulpro.anastasoft.rallyvision.afilechooser.FileLoader -> com.ipaulpro.anas
     java.lang.Object loadInBackground() -> c
     void onCanceled(java.lang.Object) -> a
     void deliverResult(java.lang.Object) -> deliverResult
-com.ipaulpro.anastasoft.rallyvision.afilechooser.FileLoader$1 -> com.ipaulpro.anastasoft.rallyvision.afilechooser.f:
-    com.ipaulpro.anastasoft.rallyvision.afilechooser.FileLoader this$0 -> a
+com.ipaulpro.afilechooser.FileLoader$1 -> com.ipaulpro.afilechooser.f:
+    com.ipaulpro.afilechooser.FileLoader this$0 -> a
     void onEvent(int,java.lang.String) -> onEvent
-com.ipaulpro.anastasoft.rallyvision.afilechooser.R -> com.ipaulpro.anastasoft.rallyvision.afilechooser.g:
-com.ipaulpro.anastasoft.rallyvision.afilechooser.R$drawable -> com.ipaulpro.anastasoft.rallyvision.afilechooser.h:
+com.ipaulpro.afilechooser.R -> com.ipaulpro.afilechooser.g:
+com.ipaulpro.afilechooser.R$drawable -> com.ipaulpro.afilechooser.h:
     int ic_chooser -> ic_chooser
     int ic_file -> ic_file
     int ic_folder -> ic_folder
     int ic_provider -> ic_provider
-com.ipaulpro.anastasoft.rallyvision.afilechooser.R$layout -> com.ipaulpro.anastasoft.rallyvision.afilechooser.i:
+com.ipaulpro.afilechooser.R$layout -> com.ipaulpro.afilechooser.i:
     int file -> file
-com.ipaulpro.anastasoft.rallyvision.afilechooser.R$string -> com.ipaulpro.anastasoft.rallyvision.afilechooser.j:
+com.ipaulpro.afilechooser.R$string -> com.ipaulpro.afilechooser.j:
     int choose_file -> choose_file
     int empty_directory -> empty_directory
     int error_selecting_file -> error_selecting_file
     int internal_storage -> internal_storage
     int storage_removed -> storage_removed
-com.ipaulpro.anastasoft.rallyvision.afilechooser.utils.FileUtils -> com.ipaulpro.anastasoft.rallyvision.afilechooser.a.a:
+com.ipaulpro.afilechooser.utils.FileUtils -> com.ipaulpro.afilechooser.a.a:
     java.util.Comparator sComparator -> a
     java.io.FileFilter sFileFilter -> b
     java.io.FileFilter sDirFilter -> c
@@ -33818,12 +34117,13 @@ com.ipaulpro.anastasoft.rallyvision.afilechooser.utils.FileUtils -> com.ipaulpro
     boolean isGooglePhotosUri(android.net.Uri) -> e
     java.lang.String getDataColumn(android.content.Context,android.net.Uri,java.lang.String,java.lang.String[]) -> a
     java.lang.String getPath(android.content.Context,android.net.Uri) -> a
-com.ipaulpro.anastasoft.rallyvision.afilechooser.utils.FileUtils$1 -> com.ipaulpro.anastasoft.rallyvision.afilechooser.a.b:
+    android.content.Intent createGetContentIntent() -> a
+com.ipaulpro.afilechooser.utils.FileUtils$1 -> com.ipaulpro.afilechooser.a.b:
     int compare(java.io.File,java.io.File) -> a
     int compare(java.lang.Object,java.lang.Object) -> compare
-com.ipaulpro.anastasoft.rallyvision.afilechooser.utils.FileUtils$2 -> com.ipaulpro.anastasoft.rallyvision.afilechooser.a.c:
+com.ipaulpro.afilechooser.utils.FileUtils$2 -> com.ipaulpro.afilechooser.a.c:
     boolean accept(java.io.File) -> accept
-com.ipaulpro.anastasoft.rallyvision.afilechooser.utils.FileUtils$3 -> com.ipaulpro.anastasoft.rallyvision.afilechooser.a.d:
+com.ipaulpro.afilechooser.utils.FileUtils$3 -> com.ipaulpro.afilechooser.a.d:
     boolean accept(java.io.File) -> accept
 com.ubertesters.common.containers.ExtraDataMap -> com.a.a.a.a:
     java.util.HashMap mHashMap -> a

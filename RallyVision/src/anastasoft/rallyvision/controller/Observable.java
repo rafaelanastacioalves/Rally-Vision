@@ -9,6 +9,8 @@ import java.util.List;
 import anastasoft.rallyvision.Slider.motorista.Motorista;
 import anastasoft.rallyvision.activity.MenuPrincipal;
 import anastasoft.rallyvision.controller.Controller.CounterAndConverter;
+import anastasoft.rallyvision.controller.Data.DBHelper;
+import anastasoft.rallyvision.controller.Data.model.Afericao;
 
 public class Observable {
 
@@ -29,6 +31,7 @@ public class Observable {
     private  Controller aController;
     float ratio;
     private ArrayList<Motorista> motoristasStatus;
+    private Afericao aFericao;
 
     public Observable(Controller aController) {
         // TODO Auto-generated constructor stub
@@ -74,7 +77,7 @@ public class Observable {
     /**
      * @return array: [Distance, InstVelocity, AvarageVelocity ]
      */
-    public void setValues(List<Float> values) {
+    public void setValues(List<Float> values)  {
 
         for (int i = 0; i < values.size(); i++) {
 
@@ -97,7 +100,11 @@ public class Observable {
 
         }
 
-        Notify();
+        try {
+            Notify();
+        } catch (DBHelper.AfericaoExistenteException e) {
+
+        }
 
     }
 
@@ -105,11 +112,15 @@ public class Observable {
         return ratio;
     }
 
-    public void setRatio(float aRatio) {
+    public void setAfericao(Afericao afericao) throws DBHelper.AfericaoExistenteException {
         // TODO Auto-generated method stub
-        this.ratio = aRatio;
-
-        Notify();
+        this.aFericao = afericao;
+        this.ratio = aFericao.getRatio();
+        try{
+            Notify();
+        }catch (DBHelper.AfericaoExistenteException e){
+            throw e;
+        }
     }
 
     public void Attach(Object object) {
@@ -120,7 +131,7 @@ public class Observable {
         aObservers.remove(object);
     }
 
-    public void Notify() {
+    public void Notify() throws DBHelper.AfericaoExistenteException {
 
         for (int i = 0; i < aObservers.size(); i++) {
             Object array_element = aObservers.get(i);
@@ -141,6 +152,8 @@ public class Observable {
                 if (array_element.getClass() == Clock.class) {
                     ((Clock) array_element).update();
                 }
+                if(array_element.getClass() == DBHelper.class)
+                    ((DBHelper) array_element).update();
             }
 
 
@@ -193,7 +206,9 @@ public class Observable {
         instantVel = 0;
         tTot = 0;
         tStart.setTime(System.currentTimeMillis());
-        Notify();
+
+            Notify();
+
     }
 
     public float getOdometer() {
@@ -203,7 +218,10 @@ public class Observable {
 
     public void setOdometer(int value) {
         deltaStot = value;
-        Notify();
+        try {
+            Notify();
+        } catch (DBHelper.AfericaoExistenteException e) {
+        }
     }
 
     public void setValues(ArrayList<Motorista> motoristasStatus) {
@@ -227,4 +245,10 @@ public class Observable {
 
         }
     }
+
+    public Afericao getAfericao() {
+        return aFericao;
+    }
+
+
 }

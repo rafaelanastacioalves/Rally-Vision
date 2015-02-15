@@ -50,11 +50,13 @@
 
     <string name="pref_title_ratio"> Razão</string>
     <string name="pref_default_ratio_number">0.28248</string>
+    <string name="ratio_key_list">ratio_key_list</string>
+
 
     <!-- Preference Keys -->
 
-    <string name="ratio_key"> example_ratio</string>
-    <string name="reset_ratio_key"> reset_ratio</string>
+    <string name="ratio_key">example_ratio</string>
+    <string name="reset_ratio_key">reset_ratio</string>
     <string name="descanso_key">descanso</string>
 
     <!-- Preferences     -->
@@ -63,6 +65,12 @@
     <string name="pref_comportamento_descanso">Desativar Bloqueio de Tela do Android</string>
     <string name="pref_comportamento_descanso_on">Status: Bloqueio ativado</string>
     <string name="pref_comportamento_descanso_off">Status: Bloqueio desativado</string>
+    <string name="ratio_name">Nome da Aferição</string>
+    <string name="ratio_key_list_name">Aferição</string>
+    <string name="pref_default_ratio_name">AFERICAO_PADRÃO</string>
+    <string name="invalido">inválido</string>
+    <string name="invalido_jah_existe">Invalido: Já existe a aferição </string>
+
 
 
     <!--  Bluetooth -->

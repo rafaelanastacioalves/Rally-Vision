@@ -38,12 +38,14 @@ public class ConfigureDialog extends android.support.v4.app.DialogFragment {
 
         // set prompts.xml to alertdialog builder
         alertDialogBuilder.setView(promptsView);
-        final EditText userInput = (EditText) promptsView
+        final EditText userAfericaoInput = (EditText) promptsView
                 .findViewById(R.id.config);
+        final EditText userAfericaoName = (EditText)  promptsView
+                .findViewById(R.id.config_name);
 
-        userInput.requestFocus();
+        userAfericaoInput.requestFocus();
 
-        userInput.addTextChangedListener(new TextWatcher() {
+        userAfericaoInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void afterTextChanged(Editable s) {
             }
@@ -56,7 +58,7 @@ public class ConfigureDialog extends android.support.v4.app.DialogFragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before,
                                       int count) {
-                String strEnteredVal = userInput.getText().toString();
+                String strEnteredVal = userAfericaoInput.getText().toString();
 //				if (OKButton == null) {
 //					OKButton = getOkButton();
 //				}
@@ -71,7 +73,7 @@ public class ConfigureDialog extends android.support.v4.app.DialogFragment {
                     int num = Integer.parseInt(strEnteredVal);
 
                     if (num < 1) {
-                        userInput.setText("");
+                        userAfericaoInput.setText("");
                     }
 
                 }
@@ -90,10 +92,11 @@ public class ConfigureDialog extends android.support.v4.app.DialogFragment {
                         } catch (Exception e) {
                             // TODO: handle exception
                         }
-                        String result = String.valueOf(userInput.getText());
+                        String afericao_valor = String.valueOf(userAfericaoInput.getText());
+                        String afericao_nome = String.valueOf(userAfericaoName.getText());
                         try {
 
-                            if (result.equals("")) {
+                            if (afericao_valor.equals("")) {
                                 Field field = dialog.getClass().getSuperclass()
                                         .getDeclaredField("mShowing");
                                 field.setAccessible(true);
@@ -103,7 +106,7 @@ public class ConfigureDialog extends android.support.v4.app.DialogFragment {
                                         Toast.LENGTH_SHORT).show();
                             } else {
                                 Command cmd = new ConfigureRatioCommand(
-                                        aController, Integer.parseInt(result));
+                                        aController, Integer.parseInt(afericao_valor), afericao_nome);
                                 cmd.Execute();
                             }
 

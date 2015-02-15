@@ -10,6 +10,7 @@ anastasoft.rallyvision.BuildConfig
 anastasoft.rallyvision.R:
     10:10:public R()
 anastasoft.rallyvision.R$anim
+anastasoft.rallyvision.R$array
 anastasoft.rallyvision.R$attr
 anastasoft.rallyvision.R$bool
 anastasoft.rallyvision.R$color
@@ -19,10 +20,11 @@ anastasoft.rallyvision.R$id
 anastasoft.rallyvision.R$integer
 anastasoft.rallyvision.R$layout
 anastasoft.rallyvision.R$menu
+anastasoft.rallyvision.R$raw
 anastasoft.rallyvision.R$string
 anastasoft.rallyvision.R$style
 anastasoft.rallyvision.R$styleable:
-    1784:1784:public R$styleable()
+    2426:2426:public R$styleable()
 anastasoft.rallyvision.R$xml
 anastasoft.rallyvision.Slider.Prova_Trecho.Prova:
     private static final java.lang.String KEY_TIPO
@@ -45,7 +47,6 @@ anastasoft.rallyvision.activity.ConnectMediator:
     private static final int APLICATION_DISCONECTED
     private static final int APLICATION_CONNECTING
     private static final int APLICATION_CONNECTED
-    27:27:public void getState()
 anastasoft.rallyvision.activity.DeviceListActivity:
     private static final java.lang.String TAG
 anastasoft.rallyvision.activity.MenuPrincipal:
@@ -63,18 +64,18 @@ anastasoft.rallyvision.activity.MenuPrincipal:
     private static final int APLICATION_CONNECTING
     private static final int APLICATION_CONNECTED
     private static final int REQUEST_CHOOSER
-    128:130:public void warnNotCalibrated()
-    396:398:public android.widget.Button getConnectButton()
-    412:420:public void makeConnectBOrange()
-    496:498:public void askKeepRatio()
-    501:513:private void hideActionBar()
-    525:532:public void displayDialog(boolean)
-    52:52:static synthetic android.widget.Button access$000(anastasoft.rallyvision.activity.MenuPrincipal)
+    167:169:public void warnNotCalibrated()
+    461:463:public android.widget.Button getConnectButton()
+    477:485:public void makeConnectBOrange()
+    569:571:public void askKeepRatio()
+    574:586:private void hideActionBar()
+    598:605:public void displayDialog(boolean)
+    56:56:static synthetic android.widget.Button access$000(anastasoft.rallyvision.activity.MenuPrincipal)
 anastasoft.rallyvision.activity.MenuPrincipal$4
 anastasoft.rallyvision.activity.SettingsActivity:
     private static final boolean ALWAYS_SIMPLE_PREFS
-    113:123:private static void bindPreferenceSummaryToValue(android.preference.Preference)
-    39:39:static synthetic void access$000(android.preference.Preference)
+    116:126:private static void bindPreferenceSummaryToValue(android.preference.Preference)
+    42:42:static synthetic void access$000(android.preference.Preference)
 anastasoft.rallyvision.activity.SettingsActivity$GeneralPreferenceFragment
 anastasoft.rallyvision.activity.customfontdemo.Led_text_view
 anastasoft.rallyvision.activity.customfontdemo.TypefaceManager:
@@ -93,18 +94,18 @@ anastasoft.rallyvision.activity.customfontdemo.TypefaceManager:
     188:188:public boolean setTypeface(android.widget.TextView,java.lang.String)
 anastasoft.rallyvision.activity.dialog.ConfigureDialog:
     android.view.View OKButton
+anastasoft.rallyvision.activity.dialog.EditarRatioManualmenteDialog
 anastasoft.rallyvision.activity.dialog.KeepRatioDialog
 anastasoft.rallyvision.activity.dialog.KeepRatioDialog$1
 anastasoft.rallyvision.activity.dialog.KeepRatioDialog$2
 anastasoft.rallyvision.activity.dialog.NotConfigureDialog
+anastasoft.rallyvision.activity.dialog.ResetarRatioDialog
 anastasoft.rallyvision.activity.dialog.ZerarDialog
 anastasoft.rallyvision.activity.dialog.ZerarDialog$1
 anastasoft.rallyvision.activity.dialog.ZerarDialog$2
-anastasoft.rallyvision.activity.dialog.ZerarRatioDialog:
-    private android.content.res.Resources res
+anastasoft.rallyvision.command.CreateRatioCommand
 anastasoft.rallyvision.command.GeneralResetCommand
-anastasoft.rallyvision.command.ResetRatioCommand:
-    9:11:public ResetRatioCommand(android.content.Context)
+anastasoft.rallyvision.command.ResetRatioCommand
 anastasoft.rallyvision.command.StopAllCommand:
     16:17:public StopAllCommand(android.content.Context)
 anastasoft.rallyvision.command.Zerar:
@@ -137,11 +138,12 @@ anastasoft.rallyvision.controller.Controller:
     private static final int REQUEST_CONNECT_DEVICE
     private static final int REQUEST_ENABLE_BT
     private android.content.SharedPreferences preferences
-    212:231:private int toInt(byte[],int)
-    400:403:private boolean isRatioDefault(float)
-    412:414:public void checkAccess()
-    422:424:public void resetGeral()
-    541:541:public void setupOdometro()
+    228:247:private int toInt(byte[],int)
+    463:466:private boolean isRatioDefault(float)
+    480:486:public void checkAccess()
+    492:496:public void resetRatio()
+    499:501:public void resetGeral()
+    618:618:public void setupOdometro()
 anastasoft.rallyvision.controller.Controller$1:
     long deltaT
 anastasoft.rallyvision.controller.Controller$CounterAndConverter:
@@ -151,9 +153,34 @@ anastasoft.rallyvision.controller.Controller$CounterAndConverter:
     protected static final int CLOCK_STATE_READY
     protected static final int CLOCK_STATE_COUNTING
     int distance
-    648:649:public void setOdometer(int)
-    730:731:protected void setRatio(float)
-    734:737:public void zerar()
+    776:777:public void setOdometer(int)
+    780:790:public void resetState()
+    869:870:protected void setRatio(float)
+    873:876:public void zerar()
+anastasoft.rallyvision.controller.Data.DBHelper:
+    public static final java.lang.String LOG
+    public static final int DATABASE_VERSION
+    public static final java.lang.String DATABASE_NAME
+    public static final java.lang.String TABLE_AFERICAO
+    public static final java.lang.String KEY_ID
+    public static final java.lang.String KEY_CREATED_AT
+    public static final java.lang.String KEY_AFERICAO_NAME
+    public static final java.lang.String KEY_AFERICAO_RATIO
+    public static java.lang.String AFERICAO_DEFAULT
+    public static final java.lang.String KEY_CHECKLINES_TEXT
+    public static final java.lang.String KEY_CHECKLINES_AFERICAO_ID
+    public static final java.lang.String KEY_CHECKLINES_ORDER
+    public static final java.lang.String KEY_CHECKLINES_CHECKED
+    public static final java.lang.String KEY_CHECKLINES_UPDATE_TIME
+    public static final java.lang.String KEY_CHECKLINES_CHECK_TIME
+    public static final java.lang.String KEY_CHECKLINES_CALENDAR_ID
+    private static final java.lang.String CREATE_TABLE_AFERICAO
+    205:215:public int updateActionBox(anastasoft.rallyvision.controller.Data.model.Afericao)
+    223:226:public void deleteActionBox(long)
+anastasoft.rallyvision.controller.Data.model.Table:
+    java.lang.String created_at
+    16:16:public java.lang.String getCreated_at()
+    20:21:public void setCreated_at(java.lang.String)
 anastasoft.rallyvision.controller.Observable:
     private static final java.lang.String TAG
     private static final int INDEX_DISTANCE
@@ -162,9 +189,10 @@ anastasoft.rallyvision.controller.Observable:
     private static final int INDEX_RATIO
     private static final int INDEX_T_START
     private static final int INDEX_T_TOT
-    79:102:public void setValues(java.util.List)
-    120:121:public void Detach(java.lang.Object)
-    200:200:public float getOdometer()
+    82:109:public void setValues(java.util.List)
+    216:216:public float getOdometer()
+anastasoft.rallyvision.controller.PreferencesAdapter:
+    48:57:private void setRatio2(float)
 anastasoft.rallyvision.controller.SliderCoreographer.FileParser:
     private static final java.lang.String KEY_TIPO
     private static final java.lang.String KEY_NUM
@@ -173,8 +201,8 @@ anastasoft.rallyvision.controller.SliderCoreographer.FileParser:
     private static final java.lang.String KEY_DTTRECHO_VMEDIO
     private static final java.lang.String KEY_TI
 anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer:
-    52:54:public void setaSliderCore()
-    75:75:public void desactivate()
+    57:59:public void setaSliderCore()
+    80:80:public void desactivate()
 anastasoft.rallyvision.controller.TimeAdapter
 anastasoft.rallyvision.controller.VelocityEng:
     private static final int DELTA_S
@@ -400,7 +428,6 @@ android.support.v4.app.NotificationCompat$Builder:
     446:447:public android.support.v4.app.NotificationCompat$Builder setVibrate(long[])
     456:462:public android.support.v4.app.NotificationCompat$Builder setLights(int,int,int)
     486:487:public android.support.v4.app.NotificationCompat$Builder setOnlyAlertOnce(boolean)
-    497:498:public android.support.v4.app.NotificationCompat$Builder setAutoCancel(boolean)
     512:516:public android.support.v4.app.NotificationCompat$Builder setDefaults(int)
     539:540:public android.support.v4.app.NotificationCompat$Builder setPriority(int)
     560:561:public android.support.v4.app.NotificationCompat$Builder addAction(int,java.lang.CharSequence,android.app.PendingIntent)
@@ -2227,32 +2254,32 @@ com.google.android.vending.licensing.util.Base64:
     489:489:public static byte[] decodeWebSafe(byte[],int,int)
 com.google.android.vending.licensing.util.Base64DecoderException:
     private static final long serialVersionUID
-LocalStorageProvider
-com.ipaulpro.anastasoft.rallyvision.afilechooser.BuildConfig
-com.ipaulpro.anastasoft.rallyvision.afilechooser.FileChooserActivity:
+com.ianhanniballake.localstorage.LocalStorageProvider
+com.ipaulpro.afilechooser.BuildConfig
+com.ipaulpro.afilechooser.FileChooserActivity:
     public static final java.lang.String PATH
-com.ipaulpro.anastasoft.rallyvision.afilechooser.FileListAdapter:
+com.ipaulpro.afilechooser.FileListAdapter:
     50:52:public void add(java.io.File)
     55:57:public void remove(java.io.File)
     60:62:public void insert(java.io.File,int)
     85:85:public java.util.List getListItems()
-com.ipaulpro.anastasoft.rallyvision.afilechooser.FileListFragment:
+com.ipaulpro.afilechooser.FileListFragment:
     private static final int LOADER_ID
-com.ipaulpro.anastasoft.rallyvision.afilechooser.FileLoader:
+com.ipaulpro.afilechooser.FileLoader:
     private static final int FILE_OBSERVER_MASK
-com.ipaulpro.anastasoft.rallyvision.afilechooser.R:
+com.ipaulpro.afilechooser.R:
     9:37:public R()
-com.ipaulpro.anastasoft.rallyvision.afilechooser.R$bool
-com.ipaulpro.anastasoft.rallyvision.afilechooser.R$dimen
-com.ipaulpro.anastasoft.rallyvision.afilechooser.R$drawable:
+com.ipaulpro.afilechooser.R$bool
+com.ipaulpro.afilechooser.R$dimen
+com.ipaulpro.afilechooser.R$drawable:
     18:18:public R$drawable()
-com.ipaulpro.anastasoft.rallyvision.afilechooser.R$layout:
+com.ipaulpro.afilechooser.R$layout:
     24:24:public R$layout()
-com.ipaulpro.anastasoft.rallyvision.afilechooser.R$string:
+com.ipaulpro.afilechooser.R$string:
     27:27:public R$string()
-com.ipaulpro.anastasoft.rallyvision.afilechooser.R$style
-com.ipaulpro.anastasoft.rallyvision.afilechooser.R$xml
-com.ipaulpro.anastasoft.rallyvision.afilechooser.utils.FileUtils:
+com.ipaulpro.afilechooser.R$style
+com.ipaulpro.afilechooser.R$xml
+com.ipaulpro.afilechooser.utils.FileUtils:
     static final java.lang.String TAG
     private static final boolean DEBUG
     public static final java.lang.String MIME_TYPE_AUDIO
@@ -2273,7 +2300,6 @@ com.ipaulpro.anastasoft.rallyvision.afilechooser.utils.FileUtils:
     399:399:public static android.graphics.Bitmap getThumbnail(android.content.Context,java.io.File)
     412:412:public static android.graphics.Bitmap getThumbnail(android.content.Context,android.net.Uri)
     429:468:public static android.graphics.Bitmap getThumbnail(android.content.Context,android.net.Uri,java.lang.String)
-    521:526:public static android.content.Intent createGetContentIntent()
 com.ubertesters.common.BaseJavaScriptInterface
 com.ubertesters.common.BuildConfig
 com.ubertesters.common.Device

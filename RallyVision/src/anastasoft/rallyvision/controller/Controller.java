@@ -18,12 +18,16 @@ import com.google.android.vending.licensing.ServerManagedPolicy;
 import com.ubertesters.common.models.LockingMode;
 import com.ubertesters.sdk.Ubertesters;
 
+import java.util.List;
+
 import anastasoft.rallyvision.BTManager.BTManager;
 import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.Slider.SliderCore;
 import anastasoft.rallyvision.activity.ConnectMediator;
 import anastasoft.rallyvision.activity.DeviceListActivity;
 import anastasoft.rallyvision.activity.MenuPrincipal;
+import anastasoft.rallyvision.controller.Data.DBHelper;
+import anastasoft.rallyvision.controller.Data.model.Afericao;
 import anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer;
 
 // licensing
@@ -46,11 +50,13 @@ public class Controller extends Application {
 
     // Test switch
 
-    private boolean testON = true;
+    private boolean testON = false;
 
-    private boolean uberON = false;
+    private boolean uberON = true;
 
-    private boolean licenseON = false;
+    private boolean licenseCheckON = false;
+
+    private boolean sliderON  = true;
 
 
     // Aplication States
@@ -93,6 +99,9 @@ public class Controller extends Application {
 
 
     private static SliderChoreographer aSliderChoreographer;
+
+    private SharedPreferences preferences;
+    private static DBHelper dbHelper;
 
     // Resources
     BTManager aBTManager;
@@ -210,7 +219,10 @@ public class Controller extends Application {
         }
     };
 
-    private SharedPreferences preferences;
+    public DBHelper getDbHelper() {
+        return dbHelper;
+    }
+
 
     private int toInt(byte[] data, int length) {
         int res = 0x0;
@@ -287,7 +299,7 @@ public class Controller extends Application {
     }
 
 
-    public void setup(Activity currentAct) {
+    public void setup(Activity currentAct) throws DBHelper.AfericaoExistenteException {
         if (isTestOn())
             Log.e(TAG, "+++ setup  +++");
         aResource = getResources();
@@ -302,7 +314,7 @@ public class Controller extends Application {
 
         // ------------checking license -------------//
 
-        if(licenseON){
+        if(licenseCheckON){
             // Try to use more data here. ANDROID_ID is a single point of attack.
             String deviceId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 
@@ -328,12 +340,24 @@ public class Controller extends Application {
 
         }
 
+
+                //setup DBHelper
+
+        if (dbHelper == null) {
+            dbHelper = new DBHelper( getApplicationContext(), aObervable);
+            aObervable.Attach(dbHelper);
+            dbHelper.createAfericao(new Afericao(
+                    getResources().getString(R.string.pref_default_ratio_name), Float.parseFloat(getString(R.string.pref_default_ratio_number))));
+        }
+
         if (aPrefAdapter == null) {
             aPrefAdapter = new PreferencesAdapter(this, aObervable);
 
         }
 
         ((MenuPrincipal) getCurrentActiviy()).keepScreenOn(aPrefAdapter.getScreenOnStatus());
+
+
 
         aObervable.Attach(aPrefAdapter);
 
@@ -343,19 +367,15 @@ public class Controller extends Application {
         }
         aBTManager.setupBT();
 
-        // If the adapter is null, then Bluetooth is not supported
-//		if (!aBTManager.hasBTDevide()) {
-//			Toast.makeText(this,
-//					aResource.getString(R.string.message_device_has_no_BT),
-//					Toast.LENGTH_LONG).show();
-//			currentAct.finish();
-//			return;
-//		}
-//
-        // setting the Ratio
-        float ratio = aPrefAdapter.getRatio();
-        aObervable.setRatio(ratio);
+
+
+        Afericao aFericao = aPrefAdapter.getAfericao();
+        aObervable.setAfericao(aFericao);
+
+
         setupCountAndConverter();
+
+
 
 
         // setup Menu Principal
@@ -376,14 +396,14 @@ public class Controller extends Application {
                     Toast.makeText(getApplicationContext(), "Erro em setup: " + e.toString(), Toast.LENGTH_SHORT).show();
                 }
             }
-            
+
         }
 //        mConnMediator.setState(this);
 
         // activating Slider
 
         if(aSliderChoreographer == null ){
-            if(true) {
+            if(sliderON) {
                 try {
                     aSliderChoreographer = new SliderChoreographer(this, (MenuPrincipal) getCurrentActiviy(), aCountConv, aObervable);
 
@@ -398,6 +418,17 @@ public class Controller extends Application {
         }
         FIRST_RUN = false;
 
+    }
+
+    public boolean jaExiste(Afericao aFer){
+        List<Afericao> afericaoListTemp = dbHelper.getTodasAfericoes();
+        for (Afericao afericaoTemp : afericaoListTemp ){
+            if (afericaoTemp.getName().equals(aFer.getName())){
+                return true;
+            }
+
+        }
+        return false;
     }
 
     private void setupCountAndConverter() {
@@ -455,8 +486,13 @@ public class Controller extends Application {
     }
 
     public void resetRatio() {
-        aObervable.setRatio(Float.parseFloat(aResource
-                .getString(R.string.pref_default_ratio_number)));
+
+
+        try {
+            aObervable.setAfericao(dbHelper.getAfericaoByName(aResource.getString(R.string.pref_default_ratio_name)));
+        } catch (DBHelper.AfericaoExistenteException e) {
+
+        }
     }
 
     public void resetGeral() {
@@ -581,10 +617,13 @@ public class Controller extends Application {
 
     }
 
-    public void setRatio(float ratio) {
+    public void setRatio(float ratio, String nomeAfericao) {
         Toast.makeText(currentAct, String.valueOf(ratio), Toast.LENGTH_SHORT)
                 .show();
-        aObervable.setRatio(ratio);
+
+            Afericao aFerTemp = new Afericao(nomeAfericao, ratio);
+
+                aObervable.setAfericao(aFerTemp);
 
     }
 
@@ -630,7 +669,7 @@ public class Controller extends Application {
         }
     }
 
-    public void configureRatio(int deltaSAfericao) {
+    public void configureRatio(int deltaSAfericao, String afericaoNome) throws DBHelper.AfericaoExistenteException {
         if (isTestOn())
             Log.e(TAG, " +++ configureRatio +++");
         // TODO Auto-generated method stub
@@ -653,7 +692,13 @@ public class Controller extends Application {
 
             ratioSis = ratioSis * ratioTemp;
 
-            aObervable.setRatio(ratioSis);
+            try{
+                aObervable.setAfericao(new Afericao(afericaoNome, ratioSis));
+
+            }catch (DBHelper.AfericaoExistenteException e){
+                Toast.makeText(getApplicationContext(), aResource.getString(R.string.invalido) + " : " + e.getMessage(), Toast.LENGTH_SHORT);
+            }
+
             aObervable.zerar();
         } catch (ArithmeticException e) {
             Toast.makeText(getApplicationContext(),
@@ -668,6 +713,26 @@ public class Controller extends Application {
         return aSliderChoreographer;
     }
 
+    public List<Afericao> getListaAfericoes() {
+        if(dbHelper == null){
+            dbHelper = new DBHelper(getApplicationContext(), aObervable);
+        }
+        return dbHelper.getTodasAfericoes();
+    }
+
+    public Afericao getAfericao() {
+        return aObervable.getAfericao();
+    }
+
+    public int getIndexDeAfericao(Afericao afericao, List<Afericao> afericaoList) {
+        Afericao afericaoTemp;
+        for(int i =0; i< afericaoList.size() ; i++){
+            if (afericao.getName().equals(afericaoList.get(i).getName()))
+                return i;
+        }
+
+        return -1;
+    }
 
 
     public class CounterAndConverter extends Thread {

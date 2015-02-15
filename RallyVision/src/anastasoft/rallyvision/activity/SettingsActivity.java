@@ -19,11 +19,14 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
 
+import java.util.List;
+
 import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.R.string;
 import anastasoft.rallyvision.command.Command;
 import anastasoft.rallyvision.command.SetRatioCommand;
 import anastasoft.rallyvision.controller.Controller;
+import anastasoft.rallyvision.controller.Data.model.Afericao;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On
@@ -131,8 +134,36 @@ public class SettingsActivity extends PreferenceActivity implements
         res = getResources();
         setupSimplePreferencesScreen();
 
+        loadAfericaoList();
+
         initSummary(getPreferenceScreen());
 
+    }
+
+    private void loadAfericaoList() {
+        ListPreference lPref = (ListPreference) findPreference(getResources().getString(string.ratio_key_list));
+        List<Afericao> afericaoList = aController.getListaAfericoes();
+
+        CharSequence entries[] = new String[afericaoList.size()];
+        CharSequence entryValues[] = new String[afericaoList.size()];
+        int i = 0;
+        for (Afericao afericao : afericaoList) {
+            entries[i] = afericao.getName();
+            entryValues[i] = (String.valueOf(afericao.getRatio()));
+            i++;
+        }
+        lPref.setEntries(entries);
+        lPref.setEntryValues(entryValues);
+        if (afericaoList.size() == 1){
+            lPref.setValueIndex(0);
+        }
+        else{
+            Afericao afericao;
+            afericao =  aController.getAfericao();
+            int index;
+            index = aController.getIndexDeAfericao(afericao,afericaoList);
+            lPref.setValueIndex(index);
+        }
     }
 
     /**
@@ -297,27 +328,9 @@ public class SettingsActivity extends PreferenceActivity implements
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
                                           String key) {
-        // TODO Auto-generated method stub
-        if (key.equals("example_ratio")) {
-            float ratio;
-            EditTextPreference aEdtRatio = (EditTextPreference) getPreferenceScreen()
-                    .findPreference(key);
-            Preference pref = findPreference(key);
-            // Set summary to be the user-description for the selected value
+        float ratio;
 
-            try {
-                pref.setSummary(sharedPreferences.getString(key,
-                        res.getString(R.string.pref_default_ratio_number)));
 
-            } catch (Exception e) {
-
-            }
-            ratio = Float.parseFloat(sharedPreferences.getString(key,
-                    res.getString(string.ratio_key)));
-            cmd = new SetRatioCommand(aController, ratio);
-            cmd.Execute();
-
-        }
 
         if (key.equals(getResources().getString(string.descanso_key))){
             CheckBoxPreference pref = (CheckBoxPreference)findPreference(key);
@@ -327,6 +340,35 @@ public class SettingsActivity extends PreferenceActivity implements
             else{
                 pref.setChecked(false);
             }
+        }
+        if(key.equals(res.getString((string.ratio_key_list)))){
+            ListPreference aListPref = (ListPreference) findPreference(key);
+
+            updateRatioSummary(sharedPreferences, "example_ratio");
+            ratio = Float.parseFloat(sharedPreferences.getString(key,
+                    res.getString(R.string.pref_default_ratio_number)));
+            updatePrefSummary(findPreference(res.getString(R.string.ratio_key_list)));
+            cmd = new SetRatioCommand(aController, Float.parseFloat(aListPref.getValue()), String.valueOf(aListPref.getEntry()) );
+            cmd.Execute();
+
+
+
+        }
+    }
+
+    private void updateRatioSummary(SharedPreferences sharedPreferences, String key) {
+
+        Preference pref = findPreference(key);
+        // Set summary to be the user-description for the selected value
+
+        try {
+            pref.setSummary(sharedPreferences.getString(key,
+                    res.getString(R.string.pref_default_ratio_number)));
+
+
+
+        } catch (Exception e) {
+
         }
     }
 

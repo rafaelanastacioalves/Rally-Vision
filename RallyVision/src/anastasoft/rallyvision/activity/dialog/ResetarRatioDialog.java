@@ -10,13 +10,13 @@ import anastasoft.rallyvision.command.Command;
 import anastasoft.rallyvision.command.ResetRatioCommand;
 import anastasoft.rallyvision.controller.Controller;
 
-public class ZerarRatioDialog extends DialogPreference {
+public class ResetarRatioDialog extends DialogPreference {
 
     private Controller aController;
     private Resources res;
     private Command cmd;
 
-    public ZerarRatioDialog(Context context, AttributeSet attrs) {
+    public ResetarRatioDialog(Context context, AttributeSet attrs) {
         super(context, attrs);
         setPersistent(false);
         aController = (Controller) context.getApplicationContext();
