@@ -1,0 +1,28 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/settings_title_main">
+
+    <PreferenceCategory android:title="@string/settings_title_category_calibragem">
+
+        <ListPreference
+
+
+            android:title="@string/ratio_key_list_name"
+
+            android:key="@string/ratio_key_list"
+
+
+            />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_comportamento">
+
+        <CheckBoxPreference
+            android:title="@string/pref_comportamento_descanso"
+            android:key="@string/descanso_key"
+            android:summaryOn="@string/pref_comportamento_descanso_on"
+            android:summaryOff="@string/pref_comportamento_descanso_off"
+
+            />
+    </PreferenceCategory>
+
+</PreferenceScreen>
