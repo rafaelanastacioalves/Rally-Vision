@@ -34,7 +34,7 @@ public class Clock extends CountDownTimer {
 
     @Override
     public void onFinish() {
-        aCC.CLOCK_STATE = aCC.CLOCK_STATE_READY;
+//        aCC.CLOCK_STATE = aCC.CLOCK_STATE_READY;
     }
 
     public void beginTimeCount() {

@@ -50,13 +50,13 @@ public class Controller extends Application {
 
     // Test switch
 
-    private boolean testON = false;
+    private boolean testON = true;
 
-    private boolean uberON = true;
+    private boolean uberON = false;
 
     private boolean licenseCheckON = false;
 
-    private boolean sliderON  = true;
+    private boolean sliderON  = false;
 
 
     // Aplication States
@@ -797,21 +797,27 @@ public class Controller extends Application {
             aClock.beginTimeCount();
 
             STATE = STATE_READY;
-            CLOCK_STATE = CLOCK_STATE_COUNTING;
+            CLOCK_STATE = CLOCK_STATE_READY;
             aVelEng.setValues(aObservable.getValues());
 
 
             while (STATE != STATE_STOPPED) {
                 switch (STATE) {
                     case STATE_READY:
-                        if (CLOCK_STATE == CLOCK_STATE_READY) {
-                            aClock.start();
+
                             aController.query();
                             STATE = STATE_WAITING;
-                            CLOCK_STATE = CLOCK_STATE_COUNTING;
+                            try {
+                                sleep(300);
+
+                            } catch (InterruptedException e) {
+                                if (testON) {
+                                    Toast.makeText(getApplicationContext(), "Erro em sleep: " + e.toString(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
                             if (isTestOn())
                                 Log.e(TAG, " +++ STATE_QUERY +++");
-                        }
+
                         ;
 
                         break;

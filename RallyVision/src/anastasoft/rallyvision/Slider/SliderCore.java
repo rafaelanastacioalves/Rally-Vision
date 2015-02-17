@@ -71,20 +71,17 @@ public class SliderCore {
 
         //atualizando status motorista usuario
 
-        dSTrechoRestante = aMotoristaUsuario.getDSTrechoRestante();
-
-        if(dSTrechoRestante <= dS){
-            dSFinal = dS - dSTrechoRestante;
-            mudaTrecho(aMotoristaUsuario);
-        }
-        else{
-            dSFinal = dS;
-        }
-
-        aMotoristaUsuario.atualizaDS(dSFinal);
+        updateMotoristaUsuario(dS);
 
         //atualizando status motorista ideal
 
+        updateMotoristaIdeal(dT);
+
+
+
+    }
+
+    private void updateMotoristaIdeal(float dT) {
         dTRemanescente = aMotoristaIdeal.getDTRemanescente();
 
         if(dT >= dTRemanescente){
@@ -99,9 +96,20 @@ public class SliderCore {
 
         percentual = aMotoristaIdeal.getDTacumuladoTrecho()/aMotoristaIdeal.getDTtotalTrecho();
         aMotoristaIdeal.setPercentualPercorrido(percentual);
+    }
 
+    private void updateMotoristaUsuario(float dS) {
+        dSTrechoRestante = aMotoristaUsuario.getDSTrechoRestante();
 
+        if(dSTrechoRestante <= dS){
+            dSFinal = dS - dSTrechoRestante;
+            mudaTrecho(aMotoristaUsuario);
+        }
+        else{
+            dSFinal = dS;
+        }
 
+        aMotoristaUsuario.atualizaDS(dSFinal);
     }
 
     private void mudaTrecho(Motorista aMotorista) {
