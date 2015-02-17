@@ -56,7 +56,7 @@ public class Controller extends Application {
 
     private boolean licenseCheckON = false;
 
-    private boolean sliderON  = false;
+    private boolean sliderON  = true;
 
 
     // Aplication States
