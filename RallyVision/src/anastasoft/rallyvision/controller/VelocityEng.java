@@ -1,131 +1,88 @@
 package anastasoft.rallyvision.controller;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 class VelocityEng {
 
-    private static final int DELTA_S = 0;
-    private static final int INSTANT_VEL = 1;
-    private static final int AVRG_VEL = 2;
-    private static final int RATIO = 3;
-    private static final int T_START = 4;
-    private static final int T_TOT = 5;
-    static float instantVel;
-    static float avrgVel;
-    static float deltaStot;
-    static float deltaS;
-    private static Clock aClock;
-    float ratio;
-    Date tStart;
+    private static final int CAR_STATUS = 0;
+    private static final int RELOGIO = 1;
+    private static CarStatus carStatusTemp;
+    private static float deltaS;
+
+    /**
+     * Utilziado localmente para evitar acessar instancias da lista...
+     */
+    private static Relogio aRelogio;
     Long deltaTTot;
-    private List<Float> valuesList;
+    private ArrayList<Object> valuesList;
 
-    public VelocityEng(float ratio, Clock aClock) {
+    public VelocityEng(CarStatus carStatus, Relogio aRelogio) {
         // TODO Auto-generated constructor stub
-        this.ratio = ratio;
+        this.carStatusTemp = carStatus;
 
-        valuesList = new ArrayList<Float>();
-        valuesList.add((float) 0);
-        valuesList.add((float) 0);
-        valuesList.add((float) 0);
-        valuesList.add((float) 0);
-        valuesList.add((float) 0);
-        valuesList.add((float) 0);
+        valuesList = new ArrayList<Object>();
 
-        deltaTTot = (long) 0;
-        instantVel = 0;
-        avrgVel = 0;
-        deltaStot = 0;
+
+        carStatus.setInstantVel(0);
+        carStatus.setAvrgVel(0);
+        carStatus.setDeltaStot(0);
         deltaS = 0;
 
-        tStart = new Date(System.currentTimeMillis());
+        valuesList.add(carStatus);
+        valuesList.add((aRelogio));
 
-        this.aClock = aClock;
-    }
-
-    protected int getAvrgVel() {
-
-        return (int) avrgVel;
 
     }
 
-    protected int getDistance() {
-        return (int) deltaStot;
-    }
+
+
 
     protected void updateEnd(int pulse) {
-
+        aRelogio = ((Relogio)valuesList.get(RELOGIO));
+        carStatusTemp = (CarStatus)valuesList.get(CAR_STATUS);
         // updating Spaces
         deltaS = convert(pulse);
-        deltaStot += deltaS;
-        deltaTTot = aClock.getDeltaTTot();
+        carStatusTemp.incrementaDeltaStot(deltaS);
+        deltaTTot = aRelogio.getDeltaTTotBasico();
         // updating times
 
         // updating velocities
-        instantVel = (float) (3.6 * deltaS / (((float) (aClock.getDeltaT())) / ((float) 1000)));
-        avrgVel    = (float) (3.6 * deltaStot / (((float) (deltaTTot)) / ((float) 1000)));
-    }
-
-    protected int getInstVel() {
-
-        return (int) instantVel;
-    }
-
-    public ArrayList<Float> getValues() {
-        valuesList.set(DELTA_S, deltaStot);
-        valuesList.set(INSTANT_VEL, instantVel);
-        valuesList.set(AVRG_VEL, avrgVel);
-        valuesList.set(RATIO, ratio);
-        valuesList.set(T_START, (float) tStart.getTime());
-        valuesList.set(T_TOT, (float) deltaTTot);
-        return (ArrayList<Float>) valuesList;
-
-    }
-
-    public void setValues(List<Float> list) {
-        deltaStot = list.get(DELTA_S);
-        instantVel = list.get(INSTANT_VEL);
-        avrgVel = list.get(AVRG_VEL);
-        ratio = list.get(RATIO);
-
-        float t = list.get(T_START);
-        tStart.setTime((long) t);
-
-        t = list.get(T_TOT);
-
-        deltaTTot = (long) t;
-    }
-
-    protected void zerar() {
-        deltaS = 0;
-        instantVel = 0;
-        avrgVel = 0;
-        deltaStot = 0;
-        deltaTTot = (long) 0;
-        tStart.setTime((System.currentTimeMillis()));
-
+        carStatusTemp.setInstantVel(
+                (float) (3.6 * deltaS / (((float) (aRelogio.getDeltaT())) / ((float) 1000)))
+        );
+        carStatusTemp.setAvrgVel(
+                (float) (3.6 * carStatusTemp.getDeltaStot() / (((float) (deltaTTot)) / ((float) 1000)))
+        );
     }
 
 
-    // retorna em milissegundos
-    public float getDeltaT(){
-        return (float)aClock.getDeltaT();
+
+    public ArrayList<Object> getValues() {
+
+        return (ArrayList<Object>) valuesList;
+
     }
+
+    public void setValues(ArrayList<Object> list) {
+        this.valuesList = list;
+    }
+
+
+
+
+
 
     private float convert(int pulse) {
-        return pulse * ratio;
+        return pulse *
+                        (
+                            ((CarStatus)valuesList.get(CAR_STATUS))
+                                .getAfericao()
+                                    .getRatio()
+                        );
     }
 
-    public void setRatio(float ratio) {
-        this.ratio = ratio;
-    }
 
-    protected void setDeltaSTotal(int value) {
-        // TODO Auto-generated method stub
-        this.deltaStot = value;
-    }
+
 
     public float getDeltaS() {
         return deltaS;

@@ -95,6 +95,7 @@
         <item name="android:textSize">40sp</item>
     </style>
 
+
     <style name="velocimetro_vermelho" parent="@style/velocimetro_preto">
         <item name="android:textColor">#f00</item>
         <item name="android:textColorHighlight">@color/abc_search_url_text_pressed</item>

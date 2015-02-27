@@ -15,7 +15,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.UUID;
 
-import anastasoft.rallyvision.R;
+import anastasoft.rallyvisionaluguel.R;
 import anastasoft.rallyvision.controller.Controller;
 
 public class BTManager {
@@ -447,7 +447,7 @@ public class BTManager {
         public void write(byte[] buffer) {
             try {
                 mmOutStream.write(buffer);
-                //aTimAdpt.beginTimeCount();
+                //aTimAdpt.beginBasicTimeCount();
 
                 // Share the sent message back to the UI Activity
                 mHandler.obtainMessage(Controller.MESSAGE_WRITE, -1, -1, buffer)

@@ -21,8 +21,7 @@ import android.view.MenuItem;
 
 import java.util.List;
 
-import anastasoft.rallyvision.R;
-import anastasoft.rallyvision.R.string;
+import anastasoft.rallyvisionaluguel.R;
 import anastasoft.rallyvision.command.Command;
 import anastasoft.rallyvision.command.SetRatioCommand;
 import anastasoft.rallyvision.controller.Controller;
@@ -141,7 +140,7 @@ public class SettingsActivity extends PreferenceActivity implements
     }
 
     private void loadAfericaoList() {
-        ListPreference lPref = (ListPreference) findPreference(getResources().getString(string.ratio_key_list));
+        ListPreference lPref = (ListPreference) findPreference(getResources().getString(R.string.ratio_key_list));
         List<Afericao> afericaoList = aController.getListaAfericoes();
 
         CharSequence entries[] = new String[afericaoList.size()];
@@ -332,7 +331,7 @@ public class SettingsActivity extends PreferenceActivity implements
 
 
 
-        if (key.equals(getResources().getString(string.descanso_key))){
+        if (key.equals(getResources().getString(R.string.descanso_key))){
             CheckBoxPreference pref = (CheckBoxPreference)findPreference(key);
             if(pref.isChecked()){
                 pref.setChecked(true);
@@ -341,7 +340,7 @@ public class SettingsActivity extends PreferenceActivity implements
                 pref.setChecked(false);
             }
         }
-        if(key.equals(res.getString((string.ratio_key_list)))){
+        if(key.equals(res.getString((R.string.ratio_key_list)))){
             ListPreference aListPref = (ListPreference) findPreference(key);
 
             updateRatioSummary(sharedPreferences, "example_ratio");

@@ -5,19 +5,30 @@
 
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="3"
+        android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_config"
-        android:orderInCategory="2"
-        android:title="@string/config_ratio"
-        app:showAsAction="never" />
+        android:icon="@drawable/ic_action_settings"
+        app:showAsAction="always" />
     <item
         android:id="@+id/action_slider_carregar_trecho"
-        android:orderInCategory="1"
+        android:orderInCategory="99"
+        android:icon="@drawable/ic_action_download"
         android:title="@string/slider_carregar_prova"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_config"
+        android:orderInCategory="98"
+        android:title="@string/config_ratio"
+        android:icon="@drawable/ic_action_edit"
+
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_slider_agendar_prova"
+        android:orderInCategory="97"
+        android:title="@string/slider_agendar_prova"
+        android:icon="@drawable/ic_action_alarms"
+        app:showAsAction="ifRoom" />
 
 
 </menu>

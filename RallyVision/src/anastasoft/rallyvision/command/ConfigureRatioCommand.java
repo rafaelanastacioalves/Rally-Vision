@@ -4,7 +4,7 @@ import android.app.Application;
 import android.text.Html;
 import android.widget.Toast;
 
-import anastasoft.rallyvision.R;
+import anastasoft.rallyvisionaluguel.R;
 import anastasoft.rallyvision.controller.Data.model.Afericao;
 
 public class ConfigureRatioCommand extends Command {

@@ -21,14 +21,15 @@ import com.ubertesters.sdk.Ubertesters;
 import java.util.List;
 
 import anastasoft.rallyvision.BTManager.BTManager;
-import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.Slider.SliderCore;
 import anastasoft.rallyvision.activity.ConnectMediator;
 import anastasoft.rallyvision.activity.DeviceListActivity;
 import anastasoft.rallyvision.activity.MenuPrincipal;
 import anastasoft.rallyvision.controller.Data.DBHelper;
 import anastasoft.rallyvision.controller.Data.model.Afericao;
+import anastasoft.rallyvision.controller.InAppBilling.AluguelChoreographer;
 import anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer;
+import anastasoft.rallyvisionaluguel.R;
 
 // licensing
 
@@ -40,8 +41,8 @@ public class Controller extends Application {
     private MylicenseChekerCallBack mLicenseCheckerCallBack;
     private LicenseChecker mChecker;
 
-    private static final String BASE64_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwsUvY54xrzoeuyTlFg8gVvY6/Uu5HyIQnK4lKiPwC2dQC34D0wQ8JkiXClovkgY4xmxV8jtTufgAV971yqHESLB7KP68sYNM1eMm7JAl1aL4hiw2qakBWsosbUbOnS0NyYMu5Rkt5m2irVdVGdsqnfXaoRChEh7auqhik5ZOxRZKaml2g2pYUx5Nw3cGA2wM0EbXlb0pVuMXuKcK0mo9YXGODm9TfA7NhvzAaVBSqjR5cyFJ9ZWiqIgBX+843auM6TYYXrKE8pEZSr+TVs4g3gfi40E6aWfzD5xhDyZ0eIBvfCVE0VeV55h4v9B4imQWUTwYO6YXre+y+9NsipD5qwIDAQAB";
-
+    private static final String BASE64_PUBLIC_KEY =         "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwsUvY54xrzoeuyTlFg8gVvY6/Uu5HyIQnK4lKiPwC2dQC34D0wQ8JkiXClovkgY4xmxV8jtTufgAV971yqHESLB7KP68sYNM1eMm7JAl1aL4hiw2qakBWsosbUbOnS0NyYMu5Rkt5m2irVdVGdsqnfXaoRChEh7auqhik5ZOxRZKaml2g2pYUx5Nw3cGA2wM0EbXlb0pVuMXuKcK0mo9YXGODm9TfA7NhvzAaVBSqjR5cyFJ9ZWiqIgBX+843auM6TYYXrKE8pEZSr+TVs4g3gfi40E6aWfzD5xhDyZ0eIBvfCVE0VeV55h4v9B4imQWUTwYO6YXre+y+9NsipD5qwIDAQAB";
+    private static final String BASE64_PUBLIC_KEY_ALUGUEL = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw/D1dXUtGrVIjidkGnpx990SWKZ5J0Gh+7p7vwozEAIer+KV5FUokUdPAGiKd/qGzue2xf+8FTcisjdc3hnWGagWF+CaG4M7nQ+Ets5gEmSd6jhmWcijCCnWYl3RkC4WoMnUire3IJDPOjGM/QFz+jzB8hbRjx7G0QTrIVkaKhw7PVWY44QzjIWAlz3G1RIA3c1VkdFSZLPkxZXk5YEAgYUcDUw/pniDvLORRzsJ595oIEQCuI9YF3YuqzhPy/zKpWVJ4e0Xb4eZyHDsWt+Ooakbu3NAKDnTWaRNfAuyczPP6uM/zglmCwNxHPHj+/WUMGT0yvIosn4N5nvJtR/CBwIDAQAB";
     // Generate your own 20 random bytes, and put them here.
     private static final byte[] SALT = new byte[]{
             -46, 65, 30, -128, -103, -57, 74, -64, 51, 88, -95, -45, 77, -117, -36, -113, -11, 32, -64,
@@ -50,14 +51,16 @@ public class Controller extends Application {
 
     // Test switch
 
-    private boolean testON = true;
+    private boolean testON = false;
 
     private boolean uberON = false;
 
     private boolean licenseCheckON = false;
 
-    private boolean sliderON  = true;
+    private boolean sliderON  = false;
 
+
+    private static final int  clockBasico = 500;
 
     // Aplication States
 
@@ -91,6 +94,7 @@ public class Controller extends Application {
     // Intent request codes
     private static final int REQUEST_CONNECT_DEVICE = 1;
     private static final int REQUEST_ENABLE_BT = 2;
+
     private static boolean FIRST_RUN = true;
     private static Resources aResource;
     private static String RATIO = "example_ratio";
@@ -218,6 +222,7 @@ public class Controller extends Application {
             }
         }
     };
+    private AluguelChoreographer aAluguelChoreographer;
 
     public DBHelper getDbHelper() {
         return dbHelper;
@@ -305,6 +310,15 @@ public class Controller extends Application {
         aResource = getResources();
         this.currentAct = currentAct;
 
+        if(aAluguelChoreographer == null){
+            if(getApplicationContext().getPackageName().endsWith("rallyvisionaluguel")){
+                    aAluguelChoreographer = new AluguelChoreographer(this, BASE64_PUBLIC_KEY_ALUGUEL);
+
+                }
+            }
+
+
+
         // ------------ubertesters      -------------//
 
         if (uberON) {
@@ -333,10 +347,16 @@ public class Controller extends Application {
 
         }
 
+        //Relogio
+
+        Relogio aRelogio = new Relogio(clockBasico,this);
 
         // -------- other components --------//
         if (aObervable == null) {
-            aObervable = new Observable(this);
+            aObervable = new Observable(this, aRelogio);
+            aObervable.Attach(aRelogio);
+            aRelogio.setaObservable(aObervable);
+
 
         }
 
@@ -458,14 +478,7 @@ public class Controller extends Application {
     }
 
 
-    private boolean isRatioDefault(float ratio2) {
-        // TODO Auto-generated method stub
-        if (aObervable.getRatio() == (float) 1.0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+
 
     private void doCheck() {
         try{
@@ -546,6 +559,9 @@ public class Controller extends Application {
     public boolean isTestOn() {
         return testON;
     }
+    public boolean isUberTestOn(){
+        return uberON;
+    }
 
     public void startExecution(Activity currentActivity) {
         if (isTestOn())
@@ -576,11 +592,11 @@ public class Controller extends Application {
         return this.mHandler;
     }
 
-    public void actionAfterBlueTooth(int requestCode, int resultCode,
+    public void handleActivityResult(int requestCode, int resultCode,
                                      Intent data) {
 
         if (isTestOn())
-            Log.d(TAG, "actionAfterBlueTooth" + resultCode);
+            Log.d(TAG, "handleActivityResult" + resultCode);
         switch (requestCode) {
             case REQUEST_CONNECT_DEVICE:
                 // When DeviceListActivity returns with a device to connect
@@ -632,8 +648,10 @@ public class Controller extends Application {
      */
     public void stopAll(){
         stopCommunication();
-        aCountConv = null;
 
+        if(aAluguelChoreographer!= null){
+            aAluguelChoreographer.onDestroy();
+        }
     }
 
     public void stopCommunication() {
@@ -679,11 +697,13 @@ public class Controller extends Application {
             float ratioTemp;
             float ratioSis;
 
+            CarStatus carStatusTemp = aObervable.getCarStatus();
+
             // retrieving deltaS sistem
-            deltaSSistema = aObervable.getValues().get(0);
+            deltaSSistema = carStatusTemp.getDeltaStot();
 
             // retrieving ratio sistem
-            ratioSis = aObervable.getValues().get(3);
+            ratioSis = carStatusTemp.getAfericao().getRatio();
 
             // temp Ratio
             ratioTemp = deltaSAfericao / deltaSSistema;
@@ -721,7 +741,8 @@ public class Controller extends Application {
     }
 
     public Afericao getAfericao() {
-        return aObervable.getAfericao();
+        CarStatus carStatusTemp = aObervable.getCarStatus();
+        return carStatusTemp.getAfericao();
     }
 
     public int getIndexDeAfericao(Afericao afericao, List<Afericao> afericaoList) {
@@ -732,6 +753,20 @@ public class Controller extends Application {
         }
 
         return -1;
+    }
+
+    /**
+     * Utilizado para fornecer a referencia do Aluguel Choreographer
+     * @return null se a versão do aplicativo não é para aluguel ou a referência do choreographer.
+     */
+    public AluguelChoreographer getAluguelChoreographer() {
+        if(aAluguelChoreographer != null){
+            return aAluguelChoreographer;
+
+        }
+        else{
+            return null;
+        }
     }
 
 
@@ -745,11 +780,10 @@ public class Controller extends Application {
         protected String TAG = "CounterAndConverter";
         protected int STATE;
         protected int CLOCK_STATE;
-        float ratio;
         int distance;
         Controller aController;
         private VelocityEng aVelEng;
-        private Clock aClock;
+        private Relogio aRelogioTemp;
         private Observable aObservable;
         private SliderCore aSliderCore;
 
@@ -759,47 +793,43 @@ public class Controller extends Application {
 
             this.aObservable = aObservable;
 
-            ratio = aObervable.getRatio();
-
-
             //this clock can change the variable CLOCK_STATE;
-            aClock = new Clock(300, this, aObservable);
-            aObservable.Attach(aClock);
-            aVelEng = new VelocityEng(ratio, aClock);
+            aVelEng = new VelocityEng(aObservable.getCarStatus(), aRelogioTemp);
             // TODO Auto-generated constructor stub
 
             aSliderCore = null;
         }
 
-        public void setOdometer(int value) {
-            // TODO Auto-generated method stub
-            aVelEng.setDeltaSTotal(value);
-        }
 
-        public void resetState() {
-            if (isTestOn())
-                Log.e(TAG, " +++ RESET_STATE +++");
 
-            aClock.start();
-
-            // redundant
-            aClock.beginTimeCount();
-            this.STATE = STATE_READY;
-            CLOCK_STATE = CLOCK_STATE_COUNTING;
-
-        }
+//        public void resetState() {
+//            if (isTestOn())
+//                Log.e(TAG, " +++ RESET_STATE +++");
+//
+//            aRelogioTemp.start();
+//
+//            // redundant
+//            aRelogioTemp.beginBasicTimeCount();
+//            this.STATE = STATE_READY;
+//            CLOCK_STATE = CLOCK_STATE_COUNTING;
+//
+//        }
 
         @Override
         public void run() {
-            aClock.start();
-
+            aRelogioTemp = aObervable.getRelogio();
+            long tempClockBasico = aRelogioTemp.getClockBasico();
             // redundant
-            aClock.beginTimeCount();
+            aRelogioTemp.beginBasicTimeCount();
 
-            STATE = STATE_READY;
-            CLOCK_STATE = CLOCK_STATE_READY;
             aVelEng.setValues(aObservable.getValues());
+            try{
+                sleep(tempClockBasico);
 
+            }catch (InterruptedException e){
+
+            }
+            STATE = STATE_READY;
 
             while (STATE != STATE_STOPPED) {
                 switch (STATE) {
@@ -808,7 +838,7 @@ public class Controller extends Application {
                             aController.query();
                             STATE = STATE_WAITING;
                             try {
-                                sleep(300);
+                                sleep(tempClockBasico);
 
                             } catch (InterruptedException e) {
                                 if (testON) {
@@ -841,8 +871,7 @@ public class Controller extends Application {
             // for slider
             if (aSliderCore !=null){
                 try{
-                    aSliderCore.update(aVelEng.getDeltaT(), aVelEng.getDeltaS());
-                    aObervable.setValues(aSliderCore.getStatus());
+                    aSliderCore.update(0, aVelEng.getDeltaS());
                 }catch (NullPointerException e){
                     if(testON){
                         Toast.makeText(getApplicationContext(), "Erro em " + "SliderCoreUpdate: " + e.toString(),Toast.LENGTH_SHORT ).show();
@@ -860,7 +889,7 @@ public class Controller extends Application {
 
         protected void cancel() {
             STATE = STATE_STOPPED;
-            aClock.cancel();
+
         }
 
         public void  setSliderCore(SliderCore aSliderCore){
@@ -871,15 +900,9 @@ public class Controller extends Application {
             aVelEng.setValues(aObervable.getValues());
         }
 
-        protected void setRatio(float ratio) {
-            aVelEng.setRatio(ratio);
-        }
 
-        public void zerar() {
-            aVelEng.zerar();
-            aObservable.setValues(aVelEng.getValues(), this);
 
-        }
+
 
 
     }

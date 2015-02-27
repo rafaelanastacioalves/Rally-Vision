@@ -12,6 +12,7 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -31,35 +32,35 @@ import android.widget.ToggleButton;
 import com.ipaulpro.afilechooser.utils.FileUtils;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import anastasoft.rallyvision.R;
-import anastasoft.rallyvision.Slider.motorista.Motorista;
-import anastasoft.rallyvision.Slider.motorista.MotoristaIdeal;
-import anastasoft.rallyvision.Slider.motorista.MotoristaUsuario;
+import anastasoft.rallyvision.Slider.Motorista;
+import anastasoft.rallyvision.Slider.MotoristaIdeal;
+import anastasoft.rallyvision.Slider.MotoristaUsuario;
 import anastasoft.rallyvision.activity.customfontdemo.TypefaceManager;
 import anastasoft.rallyvision.activity.dialog.ConfigureDialog;
 import anastasoft.rallyvision.activity.dialog.EditDialog;
 import anastasoft.rallyvision.activity.dialog.KeepRatioDialog;
-import anastasoft.rallyvision.activity.dialog.NotConfigureDialog;
+import anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment;
 import anastasoft.rallyvision.command.CarregarArquivoCommand;
 import anastasoft.rallyvision.command.Command;
 import anastasoft.rallyvision.command.StopAllCommand;
+import anastasoft.rallyvision.command.VerificaAluguelStatusCommand;
 import anastasoft.rallyvision.command.Zerar;
 import anastasoft.rallyvision.command.startCommand;
 import anastasoft.rallyvision.command.stopCommunicationCommand;
+import anastasoft.rallyvision.controller.CarStatus;
 import anastasoft.rallyvision.controller.Controller;
 import anastasoft.rallyvision.controller.Data.DBHelper;
 import anastasoft.rallyvision.controller.Observable;
+import anastasoft.rallyvisionaluguel.R;
 
 @SuppressLint("NewApi")
 public class MenuPrincipal extends ActionBarActivity {
 
     private static final int RESULT_SETTINGS = 1;
 
-    private static final int DISTANCE = 0;
-    private static final int INST_VEL = 1;
-    private static final int AVRG_VEL = 2;
+    private static final int CAR_STATUS = 0;
+
 
     private static final int MOTORISTA_USUARIO = 0;
     private static final int MOTORISTA_IDEAL = 1;
@@ -97,9 +98,11 @@ public class MenuPrincipal extends ActionBarActivity {
 
     //Menu Reference
 
-    boolean isSliderActive ;
-    private SliderMotoristaUsuario mSLDMotUsr;
-    private SliderMotoristaIdeal mSLDMotIdeal;
+    private boolean isSliderActive ;
+    private boolean isAgendamentoInicioProvaSliderActive;
+
+    private SliderMotorista mSLDMotUsr;
+    private SliderMotorista mSLDMotIdeal;
 
 
 //    slider
@@ -107,6 +110,7 @@ public class MenuPrincipal extends ActionBarActivity {
      * Usado para manter qual o layout será utilizado.
      */
     private static int layoutResID = R.layout.activity_menu_principal;
+    private Menu aOptionsMenuPrincipal;
 
 
     /***
@@ -122,7 +126,7 @@ public class MenuPrincipal extends ActionBarActivity {
 
         aController = (Controller) getApplicationContext();
 
-
+        FragmentManager var = getSupportFragmentManager();
         try {
             aController.setup(this);
         } catch (DBHelper.AfericaoExistenteException e) {
@@ -151,31 +155,69 @@ public class MenuPrincipal extends ActionBarActivity {
         }
     }
 
+
+
     /***
      * Chamado quando:
      * - Retomamos o aplicativo;
      * - Voltamos das opções;
      */
     @Override
-    protected void onRestart() {
-        super.onRestart();
+    protected void onStart() {
+        super.onStart();
         cancelNotification();
+        if (aOptionsMenuPrincipal != null){
+            onPrepareOptionsMenu(aOptionsMenuPrincipal);
 
-    }
+        }
 
-    public void warnNotCalibrated() {
-        NotConfigureDialog dFrag = new NotConfigureDialog();
-        dFrag.show(getSupportFragmentManager(), "not_calibrated");
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-
+        this.aOptionsMenuPrincipal = menu;
         getMenuInflater().inflate(R.menu.menu_principal, menu);
-        MenuItem aMenuItem = menu.findItem(R.id.action_slider_carregar_trecho);
-        aMenuItem.setVisible(isSliderActive);
-        return true;
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+            MenuItem aMenuItem = menu.findItem(R.id.action_slider_carregar_trecho);
+            if(aMenuItem != null){
+                aMenuItem.setVisible(isSliderActive);
+
+            }
+
+            aMenuItem = menu.findItem(R.id.action_slider_agendar_prova);
+            if(aMenuItem != null){
+//                    aMenuItem.setVisible(true);
+                aMenuItem.setVisible(isAgendamentoInicioProvaSliderActive);
+
+            }
+            return super.onPrepareOptionsMenu(menu);
+
+
+
+    }
+
+    @Override
+    protected void onResume() {
+
+        super.onResume();
+        cmd = new VerificaAluguelStatusCommand(aController);
+        cmd.Execute();
+
+
+
+
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
     }
 
     @Override
@@ -192,7 +234,11 @@ public class MenuPrincipal extends ActionBarActivity {
                 break;
         }
 
-        aController.actionAfterBlueTooth(requestCode, resultCode, data);
+
+
+
+
+        aController.handleActivityResult(requestCode, resultCode, data);
     }
 
     @Override
@@ -223,6 +269,12 @@ public class MenuPrincipal extends ActionBarActivity {
             } catch (ActivityNotFoundException e) {
                 // The reason for the existence of aFileChooser
             }
+            return true;
+        }
+
+        if(id == R.id.action_slider_agendar_prova){
+            TimePickerDialogFragment newFragment = new TimePickerDialogFragment();
+            newFragment.show(getSupportFragmentManager(),"timePicker");
             return true;
         }
 
@@ -314,15 +366,14 @@ public class MenuPrincipal extends ActionBarActivity {
 
     public void update() {
 
-        List<Float> lstValues;
+        ArrayList<Object> lstValues;
         lstValues = aObervable.getValues();
+        CarStatus carStatusTemp = (CarStatus)lstValues.get(CAR_STATUS);
         float a, b, c;
-        a = lstValues.get(DISTANCE);
-        b = lstValues.get(INST_VEL);
-        c = lstValues.get(AVRG_VEL);
-        updateDistance((int) a);
-        updateInstVel((int) b);
-        updateAvrgVel((int) c);
+
+        updateDistance((int) carStatusTemp.getDeltaStot());
+        updateInstVel((int)  carStatusTemp.getInstantVel());
+        updateAvrgVel((int)  carStatusTemp.getAvrgVel());
 
     }
 
@@ -335,6 +386,8 @@ public class MenuPrincipal extends ActionBarActivity {
                 getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         }
     }
+
+
 
     public void updateDistance(int distance) {
         if (aController.isTestOn()) {
@@ -415,6 +468,33 @@ public class MenuPrincipal extends ActionBarActivity {
         mINSTveloc.TVdig1.setText(String.valueOf(digit[2]));
         mINSTveloc.TVdig2.setText(String.valueOf(digit[1]));
         mINSTveloc.TVdig3.setText(String.valueOf(digit[0]));
+    }
+
+    public void updateTrechoMotorista(SliderMotorista aSlider, String tipoTrecho ,int numTrecho){
+
+        if (aController.isTestOn()) {
+            Log.e(TAG, " +++ updateInstVel +++ ");
+        }
+
+        String number = String.valueOf(numTrecho);
+
+        switch (number.length()) {
+            case 1:
+                number = "00" + number;
+                break;
+            case 2:
+                number = "0" + number;
+                break;
+            default:
+                break;
+        }
+        char[] digit = number.toCharArray();
+
+        aSlider.TVSliderNumTrechodig1.setText(String.valueOf(digit[2]));
+        aSlider.TVSliderNumTrechodig2.setText(String.valueOf(digit[1]));
+        aSlider.TVSliderNumTrechodig3.setText(String.valueOf(digit[0]));
+
+        aSlider.TVSliderTipoTrecho.setText(tipoTrecho);
     }
 
     public void setObservable(Observable observable) {
@@ -502,8 +582,8 @@ public class MenuPrincipal extends ActionBarActivity {
             mINSTveloc = new INSTvelocimeter();
             mAVGveloc = new AVRGvelocimeter();
 
-            mSLDMotIdeal  = new SliderMotoristaIdeal();
-            mSLDMotUsr = new SliderMotoristaUsuario();
+            mSLDMotIdeal  = new SliderMotorista();
+            mSLDMotUsr = new SliderMotorista();
 
 
             // odometer
@@ -525,11 +605,19 @@ public class MenuPrincipal extends ActionBarActivity {
             mAVGveloc.TVdig3 = (TextView) findViewById(R.id.AVRGVelDig03);
 
             // Sliders
-            mSLDMotUsr.TVSliderTipoTrechoUsuário = (TextView) findViewById(R.id.tipoTrechoMotoristaUsuario);
-            mSLDMotUsr.PBSliderPercentUsuario = (ProgressBar) findViewById(R.id.progressBarMotoristaUsuário);
+            mSLDMotUsr.TVSliderTipoTrecho =     (TextView) findViewById(R.id.tipoTrechoMotoristaUsuario);
+            mSLDMotUsr.TVSliderNumTrechodig1 =  (TextView) findViewById(R.id.numTrechoMotoristaUsuarioDig1);
+            mSLDMotUsr.TVSliderNumTrechodig2 =  (TextView) findViewById(R.id.numTrechoMotoristaUsuarioDig2);
+            mSLDMotUsr.TVSliderNumTrechodig3 =  (TextView) findViewById(R.id.numTrechoMotoristaUsuarioDig3);
+            mSLDMotUsr.PBSliderPercent = (ProgressBar) findViewById(R.id.progressBarMotoristaUsuário);
 
-            mSLDMotIdeal.TVSliderTipoTrechoIdeal = (TextView) findViewById(R.id.tipoTrechoMotoristaIdeal);
-            mSLDMotIdeal.PBSliderPercentIdeal = (ProgressBar) findViewById(R.id.progressBarMotoristaIdeal);
+            mSLDMotIdeal.TVSliderTipoTrecho = (TextView) findViewById(R.id.tipoTrechoMotoristaIdeal);
+            mSLDMotIdeal.TVSliderNumTrechodig1 = (TextView) findViewById(R.id.numTrechoMotoristaIdealDig1);
+            mSLDMotIdeal.TVSliderNumTrechodig2 = (TextView) findViewById(R.id.numTrechoMotoristaIdealDig2);
+            mSLDMotIdeal.TVSliderNumTrechodig3 = (TextView) findViewById(R.id.numTrechoMotoristaIdealDig3);
+
+
+        mSLDMotIdeal.PBSliderPercent = (ProgressBar) findViewById(R.id.progressBarMotoristaIdeal);
 
 
 
@@ -604,6 +692,14 @@ public class MenuPrincipal extends ActionBarActivity {
         });
     }
 
+//    public void mostrarTelaBemVindo() {
+//
+//        BemVindoAluguelDialog bemVindoAluguelDialog = new BemVindoAluguelDialog();
+//
+//
+//        bemVindoAluguelDialog.show(getSupportFragmentManager(), "change");
+//    }
+
 
 
 
@@ -613,24 +709,23 @@ public class MenuPrincipal extends ActionBarActivity {
 
             int progress;
 
+        updateTrechoMotorista(mSLDMotIdeal, (motoristasStatus.get(MOTORISTA_IDEAL))
+                                            .getTipoTrecho(),(motoristasStatus.get(MOTORISTA_IDEAL))
+                                                             .getNumTrecho());
 
-        mSLDMotUsr.TVSliderTipoTrechoUsuário.setText(
-                (motoristasStatus.get(MOTORISTA_USUARIO))
-                    .getTipoTrechoAtual()
-        );
-        mSLDMotIdeal.TVSliderTipoTrechoIdeal.setText(
-                (motoristasStatus.get(MOTORISTA_IDEAL))
-                        .getTipoTrechoAtual()
-        );
+        updateTrechoMotorista(mSLDMotUsr, (motoristasStatus.get(MOTORISTA_USUARIO))
+                    .getTipoTrecho(),(motoristasStatus.get(MOTORISTA_USUARIO))
+                    .getNumTrecho());
+
 
         progress =  (int)  (((float)(((MotoristaUsuario)motoristasStatus.get(MOTORISTA_USUARIO)).
                 getPercentPercorrido()))*100.0);
-        mSLDMotUsr.PBSliderPercentUsuario.setProgress(progress);
+        mSLDMotUsr.PBSliderPercent.setProgress(progress);
 
 
         progress = (int)  (((float)(((MotoristaIdeal)motoristasStatus.get(MOTORISTA_IDEAL)).
                 getPercentPercorrido()))*100.0);
-            mSLDMotIdeal.PBSliderPercentIdeal.setProgress(progress);
+            mSLDMotIdeal.PBSliderPercent.setProgress(progress);
         }catch (Exception erro){
             if (aController.isTestOn()) {
                 Log.e(TAG, erro.getMessage());
@@ -639,14 +734,37 @@ public class MenuPrincipal extends ActionBarActivity {
 
     }
 
-    public void setUpSliders(boolean b) {
-        isSliderActive =true;
-        layoutResID = R.layout.activity_menu_principal_sliders;
+
+
+    public void setUpSliders(boolean on) {
+        if(on){
+            isSliderActive =true;
+            layoutResID = R.layout.activity_menu_principal_sliders;
+        }else{
+            isSliderActive = false;
+            layoutResID = R.layout.activity_menu_principal;
+        }
+
     }
+    public void setAgendarInicioProvaSlider(boolean on){
+        if(on){
+            isAgendamentoInicioProvaSliderActive = true;
+
+        }else {
+            isAgendamentoInicioProvaSliderActive = false;
+        }
+        ;
+    }
+
+
     public void setaConnectMediator(ConnectMediator aCM){
         this.aConnectMediator = aCM;
     }
+
+
+
 }
+
 
 class odometer {
 
@@ -673,14 +791,13 @@ class INSTvelocimeter {
     TextView TVdig3;
 }
 
-class SliderMotoristaIdeal {
+class SliderMotorista {
 
-    TextView            TVSliderTipoTrechoIdeal;
-    ProgressBar         PBSliderPercentIdeal;
+    TextView            TVSliderTipoTrecho;
+    TextView            TVSliderNumTrechodig1;
+    TextView            TVSliderNumTrechodig2;
+    TextView            TVSliderNumTrechodig3;
+    ProgressBar         PBSliderPercent;
 }
 
-class SliderMotoristaUsuario {
-    TextView            TVSliderTipoTrechoUsuário;
-    ProgressBar         PBSliderPercentUsuario;
-}
 

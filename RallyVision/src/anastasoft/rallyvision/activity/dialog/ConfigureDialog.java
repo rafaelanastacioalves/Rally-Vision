@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import java.lang.reflect.Field;
 
-import anastasoft.rallyvision.R;
+import anastasoft.rallyvisionaluguel.R;
 import anastasoft.rallyvision.command.Command;
 import anastasoft.rallyvision.command.ConfigureRatioCommand;
 import anastasoft.rallyvision.controller.Controller;
@@ -156,20 +156,5 @@ public class ConfigureDialog extends android.support.v4.app.DialogFragment {
      *
      * @return The Button OK or null if not found
      */
-//	protected View getOkButton() {
-//		
-//		ViewGroup v = (ViewGroup) getDialog().getCurrentFocus().getParent()
-//				.getParent().getParent().getParent();
-//		
-//		View v2 = ((ViewGroup) ((ViewGroup) v.getChildAt(3))
-//				.getChildAt(0)).getChildAt(2);
-//		if (v2.getClass() == Button.class) {
-//			if (((Button) v2).getText().equals(res.getString(R.string.OK))) {
-//				return v2;
-//			}
-//		}
-//		
-//		return null;
-//		
-//	}
+
 }

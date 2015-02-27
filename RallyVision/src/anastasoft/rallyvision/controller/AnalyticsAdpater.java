@@ -8,7 +8,7 @@ import com.google.android.gms.analytics.Tracker;
 
 import java.util.HashMap;
 
-import anastasoft.rallyvision.R;
+import anastasoft.rallyvisionaluguel.R;
 
 /**
  * Created by rafaelanastacioalves on 02/01/15.

@@ -3,7 +3,7 @@ package anastasoft.rallyvision.command;
 import android.app.Application;
 import android.widget.Toast;
 
-import anastasoft.rallyvision.R;
+import anastasoft.rallyvisionaluguel.R;
 import anastasoft.rallyvision.controller.Data.model.Afericao;
 
 public class CreateRatioCommand extends Command {

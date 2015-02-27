@@ -3,10 +3,9 @@ package anastasoft.rallyvision.controller;
 import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import anastasoft.rallyvision.Slider.motorista.Motorista;
+import anastasoft.rallyvision.Slider.Motorista;
 import anastasoft.rallyvision.activity.MenuPrincipal;
 import anastasoft.rallyvision.controller.Controller.CounterAndConverter;
 import anastasoft.rallyvision.controller.Data.DBHelper;
@@ -15,90 +14,53 @@ import anastasoft.rallyvision.controller.Data.model.Afericao;
 public class Observable {
 
     private static final String TAG = "Observable";
-    private static final int INDEX_DISTANCE = 0;
-    private static final int INDEX_INST_VEL = 1;
-    private static final int INDEX_AVRG_VEL = 2;
-    private static final int INDEX_RATIO = 3;
-    private static final int INDEX_T_START = 4;
-    private static final int INDEX_T_TOT = 5;
-    private static float instantVel;
-    private static float avrgVel;
-    private static float deltaStot;
-    private static Date tStart;
-    private static long tTot;
-    private static List<Object> aObservers;
-    private static List<Float> listValues;
-    private  Controller aController;
-    float ratio;
-    private ArrayList<Motorista> motoristasStatus;
-    private Afericao aFericao;
+    private static final int INDEX_CAR_STATUS = 0;
+    private static final int INDEX_RELOGIO = 1;
+    private static CarStatus aCarStatus;
 
-    public Observable(Controller aController) {
+    private static List<Object> aObservers;
+    private static ArrayList<Object> listValues;
+    private  Controller aController;
+    private ArrayList<Motorista> motoristasStatus;
+
+    public Observable(Controller aController, Relogio aRelogio) {
         // TODO Auto-generated constructor stub
 
         this.aController = aController;
-        instantVel = 0;
-        avrgVel = 0;
-        deltaStot = 0;
+        aCarStatus = new CarStatus();
+        aCarStatus.setInstantVel(0);
+        aCarStatus.setAvrgVel(0);
+        aCarStatus.setDeltaStot(0);
         aObservers = new ArrayList<Object>();
 
         // initializing values
-        listValues = new ArrayList<Float>();
+        listValues = new ArrayList<Object>();
 
-        listValues.add(deltaStot);
-        listValues.add(instantVel);
-        listValues.add(avrgVel);
-        listValues.add(ratio);
-        listValues.add((float) 0);
-        listValues.add((float) 0);
+        listValues.add(aCarStatus);
+        listValues.add(aRelogio);
 
-        // timers
-        tStart = new Date();
-        tTot = 0;
+
     }
 
     /**
      * @return array<float>: [Distance, InstVelocity, AvarageVelocity, Ratio,
      * tStart, tLast]
      */
-    public List<Float> getValues() {
+    public ArrayList<Object> getValues() {
         if ( aController.isTestOn())
             Log.e(TAG, " +++ getValues +++");
 
-        listValues.set(INDEX_DISTANCE, deltaStot);
-        listValues.set(INDEX_INST_VEL, instantVel);
-        listValues.set(INDEX_AVRG_VEL, avrgVel);
-        listValues.set(INDEX_RATIO, ratio);
-        listValues.set(INDEX_T_START, (float) tStart.getTime());
-        listValues.set(INDEX_T_TOT, (float) tTot);
+
         return listValues;
     }
 
     /**
      * @return array: [Distance, InstVelocity, AvarageVelocity ]
+     * @param values
      */
-    public void setValues(List<Float> values)  {
+    public void setValues(List<Object> values)  {
 
-        for (int i = 0; i < values.size(); i++) {
-
-            switch (i) {
-                case INDEX_DISTANCE:
-                    deltaStot = values.get(i);
-                    break;
-                case INDEX_INST_VEL:
-                    instantVel = values.get(i);
-                    break;
-                case INDEX_AVRG_VEL:
-                    avrgVel = values.get(i);
-                    break;
-                case INDEX_RATIO:
-                    ratio = values.get(INDEX_RATIO);
-
-                default:
-                    break;
-            }
-
-        }
+        this.listValues = (ArrayList<Object>)values;
 
         try {
             Notify();
@@ -108,20 +70,20 @@ public class Observable {
 
     }
 
-    public float getRatio() {
-        return ratio;
-    }
 
-    public void setAfericao(Afericao afericao) throws DBHelper.AfericaoExistenteException {
+    public void setAfericao(Afericao afericao) {
         // TODO Auto-generated method stub
-        this.aFericao = afericao;
-        this.ratio = aFericao.getRatio();
-        try{
+
+        aCarStatus = (CarStatus) listValues.get(INDEX_CAR_STATUS);
+        aCarStatus.setAfericao(afericao);
+        listValues.set(INDEX_CAR_STATUS, aCarStatus);
+        try {
             Notify();
-        }catch (DBHelper.AfericaoExistenteException e){
+        } catch (DBHelper.AfericaoExistenteException e) {
             throw e;
         }
     }
+
 
     public void Attach(Object object) {
         aObservers.add(object);
@@ -149,9 +111,7 @@ public class Observable {
                 if (array_element.getClass() == PreferencesAdapter.class) {
                     ((PreferencesAdapter) array_element).update();
                 }
-                if (array_element.getClass() == Clock.class) {
-                    ((Clock) array_element).update();
-                }
+
                 if(array_element.getClass() == DBHelper.class)
                     ((DBHelper) array_element).update();
             }
@@ -172,53 +132,38 @@ public class Observable {
         }
     }
 
-    public long getStartTime() {
-        return tStart.getTime();
-    }
 
-    public void setValues(ArrayList<Float> values,
+
+    public void setValues(ArrayList<Object> values,
                           CounterAndConverter counterAndConverter) {
-        // TODO Auto-generated method stub
-        for (int i = 0; i < values.size(); i++) {
-
-            switch (i) {
-                case INDEX_DISTANCE:
-                    deltaStot = values.get(i);
-                    break;
-                case INDEX_INST_VEL:
-                    instantVel = values.get(i);
-                    break;
-                case INDEX_AVRG_VEL:
-                    avrgVel = values.get(i);
-                    break;
-                default:
-                    break;
-            }
-        }
+        this.listValues = values;
 
         Notify(counterAndConverter);
 
     }
 
     public void zerar() {
-        avrgVel = 0;
-        deltaStot = 0;
-        instantVel = 0;
-        tTot = 0;
-        tStart.setTime(System.currentTimeMillis());
+        aCarStatus = (CarStatus)listValues.get(INDEX_CAR_STATUS);
+        aCarStatus.setAvrgVel(0);
+        aCarStatus.setDeltaStot(0);
+        aCarStatus.setInstantVel(0);
 
+        Relogio aRelogio = (Relogio)listValues.get(INDEX_RELOGIO);
+        aRelogio.reset();
+        listValues.set(INDEX_CAR_STATUS, aCarStatus);
+        listValues.set(INDEX_RELOGIO,aRelogio);
             Notify();
 
     }
 
-    public float getOdometer() {
-        // TODO Auto-generated method stub
-        return deltaStot;
-    }
+
 
     public void setOdometer(int value) {
-        deltaStot = value;
+        aCarStatus = (CarStatus) listValues.get(INDEX_CAR_STATUS);
+        aCarStatus.setDeltaStot(value);
+        listValues.set(INDEX_CAR_STATUS , aCarStatus);
         try {
+
             Notify();
         } catch (DBHelper.AfericaoExistenteException e) {
         }
@@ -229,7 +174,7 @@ public class Observable {
         Notify(motoristasStatus);
     }
 
-    private void Notify(ArrayList<Motorista> motoristasStatus) {
+    public void Notify(ArrayList<Motorista> motoristasStatus) {
         Object array_element;
 
         for (int i = 0; i < aObservers.size(); i++) {
@@ -246,9 +191,12 @@ public class Observable {
         }
     }
 
-    public Afericao getAfericao() {
-        return aFericao;
+    public CarStatus getCarStatus() {
+        return aCarStatus;
     }
 
 
+    public Relogio getRelogio() {
+        return (Relogio)listValues.get(INDEX_RELOGIO);
+    }
 }

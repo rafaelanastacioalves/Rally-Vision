@@ -8,7 +8,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-import anastasoft.rallyvision.R;
+import anastasoft.rallyvisionaluguel.R;
 import anastasoft.rallyvision.controller.Data.DBHelper;
 import anastasoft.rallyvision.controller.Data.model.Afericao;
 
@@ -16,7 +16,7 @@ public class PreferencesAdapter {
 
     private static String RATIO;
     private static String SCREEN;
-    private static int INDEX_RATIO = 3;
+    private static int INDEX_CARSTATUS = 0;
     private static SharedPreferences sPreferences;
     private static String TAG;
     private static Resources res;
@@ -44,17 +44,7 @@ public class PreferencesAdapter {
         
     }
 
-    private void setRatio2(float ratio) {
-        editor = sPreferences.edit();
-        float currentRatio = getRatio();
 
-        if (currentRatio != ratio) {
-            editor.putString("ratio_key_list", String.valueOf(ratio));
-
-            editor.commit();
-        }
-
-    }
 
     public float getRatio() {
         sPreferences = PreferenceManager
@@ -115,8 +105,9 @@ public class PreferencesAdapter {
     public void update() {
         if (aController.isTestOn())
             Log.e(TAG, " +++ setState +++");
-        ArrayList<Float> tempArray = (ArrayList<Float>) aObservable.getValues();
-        setRatio((tempArray.get(INDEX_RATIO)));
+        ArrayList<Object> tempArray =  aObservable.getValues();
+        CarStatus carStatusTemp = (CarStatus)tempArray.get(INDEX_CARSTATUS);
+        setRatio(carStatusTemp.getAfericao().getRatio());
     }
 
     public boolean getScreenOnStatus(){

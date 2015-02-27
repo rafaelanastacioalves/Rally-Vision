@@ -184,7 +184,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void update()  {
         if(aObservable != null){
             try{
-                createAfericao(aObservable.getAfericao());
+                createAfericao(aObservable.getCarStatus().getAfericao());
 
             }catch (Exception e){
                 throw new AfericaoExistenteException();

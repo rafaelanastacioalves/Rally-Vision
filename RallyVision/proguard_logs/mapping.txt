@@ -49,8 +49,741 @@ anastasoft.rallyvision.BTManager.BTManager$ConnectedThread -> anastasoft.rallyvi
     void run() -> run
     void write(byte[]) -> a
     void cancel() -> a
-anastasoft.rallyvision.R -> anastasoft.rallyvision.a:
-anastasoft.rallyvision.R$styleable -> anastasoft.rallyvision.b:
+anastasoft.rallyvision.Slider.Motorista -> anastasoft.rallyvision.b.a:
+    anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho trechoAtual -> a
+    float percentualPercorrido -> b
+    int getNumTrecho() -> a
+    java.lang.String getTipoTrecho() -> b
+    float getPercentPercorrido() -> c
+    void setPercentualPercorrido(float) -> a
+    void setTrecho(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho) -> a
+anastasoft.rallyvision.Slider.MotoristaIdeal -> anastasoft.rallyvision.b.b:
+    float deltaTacumuladoTrecho -> c
+    float deltaTTrechoTotal -> d
+    void zeraTrocandoTrecho() -> d
+    void setTrecho(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho) -> a
+    float getDTRemanescente() -> e
+    void incrementaDTacumuladoTrecho(float) -> b
+    float getDTacumuladoTrecho() -> f
+    float getDTtotalTrecho() -> g
+anastasoft.rallyvision.Slider.MotoristaUsuario -> anastasoft.rallyvision.b.c:
+    float deltaSTrechoTotal -> c
+    float deltaSTrechoPercorrido -> d
+    void zeraTrocandoTrecho() -> d
+    void setTrecho(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho) -> a
+    float getDSTrechoRestante() -> e
+    void atualizaDS(float) -> b
+anastasoft.rallyvision.Slider.Prova_Trecho.Prova -> anastasoft.rallyvision.b.a.a:
+    java.util.ArrayList listaDeTrechos -> a
+    anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho getTrecho(int) -> a
+anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho -> anastasoft.rallyvision.b.a.a.a:
+    int numero -> a
+    float ki -> b
+    float kf -> c
+    float ti -> d
+    float getDeltaStrecho() -> a
+    float getdTTrecho() -> b
+    int getNumTrecho() -> c
+    java.lang.String getTipo() -> d
+anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.TrechoD -> anastasoft.rallyvision.b.a.a.b:
+    float dTTrecho -> e
+    float getdTTrecho() -> b
+    java.lang.String getTipo() -> d
+anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.TrechoN -> anastasoft.rallyvision.b.a.a.c:
+    float dTTrecho -> e
+    float getdTTrecho() -> b
+    java.lang.String getTipo() -> d
+anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.TrechoV -> anastasoft.rallyvision.b.a.a.d:
+    float vMedio -> e
+    float getdTTrecho() -> b
+    java.lang.String getTipo() -> d
+anastasoft.rallyvision.Slider.SliderCore -> anastasoft.rallyvision.b.d:
+    anastasoft.rallyvision.Slider.MotoristaUsuario aMotoristaUsuario -> a
+    anastasoft.rallyvision.Slider.MotoristaIdeal aMotoristaIdeal -> b
+    anastasoft.rallyvision.Slider.Prova_Trecho.Prova aProva -> c
+    float dSTrechoRestante -> d
+    float dTRemanescente -> e
+    float percentual -> f
+    java.util.ArrayList listaMotorista -> g
+    void setProva(anastasoft.rallyvision.Slider.Prova_Trecho.Prova) -> a
+    java.util.ArrayList getStatus() -> a
+    void carregarProva(android.database.Cursor) -> a
+    void update(float,float) -> a
+    void updateMotoristaIdeal(float) -> a
+    void updateMotoristaUsuario(float) -> b
+    void mudaTrecho(anastasoft.rallyvision.Slider.Motorista) -> a
+anastasoft.rallyvision.activity.AVRGvelocimeter -> anastasoft.rallyvision.activity.a:
+    android.widget.TextView TVdig1 -> a
+    android.widget.TextView TVdig2 -> b
+    android.widget.TextView TVdig3 -> c
+anastasoft.rallyvision.activity.ConnectMediator -> anastasoft.rallyvision.activity.b:
+    anastasoft.rallyvision.controller.Controller aController -> a
+    void update() -> a
+    void setState(anastasoft.rallyvision.controller.Controller) -> a
+anastasoft.rallyvision.activity.DeviceListActivity -> anastasoft.rallyvision.activity.DeviceListActivity:
+    java.lang.String EXTRA_DEVICE_ADDRESS -> a
+    android.widget.AdapterView$OnItemClickListener mDeviceClickListener -> b
+    android.content.BroadcastReceiver mReceiver -> c
+    android.bluetooth.BluetoothAdapter mBtAdapter -> d
+    android.widget.ArrayAdapter mPairedDevicesArrayAdapter -> e
+    android.widget.ArrayAdapter mNewDevicesArrayAdapter -> f
+    void onCreate(android.os.Bundle) -> onCreate
+    void onDestroy() -> onDestroy
+    void doDiscovery() -> a
+    android.bluetooth.BluetoothAdapter access$000(anastasoft.rallyvision.activity.DeviceListActivity) -> a
+    android.widget.ArrayAdapter access$100(anastasoft.rallyvision.activity.DeviceListActivity) -> b
+    void access$200(anastasoft.rallyvision.activity.DeviceListActivity) -> c
+anastasoft.rallyvision.activity.DeviceListActivity$1 -> anastasoft.rallyvision.activity.c:
+    anastasoft.rallyvision.activity.DeviceListActivity this$0 -> a
+    void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+anastasoft.rallyvision.activity.DeviceListActivity$2 -> anastasoft.rallyvision.activity.d:
+    anastasoft.rallyvision.activity.DeviceListActivity this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+anastasoft.rallyvision.activity.DeviceListActivity$3 -> anastasoft.rallyvision.activity.e:
+    anastasoft.rallyvision.activity.DeviceListActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+anastasoft.rallyvision.activity.EscolheAluguel -> anastasoft.rallyvision.activity.EscolheAluguel:
+    android.widget.ArrayAdapter listaAlugueisAdapter -> b
+    anastasoft.rallyvision.controller.Controller aController -> c
+    anastasoft.rallyvision.controller.InAppBilling.AluguelChoreographer aAluguelChoreographer -> d
+    android.app.Activity aEscolheAluguel -> a
+    android.widget.ListView listaDeAlugueis -> e
+    android.widget.AdapterView$OnItemClickListener mAluguelClickListener -> f
+    android.widget.TextView aTVEstamosCarregando -> g
+    android.widget.TextView aTVEscolhaUmaOpcao -> h
+    void onCreate(android.os.Bundle) -> onCreate
+    void setupViews() -> b
+    void onStart() -> onStart
+    void onDestroy() -> onDestroy
+    void configuraListaDeAlugueis() -> c
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    void mostraParaEscolher() -> a
+    anastasoft.rallyvision.controller.InAppBilling.AluguelChoreographer access$000(anastasoft.rallyvision.activity.EscolheAluguel) -> a
+anastasoft.rallyvision.activity.EscolheAluguel$1 -> anastasoft.rallyvision.activity.f:
+    anastasoft.rallyvision.activity.EscolheAluguel this$0 -> a
+    void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+anastasoft.rallyvision.activity.INSTvelocimeter -> anastasoft.rallyvision.activity.g:
+    android.widget.TextView TVdig1 -> a
+    android.widget.TextView TVdig2 -> b
+    android.widget.TextView TVdig3 -> c
+anastasoft.rallyvision.activity.MenuPrincipal -> anastasoft.rallyvision.activity.MenuPrincipal:
+    anastasoft.rallyvision.activity.odometer mOdom -> q
+    anastasoft.rallyvision.activity.AVRGvelocimeter mAVGveloc -> r
+    anastasoft.rallyvision.activity.INSTvelocimeter mINSTveloc -> s
+    anastasoft.rallyvision.activity.ConnectMediator aConnectMediator -> t
+    anastasoft.rallyvision.controller.Observable aObervable -> a
+    anastasoft.rallyvision.controller.Controller aController -> b
+    anastasoft.rallyvision.command.Command cmd -> u
+    int NOTIFICATION_ID -> v
+    boolean isSliderActive -> w
+    boolean isAgendamentoInicioProvaSliderActive -> x
+    anastasoft.rallyvision.activity.SliderMotorista mSLDMotUsr -> y
+    anastasoft.rallyvision.activity.SliderMotorista mSLDMotIdeal -> z
+    int layoutResID -> A
+    android.view.Menu aOptionsMenuPrincipal -> B
+    void onCreate(android.os.Bundle) -> onCreate
+    void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
+    void onStart() -> onStart
+    boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
+    boolean onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
+    void onResume() -> onResume
+    void onRestart() -> onRestart
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    void onStop() -> onStop
+    void onDestroy() -> onDestroy
+    void onBackPressed() -> onBackPressed
+    void createNotification() -> m
+    void cancelNotification() -> n
+    void update() -> a
+    void keepScreenOn(boolean) -> a
+    void updateDistance(int) -> a
+    void updateAvrgVel(java.lang.Integer) -> a
+    void updateInstVel(java.lang.Integer) -> b
+    void updateTrechoMotorista(anastasoft.rallyvision.activity.SliderMotorista,java.lang.String,int) -> a
+    void setObservable(anastasoft.rallyvision.controller.Observable) -> a
+    void startProcedure(android.view.View) -> startProcedure
+    void stopCom(android.view.View) -> stopCom
+    void zerar(android.view.View) -> zerar
+    void editar(android.view.View) -> editar
+    int getOdometerValue() -> b
+    void makeConnectBGreen() -> c
+    void makeConnectBRed() -> d
+    void setupViews() -> o
+    void displayResult(java.lang.String) -> a
+    void update(java.util.ArrayList) -> a
+    void setUpSliders(boolean) -> b
+    void setAgendarInicioProvaSlider(boolean) -> c
+    void setaConnectMediator(anastasoft.rallyvision.activity.ConnectMediator) -> a
+anastasoft.rallyvision.activity.MenuPrincipal$1 -> anastasoft.rallyvision.activity.h:
+    anastasoft.rallyvision.activity.MenuPrincipal this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+anastasoft.rallyvision.activity.MenuPrincipal$2 -> anastasoft.rallyvision.activity.i:
+    anastasoft.rallyvision.activity.MenuPrincipal this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+anastasoft.rallyvision.activity.MenuPrincipal$3 -> anastasoft.rallyvision.activity.j:
+    java.lang.String val$result -> a
+    anastasoft.rallyvision.activity.MenuPrincipal this$0 -> b
+    void run() -> run
+anastasoft.rallyvision.activity.SettingsActivity -> anastasoft.rallyvision.activity.SettingsActivity:
+    android.preference.Preference$OnPreferenceChangeListener sBindPreferenceSummaryToValueListener -> a
+    anastasoft.rallyvision.controller.Controller aController -> b
+    anastasoft.rallyvision.command.Command cmd -> c
+    android.content.res.Resources res -> d
+    boolean isXLargeTablet(android.content.Context) -> a
+    boolean isSimplePreferences(android.content.Context) -> b
+    void onCreate(android.os.Bundle) -> onCreate
+    void loadAfericaoList() -> a
+    void setupActionBar() -> b
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    void setupSimplePreferencesScreen() -> c
+    boolean onIsMultiPane() -> onIsMultiPane
+    void initSummary(android.preference.Preference) -> a
+    void updatePrefSummary(android.preference.Preference) -> b
+    void onResume() -> onResume
+    void onRestart() -> onRestart
+    void onPause() -> onPause
+    void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String) -> onSharedPreferenceChanged
+    void updateRatioSummary(android.content.SharedPreferences,java.lang.String) -> a
+anastasoft.rallyvision.activity.SettingsActivity$1 -> anastasoft.rallyvision.activity.k:
+    boolean onPreferenceChange(android.preference.Preference,java.lang.Object) -> onPreferenceChange
+anastasoft.rallyvision.activity.SliderMotorista -> anastasoft.rallyvision.activity.l:
+    android.widget.TextView TVSliderTipoTrecho -> a
+    android.widget.TextView TVSliderNumTrechodig1 -> b
+    android.widget.TextView TVSliderNumTrechodig2 -> c
+    android.widget.TextView TVSliderNumTrechodig3 -> d
+    android.widget.ProgressBar PBSliderPercent -> e
+anastasoft.rallyvision.activity.customfontdemo.FontTextView -> anastasoft.rallyvision.activity.customfontdemo.FontTextView:
+    anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$DrawCallback drawCallback -> a
+    void onDraw(android.graphics.Canvas) -> onDraw
+    void access$001(anastasoft.rallyvision.activity.customfontdemo.FontTextView,android.graphics.Canvas) -> a
+anastasoft.rallyvision.activity.customfontdemo.FontTextView$1 -> anastasoft.rallyvision.activity.customfontdemo.a:
+    anastasoft.rallyvision.activity.customfontdemo.FontTextView this$0 -> a
+    void onDraw(android.graphics.Canvas) -> a
+anastasoft.rallyvision.activity.customfontdemo.TypefaceManager -> anastasoft.rallyvision.activity.customfontdemo.b:
+    java.lang.String TAG -> a
+    anastasoft.rallyvision.activity.customfontdemo.TypefaceManager INSTANCE -> b
+    java.util.Map styleMap -> c
+    java.util.Map mCache -> d
+    android.content.Context mContext -> e
+    int mXmlResource -> f
+    java.util.Map mFonts -> g
+    void initialize(android.content.Context,int) -> a
+    anastasoft.rallyvision.activity.customfontdemo.TypefaceManager getInstance() -> a
+    android.graphics.Typeface getTypeface(java.lang.String,int) -> a
+    boolean setTypeface(android.widget.TextView,java.lang.String,int) -> a
+    void parse() -> b
+    byte next(byte) -> a
+    byte toInternalStyle(int) -> a
+    void addMissingStyles(anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$Font) -> a
+    java.lang.String[] getAvailableFontfiles() -> c
+    boolean isMissing(byte,byte) -> a
+    void applyFont(android.widget.TextView,android.util.AttributeSet,int) -> a
+    void getAttributes(android.content.res.TypedArray,anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$ExtraFontData) -> a
+    void onDrawHelper(android.graphics.Canvas,android.widget.TextView,anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$DrawCallback) -> a
+    void callDrawCallback(anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$DrawCallback,android.graphics.Canvas) -> a
+anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$1 -> anastasoft.rallyvision.activity.customfontdemo.c:
+anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$DrawCallback -> anastasoft.rallyvision.activity.customfontdemo.d:
+    void onDraw(android.graphics.Canvas) -> a
+anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$ExtraFontData -> anastasoft.rallyvision.activity.customfontdemo.e:
+    java.lang.String font -> a
+    int style -> b
+    int borderWidth -> c
+    int borderColor -> d
+anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$Font -> anastasoft.rallyvision.activity.customfontdemo.f:
+    java.util.List names -> a
+    java.util.Map styles -> b
+anastasoft.rallyvision.activity.dialog.ConfigureDialog -> anastasoft.rallyvision.activity.a.a:
+    anastasoft.rallyvision.controller.Controller aController -> a
+    android.content.res.Resources res -> b
+    android.app.Dialog onCreateDialog(android.os.Bundle) -> onCreateDialog
+    anastasoft.rallyvision.controller.Controller access$000(anastasoft.rallyvision.activity.dialog.ConfigureDialog) -> a
+    android.content.res.Resources access$100(anastasoft.rallyvision.activity.dialog.ConfigureDialog) -> b
+anastasoft.rallyvision.activity.dialog.ConfigureDialog$1 -> anastasoft.rallyvision.activity.a.b:
+    android.widget.EditText val$userAfericaoInput -> a
+    anastasoft.rallyvision.activity.dialog.ConfigureDialog this$0 -> b
+    void afterTextChanged(android.text.Editable) -> afterTextChanged
+    void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
+    void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
+anastasoft.rallyvision.activity.dialog.ConfigureDialog$2 -> anastasoft.rallyvision.activity.a.c:
+    android.widget.EditText val$userAfericaoInput -> a
+    android.widget.EditText val$userAfericaoName -> b
+    anastasoft.rallyvision.activity.dialog.ConfigureDialog this$0 -> c
+    void onClick(android.content.DialogInterface,int) -> onClick
+anastasoft.rallyvision.activity.dialog.ConfigureDialog$3 -> anastasoft.rallyvision.activity.a.d:
+    anastasoft.rallyvision.activity.dialog.ConfigureDialog this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+anastasoft.rallyvision.activity.dialog.EditDialog -> anastasoft.rallyvision.activity.a.e:
+    anastasoft.rallyvision.controller.Controller aController -> a
+    android.content.res.Resources res -> b
+    android.app.Dialog onCreateDialog(android.os.Bundle) -> onCreateDialog
+    anastasoft.rallyvision.controller.Controller access$000(anastasoft.rallyvision.activity.dialog.EditDialog) -> a
+    android.content.res.Resources access$100(anastasoft.rallyvision.activity.dialog.EditDialog) -> b
+anastasoft.rallyvision.activity.dialog.EditDialog$1 -> anastasoft.rallyvision.activity.a.f:
+    android.widget.EditText val$userInput -> a
+    anastasoft.rallyvision.activity.dialog.EditDialog this$0 -> b
+    void onClick(android.content.DialogInterface,int) -> onClick
+anastasoft.rallyvision.activity.dialog.EditDialog$2 -> anastasoft.rallyvision.activity.a.g:
+    anastasoft.rallyvision.activity.dialog.EditDialog this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment -> anastasoft.rallyvision.activity.a.h:
+    anastasoft.rallyvision.controller.Controller aController -> a
+    android.content.res.Resources res -> b
+    android.app.Dialog onCreateDialog(android.os.Bundle) -> onCreateDialog
+    anastasoft.rallyvision.controller.Controller access$000(anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment) -> a
+    android.content.res.Resources access$100(anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment) -> b
+anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment$1 -> anastasoft.rallyvision.activity.a.i:
+    android.widget.TimePicker val$userInput -> a
+    anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment this$0 -> b
+    void onClick(android.content.DialogInterface,int) -> onClick
+anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment$2 -> anastasoft.rallyvision.activity.a.j:
+    anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+anastasoft.rallyvision.activity.odometer -> anastasoft.rallyvision.activity.m:
+    android.widget.TextView TVdig1 -> a
+    android.widget.TextView TVdig2 -> b
+    android.widget.TextView TVdig3 -> c
+    android.widget.TextView TVdig4 -> d
+    android.widget.TextView TVdig5 -> e
+anastasoft.rallyvision.command.CarregarArquivoCommand -> anastasoft.rallyvision.c.a:
+    android.net.Uri aUri -> b
+    anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer aSliderChoreographer -> c
+    void Execute() -> a
+anastasoft.rallyvision.command.Command -> anastasoft.rallyvision.c.b:
+    anastasoft.rallyvision.controller.Controller aController -> a
+    void Execute() -> a
+anastasoft.rallyvision.command.ConfigureRatioCommand -> anastasoft.rallyvision.c.c:
+    java.lang.String afericaoNome -> b
+    int afericaoValor -> c
+    void Execute() -> a
+anastasoft.rallyvision.command.EditCommand -> anastasoft.rallyvision.c.d:
+    int odomValue -> b
+    void Execute() -> a
+anastasoft.rallyvision.command.SetRatioCommand -> anastasoft.rallyvision.c.e:
+    java.lang.String aFericaoNome -> b
+    float aRatio -> c
+    void Execute() -> a
+anastasoft.rallyvision.command.SetarInicioProvaSliderCommand -> anastasoft.rallyvision.c.f:
+    int hora -> b
+    int minuto -> c
+    void Execute() -> a
+anastasoft.rallyvision.command.StopAllCommand -> anastasoft.rallyvision.c.g:
+    void Execute() -> a
+anastasoft.rallyvision.command.VerificaAluguelStatusCommand -> anastasoft.rallyvision.c.h:
+    void Execute() -> a
+anastasoft.rallyvision.command.Zerar -> anastasoft.rallyvision.c.i:
+    void Execute() -> a
+anastasoft.rallyvision.command.startCommand -> anastasoft.rallyvision.c.j:
+    int aOdomValue -> b
+    android.app.Activity currActivity -> c
+    void Execute() -> a
+anastasoft.rallyvision.command.stopCommunicationCommand -> anastasoft.rallyvision.c.k:
+    void Execute() -> a
+anastasoft.rallyvision.controller.AnalyticsAdpater -> anastasoft.rallyvision.controller.a:
+    anastasoft.rallyvision.controller.Controller aController -> b
+    java.lang.String EXECUTANDO -> c
+    java.util.HashMap mTrackers -> a
+    com.google.android.gms.analytics.Tracker getTracker(anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName) -> a
+    void sendScreen() -> a
+anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName -> anastasoft.rallyvision.controller.b:
+    anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName APP_TRACKER -> a
+    anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName GLOBAL_TRACKER -> b
+    anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName ECOMMERCE_TRACKER -> c
+    anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName[] $VALUES -> d
+    anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName[] values() -> values
+    anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName valueOf(java.lang.String) -> valueOf
+anastasoft.rallyvision.controller.CarStatus -> anastasoft.rallyvision.controller.c:
+    float instantVel -> a
+    float avrgVel -> b
+    float deltaStot -> c
+    anastasoft.rallyvision.controller.Data.model.Afericao afericao -> d
+    float getInstantVel() -> a
+    void setInstantVel(float) -> a
+    float getAvrgVel() -> b
+    void setAvrgVel(float) -> b
+    float getDeltaStot() -> c
+    void setDeltaStot(float) -> c
+    anastasoft.rallyvision.controller.Data.model.Afericao getAfericao() -> d
+    void setAfericao(anastasoft.rallyvision.controller.Data.model.Afericao) -> a
+    void incrementaDeltaStot(float) -> d
+anastasoft.rallyvision.controller.Controller -> anastasoft.rallyvision.controller.Controller:
+    anastasoft.rallyvision.controller.MylicenseChekerCallBack mLicenseCheckerCallBack -> c
+    com.google.android.vending.licensing.LicenseChecker mChecker -> d
+    byte[] SALT -> e
+    boolean testON -> f
+    boolean uberON -> g
+    boolean licenseCheckON -> h
+    boolean sliderON -> i
+    int appState -> j
+    anastasoft.rallyvision.controller.AnalyticsAdpater analyticsAdpater -> a
+    boolean FIRST_RUN -> k
+    android.content.res.Resources aResource -> l
+    java.lang.String RATIO -> m
+    anastasoft.rallyvision.controller.PreferencesAdapter aPrefAdapter -> n
+    anastasoft.rallyvision.controller.Observable aObervable -> o
+    anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer aSliderChoreographer -> p
+    anastasoft.rallyvision.controller.Data.DBHelper dbHelper -> q
+    anastasoft.rallyvision.BTManager.BTManager aBTManager -> b
+    anastasoft.rallyvision.controller.Controller$CounterAndConverter aCountConv -> r
+    android.app.Activity currentAct -> s
+    java.lang.String mConnectedDeviceName -> t
+    anastasoft.rallyvision.activity.ConnectMediator mConnMediator -> u
+    android.os.Handler mHandler -> v
+    anastasoft.rallyvision.controller.InAppBilling.AluguelChoreographer aAluguelChoreographer -> w
+    anastasoft.rallyvision.controller.Data.DBHelper getDbHelper() -> a
+    void startCommunication() -> b
+    boolean shouldCreateNotification() -> c
+    void setup(android.app.Activity) -> a
+    boolean jaExiste(anastasoft.rallyvision.controller.Data.model.Afericao) -> a
+    void setupCountAndConverter() -> s
+    int getAppState() -> d
+    void setAppState(int) -> a
+    void notifY() -> t
+    void doCheck() -> u
+    void setOdometer(int) -> b
+    void zerar() -> e
+    void enableBT(android.app.Activity) -> b
+    void query() -> f
+    boolean isTestOn() -> g
+    boolean isUberTestOn() -> h
+    void startExecution(android.app.Activity) -> c
+    android.app.Activity getCurrentActiviy() -> i
+    android.os.Handler getHandler() -> j
+    void handleActivityResult(int,int,android.content.Intent) -> a
+    void setRatio(float,java.lang.String) -> a
+    void stopAll() -> k
+    void stopCommunication() -> l
+    void destroyACountAndConverterSafely() -> v
+    void configureRatio(int,java.lang.String) -> a
+    anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer getChoreographer() -> m
+    java.util.List getListaAfericoes() -> n
+    anastasoft.rallyvision.controller.Data.model.Afericao getAfericao() -> o
+    int getIndexDeAfericao(anastasoft.rallyvision.controller.Data.model.Afericao,java.util.List) -> a
+    anastasoft.rallyvision.controller.InAppBilling.AluguelChoreographer getAluguelChoreographer() -> p
+    anastasoft.rallyvision.controller.Controller$CounterAndConverter access$000(anastasoft.rallyvision.controller.Controller) -> a
+    boolean access$100(anastasoft.rallyvision.controller.Controller) -> b
+    java.lang.String access$202(anastasoft.rallyvision.controller.Controller,java.lang.String) -> a
+    android.content.res.Resources access$300() -> q
+    java.lang.String access$200(anastasoft.rallyvision.controller.Controller) -> c
+    anastasoft.rallyvision.controller.Observable access$400() -> r
+anastasoft.rallyvision.controller.Controller$1 -> anastasoft.rallyvision.controller.d:
+    int i -> a
+    anastasoft.rallyvision.controller.Controller this$0 -> b
+    void handleMessage(android.os.Message) -> handleMessage
+anastasoft.rallyvision.controller.Controller$CounterAndConverter -> anastasoft.rallyvision.controller.e:
+    java.lang.String TAG -> a
+    int STATE -> b
+    anastasoft.rallyvision.controller.Controller aController -> c
+    anastasoft.rallyvision.controller.VelocityEng aVelEng -> e
+    anastasoft.rallyvision.controller.Relogio aRelogioTemp -> f
+    anastasoft.rallyvision.controller.Observable aObservable -> g
+    anastasoft.rallyvision.Slider.SliderCore aSliderCore -> h
+    anastasoft.rallyvision.controller.Controller this$0 -> d
+    void run() -> run
+    void update(int) -> a
+    void cancel() -> a
+    void setSliderCore(anastasoft.rallyvision.Slider.SliderCore) -> a
+    void update() -> b
+anastasoft.rallyvision.controller.Data.DBHelper -> anastasoft.rallyvision.controller.a.a:
+    anastasoft.rallyvision.controller.Observable aObservable -> a
+    void onCreate(android.database.sqlite.SQLiteDatabase) -> onCreate
+    void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int) -> onUpgrade
+    long createAfericao(anastasoft.rallyvision.controller.Data.model.Afericao) -> a
+    java.util.List getTodasAfericoes() -> a
+    int getAfericaoCount() -> b
+    void update() -> c
+    anastasoft.rallyvision.controller.Data.model.Afericao getAfericaoByName(java.lang.String) -> a
+anastasoft.rallyvision.controller.Data.DBHelper$AfericaoExistenteException -> anastasoft.rallyvision.controller.a.b:
+    anastasoft.rallyvision.controller.Data.DBHelper this$0 -> a
+anastasoft.rallyvision.controller.Data.model.Afericao -> anastasoft.rallyvision.controller.a.a.a:
+    java.lang.String name -> b
+    float ratio -> c
+    java.lang.String getName() -> a
+    void setName(java.lang.String) -> a
+    void setRatio(float) -> a
+    java.lang.String toS() -> b
+    float getRatio() -> c
+anastasoft.rallyvision.controller.Data.model.Table -> anastasoft.rallyvision.controller.a.a.b:
+    int id -> a
+    int getId() -> d
+    void setId(int) -> a
+anastasoft.rallyvision.controller.InAppBilling.AluguelAdapter -> anastasoft.rallyvision.controller.b.a:
+    anastasoft.rallyvision.controller.Controller aController -> c
+    anastasoft.rallyvision.controller.InAppBilling.AluguelChoreographer aAluguelChoreographer -> d
+    anastasoft.rallyvision.controller.InAppBilling.util.IabHelper mHelper -> e
+    java.util.ArrayList listadeComprasSKU -> f
+    java.util.ArrayList listadeComprasNOMES -> g
+    java.lang.String ALUGUEL_MENSAL_NOME -> h
+    int ALUGUEL_MENSAL_INDEX -> i
+    java.lang.String COMRA_TESTE_NOME -> j
+    int COMPRA_TESTE_INDEX -> k
+    anastasoft.rallyvision.controller.InAppBilling.util.Inventory aInventory -> l
+    anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$QueryInventoryFinishedListener mGotInventoryListener -> a
+    anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnIabPurchaseFinishedListener mPurchaseFinishedListener -> b
+    void inicializar(java.lang.String) -> a
+    void realizarTransacaoUsando(android.app.Activity,int) -> a
+    boolean verifyDeveloperPayload(anastasoft.rallyvision.controller.InAppBilling.util.Purchase) -> a
+    void setInventory(anastasoft.rallyvision.controller.InAppBilling.util.Inventory) -> a
+    java.util.ArrayList getListadeComprasSKU() -> a
+    void handleActivityResult(int,int,android.content.Intent) -> a
+    void encerrarAtividades() -> b
+    anastasoft.rallyvision.controller.Controller access$000(anastasoft.rallyvision.controller.InAppBilling.AluguelAdapter) -> a
+    anastasoft.rallyvision.controller.InAppBilling.AluguelChoreographer access$100(anastasoft.rallyvision.controller.InAppBilling.AluguelAdapter) -> b
+    anastasoft.rallyvision.controller.InAppBilling.util.IabHelper access$200(anastasoft.rallyvision.controller.InAppBilling.AluguelAdapter) -> c
+    void access$300(anastasoft.rallyvision.controller.InAppBilling.AluguelAdapter,anastasoft.rallyvision.controller.InAppBilling.util.Inventory) -> a
+    java.lang.String access$400(anastasoft.rallyvision.controller.InAppBilling.AluguelAdapter) -> d
+anastasoft.rallyvision.controller.InAppBilling.AluguelAdapter$1 -> anastasoft.rallyvision.controller.b.b:
+    anastasoft.rallyvision.controller.InAppBilling.AluguelAdapter this$0 -> a
+    void onIabSetupFinished(anastasoft.rallyvision.controller.InAppBilling.util.IabResult) -> a
+anastasoft.rallyvision.controller.InAppBilling.AluguelAdapter$2 -> anastasoft.rallyvision.controller.b.c:
+    anastasoft.rallyvision.controller.InAppBilling.AluguelAdapter this$0 -> a
+    void onQueryInventoryFinished(anastasoft.rallyvision.controller.InAppBilling.util.IabResult,anastasoft.rallyvision.controller.InAppBilling.util.Inventory) -> a
+anastasoft.rallyvision.controller.InAppBilling.AluguelAdapter$3 -> anastasoft.rallyvision.controller.b.d:
+    anastasoft.rallyvision.controller.InAppBilling.AluguelAdapter this$0 -> a
+    void onIabPurchaseFinished(anastasoft.rallyvision.controller.InAppBilling.util.IabResult,anastasoft.rallyvision.controller.InAppBilling.util.Purchase) -> a
+anastasoft.rallyvision.controller.InAppBilling.AluguelChoreographer -> anastasoft.rallyvision.controller.b.e:
+    anastasoft.rallyvision.controller.Controller aController -> a
+    anastasoft.rallyvision.controller.InAppBilling.AluguelAdapter aAluguelAdapter -> b
+    int STATE -> c
+    java.lang.String BASE64_PUBLIC_KEY_ALUGUEL -> d
+    anastasoft.rallyvision.activity.EscolheAluguel aEscolheAluguelActivity -> e
+    java.util.ArrayList getListaDeCompras() -> a
+    void inicializar() -> b
+    void mostrarTelaBemVindo() -> f
+    void complain(java.lang.String) -> a
+    void setState(int) -> a
+    void recupInventorioTerminado(java.lang.String) -> b
+    void verificaAluguel() -> c
+    void onDestroy() -> d
+    void comprar(android.app.Activity,int) -> a
+    void temAluguel(boolean) -> a
+    void handleActivityResult(int,int,android.content.Intent) -> a
+    void setActivity(anastasoft.rallyvision.activity.EscolheAluguel) -> a
+    boolean statusSemAluguelConfirmado() -> e
+anastasoft.rallyvision.controller.InAppBilling.util.Base64 -> anastasoft.rallyvision.controller.b.a.a:
+    byte[] ALPHABET -> b
+    byte[] WEBSAFE_ALPHABET -> c
+    byte[] DECODABET -> d
+    byte[] WEBSAFE_DECODABET -> e
+    boolean $assertionsDisabled -> a
+    int decode4to3(byte[],int,byte[],int,byte[]) -> a
+    byte[] decode(java.lang.String) -> a
+    byte[] decode(byte[],int,int) -> a
+    byte[] decode(byte[],int,int,byte[]) -> a
+anastasoft.rallyvision.controller.InAppBilling.util.Base64DecoderException -> anastasoft.rallyvision.controller.b.a.b:
+anastasoft.rallyvision.controller.InAppBilling.util.IabException -> anastasoft.rallyvision.controller.b.a.c:
+    anastasoft.rallyvision.controller.InAppBilling.util.IabResult mResult -> a
+    anastasoft.rallyvision.controller.InAppBilling.util.IabResult getResult() -> a
+anastasoft.rallyvision.controller.InAppBilling.util.IabHelper -> anastasoft.rallyvision.controller.b.a.d:
+    boolean mDebugLog -> a
+    java.lang.String mDebugTag -> b
+    boolean mSetupDone -> c
+    boolean mDisposed -> d
+    boolean mSubscriptionsSupported -> e
+    boolean mAsyncInProgress -> f
+    java.lang.String mAsyncOperation -> g
+    android.content.Context mContext -> h
+    com.android.vending.billing.IInAppBillingService mService -> i
+    android.content.ServiceConnection mServiceConn -> j
+    int mRequestCode -> k
+    java.lang.String mPurchasingItemType -> l
+    java.lang.String mSignatureBase64 -> m
+    anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnIabPurchaseFinishedListener mPurchaseListener -> n
+    void enableDebugLogging(boolean) -> a
+    void startSetup(anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnIabSetupFinishedListener) -> a
+    void dispose() -> a
+    void checkNotDisposed() -> d
+    boolean subscriptionsSupported() -> b
+    void launchPurchaseFlow(android.app.Activity,java.lang.String,java.lang.String,int,anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnIabPurchaseFinishedListener,java.lang.String) -> a
+    boolean handleActivityResult(int,int,android.content.Intent) -> a
+    anastasoft.rallyvision.controller.InAppBilling.util.Inventory queryInventory(boolean,java.util.List) -> a
+    anastasoft.rallyvision.controller.InAppBilling.util.Inventory queryInventory(boolean,java.util.List,java.util.List) -> a
+    void queryInventoryAsync(boolean,java.util.List,anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$QueryInventoryFinishedListener) -> a
+    void queryInventoryAsync(anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$QueryInventoryFinishedListener) -> a
+    java.lang.String getResponseDesc(int) -> a
+    void checkSetupDone(java.lang.String) -> a
+    int getResponseCodeFromBundle(android.os.Bundle) -> a
+    int getResponseCodeFromIntent(android.content.Intent) -> a
+    void flagStartAsync(java.lang.String) -> b
+    void flagEndAsync() -> c
+    int queryPurchases(anastasoft.rallyvision.controller.InAppBilling.util.Inventory,java.lang.String) -> a
+    int querySkuDetails(java.lang.String,anastasoft.rallyvision.controller.InAppBilling.util.Inventory,java.util.List) -> a
+    void logDebug(java.lang.String) -> c
+    void logError(java.lang.String) -> d
+    void logWarn(java.lang.String) -> e
+anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$1 -> anastasoft.rallyvision.controller.b.a.e:
+    anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnIabSetupFinishedListener val$listener -> a
+    anastasoft.rallyvision.controller.InAppBilling.util.IabHelper this$0 -> b
+    void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
+    void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
+anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$2 -> anastasoft.rallyvision.controller.b.a.f:
+    boolean val$querySkuDetails -> a
+    java.util.List val$moreSkus -> b
+    anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$QueryInventoryFinishedListener val$listener -> c
+    android.os.Handler val$handler -> d
+    anastasoft.rallyvision.controller.InAppBilling.util.IabHelper this$0 -> e
+    void run() -> run
+anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$2$1 -> anastasoft.rallyvision.controller.b.a.g:
+    anastasoft.rallyvision.controller.InAppBilling.util.IabResult val$result_f -> a
+    anastasoft.rallyvision.controller.InAppBilling.util.Inventory val$inv_f -> b
+    anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$2 this$1 -> c
+    void run() -> run
+anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnIabPurchaseFinishedListener -> anastasoft.rallyvision.controller.b.a.h:
+    void onIabPurchaseFinished(anastasoft.rallyvision.controller.InAppBilling.util.IabResult,anastasoft.rallyvision.controller.InAppBilling.util.Purchase) -> a
+anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnIabSetupFinishedListener -> anastasoft.rallyvision.controller.b.a.i:
+    void onIabSetupFinished(anastasoft.rallyvision.controller.InAppBilling.util.IabResult) -> a
+anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$QueryInventoryFinishedListener -> anastasoft.rallyvision.controller.b.a.j:
+    void onQueryInventoryFinished(anastasoft.rallyvision.controller.InAppBilling.util.IabResult,anastasoft.rallyvision.controller.InAppBilling.util.Inventory) -> a
+anastasoft.rallyvision.controller.InAppBilling.util.IabResult -> anastasoft.rallyvision.controller.b.a.k:
+    int mResponse -> a
+    java.lang.String mMessage -> b
+    java.lang.String getMessage() -> a
+    boolean isSuccess() -> b
+    boolean isFailure() -> c
+    java.lang.String toString() -> toString
+anastasoft.rallyvision.controller.InAppBilling.util.Inventory -> anastasoft.rallyvision.controller.b.a.l:
+    java.util.Map mSkuMap -> a
+    java.util.Map mPurchaseMap -> b
+    anastasoft.rallyvision.controller.InAppBilling.util.Purchase getPurchase(java.lang.String) -> a
+    java.util.List getAllOwnedSkus(java.lang.String) -> b
+    void addSkuDetails(anastasoft.rallyvision.controller.InAppBilling.util.SkuDetails) -> a
+    void addPurchase(anastasoft.rallyvision.controller.InAppBilling.util.Purchase) -> a
+anastasoft.rallyvision.controller.InAppBilling.util.Purchase -> anastasoft.rallyvision.controller.b.a.m:
+    java.lang.String mItemType -> a
+    java.lang.String mOrderId -> b
+    java.lang.String mPackageName -> c
+    java.lang.String mSku -> d
+    long mPurchaseTime -> e
+    int mPurchaseState -> f
+    java.lang.String mDeveloperPayload -> g
+    java.lang.String mToken -> h
+    java.lang.String mOriginalJson -> i
+    java.lang.String mSignature -> j
+    java.lang.String getItemType() -> a
+    java.lang.String getSku() -> b
+    java.lang.String getDeveloperPayload() -> c
+    java.lang.String getToken() -> d
+    java.lang.String toString() -> toString
+anastasoft.rallyvision.controller.InAppBilling.util.Security -> anastasoft.rallyvision.controller.b.a.n:
+    boolean verifyPurchase(java.lang.String,java.lang.String,java.lang.String) -> a
+    java.security.PublicKey generatePublicKey(java.lang.String) -> a
+    boolean verify(java.security.PublicKey,java.lang.String,java.lang.String) -> a
+anastasoft.rallyvision.controller.InAppBilling.util.SkuDetails -> anastasoft.rallyvision.controller.b.a.o:
+    java.lang.String mItemType -> a
+    java.lang.String mSku -> b
+    java.lang.String mType -> c
+    java.lang.String mPrice -> d
+    java.lang.String mTitle -> e
+    java.lang.String mDescription -> f
+    java.lang.String mJson -> g
+    java.lang.String getSku() -> a
+    java.lang.String toString() -> toString
+anastasoft.rallyvision.controller.MylicenseChekerCallBack -> anastasoft.rallyvision.controller.f:
+    anastasoft.rallyvision.controller.Controller controller -> a
+    void allow(int) -> a
+    void dontAllow(int) -> b
+    void applicationError(int) -> c
+anastasoft.rallyvision.controller.Observable -> anastasoft.rallyvision.controller.g:
+    anastasoft.rallyvision.controller.CarStatus aCarStatus -> a
+    java.util.List aObservers -> b
+    java.util.ArrayList listValues -> c
+    anastasoft.rallyvision.controller.Controller aController -> d
+    java.util.ArrayList getValues() -> a
+    void setAfericao(anastasoft.rallyvision.controller.Data.model.Afericao) -> a
+    void Attach(java.lang.Object) -> a
+    void Detach(java.lang.Object) -> b
+    void Notify() -> b
+    void Notify(anastasoft.rallyvision.controller.Controller$CounterAndConverter) -> a
+    void setValues(java.util.ArrayList,anastasoft.rallyvision.controller.Controller$CounterAndConverter) -> a
+    void zerar() -> c
+    void setOdometer(int) -> a
+    void Notify(java.util.ArrayList) -> a
+    anastasoft.rallyvision.controller.CarStatus getCarStatus() -> d
+    anastasoft.rallyvision.controller.Relogio getRelogio() -> e
+anastasoft.rallyvision.controller.PreferencesAdapter -> anastasoft.rallyvision.controller.h:
+    java.lang.String RATIO -> a
+    java.lang.String SCREEN -> b
+    int INDEX_CARSTATUS -> c
+    android.content.SharedPreferences sPreferences -> d
+    java.lang.String TAG -> e
+    android.content.res.Resources res -> f
+    anastasoft.rallyvision.controller.Controller aController -> g
+    android.content.SharedPreferences$Editor editor -> h
+    anastasoft.rallyvision.controller.Observable aObservable -> i
+    anastasoft.rallyvision.controller.Data.DBHelper dbHelper -> j
+    float getRatio() -> a
+    void setRatio(float) -> a
+    void update() -> b
+    boolean getScreenOnStatus() -> c
+    anastasoft.rallyvision.controller.Data.model.Afericao getAfericao() -> d
+anastasoft.rallyvision.controller.Relogio -> anastasoft.rallyvision.controller.i:
+    java.util.Date tInicialBasico -> a
+    long clockBasico -> b
+    anastasoft.rallyvision.controller.Controller aController -> c
+    android.content.BroadcastReceiver br -> d
+    android.app.AlarmManager am -> e
+    java.util.Calendar horarioInicioSlider -> f
+    android.os.CountDownTimer aCountDownTimerSlider -> g
+    anastasoft.rallyvision.Slider.SliderCore aSliderCore -> h
+    java.util.Calendar sliderTimeStamp -> i
+    java.util.Calendar sliderTimeStampTemp -> j
+    long deltaTSliderTemp -> k
+    anastasoft.rallyvision.controller.Observable aObservable -> l
+    void beginBasicTimeCount() -> a
+    long getDeltaT() -> b
+    long getDeltaTSlider() -> c
+    long getDeltaTTotBasico() -> d
+    void reset() -> e
+    long getClockBasico() -> f
+    void setarAlarme(java.util.Calendar,anastasoft.rallyvision.Slider.SliderCore) -> a
+    void comecarFuncionamentoComSliders(anastasoft.rallyvision.Slider.SliderCore) -> a
+    void setaObservable(anastasoft.rallyvision.controller.Observable) -> a
+    anastasoft.rallyvision.controller.Controller access$000(anastasoft.rallyvision.controller.Relogio) -> a
+    void access$100(anastasoft.rallyvision.controller.Relogio,anastasoft.rallyvision.Slider.SliderCore) -> a
+    anastasoft.rallyvision.controller.Observable access$200(anastasoft.rallyvision.controller.Relogio) -> b
+anastasoft.rallyvision.controller.Relogio$1 -> anastasoft.rallyvision.controller.j:
+    anastasoft.rallyvision.Slider.SliderCore val$aSliderCore -> a
+    anastasoft.rallyvision.controller.Relogio this$0 -> b
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+anastasoft.rallyvision.controller.Relogio$2 -> anastasoft.rallyvision.controller.k:
+    anastasoft.rallyvision.Slider.SliderCore val$aSliderCore -> a
+    anastasoft.rallyvision.controller.Relogio this$0 -> b
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+anastasoft.rallyvision.controller.SliderCoreographer.FileParser -> anastasoft.rallyvision.controller.c.a:
+    java.lang.String[] listaColunas -> a
+    java.lang.String pathAccessed -> b
+    java.util.ArrayList finalList -> c
+    android.database.Cursor getProvaCursorFrom(java.lang.String) -> a
+    java.util.ArrayList loadFromPath(java.lang.String) -> b
+    void loadWords() -> a
+    java.lang.String[] separaTipoNumero(java.lang.String[]) -> a
+    boolean estaTudoNosConformes(java.lang.String[]) -> b
+    android.database.MatrixCursor convertToCursor(java.util.ArrayList) -> a
+anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer -> anastasoft.rallyvision.controller.c.b:
+    anastasoft.rallyvision.controller.Controller aController -> a
+    anastasoft.rallyvision.activity.MenuPrincipal aMenuPrincipal -> b
+    anastasoft.rallyvision.controller.Controller$CounterAndConverter aCounterandConverter -> c
+    anastasoft.rallyvision.controller.Observable aObservable -> d
+    anastasoft.rallyvision.Slider.SliderCore aSliderCore -> e
+    anastasoft.rallyvision.controller.SliderCoreographer.FileParser aFileParser -> f
+    void setupAConuntAndConverter(anastasoft.rallyvision.controller.Controller$CounterAndConverter) -> a
+    void carregarArquivoProva(android.net.Uri) -> a
+    void setInicioProvaSlider(java.util.Calendar) -> a
+    void startProvaSlider() -> a
+anastasoft.rallyvision.controller.VelocityEng -> anastasoft.rallyvision.controller.l:
+    anastasoft.rallyvision.controller.CarStatus carStatusTemp -> b
+    float deltaS -> c
+    anastasoft.rallyvision.controller.Relogio aRelogio -> d
+    java.lang.Long deltaTTot -> a
+    java.util.ArrayList valuesList -> e
+    void updateEnd(int) -> a
+    java.util.ArrayList getValues() -> a
+    void setValues(java.util.ArrayList) -> a
+    float convert(int) -> b
+    float getDeltaS() -> b
+anastasoft.rallyvisionaluguel.R -> anastasoft.a.a:
+anastasoft.rallyvisionaluguel.R$styleable -> anastasoft.a.b:
     int[] ActionBar -> ActionBar
     int ActionBar_background -> ActionBar_background
     int ActionBar_backgroundSplit -> ActionBar_backgroundSplit
@@ -208,497 +941,6 @@ anastasoft.rallyvision.R$styleable -> anastasoft.rallyvision.b:
     int WalletFragmentStyle_maskedWalletDetailsLogoImageType -> WalletFragmentStyle_maskedWalletDetailsLogoImageType
     int WalletFragmentStyle_maskedWalletDetailsLogoTextColor -> WalletFragmentStyle_maskedWalletDetailsLogoTextColor
     int WalletFragmentStyle_maskedWalletDetailsTextAppearance -> WalletFragmentStyle_maskedWalletDetailsTextAppearance
-anastasoft.rallyvision.Slider.Prova_Trecho.Prova -> anastasoft.rallyvision.b.a.a:
-    java.util.ArrayList listaDeTrechos -> a
-    anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho getTrecho(int) -> a
-anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho -> anastasoft.rallyvision.b.a.a.a:
-    int numero -> a
-    float ki -> b
-    float kf -> c
-    float ti -> d
-    float getDeltaStrecho() -> a
-    float getdTTrecho() -> b
-    int getNumTrecho() -> c
-    java.lang.String getTipo() -> d
-anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.TrechoD -> anastasoft.rallyvision.b.a.a.b:
-    float dTTrecho -> e
-    float getdTTrecho() -> b
-    java.lang.String getTipo() -> d
-anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.TrechoN -> anastasoft.rallyvision.b.a.a.c:
-    float dTTrecho -> e
-    float getdTTrecho() -> b
-    java.lang.String getTipo() -> d
-anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.TrechoV -> anastasoft.rallyvision.b.a.a.d:
-    float vMedio -> e
-    float getdTTrecho() -> b
-    java.lang.String getTipo() -> d
-anastasoft.rallyvision.Slider.SliderCore -> anastasoft.rallyvision.b.a:
-    anastasoft.rallyvision.Slider.motorista.MotoristaUsuario aMotoristaUsuario -> a
-    anastasoft.rallyvision.Slider.motorista.MotoristaIdeal aMotoristaIdeal -> b
-    anastasoft.rallyvision.Slider.Prova_Trecho.Prova aProva -> c
-    float dSTrechoRestante -> d
-    float dSFinal -> e
-    float dTRemanescente -> f
-    float dTfinal -> g
-    float percentual -> h
-    java.util.ArrayList listaMotorista -> i
-    void setProva(anastasoft.rallyvision.Slider.Prova_Trecho.Prova) -> a
-    java.util.ArrayList getStatus() -> a
-    void carregarProva(android.database.Cursor) -> a
-    void update(float,float) -> a
-    void mudaTrecho(anastasoft.rallyvision.Slider.motorista.Motorista) -> a
-anastasoft.rallyvision.Slider.motorista.Motorista -> anastasoft.rallyvision.b.b.a:
-    anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho trechoAtual -> a
-    float percentualPercorrido -> b
-    int getNumTrecho() -> a
-    java.lang.String getTipoTrechoAtual() -> b
-    float getPercentPercorrido() -> c
-    void setPercentualPercorrido(float) -> a
-    void setTrecho(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho) -> a
-anastasoft.rallyvision.Slider.motorista.MotoristaIdeal -> anastasoft.rallyvision.b.b.b:
-    float deltaTacumuladoTrecho -> c
-    float deltaTTrechoTotal -> d
-    void zeraTrocandoTrecho() -> d
-    void setTrecho(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho) -> a
-    float getDTRemanescente() -> e
-    void incrementaDTacumuladoTrecho(float) -> b
-    float getDTacumuladoTrecho() -> f
-    float getDTtotalTrecho() -> g
-anastasoft.rallyvision.Slider.motorista.MotoristaUsuario -> anastasoft.rallyvision.b.b.c:
-    float deltaSTrechoTotal -> c
-    float deltaSTrechoPercorrido -> d
-    void zeraTrocandoTrecho() -> d
-    void setTrecho(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho) -> a
-    float getDSTrechoRestante() -> e
-    void atualizaDS(float) -> b
-anastasoft.rallyvision.activity.AVRGvelocimeter -> anastasoft.rallyvision.activity.a:
-    android.widget.TextView TVdig1 -> a
-    android.widget.TextView TVdig2 -> b
-    android.widget.TextView TVdig3 -> c
-anastasoft.rallyvision.activity.ConnectMediator -> anastasoft.rallyvision.activity.b:
-    anastasoft.rallyvision.controller.Controller aController -> a
-    void update() -> a
-    void setState(anastasoft.rallyvision.controller.Controller) -> a
-anastasoft.rallyvision.activity.DeviceListActivity -> anastasoft.rallyvision.activity.DeviceListActivity:
-    java.lang.String EXTRA_DEVICE_ADDRESS -> a
-    android.widget.AdapterView$OnItemClickListener mDeviceClickListener -> b
-    android.content.BroadcastReceiver mReceiver -> c
-    android.bluetooth.BluetoothAdapter mBtAdapter -> d
-    android.widget.ArrayAdapter mPairedDevicesArrayAdapter -> e
-    android.widget.ArrayAdapter mNewDevicesArrayAdapter -> f
-    void onCreate(android.os.Bundle) -> onCreate
-    void onDestroy() -> onDestroy
-    void doDiscovery() -> a
-    android.bluetooth.BluetoothAdapter access$000(anastasoft.rallyvision.activity.DeviceListActivity) -> a
-    android.widget.ArrayAdapter access$100(anastasoft.rallyvision.activity.DeviceListActivity) -> b
-    void access$200(anastasoft.rallyvision.activity.DeviceListActivity) -> c
-anastasoft.rallyvision.activity.DeviceListActivity$1 -> anastasoft.rallyvision.activity.c:
-    anastasoft.rallyvision.activity.DeviceListActivity this$0 -> a
-    void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-anastasoft.rallyvision.activity.DeviceListActivity$2 -> anastasoft.rallyvision.activity.d:
-    anastasoft.rallyvision.activity.DeviceListActivity this$0 -> a
-    void onReceive(android.content.Context,android.content.Intent) -> onReceive
-anastasoft.rallyvision.activity.DeviceListActivity$3 -> anastasoft.rallyvision.activity.e:
-    anastasoft.rallyvision.activity.DeviceListActivity this$0 -> a
-    void onClick(android.view.View) -> onClick
-anastasoft.rallyvision.activity.INSTvelocimeter -> anastasoft.rallyvision.activity.f:
-    android.widget.TextView TVdig1 -> a
-    android.widget.TextView TVdig2 -> b
-    android.widget.TextView TVdig3 -> c
-anastasoft.rallyvision.activity.MenuPrincipal -> anastasoft.rallyvision.activity.MenuPrincipal:
-    anastasoft.rallyvision.activity.odometer mOdom -> r
-    anastasoft.rallyvision.activity.AVRGvelocimeter mAVGveloc -> s
-    anastasoft.rallyvision.activity.INSTvelocimeter mINSTveloc -> t
-    anastasoft.rallyvision.activity.ConnectMediator aConnectMediator -> u
-    anastasoft.rallyvision.controller.Observable aObervable -> a
-    anastasoft.rallyvision.controller.Controller aController -> b
-    anastasoft.rallyvision.command.Command cmd -> v
-    int NOTIFICATION_ID -> w
-    boolean isSliderActive -> c
-    anastasoft.rallyvision.activity.SliderMotoristaUsuario mSLDMotUsr -> x
-    anastasoft.rallyvision.activity.SliderMotoristaIdeal mSLDMotIdeal -> y
-    int layoutResID -> z
-    void onCreate(android.os.Bundle) -> onCreate
-    void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
-    void onRestart() -> onRestart
-    boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
-    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    void onStop() -> onStop
-    void onDestroy() -> onDestroy
-    void onBackPressed() -> onBackPressed
-    void createNotification() -> m
-    void cancelNotification() -> n
-    void update() -> a
-    void keepScreenOn(boolean) -> a
-    void updateDistance(int) -> a
-    void updateAvrgVel(java.lang.Integer) -> a
-    void updateInstVel(java.lang.Integer) -> b
-    void setObservable(anastasoft.rallyvision.controller.Observable) -> a
-    void startProcedure(android.view.View) -> startProcedure
-    void stopCom(android.view.View) -> stopCom
-    void zerar(android.view.View) -> zerar
-    void editar(android.view.View) -> editar
-    int getOdometerValue() -> b
-    void makeConnectBGreen() -> c
-    void makeConnectBRed() -> d
-    void setupViews() -> o
-    void displayResult(java.lang.String) -> a
-    void update(java.util.ArrayList) -> a
-    void setUpSliders(boolean) -> b
-    void setaConnectMediator(anastasoft.rallyvision.activity.ConnectMediator) -> a
-anastasoft.rallyvision.activity.MenuPrincipal$1 -> anastasoft.rallyvision.activity.g:
-    anastasoft.rallyvision.activity.MenuPrincipal this$0 -> a
-    boolean onLongClick(android.view.View) -> onLongClick
-anastasoft.rallyvision.activity.MenuPrincipal$2 -> anastasoft.rallyvision.activity.h:
-    anastasoft.rallyvision.activity.MenuPrincipal this$0 -> a
-    boolean onLongClick(android.view.View) -> onLongClick
-anastasoft.rallyvision.activity.MenuPrincipal$3 -> anastasoft.rallyvision.activity.i:
-    java.lang.String val$result -> a
-    anastasoft.rallyvision.activity.MenuPrincipal this$0 -> b
-    void run() -> run
-anastasoft.rallyvision.activity.SettingsActivity -> anastasoft.rallyvision.activity.SettingsActivity:
-    android.preference.Preference$OnPreferenceChangeListener sBindPreferenceSummaryToValueListener -> a
-    anastasoft.rallyvision.controller.Controller aController -> b
-    anastasoft.rallyvision.command.Command cmd -> c
-    android.content.res.Resources res -> d
-    boolean isXLargeTablet(android.content.Context) -> a
-    boolean isSimplePreferences(android.content.Context) -> b
-    void onCreate(android.os.Bundle) -> onCreate
-    void loadAfericaoList() -> a
-    void setupActionBar() -> b
-    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    void setupSimplePreferencesScreen() -> c
-    boolean onIsMultiPane() -> onIsMultiPane
-    void initSummary(android.preference.Preference) -> a
-    void updatePrefSummary(android.preference.Preference) -> b
-    void onResume() -> onResume
-    void onRestart() -> onRestart
-    void onPause() -> onPause
-    void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String) -> onSharedPreferenceChanged
-    void updateRatioSummary(android.content.SharedPreferences,java.lang.String) -> a
-anastasoft.rallyvision.activity.SettingsActivity$1 -> anastasoft.rallyvision.activity.j:
-    boolean onPreferenceChange(android.preference.Preference,java.lang.Object) -> onPreferenceChange
-anastasoft.rallyvision.activity.SliderMotoristaIdeal -> anastasoft.rallyvision.activity.k:
-    android.widget.TextView TVSliderTipoTrechoIdeal -> a
-    android.widget.ProgressBar PBSliderPercentIdeal -> b
-anastasoft.rallyvision.activity.SliderMotoristaUsuario -> anastasoft.rallyvision.activity.l:
-    android.widget.TextView TVSliderTipoTrechoUsu‡rio -> a
-    android.widget.ProgressBar PBSliderPercentUsuario -> b
-anastasoft.rallyvision.activity.customfontdemo.FontTextView -> anastasoft.rallyvision.activity.customfontdemo.FontTextView:
-    anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$DrawCallback drawCallback -> a
-    void onDraw(android.graphics.Canvas) -> onDraw
-    void access$001(anastasoft.rallyvision.activity.customfontdemo.FontTextView,android.graphics.Canvas) -> a
-anastasoft.rallyvision.activity.customfontdemo.FontTextView$1 -> anastasoft.rallyvision.activity.customfontdemo.a:
-    anastasoft.rallyvision.activity.customfontdemo.FontTextView this$0 -> a
-    void onDraw(android.graphics.Canvas) -> a
-anastasoft.rallyvision.activity.customfontdemo.TypefaceManager -> anastasoft.rallyvision.activity.customfontdemo.b:
-    java.lang.String TAG -> a
-    anastasoft.rallyvision.activity.customfontdemo.TypefaceManager INSTANCE -> b
-    java.util.Map styleMap -> c
-    java.util.Map mCache -> d
-    android.content.Context mContext -> e
-    int mXmlResource -> f
-    java.util.Map mFonts -> g
-    void initialize(android.content.Context,int) -> a
-    anastasoft.rallyvision.activity.customfontdemo.TypefaceManager getInstance() -> a
-    android.graphics.Typeface getTypeface(java.lang.String,int) -> a
-    boolean setTypeface(android.widget.TextView,java.lang.String,int) -> a
-    void parse() -> b
-    byte next(byte) -> a
-    byte toInternalStyle(int) -> a
-    void addMissingStyles(anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$Font) -> a
-    java.lang.String[] getAvailableFontfiles() -> c
-    boolean isMissing(byte,byte) -> a
-    void applyFont(android.widget.TextView,android.util.AttributeSet,int) -> a
-    void getAttributes(android.content.res.TypedArray,anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$ExtraFontData) -> a
-    void onDrawHelper(android.graphics.Canvas,android.widget.TextView,anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$DrawCallback) -> a
-    void callDrawCallback(anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$DrawCallback,android.graphics.Canvas) -> a
-anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$1 -> anastasoft.rallyvision.activity.customfontdemo.c:
-anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$DrawCallback -> anastasoft.rallyvision.activity.customfontdemo.d:
-    void onDraw(android.graphics.Canvas) -> a
-anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$ExtraFontData -> anastasoft.rallyvision.activity.customfontdemo.e:
-    java.lang.String font -> a
-    int style -> b
-    int borderWidth -> c
-    int borderColor -> d
-anastasoft.rallyvision.activity.customfontdemo.TypefaceManager$Font -> anastasoft.rallyvision.activity.customfontdemo.f:
-    java.util.List names -> a
-    java.util.Map styles -> b
-anastasoft.rallyvision.activity.dialog.ConfigureDialog -> anastasoft.rallyvision.activity.a.a:
-    anastasoft.rallyvision.controller.Controller aController -> a
-    android.content.res.Resources res -> b
-    android.app.Dialog onCreateDialog(android.os.Bundle) -> onCreateDialog
-    anastasoft.rallyvision.controller.Controller access$000(anastasoft.rallyvision.activity.dialog.ConfigureDialog) -> a
-    android.content.res.Resources access$100(anastasoft.rallyvision.activity.dialog.ConfigureDialog) -> b
-anastasoft.rallyvision.activity.dialog.ConfigureDialog$1 -> anastasoft.rallyvision.activity.a.b:
-    android.widget.EditText val$userAfericaoInput -> a
-    anastasoft.rallyvision.activity.dialog.ConfigureDialog this$0 -> b
-    void afterTextChanged(android.text.Editable) -> afterTextChanged
-    void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
-    void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
-anastasoft.rallyvision.activity.dialog.ConfigureDialog$2 -> anastasoft.rallyvision.activity.a.c:
-    android.widget.EditText val$userAfericaoInput -> a
-    android.widget.EditText val$userAfericaoName -> b
-    anastasoft.rallyvision.activity.dialog.ConfigureDialog this$0 -> c
-    void onClick(android.content.DialogInterface,int) -> onClick
-anastasoft.rallyvision.activity.dialog.ConfigureDialog$3 -> anastasoft.rallyvision.activity.a.d:
-    anastasoft.rallyvision.activity.dialog.ConfigureDialog this$0 -> a
-    void onClick(android.content.DialogInterface,int) -> onClick
-anastasoft.rallyvision.activity.dialog.EditDialog -> anastasoft.rallyvision.activity.a.e:
-    anastasoft.rallyvision.controller.Controller aController -> a
-    android.content.res.Resources res -> b
-    android.app.Dialog onCreateDialog(android.os.Bundle) -> onCreateDialog
-    anastasoft.rallyvision.controller.Controller access$000(anastasoft.rallyvision.activity.dialog.EditDialog) -> a
-    android.content.res.Resources access$100(anastasoft.rallyvision.activity.dialog.EditDialog) -> b
-anastasoft.rallyvision.activity.dialog.EditDialog$1 -> anastasoft.rallyvision.activity.a.f:
-    android.widget.EditText val$userInput -> a
-    anastasoft.rallyvision.activity.dialog.EditDialog this$0 -> b
-    void onClick(android.content.DialogInterface,int) -> onClick
-anastasoft.rallyvision.activity.dialog.EditDialog$2 -> anastasoft.rallyvision.activity.a.g:
-    anastasoft.rallyvision.activity.dialog.EditDialog this$0 -> a
-    void onClick(android.content.DialogInterface,int) -> onClick
-anastasoft.rallyvision.activity.odometer -> anastasoft.rallyvision.activity.m:
-    android.widget.TextView TVdig1 -> a
-    android.widget.TextView TVdig2 -> b
-    android.widget.TextView TVdig3 -> c
-    android.widget.TextView TVdig4 -> d
-    android.widget.TextView TVdig5 -> e
-anastasoft.rallyvision.command.CarregarArquivoCommand -> anastasoft.rallyvision.c.a:
-    android.net.Uri aUri -> b
-    anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer aSliderChoreographer -> c
-    void Execute() -> a
-anastasoft.rallyvision.command.Command -> anastasoft.rallyvision.c.b:
-    anastasoft.rallyvision.controller.Controller aController -> a
-    void Execute() -> a
-anastasoft.rallyvision.command.ConfigureRatioCommand -> anastasoft.rallyvision.c.c:
-    java.lang.String afericaoNome -> b
-    int afericaoValor -> c
-    void Execute() -> a
-anastasoft.rallyvision.command.EditCommand -> anastasoft.rallyvision.c.d:
-    int odomValue -> b
-    void Execute() -> a
-anastasoft.rallyvision.command.SetRatioCommand -> anastasoft.rallyvision.c.e:
-    java.lang.String aFericaoNome -> b
-    float aRatio -> c
-    void Execute() -> a
-anastasoft.rallyvision.command.StopAllCommand -> anastasoft.rallyvision.c.f:
-    void Execute() -> a
-anastasoft.rallyvision.command.Zerar -> anastasoft.rallyvision.c.g:
-    void Execute() -> a
-anastasoft.rallyvision.command.startCommand -> anastasoft.rallyvision.c.h:
-    int aOdomValue -> b
-    android.app.Activity currActivity -> c
-    void Execute() -> a
-anastasoft.rallyvision.command.stopCommunicationCommand -> anastasoft.rallyvision.c.i:
-    void Execute() -> a
-anastasoft.rallyvision.controller.AnalyticsAdpater -> anastasoft.rallyvision.controller.a:
-    anastasoft.rallyvision.controller.Controller aController -> b
-    java.lang.String EXECUTANDO -> c
-    java.util.HashMap mTrackers -> a
-    com.google.android.gms.analytics.Tracker getTracker(anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName) -> a
-    void sendScreen() -> a
-anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName -> anastasoft.rallyvision.controller.b:
-    anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName APP_TRACKER -> a
-    anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName GLOBAL_TRACKER -> b
-    anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName ECOMMERCE_TRACKER -> c
-    anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName[] $VALUES -> d
-    anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName[] values() -> values
-    anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName valueOf(java.lang.String) -> valueOf
-anastasoft.rallyvision.controller.Clock -> anastasoft.rallyvision.controller.c:
-    java.util.Date ti -> a
-    java.util.Date te -> b
-    long timer -> c
-    anastasoft.rallyvision.controller.Observable aObservable -> d
-    anastasoft.rallyvision.controller.Controller$CounterAndConverter aCC -> e
-    void onTick(long) -> onTick
-    void onFinish() -> onFinish
-    void beginTimeCount() -> a
-    void update() -> b
-    long getDeltaT() -> c
-    long getDeltaTTot() -> d
-anastasoft.rallyvision.controller.Controller -> anastasoft.rallyvision.controller.Controller:
-    anastasoft.rallyvision.controller.MylicenseChekerCallBack mLicenseCheckerCallBack -> c
-    com.google.android.vending.licensing.LicenseChecker mChecker -> d
-    byte[] SALT -> e
-    boolean testON -> f
-    boolean uberON -> g
-    boolean licenseCheckON -> h
-    boolean sliderON -> i
-    int appState -> j
-    anastasoft.rallyvision.controller.AnalyticsAdpater analyticsAdpater -> a
-    boolean FIRST_RUN -> k
-    android.content.res.Resources aResource -> l
-    java.lang.String RATIO -> m
-    anastasoft.rallyvision.controller.PreferencesAdapter aPrefAdapter -> n
-    anastasoft.rallyvision.controller.Observable aObervable -> o
-    anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer aSliderChoreographer -> p
-    anastasoft.rallyvision.controller.Data.DBHelper dbHelper -> q
-    anastasoft.rallyvision.BTManager.BTManager aBTManager -> b
-    anastasoft.rallyvision.controller.Controller$CounterAndConverter aCountConv -> r
-    android.app.Activity currentAct -> s
-    java.lang.String mConnectedDeviceName -> t
-    anastasoft.rallyvision.activity.ConnectMediator mConnMediator -> u
-    android.os.Handler mHandler -> v
-    anastasoft.rallyvision.controller.Data.DBHelper getDbHelper() -> a
-    void startCommunication() -> b
-    boolean shouldCreateNotification() -> c
-    void setup(android.app.Activity) -> a
-    boolean jaExiste(anastasoft.rallyvision.controller.Data.model.Afericao) -> a
-    void setupCountAndConverter() -> q
-    int getAppState() -> d
-    void setAppState(int) -> a
-    void notifY() -> r
-    void doCheck() -> s
-    void setOdometer(int) -> b
-    void zerar() -> e
-    void enableBT(android.app.Activity) -> b
-    void query() -> f
-    boolean isTestOn() -> g
-    void startExecution(android.app.Activity) -> c
-    android.app.Activity getCurrentActiviy() -> h
-    android.os.Handler getHandler() -> i
-    void actionAfterBlueTooth(int,int,android.content.Intent) -> a
-    void setRatio(float,java.lang.String) -> a
-    void stopAll() -> j
-    void stopCommunication() -> k
-    void destroyACountAndConverterSafely() -> t
-    void configureRatio(int,java.lang.String) -> a
-    anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer getChoreographer() -> l
-    java.util.List getListaAfericoes() -> m
-    anastasoft.rallyvision.controller.Data.model.Afericao getAfericao() -> n
-    int getIndexDeAfericao(anastasoft.rallyvision.controller.Data.model.Afericao,java.util.List) -> a
-    anastasoft.rallyvision.controller.Controller$CounterAndConverter access$000(anastasoft.rallyvision.controller.Controller) -> a
-    boolean access$100(anastasoft.rallyvision.controller.Controller) -> b
-    java.lang.String access$202(anastasoft.rallyvision.controller.Controller,java.lang.String) -> a
-    android.content.res.Resources access$300() -> o
-    java.lang.String access$200(anastasoft.rallyvision.controller.Controller) -> c
-    anastasoft.rallyvision.controller.Observable access$400() -> p
-anastasoft.rallyvision.controller.Controller$1 -> anastasoft.rallyvision.controller.d:
-    int i -> a
-    anastasoft.rallyvision.controller.Controller this$0 -> b
-    void handleMessage(android.os.Message) -> handleMessage
-anastasoft.rallyvision.controller.Controller$CounterAndConverter -> anastasoft.rallyvision.controller.e:
-    java.lang.String TAG -> a
-    int STATE -> b
-    int CLOCK_STATE -> c
-    float ratio -> d
-    anastasoft.rallyvision.controller.Controller aController -> e
-    anastasoft.rallyvision.controller.VelocityEng aVelEng -> g
-    anastasoft.rallyvision.controller.Clock aClock -> h
-    anastasoft.rallyvision.controller.Observable aObservable -> i
-    anastasoft.rallyvision.Slider.SliderCore aSliderCore -> j
-    anastasoft.rallyvision.controller.Controller this$0 -> f
-    void run() -> run
-    void update(int) -> a
-    void cancel() -> a
-    void setSliderCore(anastasoft.rallyvision.Slider.SliderCore) -> a
-    void update() -> b
-anastasoft.rallyvision.controller.Data.DBHelper -> anastasoft.rallyvision.controller.a.a:
-    anastasoft.rallyvision.controller.Observable aObservable -> a
-    void onCreate(android.database.sqlite.SQLiteDatabase) -> onCreate
-    void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int) -> onUpgrade
-    long createAfericao(anastasoft.rallyvision.controller.Data.model.Afericao) -> a
-    java.util.List getTodasAfericoes() -> a
-    int getAfericaoCount() -> b
-    void update() -> c
-    anastasoft.rallyvision.controller.Data.model.Afericao getAfericaoByName(java.lang.String) -> a
-anastasoft.rallyvision.controller.Data.DBHelper$AfericaoExistenteException -> anastasoft.rallyvision.controller.a.b:
-    anastasoft.rallyvision.controller.Data.DBHelper this$0 -> a
-anastasoft.rallyvision.controller.Data.model.Afericao -> anastasoft.rallyvision.controller.a.a.a:
-    java.lang.String name -> b
-    float ratio -> c
-    java.lang.String getName() -> a
-    void setName(java.lang.String) -> a
-    void setRatio(float) -> a
-    java.lang.String toS() -> b
-    float getRatio() -> c
-anastasoft.rallyvision.controller.Data.model.Table -> anastasoft.rallyvision.controller.a.a.b:
-    int id -> a
-    int getId() -> d
-    void setId(int) -> a
-anastasoft.rallyvision.controller.MylicenseChekerCallBack -> anastasoft.rallyvision.controller.f:
-    anastasoft.rallyvision.controller.Controller controller -> a
-    void allow(int) -> a
-    void dontAllow(int) -> b
-    void applicationError(int) -> c
-anastasoft.rallyvision.controller.Observable -> anastasoft.rallyvision.controller.g:
-    float instantVel -> b
-    float avrgVel -> c
-    float deltaStot -> d
-    java.util.Date tStart -> e
-    long tTot -> f
-    java.util.List aObservers -> g
-    java.util.List listValues -> h
-    anastasoft.rallyvision.controller.Controller aController -> i
-    float ratio -> a
-    java.util.ArrayList motoristasStatus -> j
-    anastasoft.rallyvision.controller.Data.model.Afericao aFericao -> k
-    java.util.List getValues() -> a
-    float getRatio() -> b
-    void setAfericao(anastasoft.rallyvision.controller.Data.model.Afericao) -> a
-    void Attach(java.lang.Object) -> a
-    void Detach(java.lang.Object) -> b
-    void Notify() -> c
-    void Notify(anastasoft.rallyvision.controller.Controller$CounterAndConverter) -> a
-    long getStartTime() -> d
-    void setValues(java.util.ArrayList,anastasoft.rallyvision.controller.Controller$CounterAndConverter) -> a
-    void zerar() -> e
-    void setOdometer(int) -> a
-    void setValues(java.util.ArrayList) -> a
-    void Notify(java.util.ArrayList) -> b
-    anastasoft.rallyvision.controller.Data.model.Afericao getAfericao() -> f
-anastasoft.rallyvision.controller.PreferencesAdapter -> anastasoft.rallyvision.controller.h:
-    java.lang.String RATIO -> a
-    java.lang.String SCREEN -> b
-    int INDEX_RATIO -> c
-    android.content.SharedPreferences sPreferences -> d
-    java.lang.String TAG -> e
-    android.content.res.Resources res -> f
-    anastasoft.rallyvision.controller.Controller aController -> g
-    android.content.SharedPreferences$Editor editor -> h
-    anastasoft.rallyvision.controller.Observable aObservable -> i
-    anastasoft.rallyvision.controller.Data.DBHelper dbHelper -> j
-    float getRatio() -> a
-    void setRatio(float) -> a
-    void update() -> b
-    boolean getScreenOnStatus() -> c
-    anastasoft.rallyvision.controller.Data.model.Afericao getAfericao() -> d
-anastasoft.rallyvision.controller.SliderCoreographer.FileParser -> anastasoft.rallyvision.controller.b.a:
-    java.lang.String[] listaColunas -> a
-    java.lang.String pathAccessed -> b
-    java.util.ArrayList finalList -> c
-    android.database.Cursor getProvaCursorFrom(java.lang.String) -> a
-    java.util.ArrayList loadFromPath(java.lang.String) -> b
-    void loadWords() -> a
-    java.lang.String[] separaTipoNumero(java.lang.String[]) -> a
-    boolean estaTudoNosConformes(java.lang.String[]) -> b
-    android.database.MatrixCursor convertToCursor(java.util.ArrayList) -> a
-anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer -> anastasoft.rallyvision.controller.b.b:
-    anastasoft.rallyvision.controller.Controller aController -> a
-    anastasoft.rallyvision.activity.MenuPrincipal aMenuPrincipal -> b
-    anastasoft.rallyvision.controller.Controller$CounterAndConverter aCounterandConverter -> c
-    anastasoft.rallyvision.controller.Observable aObservable -> d
-    anastasoft.rallyvision.Slider.SliderCore aSliderCore -> e
-    anastasoft.rallyvision.controller.SliderCoreographer.FileParser aFileParser -> f
-    void setupAConuntAndConverter(anastasoft.rallyvision.controller.Controller$CounterAndConverter) -> a
-    void carregarArquivoProva(android.net.Uri) -> a
-anastasoft.rallyvision.controller.VelocityEng -> anastasoft.rallyvision.controller.i:
-    float instantVel -> a
-    float avrgVel -> b
-    float deltaStot -> c
-    float deltaS -> d
-    anastasoft.rallyvision.controller.Clock aClock -> h
-    float ratio -> e
-    java.util.Date tStart -> f
-    java.lang.Long deltaTTot -> g
-    java.util.List valuesList -> i
-    void updateEnd(int) -> a
-    java.util.ArrayList getValues() -> a
-    void setValues(java.util.List) -> a
-    float getDeltaT() -> b
-    float convert(int) -> b
-    float getDeltaS() -> c
 android.support.v4.app.ActivityCompat -> android.support.v4.app.a:
     void finishAffinity(android.app.Activity) -> a
 android.support.v4.app.ActivityCompatHoneycomb -> android.support.v4.app.b:
@@ -980,19 +1222,19 @@ android.support.v4.app.Fragment$SavedState$1 -> android.support.v4.app.j:
     java.lang.Object[] newArray(int) -> newArray
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
 android.support.v4.app.FragmentActivity -> android.support.v4.app.k:
-    android.os.Handler mHandler -> d
-    android.support.v4.app.FragmentManagerImpl mFragments -> e
-    android.support.v4.app.FragmentContainer mContainer -> f
-    boolean mCreated -> g
-    boolean mResumed -> h
-    boolean mStopped -> i
-    boolean mReallyStopped -> j
-    boolean mRetaining -> k
-    boolean mOptionsMenuInvalidated -> l
-    boolean mCheckedForLoaderManager -> m
-    boolean mLoadersStarted -> n
-    android.support.v4.util.SimpleArrayMap mAllLoaderManagers -> o
-    android.support.v4.app.LoaderManagerImpl mLoaderManager -> p
+    android.os.Handler mHandler -> c
+    android.support.v4.app.FragmentManagerImpl mFragments -> d
+    android.support.v4.app.FragmentContainer mContainer -> e
+    boolean mCreated -> f
+    boolean mResumed -> g
+    boolean mStopped -> h
+    boolean mReallyStopped -> i
+    boolean mRetaining -> j
+    boolean mOptionsMenuInvalidated -> k
+    boolean mCheckedForLoaderManager -> l
+    boolean mLoadersStarted -> m
+    android.support.v4.util.SimpleArrayMap mAllLoaderManagers -> n
+    android.support.v4.app.LoaderManagerImpl mLoaderManager -> o
     void onActivityResult(int,int,android.content.Intent) -> onActivityResult
     void onBackPressed() -> onBackPressed
     void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
@@ -1020,7 +1262,7 @@ android.support.v4.app.FragmentActivity -> android.support.v4.app.k:
     void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[]) -> dump
     java.lang.String viewToString(android.view.View) -> a
     void dumpViewHierarchy(java.lang.String,java.io.PrintWriter,android.view.View) -> a
-    void doReallyStop(boolean) -> c
+    void doReallyStop(boolean) -> d
     void onReallyStop() -> h
     void onAttachFragment(android.support.v4.app.Fragment) -> a
     android.support.v4.app.FragmentManager getSupportFragmentManager() -> i
@@ -2668,7 +2910,7 @@ android.support.v7.app.ActionBar$Tab -> android.support.v7.a.e:
     void select() -> d
     java.lang.CharSequence getContentDescription() -> e
 android.support.v7.app.ActionBarActivity -> android.support.v7.a.f:
-    android.support.v7.app.ActionBarActivityDelegate mImpl -> q
+    android.support.v7.app.ActionBarActivityDelegate mImpl -> p
     android.support.v7.app.ActionBar getSupportActionBar() -> j
     android.view.MenuInflater getMenuInflater() -> getMenuInflater
     void setContentView(int) -> setContentView
@@ -5086,6 +5328,23 @@ android.support.v7.widget.SuggestionsAdapter$ChildViewCache -> android.support.v
     android.widget.ImageView mIcon1 -> c
     android.widget.ImageView mIcon2 -> d
     android.widget.ImageView mIconRefine -> e
+com.android.vending.billing.IInAppBillingService -> com.a.a.a.a:
+    int isBillingSupported(int,java.lang.String,java.lang.String) -> a
+    android.os.Bundle getSkuDetails(int,java.lang.String,java.lang.String,android.os.Bundle) -> a
+    android.os.Bundle getBuyIntent(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
+    android.os.Bundle getPurchases(int,java.lang.String,java.lang.String,java.lang.String) -> a
+    int consumePurchase(int,java.lang.String,java.lang.String) -> b
+com.android.vending.billing.IInAppBillingService$Stub -> com.a.a.a.b:
+    com.android.vending.billing.IInAppBillingService asInterface(android.os.IBinder) -> a
+    boolean onTransact(int,android.os.Parcel,android.os.Parcel,int) -> onTransact
+com.android.vending.billing.IInAppBillingService$Stub$Proxy -> com.a.a.a.c:
+    android.os.IBinder mRemote -> a
+    android.os.IBinder asBinder() -> asBinder
+    int isBillingSupported(int,java.lang.String,java.lang.String) -> a
+    android.os.Bundle getSkuDetails(int,java.lang.String,java.lang.String,android.os.Bundle) -> a
+    android.os.Bundle getBuyIntent(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
+    android.os.Bundle getPurchases(int,java.lang.String,java.lang.String,java.lang.String) -> a
+    int consumePurchase(int,java.lang.String,java.lang.String) -> b
 com.google.ads.AdRequest -> com.google.a.a:
     java.lang.String TEST_EMULATOR -> a
 com.google.ads.AdRequest$ErrorCode -> com.google.a.b:
@@ -34027,7 +34286,7 @@ com.google.android.vending.licensing.util.Base64DecoderException -> com.google.a
 com.ipaulpro.afilechooser.FileChooserActivity -> com.ipaulpro.afilechooser.FileChooserActivity:
     java.lang.String EXTERNAL_BASE_PATH -> a
     boolean HAS_ACTIONBAR -> b
-    android.support.v4.app.FragmentManager mFragmentManager -> c
+    android.support.v4.app.FragmentManager mFragmentManager -> p
     android.content.BroadcastReceiver mStorageListener -> q
     java.lang.String mPath -> r
     void onCreate(android.os.Bundle) -> onCreate
@@ -34125,10 +34384,10 @@ com.ipaulpro.afilechooser.utils.FileUtils$2 -> com.ipaulpro.afilechooser.a.c:
     boolean accept(java.io.File) -> accept
 com.ipaulpro.afilechooser.utils.FileUtils$3 -> com.ipaulpro.afilechooser.a.d:
     boolean accept(java.io.File) -> accept
-com.ubertesters.common.containers.ExtraDataMap -> com.a.a.a.a:
+com.ubertesters.common.containers.ExtraDataMap -> com.b.a.a.a:
     java.util.HashMap mHashMap -> a
     java.util.HashMap getHashMap() -> a
-com.ubertesters.common.models.ActivationMode -> com.a.a.b.a:
+com.ubertesters.common.models.ActivationMode -> com.b.a.b.a:
     com.ubertesters.common.models.ActivationMode Slider -> a
     com.ubertesters.common.models.ActivationMode Widget -> b
     com.ubertesters.common.models.ActivationMode Shake -> c
@@ -34137,7 +34396,7 @@ com.ubertesters.common.models.ActivationMode -> com.a.a.b.a:
     com.ubertesters.common.models.ActivationMode[] ENUM$VALUES -> f
     com.ubertesters.common.models.ActivationMode[] values() -> values
     com.ubertesters.common.models.ActivationMode valueOf(java.lang.String) -> valueOf
-com.ubertesters.common.models.AppInfo -> com.a.a.b.b:
+com.ubertesters.common.models.AppInfo -> com.b.a.b.b:
     java.lang.String mAppId -> a
     java.lang.String mVersionName -> b
     java.lang.String mVersionCode -> c
@@ -34155,17 +34414,17 @@ com.ubertesters.common.models.AppInfo -> com.a.a.b.b:
     void setVersionCode(java.lang.String) -> d
     java.lang.String getApiKey() -> f
     void setApiKey(java.lang.String) -> e
-com.ubertesters.common.models.InitData -> com.a.a.b.c:
+com.ubertesters.common.models.InitData -> com.b.a.b.c:
     com.ubertesters.common.models.LockingMode mLockingMode -> a
     com.ubertesters.common.models.ActivationMode mActivationMode -> b
     com.ubertesters.common.models.LockingMode getLockingMode() -> a
     void setLockingMode(com.ubertesters.common.models.LockingMode) -> a
     com.ubertesters.common.models.ActivationMode getActivationMode() -> b
     void setActivationMode(com.ubertesters.common.models.ActivationMode) -> a
-com.ubertesters.common.models.Issue -> com.a.a.b.d:
+com.ubertesters.common.models.Issue -> com.b.a.b.d:
     java.lang.Long _rid -> a
     boolean mIsAttached -> b
-com.ubertesters.common.models.LibraryInfo -> com.a.a.b.e:
+com.ubertesters.common.models.LibraryInfo -> com.b.a.b.e:
     java.lang.String _version -> a
     java.lang.String _build -> b
     java.lang.String _api -> c
@@ -34180,7 +34439,7 @@ com.ubertesters.common.models.LibraryInfo -> com.a.a.b.e:
     void setApi(java.lang.String) -> c
     java.lang.String getType() -> e
     void setType(java.lang.String) -> d
-com.ubertesters.common.models.LockingMode -> com.a.a.b.f:
+com.ubertesters.common.models.LockingMode -> com.b.a.b.f:
     com.ubertesters.common.models.LockingMode LockingModeDisableUbertestersIfBuildNotExist -> a
     com.ubertesters.common.models.LockingMode LockingModeLockAppIfBuildNotExist -> b
     com.ubertesters.common.models.LockingMode DisableUbertesters -> c
@@ -34188,7 +34447,7 @@ com.ubertesters.common.models.LockingMode -> com.a.a.b.f:
     com.ubertesters.common.models.LockingMode[] ENUM$VALUES -> e
     com.ubertesters.common.models.LockingMode[] values() -> values
     com.ubertesters.common.models.LockingMode valueOf(java.lang.String) -> valueOf
-com.ubertesters.common.models.PackageInfo -> com.a.a.b.g:
+com.ubertesters.common.models.PackageInfo -> com.b.a.b.g:
     java.lang.String mAppDir -> a
     boolean mOfflineModeEnabled -> b
     boolean mIsIgnored -> c
@@ -34210,15 +34469,15 @@ com.ubertesters.common.models.PackageInfo -> com.a.a.b.g:
     void setActivationMode(com.ubertesters.common.models.ActivationMode) -> a
     com.ubertesters.common.models.LockingMode getLockingMode() -> f
     void setLockingMode(com.ubertesters.common.models.LockingMode) -> a
-com.ubertesters.common.transactions.TransactionConverter -> com.a.a.c.a:
+com.ubertesters.common.transactions.TransactionConverter -> com.b.a.c.a:
     java.lang.String toJson(com.ubertesters.common.containers.ExtraDataMap) -> a
     java.lang.String toJson(com.ubertesters.common.models.InitData) -> a
     java.lang.String toJson(com.ubertesters.common.models.PackageInfo) -> a
     org.json.JSONObject toJsonObject(com.ubertesters.common.models.AppInfo) -> a
     org.json.JSONObject toJsonObject(com.ubertesters.common.models.LibraryInfo) -> a
-com.ubertesters.common.utils.DeviceInfo -> com.a.a.d.a:
+com.ubertesters.common.utils.DeviceInfo -> com.b.a.d.a:
     android.util.DisplayMetrics getMetric(android.content.Context) -> a
-com.ubertesters.common.utils.TransactCode -> com.a.a.d.b:
+com.ubertesters.common.utils.TransactCode -> com.b.a.d.b:
     com.ubertesters.common.utils.TransactCode UNKNOWN -> a
     com.ubertesters.common.utils.TransactCode APP_INFO_CODE -> b
     com.ubertesters.common.utils.TransactCode LIB_INFO -> c
@@ -34250,29 +34509,29 @@ com.ubertesters.common.utils.TransactCode -> com.a.a.d.b:
     int getValue() -> a
     com.ubertesters.common.utils.TransactCode[] values() -> values
     com.ubertesters.common.utils.TransactCode valueOf(java.lang.String) -> valueOf
-com.ubertesters.common.utils.api.ApiHelper -> com.a.a.d.a.a:
+com.ubertesters.common.utils.api.ApiHelper -> com.b.a.d.a.a:
     com.ubertesters.common.utils.api.ApiHelper _instance -> a
     com.ubertesters.common.utils.api.IApiHelper _current -> b
     void setBackgroundDrawable(android.view.View,android.graphics.drawable.Drawable) -> a
     com.ubertesters.common.utils.api.ApiHelper getInstance() -> a
     com.ubertesters.common.utils.api.IApiHelper getHelper() -> b
-com.ubertesters.common.utils.api.ApiHelperFroyo -> com.a.a.d.a.b:
+com.ubertesters.common.utils.api.ApiHelperFroyo -> com.b.a.d.a.b:
     void setBackgroundDrawable(android.view.View,android.graphics.drawable.Drawable) -> a
-com.ubertesters.common.utils.api.ApiHelperGingerbread -> com.a.a.d.a.c:
-com.ubertesters.common.utils.api.ApiHelperGingerbreadMr1 -> com.a.a.d.a.d:
-com.ubertesters.common.utils.api.ApiHelperHoneycomb -> com.a.a.d.a.e:
-com.ubertesters.common.utils.api.ApiHelperHoneycombM1 -> com.a.a.d.a.f:
-com.ubertesters.common.utils.api.ApiHelperHoneycombM2 -> com.a.a.d.a.g:
-com.ubertesters.common.utils.api.ApiHelperIceCreamSandwich -> com.a.a.d.a.h:
-com.ubertesters.common.utils.api.ApiHelperIceCreamSandwichM1 -> com.a.a.d.a.i:
-com.ubertesters.common.utils.api.ApiHelperJellyBean -> com.a.a.d.a.j:
+com.ubertesters.common.utils.api.ApiHelperGingerbread -> com.b.a.d.a.c:
+com.ubertesters.common.utils.api.ApiHelperGingerbreadMr1 -> com.b.a.d.a.d:
+com.ubertesters.common.utils.api.ApiHelperHoneycomb -> com.b.a.d.a.e:
+com.ubertesters.common.utils.api.ApiHelperHoneycombM1 -> com.b.a.d.a.f:
+com.ubertesters.common.utils.api.ApiHelperHoneycombM2 -> com.b.a.d.a.g:
+com.ubertesters.common.utils.api.ApiHelperIceCreamSandwich -> com.b.a.d.a.h:
+com.ubertesters.common.utils.api.ApiHelperIceCreamSandwichM1 -> com.b.a.d.a.i:
+com.ubertesters.common.utils.api.ApiHelperJellyBean -> com.b.a.d.a.j:
     void setBackgroundDrawable(android.view.View,android.graphics.drawable.Drawable) -> a
-com.ubertesters.common.utils.api.ApiHelperJellyBeanM1 -> com.a.a.d.a.k:
-com.ubertesters.common.utils.api.ApiHelperJellyBeanM2 -> com.a.a.d.a.l:
-com.ubertesters.common.utils.api.ApiHelperKitKat -> com.a.a.d.a.m:
-com.ubertesters.common.utils.api.IApiHelper -> com.a.a.d.a.n:
+com.ubertesters.common.utils.api.ApiHelperJellyBeanM1 -> com.b.a.d.a.k:
+com.ubertesters.common.utils.api.ApiHelperJellyBeanM2 -> com.b.a.d.a.l:
+com.ubertesters.common.utils.api.ApiHelperKitKat -> com.b.a.d.a.m:
+com.ubertesters.common.utils.api.IApiHelper -> com.b.a.d.a.n:
     void setBackgroundDrawable(android.view.View,android.graphics.drawable.Drawable) -> a
-com.ubertesters.sdk.Ubertesters -> com.a.b.a:
+com.ubertesters.sdk.Ubertesters -> com.b.b.a:
     com.ubertesters.sdk.Ubertesters mInstance -> b
     boolean mIsStarted -> c
     com.ubertesters.common.models.ActivationMode mActivationMode -> d
@@ -34336,28 +34595,28 @@ com.ubertesters.sdk.Ubertesters -> com.a.b.a:
     android.os.Handler access$16() -> i
     android.app.Application access$17(com.ubertesters.sdk.Ubertesters) -> f
     com.ubertesters.sdk.utility.LockScreen access$18(com.ubertesters.sdk.Ubertesters) -> g
-com.ubertesters.sdk.Ubertesters$1 -> com.a.b.b:
+com.ubertesters.sdk.Ubertesters$1 -> com.b.b.b:
     com.ubertesters.sdk.Ubertesters this$0 -> a
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
-com.ubertesters.sdk.Ubertesters$2 -> com.a.b.c:
+com.ubertesters.sdk.Ubertesters$2 -> com.b.b.c:
     com.ubertesters.sdk.Ubertesters this$0 -> a
     java.lang.String val$path -> b
     void run() -> run
-com.ubertesters.sdk.Ubertesters$3 -> com.a.b.d:
+com.ubertesters.sdk.Ubertesters$3 -> com.b.b.d:
     com.ubertesters.sdk.Ubertesters this$0 -> a
     void run() -> run
     com.ubertesters.sdk.Ubertesters access$0(com.ubertesters.sdk.Ubertesters$3) -> a
-com.ubertesters.sdk.Ubertesters$3$1 -> com.a.b.e:
+com.ubertesters.sdk.Ubertesters$3$1 -> com.b.b.e:
     com.ubertesters.sdk.Ubertesters$3 this$1 -> a
     void run() -> run
-com.ubertesters.sdk.Ubertesters$4 -> com.a.b.f:
+com.ubertesters.sdk.Ubertesters$4 -> com.b.b.f:
     com.ubertesters.sdk.Ubertesters this$0 -> a
     void onBackPressed() -> a
-com.ubertesters.sdk.Ubertesters$IBeforeSendCrashListener -> com.a.b.g:
+com.ubertesters.sdk.Ubertesters$IBeforeSendCrashListener -> com.b.b.g:
     void addExtraIssueParameter(com.ubertesters.common.containers.ExtraDataMap) -> a
-com.ubertesters.sdk.Ubertesters$IBeforeSendIssueListener -> com.a.b.h:
+com.ubertesters.sdk.Ubertesters$IBeforeSendIssueListener -> com.b.b.h:
     void addExtraIssueParameter(com.ubertesters.common.containers.ExtraDataMap) -> a
-com.ubertesters.sdk.Ubertesters$UtServiceConnection -> com.a.b.i:
+com.ubertesters.sdk.Ubertesters$UtServiceConnection -> com.b.b.i:
     com.ubertesters.sdk.Ubertesters this$0 -> a
     void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
     void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
@@ -34368,10 +34627,10 @@ com.ubertesters.sdk.Ubertesters$UtServiceConnection -> com.a.b.i:
     void init(com.ubertesters.common.models.LockingMode,com.ubertesters.common.models.ActivationMode) -> a
     void postIssue(com.ubertesters.common.containers.ExtraDataMap) -> a
     void access$4(com.ubertesters.sdk.Ubertesters$UtServiceConnection) -> a
-com.ubertesters.sdk.tools.LibraryInfoDownloader -> com.a.b.a.a:
+com.ubertesters.sdk.tools.LibraryInfoDownloader -> com.b.b.a.a:
     java.io.InputStream getResourceStream(android.content.Context,java.lang.String) -> a
     java.io.InputStream openFileByClassLoader(java.lang.String,java.util.List) -> a
-com.ubertesters.sdk.tools.Log -> com.a.b.a.b:
+com.ubertesters.sdk.tools.Log -> com.b.b.a.b:
     boolean _canWrite -> a
     int[] $SWITCH_TABLE$com$ubertesters$sdk$tools$Log$Priority -> b
     void setEnable(boolean) -> a
@@ -34379,7 +34638,7 @@ com.ubertesters.sdk.tools.Log -> com.a.b.a.b:
     void w(java.lang.String,java.lang.String) -> b
     void writeLog(java.lang.String,java.lang.String,com.ubertesters.sdk.tools.Log$Priority) -> a
     int[] $SWITCH_TABLE$com$ubertesters$sdk$tools$Log$Priority() -> a
-com.ubertesters.sdk.tools.Log$Priority -> com.a.b.a.c:
+com.ubertesters.sdk.tools.Log$Priority -> com.b.b.a.c:
     com.ubertesters.sdk.tools.Log$Priority Debug -> a
     com.ubertesters.sdk.tools.Log$Priority Info -> b
     com.ubertesters.sdk.tools.Log$Priority Warning -> c
@@ -34387,13 +34646,13 @@ com.ubertesters.sdk.tools.Log$Priority -> com.a.b.a.c:
     com.ubertesters.sdk.tools.Log$Priority[] ENUM$VALUES -> e
     com.ubertesters.sdk.tools.Log$Priority[] values() -> values
     com.ubertesters.sdk.tools.Log$Priority valueOf(java.lang.String) -> valueOf
-com.ubertesters.sdk.tools.MetadataReader -> com.a.b.a.d:
+com.ubertesters.sdk.tools.MetadataReader -> com.b.b.a.d:
     java.lang.String readProjectId(android.content.Context) -> a
-com.ubertesters.sdk.utility.ActivityTracker -> com.a.b.b.a:
+com.ubertesters.sdk.utility.ActivityTracker -> com.b.b.b.a:
     com.ubertesters.sdk.utility.ActivityTracker _tracker -> a
     java.util.List sListeners -> b
     void setOnLogUpdatedListener(com.ubertesters.sdk.utility.Logger$OnLogUpdated) -> a
-com.ubertesters.sdk.utility.ButtonDrawable -> com.a.b.b.b:
+com.ubertesters.sdk.utility.ButtonDrawable -> com.b.b.b.b:
     int _enabledColor -> a
     int _pressedColor -> b
     java.lang.Integer _bottomBorder -> c
@@ -34402,19 +34661,19 @@ com.ubertesters.sdk.utility.ButtonDrawable -> com.a.b.b.b:
     int access$0(com.ubertesters.sdk.utility.ButtonDrawable) -> a
     java.lang.Integer access$1(com.ubertesters.sdk.utility.ButtonDrawable) -> b
     int access$2(com.ubertesters.sdk.utility.ButtonDrawable) -> c
-com.ubertesters.sdk.utility.ButtonDrawable$1 -> com.a.b.b.c:
+com.ubertesters.sdk.utility.ButtonDrawable$1 -> com.b.b.b.c:
     com.ubertesters.sdk.utility.ButtonDrawable this$0 -> a
     void setColorFilter(android.graphics.ColorFilter) -> setColorFilter
     void setAlpha(int) -> setAlpha
     int getOpacity() -> getOpacity
     void draw(android.graphics.Canvas) -> draw
-com.ubertesters.sdk.utility.ButtonDrawable$2 -> com.a.b.b.d:
+com.ubertesters.sdk.utility.ButtonDrawable$2 -> com.b.b.b.d:
     com.ubertesters.sdk.utility.ButtonDrawable this$0 -> a
     void setColorFilter(android.graphics.ColorFilter) -> setColorFilter
     void setAlpha(int) -> setAlpha
     int getOpacity() -> getOpacity
     void draw(android.graphics.Canvas) -> draw
-com.ubertesters.sdk.utility.CrashLogger -> com.a.b.b.e:
+com.ubertesters.sdk.utility.CrashLogger -> com.b.b.b.e:
     java.lang.Thread$UncaughtExceptionHandler _defaultHandler -> a
     com.ubertesters.sdk.utility.CrashLogger$IListener _listener -> b
     com.ubertesters.sdk.utility.CrashLogger _instance -> c
@@ -34422,9 +34681,9 @@ com.ubertesters.sdk.utility.CrashLogger -> com.a.b.b.e:
     void uncaughtException(java.lang.Thread,java.lang.Throwable) -> uncaughtException
     boolean isUbertestersError(java.lang.Throwable) -> a
     void setUncaughtException(java.lang.Thread,java.lang.Throwable) -> a
-com.ubertesters.sdk.utility.CrashLogger$IListener -> com.a.b.b.f:
+com.ubertesters.sdk.utility.CrashLogger$IListener -> com.b.b.b.f:
     void onCrash(java.lang.Thread$UncaughtExceptionHandler,java.lang.Thread,java.lang.Throwable,java.lang.String) -> a
-com.ubertesters.sdk.utility.GLRenderWrapper -> com.a.b.b.g:
+com.ubertesters.sdk.utility.GLRenderWrapper -> com.b.b.b.g:
     android.opengl.GLSurfaceView$Renderer _renderer -> a
     int _width -> b
     int _height -> c
@@ -34442,7 +34701,7 @@ com.ubertesters.sdk.utility.GLRenderWrapper -> com.a.b.b.g:
     void onDrawFrame(javax.microedition.khronos.opengles.GL10) -> onDrawFrame
     android.graphics.Bitmap savePixels(int,int,int,int) -> a
     android.graphics.Bitmap savePixels(int,int,int,int,javax.microedition.khronos.opengles.GL10) -> a
-com.ubertesters.sdk.utility.LockScreen -> com.a.b.b.h:
+com.ubertesters.sdk.utility.LockScreen -> com.b.b.b.h:
     java.lang.String mFolder -> a
     com.ubertesters.sdk.utility.LockScreen$OnBackPressed mListener -> b
     java.lang.String mText -> c
@@ -34460,20 +34719,20 @@ com.ubertesters.sdk.utility.LockScreen -> com.a.b.b.h:
     java.lang.String folder(android.content.Context) -> a
     int dpiToPixel(float) -> a
     java.lang.Runnable access$0(com.ubertesters.sdk.utility.LockScreen) -> a
-com.ubertesters.sdk.utility.LockScreen$1 -> com.a.b.b.i:
+com.ubertesters.sdk.utility.LockScreen$1 -> com.b.b.b.i:
     com.ubertesters.sdk.utility.LockScreen this$0 -> a
     void onClick(android.view.View) -> onClick
-com.ubertesters.sdk.utility.LockScreen$OnBackPressed -> com.a.b.b.j:
+com.ubertesters.sdk.utility.LockScreen$OnBackPressed -> com.b.b.b.j:
     void onBackPressed() -> a
-com.ubertesters.sdk.utility.Logger -> com.a.b.b.k:
+com.ubertesters.sdk.utility.Logger -> com.b.b.b.k:
     com.ubertesters.sdk.utility.Logger sLogger -> a
     java.util.List sListeners -> b
     void setOnLogUpdatedListener(com.ubertesters.sdk.utility.Logger$OnLogUpdated) -> a
-com.ubertesters.sdk.utility.Logger$OnLogUpdated -> com.a.b.b.l:
-com.ubertesters.sdk.utility.Reflect -> com.a.b.b.m:
+com.ubertesters.sdk.utility.Logger$OnLogUpdated -> com.b.b.b.l:
+com.ubertesters.sdk.utility.Reflect -> com.b.b.b.m:
     java.lang.Object _object -> a
     com.ubertesters.sdk.utility.Reflect$FieldRf field(java.lang.String) -> a
-com.ubertesters.sdk.utility.Reflect$FieldRf -> com.a.b.b.n:
+com.ubertesters.sdk.utility.Reflect$FieldRf -> com.b.b.b.n:
     java.lang.Class clazz -> b
     java.lang.Object object -> c
     java.lang.String name -> d
@@ -34481,11 +34740,11 @@ com.ubertesters.sdk.utility.Reflect$FieldRf -> com.a.b.b.n:
     void in(java.lang.Object) -> a
     com.ubertesters.sdk.utility.Reflect$FieldRf type(java.lang.Class) -> a
     java.lang.reflect.Field getField() -> a
-com.ubertesters.sdk.utility.StringProvider -> com.a.b.b.o:
+com.ubertesters.sdk.utility.StringProvider -> com.b.b.b.o:
     java.lang.String addPermission() -> a
     java.lang.String installLatestVersion() -> b
     java.lang.String install() -> c
-com.ubertesters.sdk.utility.VideoRecorderThread -> com.a.b.b.p:
+com.ubertesters.sdk.utility.VideoRecorderThread -> com.b.b.b.p:
     com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider mScreenshotProvider -> a
     java.util.List mBitmaps -> b
     java.lang.Object mLocker -> c
@@ -34500,10 +34759,10 @@ com.ubertesters.sdk.utility.VideoRecorderThread -> com.a.b.b.p:
     android.graphics.Bitmap getBitmap() -> d
     void createVideo() -> e
     com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider access$0(com.ubertesters.sdk.utility.VideoRecorderThread) -> a
-com.ubertesters.sdk.utility.VideoRecorderThread$1 -> com.a.b.b.q:
+com.ubertesters.sdk.utility.VideoRecorderThread$1 -> com.b.b.b.q:
     com.ubertesters.sdk.utility.VideoRecorderThread this$0 -> a
     void run() -> run
-com.ubertesters.sdk.utility.ViewHelper -> com.a.b.b.r:
+com.ubertesters.sdk.utility.ViewHelper -> com.b.b.b.r:
     java.lang.String _windowManagerString -> a
     java.lang.Class _windowManager -> b
     android.view.View[] getWindowDecorViews() -> a
@@ -34518,7 +34777,7 @@ com.ubertesters.sdk.utility.ViewHelper -> com.a.b.b.r:
     boolean isViewSufficientlyShown(android.view.View) -> a
     android.view.View getScrollOrListParent(android.view.View) -> b
     float getScrollListWindowHeight(android.view.View) -> c
-com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider -> com.a.b.b.a.a:
+com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider -> com.b.b.b.a.a:
     java.lang.String LOG_TAG -> b
     android.os.HandlerThread mScreenShotSaverThread -> c
     com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider$ScreenShotSaver mScreenShotSaver -> d
@@ -34545,30 +34804,30 @@ com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider -> com.a.b.b.a.
     java.lang.String access$5(com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider) -> c
     java.lang.String access$6(com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider,java.lang.String) -> a
     void access$7(com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider,java.lang.String) -> b
-com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider$IBitmapCreatedListener -> com.a.b.b.a.b:
+com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider$IBitmapCreatedListener -> com.b.b.b.a.b:
     void onBitmap(android.graphics.Bitmap) -> a
-com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider$ScreenShotSaver -> com.a.b.b.a.c:
+com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider$ScreenShotSaver -> com.b.b.b.a.c:
     com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider this$0 -> a
     void saveBitmap(android.graphics.Bitmap,java.lang.String,int) -> a
     void handleMessage(android.os.Message) -> handleMessage
     void saveFile(java.lang.String,android.graphics.Bitmap,int) -> a
-com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider$ScreenshotRunnable -> com.a.b.b.a.d:
+com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider$ScreenshotRunnable -> com.b.b.b.a.d:
     android.view.View _view -> b
     java.lang.String _name -> c
     int _quality -> d
     com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider this$0 -> a
     void run() -> run
-com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider$Snapshot -> com.a.b.b.a.e:
+com.ubertesters.sdk.utility.screenshot.DefaultScreenshotProvider$Snapshot -> com.b.b.b.a.e:
     android.graphics.Bitmap _bitmap -> a
     android.graphics.Rect _rect -> b
     android.graphics.Bitmap getBitmap() -> a
     android.graphics.Rect getRect() -> b
     void destroy() -> c
-com.ubertesters.sdk.utility.screenshot.IScreenshotListener -> com.a.b.b.a.f:
+com.ubertesters.sdk.utility.screenshot.IScreenshotListener -> com.b.b.b.a.f:
     void onScreenshotSaved(java.lang.String) -> a
-com.ubertesters.sdk.utility.screenshot.IScreenshotProvider -> com.a.b.b.a.g:
+com.ubertesters.sdk.utility.screenshot.IScreenshotProvider -> com.b.b.b.a.g:
     void setListener(com.ubertesters.sdk.utility.screenshot.IScreenshotListener) -> a
     void takeScreenshot(java.lang.String,int) -> a
-com.ubertesters.sdk.utility.screenshot.ScreenshotProvider -> com.a.b.b.a.h:
+com.ubertesters.sdk.utility.screenshot.ScreenshotProvider -> com.b.b.b.a.h:
     com.ubertesters.sdk.utility.screenshot.IScreenshotListener mListener -> a
     void setListener(com.ubertesters.sdk.utility.screenshot.IScreenshotListener) -> a

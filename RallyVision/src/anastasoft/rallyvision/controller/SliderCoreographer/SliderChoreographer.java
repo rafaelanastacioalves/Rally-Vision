@@ -5,7 +5,9 @@ import android.widget.Toast;
 
 import com.ipaulpro.afilechooser.utils.FileUtils;
 
-import anastasoft.rallyvision.R;
+import java.util.Calendar;
+
+import anastasoft.rallyvisionaluguel.R;
 import anastasoft.rallyvision.Slider.SliderCore;
 import anastasoft.rallyvision.activity.MenuPrincipal;
 import anastasoft.rallyvision.controller.Controller;
@@ -22,6 +24,7 @@ public class SliderChoreographer {
     private Observable aObservable;
     private SliderCore aSliderCore;
     private FileParser aFileParser;
+    private Calendar inicioProvaSlider;
 
     public  SliderChoreographer(Controller aController, MenuPrincipal aMenuPrincipal, Controller.CounterAndConverter aCounterandConverter, Observable aObservable){
 
@@ -50,7 +53,6 @@ public class SliderChoreographer {
 
     public void setupAConuntAndConverter(Controller.CounterAndConverter aCounterandConverter) {
         this.aCounterandConverter = aCounterandConverter;
-        this.aCounterandConverter.setSliderCore(aSliderCore);
     }
 
     public void setaSliderCore(){
@@ -66,9 +68,17 @@ public class SliderChoreographer {
             // Alternatively, use FileUtils.getFile(Context, Uri)
             if (path != null && FileUtils.isLocal(path)) {
                 aSliderCore.carregarProva(aFileParser.getProvaCursorFrom(path));
+
             }
         }catch(Exception erro){
             Toast.makeText(aController, aController.getResources().getString(R.string.slider_carregar_arquivo_invalido), Toast.LENGTH_SHORT).show();
+        }
+        try{
+            aMenuPrincipal.setAgendarInicioProvaSlider(true);
+        }catch (NullPointerException e){
+            if (aController.isTestOn()) {
+                Toast.makeText(aController.getApplicationContext(), "Erro em setAgendarInicioProvaSlider: " + e.toString(), Toast.LENGTH_SHORT).show();
+            }
         }
 
 
@@ -78,4 +88,19 @@ public class SliderChoreographer {
     public void desactivate(){
 
     }
+
+    public void setInicioProvaSlider(Calendar inicioProvaSlider) {
+        aObservable.getRelogio().setarAlarme(inicioProvaSlider, aSliderCore);
+
+    }
+
+    /**
+     * Inicia a contagem da prova usando sliders.
+     * Necessita que o CountAndConverter esteja iniciado.
+     */
+    public void startProvaSlider(){
+        this.aCounterandConverter.setSliderCore(aSliderCore);
+
+    }
+
 }

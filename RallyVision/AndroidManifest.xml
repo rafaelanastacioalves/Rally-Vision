@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--Ao mudar o package, renomeie colocando para procurar por comments e stringd
+Também é bom dar um "make project" antes de apertar "run"-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 
-    package="anastasoft.rallyvision"
-    android:versionCode="29"
-    android:versionName="1.998">
+    package="anastasoft.rallyvisionaluguel"
+    android:versionCode="33"
+    android:versionName="1.9989">
+
 
     <uses-sdk
         android:minSdkVersion="10"
@@ -16,6 +20,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
 
 
 
@@ -25,9 +31,9 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- Ubertesters library user-permissions -->
 
-
+<!--Mudar o nome do String do aplicativo se for assinatura! @see label-->
     <application
-        android:name=".controller.Controller"
+        android:name="anastasoft.rallyvision.controller.Controller"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -39,7 +45,7 @@
             android:name="anastasoft.rallyvision.activity.MenuPrincipal"
             android:launchMode="singleTop"
             android:configChanges="orientation|screenSize"
-            android:label="@string/app_name">
+            >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,12 +59,18 @@
             android:parentActivityName="anastasoft.rallyvision.activity.MenuPrincipal">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="anastasoft.rallyvision.activity.MenuPrincipal" />
+                android:value="PsiClass:MenuPrincipal" />
         </activity>
         <activity
             android:name="anastasoft.rallyvision.activity.DeviceListActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/select_device"
+            android:theme="@style/Dialog" />
+        <activity
+            android:name="anastasoft.rallyvision.activity.EscolheAluguel"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTop"
+
             android:theme="@style/Dialog" />
 
         <activity
@@ -76,6 +88,7 @@
                 <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

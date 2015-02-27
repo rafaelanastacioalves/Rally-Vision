@@ -6,26 +6,8 @@ anastasoft.rallyvision.BTManager.BTManager:
     private static final java.lang.String TAG
     private static final java.lang.String NAME
     65:68:public boolean hasBTDevide()
-anastasoft.rallyvision.BuildConfig
-anastasoft.rallyvision.R:
-    10:10:public R()
-anastasoft.rallyvision.R$anim
-anastasoft.rallyvision.R$array
-anastasoft.rallyvision.R$attr
-anastasoft.rallyvision.R$bool
-anastasoft.rallyvision.R$color
-anastasoft.rallyvision.R$dimen
-anastasoft.rallyvision.R$drawable
-anastasoft.rallyvision.R$id
-anastasoft.rallyvision.R$integer
-anastasoft.rallyvision.R$layout
-anastasoft.rallyvision.R$menu
-anastasoft.rallyvision.R$raw
-anastasoft.rallyvision.R$string
-anastasoft.rallyvision.R$style
-anastasoft.rallyvision.R$styleable:
-    2426:2426:public R$styleable()
-anastasoft.rallyvision.R$xml
+anastasoft.rallyvision.Slider.Motorista:
+    protected abstract void zeraTrocandoTrecho()
 anastasoft.rallyvision.Slider.Prova_Trecho.Prova:
     private static final java.lang.String KEY_TIPO
     private static final java.lang.String KEY_NUM
@@ -38,22 +20,24 @@ anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho:
 anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.TrechoV:
     21:21:public float getvMedio()
 anastasoft.rallyvision.Slider.SliderCore:
-    38:38:public anastasoft.rallyvision.Slider.motorista.MotoristaIdeal getStatusMotoristaIdeal()
-    42:42:public anastasoft.rallyvision.Slider.motorista.MotoristaUsuario getStatusMotoristaUsuario()
-    48:48:public void setPercentPercorrido()
-anastasoft.rallyvision.Slider.motorista.Motorista:
-    protected abstract void zeraTrocandoTrecho()
+    private float dSFinal
+    private float dTfinal
+    35:35:public anastasoft.rallyvision.Slider.MotoristaIdeal getStatusMotoristaIdeal()
+    39:39:public anastasoft.rallyvision.Slider.MotoristaUsuario getStatusMotoristaUsuario()
+    45:45:public void setPercentPercorrido()
+    49:49:public void reset()
 anastasoft.rallyvision.activity.ConnectMediator:
     private static final int APLICATION_DISCONECTED
     private static final int APLICATION_CONNECTING
     private static final int APLICATION_CONNECTED
 anastasoft.rallyvision.activity.DeviceListActivity:
     private static final java.lang.String TAG
+anastasoft.rallyvision.activity.EscolheAluguel:
+    115:116:public void complain(java.lang.String)
+    120:124:private void alert(java.lang.String)
 anastasoft.rallyvision.activity.MenuPrincipal:
     private static final int RESULT_SETTINGS
-    private static final int DISTANCE
-    private static final int INST_VEL
-    private static final int AVRG_VEL
+    private static final int CAR_STATUS
     private static final int MOTORISTA_USUARIO
     private static final int MOTORISTA_IDEAL
     private static final java.lang.String TAG
@@ -64,18 +48,17 @@ anastasoft.rallyvision.activity.MenuPrincipal:
     private static final int APLICATION_CONNECTING
     private static final int APLICATION_CONNECTED
     private static final int REQUEST_CHOOSER
-    167:169:public void warnNotCalibrated()
-    461:463:public android.widget.Button getConnectButton()
-    477:485:public void makeConnectBOrange()
-    569:571:public void askKeepRatio()
-    574:586:private void hideActionBar()
-    598:605:public void displayDialog(boolean)
-    56:56:static synthetic android.widget.Button access$000(anastasoft.rallyvision.activity.MenuPrincipal)
+    541:543:public android.widget.Button getConnectButton()
+    557:565:public void makeConnectBOrange()
+    657:659:public void askKeepRatio()
+    662:674:private void hideActionBar()
+    686:693:public void displayDialog(boolean)
+    58:58:static synthetic android.widget.Button access$000(anastasoft.rallyvision.activity.MenuPrincipal)
 anastasoft.rallyvision.activity.MenuPrincipal$4
 anastasoft.rallyvision.activity.SettingsActivity:
     private static final boolean ALWAYS_SIMPLE_PREFS
-    116:126:private static void bindPreferenceSummaryToValue(android.preference.Preference)
-    42:42:static synthetic void access$000(android.preference.Preference)
+    115:125:private static void bindPreferenceSummaryToValue(android.preference.Preference)
+    41:41:static synthetic void access$000(android.preference.Preference)
 anastasoft.rallyvision.activity.SettingsActivity$GeneralPreferenceFragment
 anastasoft.rallyvision.activity.customfontdemo.Led_text_view
 anastasoft.rallyvision.activity.customfontdemo.TypefaceManager:
@@ -92,20 +75,24 @@ anastasoft.rallyvision.activity.customfontdemo.TypefaceManager:
     private static final byte BOLD_ITALIC
     144:144:public android.graphics.Typeface getTypeface(java.lang.String)
     188:188:public boolean setTypeface(android.widget.TextView,java.lang.String)
+anastasoft.rallyvision.activity.dialog.BemVindoAluguelDialog
 anastasoft.rallyvision.activity.dialog.ConfigureDialog:
     android.view.View OKButton
 anastasoft.rallyvision.activity.dialog.EditarRatioManualmenteDialog
 anastasoft.rallyvision.activity.dialog.KeepRatioDialog
 anastasoft.rallyvision.activity.dialog.KeepRatioDialog$1
 anastasoft.rallyvision.activity.dialog.KeepRatioDialog$2
-anastasoft.rallyvision.activity.dialog.NotConfigureDialog
 anastasoft.rallyvision.activity.dialog.ResetarRatioDialog
+anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment_old
 anastasoft.rallyvision.activity.dialog.ZerarDialog
 anastasoft.rallyvision.activity.dialog.ZerarDialog$1
 anastasoft.rallyvision.activity.dialog.ZerarDialog$2
 anastasoft.rallyvision.command.CreateRatioCommand
 anastasoft.rallyvision.command.GeneralResetCommand
 anastasoft.rallyvision.command.ResetRatioCommand
+anastasoft.rallyvision.command.SetarInicioProvaSliderCommand:
+    14:16:public SetarInicioProvaSliderCommand(android.app.Application)
+    19:20:public SetarInicioProvaSliderCommand(android.content.Context)
 anastasoft.rallyvision.command.StopAllCommand:
     16:17:public StopAllCommand(android.content.Context)
 anastasoft.rallyvision.command.Zerar:
@@ -116,12 +103,10 @@ anastasoft.rallyvision.command.stopCommunicationCommand:
 anastasoft.rallyvision.controller.AnalyticsAdpater:
     private static final java.lang.String TAG
     public static final java.lang.String PROPERTY_ID
-anastasoft.rallyvision.controller.Clock:
-    45:46:public void endTimeCount()
-    61:61:public boolean isReady()
-    65:66:public void reset()
 anastasoft.rallyvision.controller.Controller:
     private static final java.lang.String BASE64_PUBLIC_KEY
+    private static final java.lang.String BASE64_PUBLIC_KEY_ALUGUEL
+    private static final int clockBasico
     private static final int APLICATION_DISCONECTED
     private static final int APLICATION_CONECTING
     private static final int APLICATION_CONECTED
@@ -138,12 +123,11 @@ anastasoft.rallyvision.controller.Controller:
     private static final int REQUEST_CONNECT_DEVICE
     private static final int REQUEST_ENABLE_BT
     private android.content.SharedPreferences preferences
-    228:247:private int toInt(byte[],int)
-    463:466:private boolean isRatioDefault(float)
-    480:486:public void checkAccess()
-    492:496:public void resetRatio()
-    499:501:public void resetGeral()
-    618:618:public void setupOdometro()
+    233:252:private int toInt(byte[],int)
+    493:499:public void checkAccess()
+    505:509:public void resetRatio()
+    512:514:public void resetGeral()
+    634:634:public void setupOdometro()
 anastasoft.rallyvision.controller.Controller$1:
     long deltaT
 anastasoft.rallyvision.controller.Controller$CounterAndConverter:
@@ -152,11 +136,8 @@ anastasoft.rallyvision.controller.Controller$CounterAndConverter:
     protected static final int STATE_STOPPED
     protected static final int CLOCK_STATE_READY
     protected static final int CLOCK_STATE_COUNTING
+    protected int CLOCK_STATE
     int distance
-    776:777:public void setOdometer(int)
-    780:790:public void resetState()
-    869:870:protected void setRatio(float)
-    873:876:public void zerar()
 anastasoft.rallyvision.controller.Data.DBHelper:
     public static final java.lang.String LOG
     public static final int DATABASE_VERSION
@@ -181,18 +162,129 @@ anastasoft.rallyvision.controller.Data.model.Table:
     java.lang.String created_at
     16:16:public java.lang.String getCreated_at()
     20:21:public void setCreated_at(java.lang.String)
+anastasoft.rallyvision.controller.InAppBilling.AluguelAdapter:
+    private static final java.lang.String TAG
+    private static final java.lang.String ALUGUEL_MENSAL_SKU
+    private static final java.lang.String COMPRA_TESTE_SKU
+    static final int RC_REQUEST
+anastasoft.rallyvision.controller.InAppBilling.AluguelChoreographer:
+    private static final java.lang.String TAG
+    private static final int REQUEST_ESCOLHER_ALUGUEL
+    private static final int STATE_INICIALIZANDO
+    private static final int STATE_SEM_ALUGUEL
+    private static final int STATE_ESCOLHENDO
+    private static final int STATE_COM_ALUGUEL
+    private static java.util.ArrayList listaDeCompras
+    63:63:public void encerrar()
+    92:92:public boolean aluguelOn()
+    108:108:public void inicializacaoTerminada()
+    117:117:private int getSTATE()
+    202:205:public boolean temAluguel()
+    213:213:public anastasoft.rallyvision.activity.EscolheAluguel getaEscolheAluguelActivity()
+    217:218:public void setaEscolheAluguelActivity(anastasoft.rallyvision.activity.EscolheAluguel)
+anastasoft.rallyvision.controller.InAppBilling.util.Base64:
+    public static final boolean ENCODE
+    public static final boolean DECODE
+    private static final byte EQUALS_SIGN
+    private static final byte NEW_LINE
+    private static final byte WHITE_SPACE_ENC
+    private static final byte EQUALS_SIGN_ENC
+    209:234:private static byte[] encode3to4(byte[],int,int,byte[],int,byte[])
+    247:247:public static java.lang.String encode(byte[])
+    258:258:public static java.lang.String encodeWebSafe(byte[],boolean)
+    274:286:public static java.lang.String encode(byte[],int,int,byte[],boolean)
+    301:345:public static byte[] encode(byte[],int,int,byte[],int)
+    431:432:public static byte[] decodeWebSafe(java.lang.String)
+    445:445:public static byte[] decode(byte[])
+    458:458:public static byte[] decodeWebSafe(byte[])
+    489:489:public static byte[] decodeWebSafe(byte[],int,int)
+anastasoft.rallyvision.controller.InAppBilling.util.Base64DecoderException:
+    private static final long serialVersionUID
+anastasoft.rallyvision.controller.InAppBilling.util.IabHelper:
+    public static final int BILLING_RESPONSE_RESULT_OK
+    public static final int BILLING_RESPONSE_RESULT_USER_CANCELED
+    public static final int BILLING_RESPONSE_RESULT_BILLING_UNAVAILABLE
+    public static final int BILLING_RESPONSE_RESULT_ITEM_UNAVAILABLE
+    public static final int BILLING_RESPONSE_RESULT_DEVELOPER_ERROR
+    public static final int BILLING_RESPONSE_RESULT_ERROR
+    public static final int BILLING_RESPONSE_RESULT_ITEM_ALREADY_OWNED
+    public static final int BILLING_RESPONSE_RESULT_ITEM_NOT_OWNED
+    public static final int IABHELPER_ERROR_BASE
+    public static final int IABHELPER_REMOTE_EXCEPTION
+    public static final int IABHELPER_BAD_RESPONSE
+    public static final int IABHELPER_VERIFICATION_FAILED
+    public static final int IABHELPER_SEND_INTENT_FAILED
+    public static final int IABHELPER_USER_CANCELLED
+    public static final int IABHELPER_UNKNOWN_PURCHASE_RESPONSE
+    public static final int IABHELPER_MISSING_TOKEN
+    public static final int IABHELPER_UNKNOWN_ERROR
+    public static final int IABHELPER_SUBSCRIPTIONS_NOT_AVAILABLE
+    public static final int IABHELPER_INVALID_CONSUMPTION
+    public static final java.lang.String RESPONSE_CODE
+    public static final java.lang.String RESPONSE_GET_SKU_DETAILS_LIST
+    public static final java.lang.String RESPONSE_BUY_INTENT
+    public static final java.lang.String RESPONSE_INAPP_PURCHASE_DATA
+    public static final java.lang.String RESPONSE_INAPP_SIGNATURE
+    public static final java.lang.String RESPONSE_INAPP_ITEM_LIST
+    public static final java.lang.String RESPONSE_INAPP_PURCHASE_DATA_LIST
+    public static final java.lang.String RESPONSE_INAPP_SIGNATURE_LIST
+    public static final java.lang.String INAPP_CONTINUATION_TOKEN
+    public static final java.lang.String ITEM_TYPE_INAPP
+    public static final java.lang.String ITEM_TYPE_SUBS
+    public static final java.lang.String GET_SKU_DETAILS_ITEM_LIST
+    public static final java.lang.String GET_SKU_DETAILS_ITEM_TYPE_LIST
+    173:176:public void enableDebugLogging(boolean,java.lang.String)
+    333:334:public void launchPurchaseFlow(android.app.Activity,java.lang.String,int,anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnIabPurchaseFinishedListener)
+    338:339:public void launchPurchaseFlow(android.app.Activity,java.lang.String,int,anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnIabPurchaseFinishedListener,java.lang.String)
+    343:344:public void launchSubscriptionPurchaseFlow(android.app.Activity,java.lang.String,int,anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnIabPurchaseFinishedListener)
+    348:349:public void launchSubscriptionPurchaseFlow(android.app.Activity,java.lang.String,int,anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnIabPurchaseFinishedListener,java.lang.String)
+    643:644:public void queryInventoryAsync(boolean,anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$QueryInventoryFinishedListener)
+    657:687:void consume(anastasoft.rallyvision.controller.InAppBilling.util.Purchase)
+    725:730:public void consumeAsync(anastasoft.rallyvision.controller.InAppBilling.util.Purchase,anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnConsumeFinishedListener)
+    738:741:public void consumeAsync(java.util.List,anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnConsumeMultiFinishedListener)
+    946:978:void consumeAsyncInternal(java.util.List,anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnConsumeFinishedListener,anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnConsumeMultiFinishedListener)
+anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$3
+anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$3$1
+anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$3$2
+anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnConsumeFinishedListener
+anastasoft.rallyvision.controller.InAppBilling.util.IabHelper$OnConsumeMultiFinishedListener
+anastasoft.rallyvision.controller.InAppBilling.util.IabResult:
+    39:39:public int getResponse()
+anastasoft.rallyvision.controller.InAppBilling.util.Inventory:
+    35:35:public anastasoft.rallyvision.controller.InAppBilling.util.SkuDetails getSkuDetails(java.lang.String)
+    45:45:public boolean hasPurchase(java.lang.String)
+    50:50:public boolean hasDetails(java.lang.String)
+    62:63:public void erasePurchase(java.lang.String)
+    67:67:java.util.List getAllOwnedSkus()
+    81:81:java.util.List getAllPurchases()
+anastasoft.rallyvision.controller.InAppBilling.util.Purchase:
+    51:51:public java.lang.String getOrderId()
+    52:52:public java.lang.String getPackageName()
+    54:54:public long getPurchaseTime()
+    55:55:public int getPurchaseState()
+    58:58:public java.lang.String getOriginalJson()
+    59:59:public java.lang.String getSignature()
+anastasoft.rallyvision.controller.InAppBilling.util.Security:
+    private static final java.lang.String TAG
+    private static final java.lang.String KEY_FACTORY_ALGORITHM
+    private static final java.lang.String SIGNATURE_ALGORITHM
+    41:41:public Security()
+anastasoft.rallyvision.controller.InAppBilling.util.SkuDetails:
+    34:35:public SkuDetails(java.lang.String)
+    49:49:public java.lang.String getType()
+    50:50:public java.lang.String getPrice()
+    51:51:public java.lang.String getTitle()
+    52:52:public java.lang.String getDescription()
 anastasoft.rallyvision.controller.Observable:
     private static final java.lang.String TAG
-    private static final int INDEX_DISTANCE
-    private static final int INDEX_INST_VEL
-    private static final int INDEX_AVRG_VEL
-    private static final int INDEX_RATIO
-    private static final int INDEX_T_START
-    private static final int INDEX_T_TOT
-    82:109:public void setValues(java.util.List)
-    216:216:public float getOdometer()
-anastasoft.rallyvision.controller.PreferencesAdapter:
-    48:57:private void setRatio2(float)
+    private static final int INDEX_CAR_STATUS
+    private static final int INDEX_RELOGIO
+    private java.util.ArrayList motoristasStatus
+    63:71:public void setValues(java.util.List)
+    173:175:public void setValues(java.util.ArrayList)
+anastasoft.rallyvision.controller.Relogio:
+    private float dTTotalSlider
+    82:82:public boolean isReady()
 anastasoft.rallyvision.controller.SliderCoreographer.FileParser:
     private static final java.lang.String KEY_TIPO
     private static final java.lang.String KEY_NUM
@@ -201,22 +293,33 @@ anastasoft.rallyvision.controller.SliderCoreographer.FileParser:
     private static final java.lang.String KEY_DTTRECHO_VMEDIO
     private static final java.lang.String KEY_TI
 anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer:
-    57:59:public void setaSliderCore()
-    80:80:public void desactivate()
+    private java.util.Calendar inicioProvaSlider
+    59:61:public void setaSliderCore()
+    90:90:public void desactivate()
 anastasoft.rallyvision.controller.TimeAdapter
 anastasoft.rallyvision.controller.VelocityEng:
-    private static final int DELTA_S
-    private static final int INSTANT_VEL
-    private static final int AVRG_VEL
-    private static final int RATIO
-    private static final int T_START
-    private static final int T_TOT
-    50:50:protected int getAvrgVel()
-    55:55:protected int getDistance()
-    73:73:protected int getInstVel()
-    102:109:protected void zerar()
-    122:123:public void setRatio(float)
-    127:128:protected void setDeltaSTotal(int)
+    private static final int CAR_STATUS
+    private static final int RELOGIO
+anastasoft.rallyvisionaluguel.BuildConfig
+anastasoft.rallyvisionaluguel.R:
+    10:10:public R()
+anastasoft.rallyvisionaluguel.R$anim
+anastasoft.rallyvisionaluguel.R$array
+anastasoft.rallyvisionaluguel.R$attr
+anastasoft.rallyvisionaluguel.R$bool
+anastasoft.rallyvisionaluguel.R$color
+anastasoft.rallyvisionaluguel.R$dimen
+anastasoft.rallyvisionaluguel.R$drawable
+anastasoft.rallyvisionaluguel.R$id
+anastasoft.rallyvisionaluguel.R$integer
+anastasoft.rallyvisionaluguel.R$layout
+anastasoft.rallyvisionaluguel.R$menu
+anastasoft.rallyvisionaluguel.R$raw
+anastasoft.rallyvisionaluguel.R$string
+anastasoft.rallyvisionaluguel.R$style
+anastasoft.rallyvisionaluguel.R$styleable:
+    2427:2427:public R$styleable()
+anastasoft.rallyvisionaluguel.R$xml
 android.support.v4.accessibilityservice.AccessibilityServiceInfoCompat
 android.support.v4.accessibilityservice.AccessibilityServiceInfoCompat$AccessibilityServiceInfoIcsImpl
 android.support.v4.accessibilityservice.AccessibilityServiceInfoCompat$AccessibilityServiceInfoJellyBeanMr2
@@ -2119,6 +2222,17 @@ android.support.v7.widget.SuggestionsAdapter:
     static final int INVALID_INDEX
     124:124:public int getQueryRefinement()
     172:174:public void close()
+com.android.vending.billing.IInAppBillingService$Stub:
+    private static final java.lang.String DESCRIPTOR
+    static final int TRANSACTION_isBillingSupported
+    static final int TRANSACTION_getSkuDetails
+    static final int TRANSACTION_getBuyIntent
+    static final int TRANSACTION_getPurchases
+    static final int TRANSACTION_consumePurchase
+    38:40:public IInAppBillingService$Stub()
+    58:58:public android.os.IBinder asBinder()
+com.android.vending.billing.IInAppBillingService$Stub$Proxy:
+    186:186:public java.lang.String getInterfaceDescriptor()
 com.google.ads.AdRequest:
     public static final java.lang.String VERSION
     public static final java.lang.String LOGTAG

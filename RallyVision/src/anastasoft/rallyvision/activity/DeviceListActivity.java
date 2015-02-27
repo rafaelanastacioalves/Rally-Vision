@@ -37,7 +37,7 @@ import android.widget.TextView;
 
 import java.util.Set;
 
-import anastasoft.rallyvision.R;
+import anastasoft.rallyvisionaluguel.R;
 import anastasoft.rallyvision.controller.Controller;
 
 /**
@@ -134,9 +134,9 @@ public class DeviceListActivity extends Activity {
         // Initialize array adapters. One for already paired devices and
         // one for newly discovered devices
         mPairedDevicesArrayAdapter = new ArrayAdapter<String>(this,
-                R.layout.device_name);
+                R.layout.texto_lista_simples);
         mNewDevicesArrayAdapter = new ArrayAdapter<String>(this,
-                R.layout.device_name);
+                R.layout.texto_lista_simples);
 
         // Find and set up the ListView for paired devices
         ListView pairedListView = (ListView) findViewById(R.id.paired_devices);

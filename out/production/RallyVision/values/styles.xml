@@ -88,13 +88,26 @@
 
     </style>
 
-    <style name="trecho" parent="velocimetro_pequeno">
+    <style name="tipoTrecho" parent="velocimetro_preto">
 
-        <item name="android:textSize">40sp</item>
+        <item name="android:textSize">44sp</item>
         <item name="android:inputType">text</item>
         <item name="font">dig7Reg</item>
-        <item name="android:text">D</item>
+
+        <item name="android:text">-</item>
     </style>
+
+    <style name="digitoNumTrecho" parent="velocimetro_preto">
+
+        <item name="android:textSize">28sp</item>
+        <item name="android:inputType">text</item>
+        <item name="android:padding">0dp</item>
+        <!--<item name="font">dig7Reg</item>-->
+        <item name="android:text">-</item>
+    </style>
+
+
+
 
     <style name="velocimetro_pequeno" parent="@style/velocimetro_preto">
 

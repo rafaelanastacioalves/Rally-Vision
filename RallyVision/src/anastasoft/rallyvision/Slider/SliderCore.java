@@ -5,9 +5,6 @@ import android.database.Cursor;
 import java.util.ArrayList;
 
 import anastasoft.rallyvision.Slider.Prova_Trecho.Prova;
-import anastasoft.rallyvision.Slider.motorista.Motorista;
-import anastasoft.rallyvision.Slider.motorista.MotoristaIdeal;
-import anastasoft.rallyvision.Slider.motorista.MotoristaUsuario;
 
 /**
  * Created by rafaelanastacioalves on 20/01/15.
@@ -44,6 +41,10 @@ public class SliderCore {
 
     public void setPercentPercorrido(){
 
+
+    }
+
+    public void reset(){
 
     }
 

@@ -6,7 +6,7 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-import anastasoft.rallyvision.R;
+import anastasoft.rallyvisionaluguel.R;
 
 /**
  * Created by rafaelanastacioalves on 18/09/14.

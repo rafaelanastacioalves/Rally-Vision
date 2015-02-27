@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Rally Vision</string>
+    <string name="app_name">Rally Vision </string>
+    <string name="app_name_assinatura">Rally Vision Assinatura</string>
     <string name="action_settings">Configurações</string>
     <string name="vel_media">Vel. média</string>
     <string name="vel">Velocidade</string>
@@ -122,6 +123,18 @@
     <!--Slider-->
     <string name="slider_carregar_arquivo_invalido">Arquivo inválido</string>
     <string name="slider_carregar_prova_titulo">Escolha o arquivo .txt</string>
+    <string name="slider_agendar_prova">Agendar Inicio de Prova</string>
+    <string name="slider_agendar_mensagem">Informe o horário de início da prova</string>
+    <string name="dialog_bemvindo_aluguel">Seja Bem Vindo!</string>
+    <string name="aluguel_escolha">Escolha uma das opções de aluguel:</string>
+    <string name="dialog_estamoscarregando_aluguel">Estamos carregando suas informações de assinatura. Caso esta tela demore a mudar, conecte-se temporariamente para terminarmos o procedimento.</string>
+    <string name="obrigado">Obrigado</string>
+    <string name="obrigado_utilizar">Obrigado por utilizar o Rally Vision</string>
+    <string name="aluguel_inicializar_problema">Problema ao inicializar o sistema de pagamentos:</string>
+    <string name="aluguel_assinatura_nao_compativel">Assinaturas não são disponíveis no seu aparelho. Lamentamos!</string>
+    <string name="aluguel_assinatura_impossivel_carregar_opcoes_compra">Impossível carregar opções de compra:</string>
+    <string name="aluguel_assinatura_erro_realizar_compra">Erro em realização de compra:</string>
+    <string name="aluguel_assinatura_erro_realizar_compra_autenticidade">Erro em realização de compra. A verificação de autenticidade falhou.</string>
 
 
 </resources>

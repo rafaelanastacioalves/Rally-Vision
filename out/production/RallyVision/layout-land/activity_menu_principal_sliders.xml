@@ -183,8 +183,16 @@
 
                 <anastasoft.rallyvision.activity.customfontdemo.FontTextView
                     android:id="@+id/tipoTrechoMotoristaIdeal"
-                    style="@style/trecho"
-                    android:layout_height="match_parent"/>
+                    style="@style/tipoTrecho"/>
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/numTrechoMotoristaIdealDig3"
+                    style="@style/digitoNumTrecho"/>
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/numTrechoMotoristaIdealDig2"
+                    style="@style/digitoNumTrecho"/>
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/numTrechoMotoristaIdealDig1"
+                    style="@style/digitoNumTrecho"/>
 
 
             </LinearLayout>
@@ -220,8 +228,16 @@
 
                 <anastasoft.rallyvision.activity.customfontdemo.FontTextView
                     android:id="@+id/tipoTrechoMotoristaUsuario"
-                    style="@style/trecho"
-                    android:layout_height="match_parent"/>
+                    style="@style/tipoTrecho"/>
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/numTrechoMotoristaUsuarioDig3"
+                    style="@style/digitoNumTrecho"/>
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/numTrechoMotoristaUsuarioDig2"
+                    style="@style/digitoNumTrecho"/>
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/numTrechoMotoristaUsuarioDig1"
+                    style="@style/digitoNumTrecho" />
 
 
             </LinearLayout>
