@@ -56,26 +56,26 @@
 
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
             android:id="@+id/ODdig05"
-            style="@style/velocimetro_preto" />
+            style="@style/velocimetro_azul" />
 
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
             android:id="@+id/ODdig04"
-            style="@style/velocimetro_preto" />
+            style="@style/velocimetro_azul" />
 
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
             android:id="@+id/ODdig03"
 
-            style="@style/velocimetro_vermelho" />
+            style="@style/velocimetro_azul" />
 
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
             android:id="@+id/ODdig02"
 
-            style="@style/velocimetro_vermelho" />
+            style="@style/velocimetro_azul" />
 
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
             android:id="@+id/ODdig01"
 
-            style="@style/velocimetro_vermelho" />
+            style="@style/velocimetro_azul" />
     </LinearLayout>
 
     <RelativeLayout
@@ -86,66 +86,84 @@
         android:layout_centerVertical="true"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/vel"
-            style="@style/letra_1"
-            android:layout_alignBaseline="@+id/vel_media"
-            android:layout_alignParentLeft="true"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:text="@string/vel" />
-
-        <TextView
-            android:id="@+id/vel_media"
-            style="@style/letra_1"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:text="@string/vel_media" />
+            android:layout_alignParentEnd="true">
 
-        <LinearLayout
-            android:id="@+id/LinearLayout02"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/vel_media"
-            android:layout_below="@+id/vel_media"
-            style="@style/painel"
+            <TextView
+                android:id="@+id/vel_media"
+                style="@style/letra_1"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/vel_media"
+                android:layout_gravity="center_horizontal" />
 
-            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/LinearLayout02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/vel_media"
+                android:layout_below="@+id/vel_media"
+                style="@style/painel"
 
-            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                android:id="@+id/AVRGVelDig03"
-                style="@style/velocimetro_pequeno" />
+                android:orientation="horizontal">
 
-            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                android:id="@+id/AVRGVelDig02"
-                style="@style/velocimetro_pequeno" />
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/AVRGVelDig03"
+                    style="@style/velocimetro_pequeno" />
 
-            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                android:id="@+id/AVRGVelDig01"
-                style="@style/velocimetro_pequeno" />
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/AVRGVelDig02"
+                    style="@style/velocimetro_pequeno" />
+
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/AVRGVelDig01"
+                    style="@style/velocimetro_pequeno" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/LinearLayout01"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignTop="@+id/LinearLayout02"
-            style="@style/painel"
+            android:layout_height="wrap_content">
 
-            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/vel_inst"
+                style="@style/letra_1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/vel"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false" />
 
-            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                android:id="@+id/InstVelDig03"
-                style="@style/velocimetro_pequeno" />
+            <LinearLayout
+                android:id="@+id/LinearLayout01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignTop="@+id/LinearLayout02"
+                style="@style/painel"
 
-            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                android:id="@+id/InstVelDig02"
-                style="@style/velocimetro_pequeno" />
+                android:orientation="horizontal">
 
-            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                android:id="@+id/InstVelDig01"
-                style="@style/velocimetro_pequeno" />
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/InstVelDig03"
+                    style="@style/velocimetro_pequeno" />
+
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/InstVelDig02"
+                    style="@style/velocimetro_pequeno" />
+
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/InstVelDig01"
+                    style="@style/velocimetro_pequeno" />
+            </LinearLayout>
         </LinearLayout>
+
     </RelativeLayout>
 
 

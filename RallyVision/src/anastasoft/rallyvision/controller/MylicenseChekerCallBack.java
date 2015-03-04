@@ -3,7 +3,7 @@ package anastasoft.rallyvision.controller;
 import com.google.android.vending.licensing.LicenseCheckerCallback;
 
 import anastasoft.rallyvision.activity.MenuPrincipal;
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 
 public class MylicenseChekerCallBack implements LicenseCheckerCallback {
     private final Controller controller;

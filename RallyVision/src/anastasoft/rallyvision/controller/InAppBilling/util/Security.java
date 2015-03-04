@@ -27,7 +27,7 @@ import java.security.SignatureException;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
 
-import anastasoft.rallyvisionaluguel.BuildConfig;
+import anastasoft.rallyvision.BuildConfig;
 
 /**
  * Security-related methods. For a secure implementation, all of this code

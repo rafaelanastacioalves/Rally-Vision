@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.controller.Controller;
 
 

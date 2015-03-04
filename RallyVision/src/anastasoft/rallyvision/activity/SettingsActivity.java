@@ -21,7 +21,7 @@ import android.view.MenuItem;
 
 import java.util.List;
 
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.command.Command;
 import anastasoft.rallyvision.command.SetRatioCommand;
 import anastasoft.rallyvision.controller.Controller;

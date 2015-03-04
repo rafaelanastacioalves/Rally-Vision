@@ -58,26 +58,26 @@
 
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
             android:id="@+id/ODdig05"
-            style="@style/velocimetro_preto" />
+            style="@style/velocimetro_azul_sliders" />
 
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
             android:id="@+id/ODdig04"
-            style="@style/velocimetro_preto" />
+            style="@style/velocimetro_azul_sliders" />
 
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
             android:id="@+id/ODdig03"
 
-            style="@style/velocimetro_vermelho" />
+            style="@style/velocimetro_vermelho_sliders" />
 
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
             android:id="@+id/ODdig02"
 
-            style="@style/velocimetro_vermelho" />
+            style="@style/velocimetro_vermelho_sliders" />
 
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
             android:id="@+id/ODdig01"
 
-            style="@style/velocimetro_vermelho" />
+            style="@style/velocimetro_vermelho_sliders" />
     </LinearLayout>
 
     <RelativeLayout
@@ -92,8 +92,8 @@
         android:layout_marginBottom="5dp">
 
         <TextView
-            android:id="@+id/vel"
-            style="@style/letra_1"
+            android:id="@+id/vel_inst"
+            style="@style/letra_1_sliders"
             android:layout_alignBaseline="@+id/vel_media"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
@@ -101,7 +101,7 @@
 
         <TextView
             android:id="@+id/vel_media"
-            style="@style/letra_1"
+            style="@style/letra_1_sliders"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:text="@string/vel_media" />
@@ -118,15 +118,15 @@
 
             <anastasoft.rallyvision.activity.customfontdemo.FontTextView
                 android:id="@+id/AVRGVelDig03"
-                style="@style/velocimetro_pequeno" />
+                style="@style/velocimetro_pequeno_sliders" />
 
             <anastasoft.rallyvision.activity.customfontdemo.FontTextView
                 android:id="@+id/AVRGVelDig02"
-                style="@style/velocimetro_pequeno" />
+                style="@style/velocimetro_pequeno_sliders" />
 
             <anastasoft.rallyvision.activity.customfontdemo.FontTextView
                 android:id="@+id/AVRGVelDig01"
-                style="@style/velocimetro_pequeno" />
+                style="@style/velocimetro_pequeno_sliders" />
         </LinearLayout>
 
         <LinearLayout
@@ -141,15 +141,15 @@
 
             <anastasoft.rallyvision.activity.customfontdemo.FontTextView
                 android:id="@+id/InstVelDig03"
-                style="@style/velocimetro_pequeno" />
+                style="@style/velocimetro_pequeno_sliders" />
 
             <anastasoft.rallyvision.activity.customfontdemo.FontTextView
                 android:id="@+id/InstVelDig02"
-                style="@style/velocimetro_pequeno" />
+                style="@style/velocimetro_pequeno_sliders" />
 
             <anastasoft.rallyvision.activity.customfontdemo.FontTextView
                 android:id="@+id/InstVelDig01"
-                style="@style/velocimetro_pequeno" />
+                style="@style/velocimetro_pequeno_sliders" />
         </LinearLayout>
     </RelativeLayout>
 

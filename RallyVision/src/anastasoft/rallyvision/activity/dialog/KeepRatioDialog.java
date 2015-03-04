@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.command.Command;
 import anastasoft.rallyvision.command.ResetRatioCommand;
 import anastasoft.rallyvision.controller.Controller;

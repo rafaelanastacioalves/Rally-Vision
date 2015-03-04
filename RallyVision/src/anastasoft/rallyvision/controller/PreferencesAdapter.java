@@ -8,7 +8,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.controller.Data.DBHelper;
 import anastasoft.rallyvision.controller.Data.model.Afericao;
 

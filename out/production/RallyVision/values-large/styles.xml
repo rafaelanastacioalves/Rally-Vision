@@ -22,6 +22,14 @@
     </style>
 
 
+    <style name="letra_1_sliders">
+        <item name="android:textColor">@android:color/primary_text_dark</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:layout_marginRight">2dp</item>
+    </style>
     <style name="letra_1">
         <item name="android:textColor">@android:color/primary_text_dark</item>
         <item name="android:textSize">15sp</item>
@@ -48,7 +56,7 @@
     </style>
 
 
-    <style name="velocimetro_preto">
+    <style name="velocimetro_azul_sliders">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:bottomLeftRadius">30dp</item>
@@ -69,12 +77,38 @@
 
     </style>
 
-    <style name="velocimetro_pequeno" parent="@style/velocimetro_preto">
+    <style name="velocimetro_azul">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:bottomLeftRadius">30dp</item>
+        <item name="android:bottomRightRadius">30dp</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:paddingBottom">18dp</item>
+        <item name="android:paddingTop">18dp</item>
+        <item name="android:text">0</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:textColor">#ff00dbff</item>
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:textSize">100sp</item>
+        <item name="android:topLeftRadius">30dp</item>
+        <item name="android:topRightRadius">30dp</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:inputType">number</item>
+        <item name="font">digdream</item>
+
+    </style>
+
+    <style name="velocimetro_pequeno_sliders" parent="velocimetro_azul_sliders">
 
         <item name="android:textSize">50sp</item>
     </style>
 
-    <style name="tipoTrecho" parent="@style/velocimetro_preto">
+    <style name="velocimetro_pequeno" parent="velocimetro_azul">
+
+        <item name="android:textSize">50sp</item>
+    </style>
+
+    <style name="tipoTrecho" parent="velocimetro_azul_sliders">
 
         <item name="android:textSize">60sp</item>
         <item name="android:inputType">text</item>
@@ -84,7 +118,7 @@
     </style>
 
 
-    <style name="digitoNumTrecho" parent="velocimetro_preto">
+    <style name="digitoNumTrecho" parent="velocimetro_azul_sliders">
 
         <item name="android:textSize">58sp</item>
         <item name="android:inputType">text</item>
@@ -93,7 +127,11 @@
     </style>
 
 
-    <style name="velocimetro_vermelho" parent="@style/velocimetro_preto">
+    <style name="velocimetro_vermelho_sliders" parent="velocimetro_azul_sliders">
+        <item name="android:textColor">#f00</item>
+        <item name="android:textColorHighlight">@color/abc_search_url_text_pressed</item>
+    </style>
+    <style name="velocimetro_vermelho" parent="velocimetro_azul_sliders">
         <item name="android:textColor">#f00</item>
         <item name="android:textColorHighlight">@color/abc_search_url_text_pressed</item>
     </style>

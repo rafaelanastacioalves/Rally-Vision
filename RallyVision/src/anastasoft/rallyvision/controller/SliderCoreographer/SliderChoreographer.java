@@ -7,7 +7,7 @@ import com.ipaulpro.afilechooser.utils.FileUtils;
 
 import java.util.Calendar;
 
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.Slider.SliderCore;
 import anastasoft.rallyvision.activity.MenuPrincipal;
 import anastasoft.rallyvision.controller.Controller;

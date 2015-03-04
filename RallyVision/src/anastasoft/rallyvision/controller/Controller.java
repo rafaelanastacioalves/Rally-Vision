@@ -29,7 +29,7 @@ import anastasoft.rallyvision.controller.Data.DBHelper;
 import anastasoft.rallyvision.controller.Data.model.Afericao;
 import anastasoft.rallyvision.controller.InAppBilling.AluguelChoreographer;
 import anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer;
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 
 // licensing
 

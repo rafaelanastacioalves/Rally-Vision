@@ -23,9 +23,7 @@ class VelocityEng {
         valuesList = new ArrayList<Object>();
 
 
-        carStatus.setInstantVel(0);
-        carStatus.setAvrgVel(0);
-        carStatus.setDeltaStot(0);
+
         deltaS = 0;
 
         valuesList.add(carStatus);

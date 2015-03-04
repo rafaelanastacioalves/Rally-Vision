@@ -11,7 +11,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.command.Command;
 import anastasoft.rallyvision.command.EditCommand;
 import anastasoft.rallyvision.controller.Controller;

@@ -6,7 +6,7 @@ import android.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.view.View;
 
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.command.Command;
 import anastasoft.rallyvision.command.ResetRatioCommand;
 import anastasoft.rallyvision.controller.Controller;

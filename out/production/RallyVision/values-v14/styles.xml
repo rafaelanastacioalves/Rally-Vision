@@ -11,7 +11,7 @@
 
     <style name="Dialog" parent="@android:style/Theme.DeviceDefault.Dialog"></style>
 
-    <style name="velocimetro_vermelho" parent="@style/velocimetro_preto">
+    <style name="velocimetro_vermelho_sliders" parent="velocimetro_azul_sliders">
         <item name="android:textColor">#f00</item>
         <item name="android:textColorHighlight">@android:color/holo_blue_light</item>
     </style>

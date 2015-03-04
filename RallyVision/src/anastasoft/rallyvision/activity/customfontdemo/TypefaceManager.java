@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 public class TypefaceManager
 {
 

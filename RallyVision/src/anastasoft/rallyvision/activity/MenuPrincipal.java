@@ -52,7 +52,7 @@ import anastasoft.rallyvision.controller.CarStatus;
 import anastasoft.rallyvision.controller.Controller;
 import anastasoft.rallyvision.controller.Data.DBHelper;
 import anastasoft.rallyvision.controller.Observable;
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 
 @SuppressLint("NewApi")
 public class MenuPrincipal extends ActionBarActivity {

@@ -4,7 +4,7 @@
 Também é bom dar um "make project" antes de apertar "run"-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 
-    package="anastasoft.rallyvisionaluguel"
+    package="anastasoft.rallyvision"
     android:versionCode="33"
     android:versionName="1.9989">
 

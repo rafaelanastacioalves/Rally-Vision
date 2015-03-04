@@ -37,7 +37,7 @@ import android.widget.TextView;
 
 import java.util.Set;
 
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.controller.Controller;
 
 /**

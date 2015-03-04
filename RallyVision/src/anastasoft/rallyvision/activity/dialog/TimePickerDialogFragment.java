@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.command.Command;
 import anastasoft.rallyvision.command.SetarInicioProvaSliderCommand;
 import anastasoft.rallyvision.controller.Controller;

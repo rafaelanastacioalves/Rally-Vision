@@ -17,7 +17,7 @@ import anastasoft.rallyvision.command.Command;
 import anastasoft.rallyvision.command.VerificaAluguelStatusCommand;
 import anastasoft.rallyvision.controller.Controller;
 import anastasoft.rallyvision.controller.InAppBilling.AluguelChoreographer;
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 
 import static android.widget.AdapterView.OnItemClickListener;
 

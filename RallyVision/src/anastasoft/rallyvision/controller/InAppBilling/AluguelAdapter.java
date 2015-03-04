@@ -11,7 +11,7 @@ import anastasoft.rallyvision.controller.InAppBilling.util.IabHelper;
 import anastasoft.rallyvision.controller.InAppBilling.util.IabResult;
 import anastasoft.rallyvision.controller.InAppBilling.util.Inventory;
 import anastasoft.rallyvision.controller.InAppBilling.util.Purchase;
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 
 /**
  * Created by rafaelanastacioalves on 21/02/15.

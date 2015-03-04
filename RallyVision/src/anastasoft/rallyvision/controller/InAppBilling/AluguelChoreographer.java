@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import anastasoft.rallyvision.activity.EscolheAluguel;
 import anastasoft.rallyvision.activity.MenuPrincipal;
 import anastasoft.rallyvision.controller.Controller;
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 
 /**
  * Created by rafaelanastacioalves on 20/02/15.

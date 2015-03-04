@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import java.lang.reflect.Field;
 
-import anastasoft.rallyvisionaluguel.R;
+import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.command.Command;
 import anastasoft.rallyvision.command.ConfigureRatioCommand;
 import anastasoft.rallyvision.controller.Controller;
