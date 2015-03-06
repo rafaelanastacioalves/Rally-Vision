@@ -93,7 +93,8 @@ public class ConfigureDialog extends android.support.v4.app.DialogFragment {
                             // TODO: handle exception
                         }
                         String afericao_valor = String.valueOf(userAfericaoInput.getText());
-                        String afericao_nome = String.valueOf(userAfericaoName.getText());
+                        String afericao_nome = ((String)String.valueOf(userAfericaoName.getText()).trim());
+                        afericao_nome.trim();
                         try {
 
                             if (afericao_valor.equals("")) {

@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/aFileChooser/aFileChooser.iml" filepath="$PROJECT_DIR$/aFileChooser/aFileChooser.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-support-v7-appcompat/android-support-v7-appcompat.iml" filepath="$PROJECT_DIR$/android-support-v7-appcompat/android-support-v7-appcompat.iml" />
       <module fileurl="file://$PROJECT_DIR$/google-play-services_lib/google-play-services_lib.iml" filepath="$PROJECT_DIR$/google-play-services_lib/google-play-services_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swipelistview/swipelistview.iml" filepath="$PROJECT_DIR$/swipelistview/swipelistview.iml" />
     </modules>
   </component>
 </project>

@@ -11,6 +11,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
+import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.controller.Data.model.Afericao;
 import anastasoft.rallyvision.controller.Observable;
 
@@ -65,6 +66,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(Context context, Observable aObservable) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.aObservable = aObservable;
+        AFERICAO_DEFAULT =  context.getString(R.string.pref_default_ratio_name);
     }
 
 
@@ -192,6 +194,28 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
+    public List<Afericao> getAfericoesUsuario() {
+
+            List<Afericao> actionboxes = new ArrayList<Afericao>();
+            String selectQuery = "SELECT  * FROM " + TABLE_AFERICAO + " WHERE "
+                    + KEY_AFERICAO_NAME + " NOT IN " + "('" + AFERICAO_DEFAULT + "');";
+
+            Log.e(LOG, selectQuery);
+
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor c = db.rawQuery(selectQuery, null);
+
+            // looping through all rows and adding to list
+            if (c.moveToFirst()) {
+                do {
+                    // adding to actionboxes list
+                    actionboxes.add(new Afericao(c));
+                } while (c.moveToNext());
+            }
+            return actionboxes;
+
+    }
+
     public class AfericaoExistenteException extends SQLiteConstraintException {
         public AfericaoExistenteException (){
             super("Aferição já existente");
@@ -209,7 +233,7 @@ public class DBHelper extends SQLiteOpenHelper {
 		ContentValues values = new ContentValues();
 		values.put(KEY_ID, afericao.getId());
 		values.put(KEY_AFERICAO_NAME, afericao.getName());
-		values.put(KEY_AFERICAO_NAME, afericao.getRatio());
+		values.put(KEY_AFERICAO_RATIO, afericao.getRatio());
 
 		// updating row
 		return db.update(TABLE_AFERICAO, values, KEY_ID + " = ?",

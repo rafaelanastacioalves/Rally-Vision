@@ -18,9 +18,11 @@ import com.google.android.vending.licensing.ServerManagedPolicy;
 import com.ubertesters.common.models.LockingMode;
 import com.ubertesters.sdk.Ubertesters;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import anastasoft.rallyvision.BTManager.BTManager;
+import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.Slider.SliderCore;
 import anastasoft.rallyvision.activity.ConnectMediator;
 import anastasoft.rallyvision.activity.DeviceListActivity;
@@ -29,7 +31,6 @@ import anastasoft.rallyvision.controller.Data.DBHelper;
 import anastasoft.rallyvision.controller.Data.model.Afericao;
 import anastasoft.rallyvision.controller.InAppBilling.AluguelChoreographer;
 import anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer;
-import anastasoft.rallyvision.R;
 
 // licensing
 
@@ -375,8 +376,6 @@ public class Controller extends Application {
 
         }
 
-        ((MenuPrincipal) getCurrentActiviy()).keepScreenOn(aPrefAdapter.getScreenOnStatus());
-
 
 
         aObervable.Attach(aPrefAdapter);
@@ -438,6 +437,14 @@ public class Controller extends Application {
         }
         FIRST_RUN = false;
 
+    }
+
+    /**
+     * Precisa configurar o método KeepScreenOn
+     * @param act
+     */
+    public void decideScreenOn(MenuPrincipal act) {
+        act.keepScreenOn(aPrefAdapter.getScreenOnStatus());
     }
 
     public boolean jaExiste(Afericao aFer){
@@ -767,6 +774,25 @@ public class Controller extends Application {
         else{
             return null;
         }
+    }
+
+    public void deleteAfericao(Afericao afericao) {
+        if(afericao.getName().equals(getString(R.string.pref_default_ratio_name))){
+            Toast.makeText(this, getString(R.string.afericao_padrao_nao_pode_deletar),Toast.LENGTH_SHORT).show();
+        }
+        dbHelper.deleteActionBox(afericao.getId());
+    }
+
+    public List<Afericao> getListaAfericoesUsuario() {
+
+        return  dbHelper.getAfericoesUsuario();
+    }
+
+    public void persist(ArrayList<Afericao> itemData) {
+        for (Afericao af:itemData){
+            dbHelper.updateActionBox(af);
+
+        };
     }
 
 

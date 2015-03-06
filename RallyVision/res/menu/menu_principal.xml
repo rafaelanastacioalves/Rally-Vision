@@ -19,7 +19,7 @@
         android:id="@+id/action_config"
         android:orderInCategory="98"
         android:title="@string/config_ratio"
-        android:icon="@drawable/ic_action_edit"
+        android:icon="@drawable/ic_action_edit_holo_dark"
 
         app:showAsAction="never" />
 
@@ -29,6 +29,17 @@
         android:title="@string/slider_agendar_prova"
         android:icon="@drawable/ic_action_alarms"
         app:showAsAction="ifRoom" />
+    <item
+
+        android:id="@+id/action_swipe_gerenciar_afericoes"
+        android:orderInCategory="101"
+        android:title="@string/afericoes_editar"
+        android:icon="@drawable/ic_action_storage"
+
+
+
+
+    />
 
 
 </menu>

@@ -41,6 +41,7 @@ import anastasoft.rallyvision.activity.dialog.ConfigureDialog;
 import anastasoft.rallyvision.activity.dialog.EditDialog;
 import anastasoft.rallyvision.activity.dialog.KeepRatioDialog;
 import anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment;
+import anastasoft.rallyvision.activity.swipelistview.ListaAfericoes;
 import anastasoft.rallyvision.command.CarregarArquivoCommand;
 import anastasoft.rallyvision.command.Command;
 import anastasoft.rallyvision.command.StopAllCommand;
@@ -205,6 +206,7 @@ public class MenuPrincipal extends ActionBarActivity {
     protected void onResume() {
 
         super.onResume();
+        aController.decideScreenOn(this);
         cmd = new VerificaAluguelStatusCommand(aController);
         cmd.Execute();
 
@@ -276,6 +278,11 @@ public class MenuPrincipal extends ActionBarActivity {
             TimePickerDialogFragment newFragment = new TimePickerDialogFragment();
             newFragment.show(getSupportFragmentManager(),"timePicker");
             return true;
+        }
+
+        if(id == R.id.action_swipe_gerenciar_afericoes){
+            Intent i = new Intent(this, ListaAfericoes.class);
+            startActivity(i);
         }
 
         return super.onOptionsItemSelected(item);
@@ -380,11 +387,12 @@ public class MenuPrincipal extends ActionBarActivity {
 
     public void keepScreenOn(boolean on){
         if (on){
-            if (on)
+
                 getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-            else
-                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
         }
+        else
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
 

@@ -5,8 +5,8 @@ Também é bom dar um "make project" antes de apertar "run"-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 
     package="anastasoft.rallyvision"
-    android:versionCode="33"
-    android:versionName="1.9989">
+    android:versionCode="35"
+    android:versionName="1.99901">
 
 
     <uses-sdk
@@ -72,6 +72,13 @@ Também é bom dar um "make project" antes de apertar "run"-->
             android:launchMode="singleTop"
 
             android:theme="@style/Dialog" />
+        <activity android:name="anastasoft.rallyvision.activity.swipelistview.ListaAfericoes"
+                  android:label="@string/afericoes_editar"
+                  android:parentActivityName="anastasoft.rallyvision.activity.MenuPrincipal">
+                <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="PsiClass:MenuPrincipal" />
+        </activity>
 
         <activity
             android:name="com.ipaulpro.afilechooser.FileChooserActivity"

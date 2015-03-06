@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:id="@+id/back"
+            android:tag="back"
+            style="@style/MyListBackContent"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="match_parent">
+
+       
+            
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/swipe_delete"
+                android:src= "@drawable/ic_action_discard"
+                style="@style/MyListImageButtonAction"/>
+        
+               
+
+
+
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/swipe_edit"
+                style="@style/MyListImageButtonAction"
+                android:src="@drawable/ic_action_edit_holo_light"
+                />
+
+    </LinearLayout>
+     <RelativeLayout
+            android:orientation="vertical"
+            android:id="@+id/front"
+            android:tag="front"
+            style="@style/MyListFrontContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:id="@+id/swipe_nome_afericao"/>
+         <!--<TextView-->
+             <!--android:layout_width="fill_parent"-->
+             <!--android:id="@+id/swipe_ratio"-->
+             <!--android:layout_height="wrap_content"/>-->
+         <Button
+             android:layout_width="wrap_content"
+             android:text="@string/OK"
+             android:visibility="invisible"
+             android:layout_height="wrap_content"
+             android:id="@+id/swipe_ok"
+             android:layout_alignParentTop="true"
+             android:layout_alignParentRight="true"
+             android:layout_alignParentEnd="true"/>
+        <!-- style="@style/MyListTitle" -->
+                
+
+
+    </RelativeLayout>
+
+</FrameLayout>

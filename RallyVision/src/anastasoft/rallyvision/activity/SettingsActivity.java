@@ -335,6 +335,7 @@ public class SettingsActivity extends PreferenceActivity implements
             CheckBoxPreference pref = (CheckBoxPreference)findPreference(key);
             if(pref.isChecked()){
                 pref.setChecked(true);
+
             }
             else{
                 pref.setChecked(false);

@@ -135,6 +135,10 @@
     <string name="aluguel_assinatura_impossivel_carregar_opcoes_compra">Impossível carregar opções de compra:</string>
     <string name="aluguel_assinatura_erro_realizar_compra">Erro em realização de compra:</string>
     <string name="aluguel_assinatura_erro_realizar_compra_autenticidade">Erro em realização de compra. A verificação de autenticidade falhou.</string>
+    <string name="afericoes_editar">Gerenciar Aferições</string>
+    <string name="afericao_padrao_nao_pode_deletar">A aferição padrão não pode ser modificada!</string>
+    <string name="lista_afericao_vazia">Sua lista de aferições está vazia</string>
+    <string name="realize_afericoes">Realize ao menos uma aferição</string>
 
 
 </resources>

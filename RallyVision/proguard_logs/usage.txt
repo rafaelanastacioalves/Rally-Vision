@@ -8,7 +8,7 @@ anastasoft.rallyvision.BTManager.BTManager:
     65:68:public boolean hasBTDevide()
 anastasoft.rallyvision.BuildConfig
 anastasoft.rallyvision.R:
-    10:2431:public R()
+    10:10:public R()
 anastasoft.rallyvision.R$anim
 anastasoft.rallyvision.R$array
 anastasoft.rallyvision.R$attr
@@ -24,8 +24,10 @@ anastasoft.rallyvision.R$raw
 anastasoft.rallyvision.R$string
 anastasoft.rallyvision.R$style
 anastasoft.rallyvision.R$styleable:
-    2431:2431:public R$styleable()
+    2563:2563:public R$styleable()
 anastasoft.rallyvision.R$xml
+anastasoft.rallyvision.Slider.Motorista:
+    protected abstract void zeraTrocandoTrecho()
 anastasoft.rallyvision.Slider.Prova_Trecho.Prova:
     private static final java.lang.String KEY_TIPO
     private static final java.lang.String KEY_NUM
@@ -66,12 +68,12 @@ anastasoft.rallyvision.activity.MenuPrincipal:
     private static final int APLICATION_CONNECTING
     private static final int APLICATION_CONNECTED
     private static final int REQUEST_CHOOSER
-    541:543:public android.widget.Button getConnectButton()
-    557:565:public void makeConnectBOrange()
-    657:659:public void askKeepRatio()
-    662:674:private void hideActionBar()
-    686:693:public void displayDialog(boolean)
-    58:58:static synthetic android.widget.Button access$000(anastasoft.rallyvision.activity.MenuPrincipal)
+    549:551:public android.widget.Button getConnectButton()
+    565:573:public void makeConnectBOrange()
+    665:667:public void askKeepRatio()
+    670:682:private void hideActionBar()
+    694:701:public void displayDialog(boolean)
+    59:59:static synthetic android.widget.Button access$000(anastasoft.rallyvision.activity.MenuPrincipal)
 anastasoft.rallyvision.activity.MenuPrincipal$4
 anastasoft.rallyvision.activity.SettingsActivity:
     private static final boolean ALWAYS_SIMPLE_PREFS
@@ -141,11 +143,11 @@ anastasoft.rallyvision.controller.Controller:
     private static final int REQUEST_CONNECT_DEVICE
     private static final int REQUEST_ENABLE_BT
     private android.content.SharedPreferences preferences
-    233:252:private int toInt(byte[],int)
-    493:499:public void checkAccess()
-    505:509:public void resetRatio()
-    512:514:public void resetGeral()
-    634:634:public void setupOdometro()
+    234:253:private int toInt(byte[],int)
+    500:506:public void checkAccess()
+    512:516:public void resetRatio()
+    519:521:public void resetGeral()
+    641:641:public void setupOdometro()
 anastasoft.rallyvision.controller.Controller$1:
     long deltaT
 anastasoft.rallyvision.controller.Controller$CounterAndConverter:
@@ -165,7 +167,6 @@ anastasoft.rallyvision.controller.Data.DBHelper:
     public static final java.lang.String KEY_CREATED_AT
     public static final java.lang.String KEY_AFERICAO_NAME
     public static final java.lang.String KEY_AFERICAO_RATIO
-    public static java.lang.String AFERICAO_DEFAULT
     public static final java.lang.String KEY_CHECKLINES_TEXT
     public static final java.lang.String KEY_CHECKLINES_AFERICAO_ID
     public static final java.lang.String KEY_CHECKLINES_ORDER
@@ -174,8 +175,6 @@ anastasoft.rallyvision.controller.Data.DBHelper:
     public static final java.lang.String KEY_CHECKLINES_CHECK_TIME
     public static final java.lang.String KEY_CHECKLINES_CALENDAR_ID
     private static final java.lang.String CREATE_TABLE_AFERICAO
-    205:216:public int updateActionBox(anastasoft.rallyvision.controller.Data.model.Afericao)
-    223:226:public void deleteActionBox(long)
 anastasoft.rallyvision.controller.Data.model.Table:
     java.lang.String created_at
     16:16:public java.lang.String getCreated_at()
@@ -379,6 +378,8 @@ android.support.v4.app.BackStackRecord:
     779:779:public int getTransition()
     783:783:public int getTransitionStyle()
     787:787:public boolean isEmpty()
+android.support.v4.app.Fragment$SavedState:
+    309:311:Fragment$SavedState(android.os.Bundle)
 android.support.v4.app.FragmentActivity:
     private static final java.lang.String TAG
     static final java.lang.String FRAGMENTS_TAG
@@ -401,6 +402,9 @@ android.support.v4.app.FragmentManager:
     public abstract boolean popBackStackImmediate(java.lang.String,int)
     public abstract boolean popBackStackImmediate(int,int)
     public abstract void removeOnBackStackChangedListener(android.support.v4.app.FragmentManager$OnBackStackChangedListener)
+    public abstract void putFragment(android.os.Bundle,java.lang.String,android.support.v4.app.Fragment)
+    public abstract android.support.v4.app.Fragment getFragment(android.os.Bundle,java.lang.String)
+    public abstract android.support.v4.app.Fragment$SavedState saveFragmentInstanceState(android.support.v4.app.Fragment)
     public abstract void dump(java.lang.String,java.io.FileDescriptor,java.io.PrintWriter,java.lang.String[])
     345:346:public static void enableDebugLogging(boolean)
 android.support.v4.app.FragmentManager$BackStackEntry:
@@ -426,19 +430,14 @@ android.support.v4.app.FragmentManagerImpl:
     502:504:public boolean popBackStackImmediate(java.lang.String,int)
     521:526:public boolean popBackStackImmediate(int,int)
     549:552:public void removeOnBackStackChangedListener(android.support.v4.app.FragmentManager$OnBackStackChangedListener)
+    588:596:public android.support.v4.app.Fragment$SavedState saveFragmentInstanceState(android.support.v4.app.Fragment)
 android.support.v4.app.FragmentManagerImpl$3
-android.support.v4.app.FragmentPagerAdapter:
-    private static final java.lang.String TAG
-    private static final boolean DEBUG
-    66:71:public FragmentPagerAdapter(android.support.v4.app.FragmentManager)
-android.support.v4.app.FragmentStatePagerAdapter:
-    private static final java.lang.String TAG
-    private static final boolean DEBUG
-    69:77:public FragmentStatePagerAdapter(android.support.v4.app.FragmentManager)
+android.support.v4.app.FragmentPagerAdapter
+android.support.v4.app.FragmentStatePagerAdapter
 android.support.v4.app.FragmentTabHost:
     private android.widget.FrameLayout mRealTabContent
-    52:132:public FragmentTabHost(android.content.Context)
-    52:137:public FragmentTabHost(android.content.Context,android.util.AttributeSet)
+    130:132:public FragmentTabHost(android.content.Context)
+    135:137:public FragmentTabHost(android.content.Context,android.util.AttributeSet)
     140:146:private void initFragmentTabHost(android.content.Context,android.util.AttributeSet)
     151:174:private void ensureHierarchy(android.content.Context)
     188:193:public void setup(android.content.Context,android.support.v4.app.FragmentManager)
@@ -535,7 +534,7 @@ android.support.v4.app.NotificationCompat$Builder:
     573:579:public android.support.v4.app.NotificationCompat$Builder setStyle(android.support.v4.app.NotificationCompat$Style)
     587:587:public android.app.Notification getNotification()
 android.support.v4.app.NotificationCompat$InboxStyle:
-    783:790:public NotificationCompat$InboxStyle(android.support.v4.app.NotificationCompat$Builder)
+    788:790:public NotificationCompat$InboxStyle(android.support.v4.app.NotificationCompat$Builder)
     797:798:public android.support.v4.app.NotificationCompat$InboxStyle setBigContentTitle(java.lang.CharSequence)
     805:807:public android.support.v4.app.NotificationCompat$InboxStyle setSummaryText(java.lang.CharSequence)
     814:815:public android.support.v4.app.NotificationCompat$InboxStyle addLine(java.lang.CharSequence)
@@ -967,6 +966,7 @@ android.support.v4.view.ViewCompat:
     735:736:public static void setAccessibilityDelegate(android.view.View,android.support.v4.view.AccessibilityDelegateCompat)
     747:747:public static boolean hasTransientState(android.view.View)
     758:759:public static void setHasTransientState(android.view.View,boolean)
+    820:821:public static void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long)
     837:837:public static int getImportantForAccessibility(android.view.View)
     854:855:public static void setImportantForAccessibility(android.view.View,int)
     872:872:public static boolean performAccessibilityAction(android.view.View,int,android.os.Bundle)
@@ -991,6 +991,7 @@ android.support.v4.view.ViewCompat$BaseViewCompatImpl:
     258:258:public void onInitializeAccessibilityNodeInfo(android.view.View,android.support.v4.view.accessibility.AccessibilityNodeInfoCompat)
     261:261:public boolean hasTransientState(android.view.View)
     265:265:public void setHasTransientState(android.view.View,boolean)
+    276:277:public void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long)
     282:282:public int getImportantForAccessibility(android.view.View)
     286:286:public void setImportantForAccessibility(android.view.View,int)
     288:288:public boolean performAccessibilityAction(android.view.View,int,android.os.Bundle)
@@ -1023,6 +1024,7 @@ android.support.v4.view.ViewCompat$ICSViewCompatImpl:
 android.support.v4.view.ViewCompat$JBViewCompatImpl:
     457:457:public boolean hasTransientState(android.view.View)
     461:462:public void setHasTransientState(android.view.View,boolean)
+    477:478:public void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long)
     481:481:public int getImportantForAccessibility(android.view.View)
     485:486:public void setImportantForAccessibility(android.view.View,int)
     489:489:public boolean performAccessibilityAction(android.view.View,int,android.os.Bundle)
@@ -1044,6 +1046,7 @@ android.support.v4.view.ViewCompat$ViewCompatImpl:
     public abstract void setAccessibilityDelegate(android.view.View,android.support.v4.view.AccessibilityDelegateCompat)
     public abstract boolean hasTransientState(android.view.View)
     public abstract void setHasTransientState(android.view.View,boolean)
+    public abstract void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long)
     public abstract int getImportantForAccessibility(android.view.View)
     public abstract void setImportantForAccessibility(android.view.View,int)
     public abstract boolean performAccessibilityAction(android.view.View,int,android.os.Bundle)
@@ -1082,6 +1085,7 @@ android.support.v4.view.ViewCompatJB:
     26:26:ViewCompatJB()
     29:29:public static boolean hasTransientState(android.view.View)
     33:34:public static void setHasTransientState(android.view.View,boolean)
+    50:51:public static void postOnAnimationDelayed(android.view.View,java.lang.Runnable,long)
     54:54:public static int getImportantForAccessibility(android.view.View)
     58:59:public static void setImportantForAccessibility(android.view.View,int)
     62:62:public static boolean performAccessibilityAction(android.view.View,int,android.os.Bundle)
@@ -1093,11 +1097,10 @@ android.support.v4.view.ViewCompatJellybeanMr1:
     32:33:public static void setLabelFor(android.view.View,int)
     44:45:public static void setLayoutDirection(android.view.View,int)
 android.support.v4.view.ViewCompatKitKat
-android.support.v4.view.ViewConfigurationCompat
-android.support.v4.view.ViewConfigurationCompat$BaseViewConfigurationVersionImpl
-android.support.v4.view.ViewConfigurationCompat$FroyoViewConfigurationVersionImpl
-android.support.v4.view.ViewConfigurationCompat$ViewConfigurationVersionImpl
-android.support.v4.view.ViewConfigurationCompatFroyo
+android.support.v4.view.ViewConfigurationCompat:
+    25:46:public ViewConfigurationCompat()
+android.support.v4.view.ViewConfigurationCompatFroyo:
+    24:24:ViewConfigurationCompatFroyo()
 android.support.v4.view.ViewGroupCompat
 android.support.v4.view.ViewGroupCompat$ViewGroupCompatHCImpl
 android.support.v4.view.ViewGroupCompat$ViewGroupCompatIcsImpl
@@ -1126,8 +1129,8 @@ android.support.v4.view.ViewPager:
     public static final int SCROLL_STATE_IDLE
     public static final int SCROLL_STATE_DRAGGING
     public static final int SCROLL_STATE_SETTLING
-    130:346:public ViewPager(android.content.Context)
-    130:351:public ViewPager(android.content.Context,android.util.AttributeSet)
+    344:346:public ViewPager(android.content.Context)
+    349:351:public ViewPager(android.content.Context,android.util.AttributeSet)
     354:379:void initViewPager()
     608:620:public void setPageTransformer(boolean,android.support.v4.view.ViewPager$PageTransformer)
     654:656:android.support.v4.view.ViewPager$OnPageChangeListener setInternalPageChangeListener(android.support.v4.view.ViewPager$OnPageChangeListener)
@@ -1195,41 +1198,10 @@ android.support.v4.view.accessibility.AccessibilityRecordCompat$AccessibilityRec
 android.support.v4.view.accessibility.AccessibilityRecordCompatIcs
 android.support.v4.view.accessibility.AccessibilityRecordCompatIcsMr1
 android.support.v4.view.accessibility.AccessibilityRecordCompatJellyBean
-android.support.v4.widget.AutoScrollHelper:
-    public static final float RELATIVE_UNSPECIFIED
-    public static final float NO_MAX
-    public static final float NO_MIN
-    public static final int EDGE_TYPE_INSIDE
-    public static final int EDGE_TYPE_INSIDE_EXTEND
-    public static final int EDGE_TYPE_OUTSIDE
-    private static final int HORIZONTAL
-    private static final int VERTICAL
-    private static final int DEFAULT_EDGE_TYPE
-    private static final int DEFAULT_MINIMUM_VELOCITY_DIPS
-    private static final int DEFAULT_MAXIMUM_VELOCITY_DIPS
-    private static final float DEFAULT_MAXIMUM_EDGE
-    private static final float DEFAULT_RELATIVE_EDGE
-    private static final float DEFAULT_RELATIVE_VELOCITY
-    private static final int DEFAULT_RAMP_UP_DURATION
-    private static final int DEFAULT_RAMP_DOWN_DURATION
-    137:225:public AutoScrollHelper(android.view.View)
-    235:240:public android.support.v4.widget.AutoScrollHelper setEnabled(boolean)
-    247:247:public boolean isEnabled()
-    263:264:public android.support.v4.widget.AutoScrollHelper setExclusive(boolean)
-    276:276:public boolean isExclusive()
-    294:296:public android.support.v4.widget.AutoScrollHelper setMaximumVelocity(float,float)
-    312:314:public android.support.v4.widget.AutoScrollHelper setMinimumVelocity(float,float)
-    333:335:public android.support.v4.widget.AutoScrollHelper setRelativeVelocity(float,float)
-    354:355:public android.support.v4.widget.AutoScrollHelper setEdgeType(int)
-    373:375:public android.support.v4.widget.AutoScrollHelper setRelativeEdges(float,float)
-    395:397:public android.support.v4.widget.AutoScrollHelper setMaximumEdges(float,float)
-    412:413:public android.support.v4.widget.AutoScrollHelper setActivationDelay(int)
-    427:428:public android.support.v4.widget.AutoScrollHelper setRampUpDuration(int)
-    442:443:public android.support.v4.widget.AutoScrollHelper setRampDownDuration(int)
-android.support.v4.widget.AutoScrollHelper$ClampedScroller:
-    743:749:public AutoScrollHelper$ClampedScroller()
-    752:753:public void setRampUpDuration(int)
-    756:757:public void setRampDownDuration(int)
+android.support.v4.widget.AutoScrollHelper
+android.support.v4.widget.AutoScrollHelper$1
+android.support.v4.widget.AutoScrollHelper$ClampedScroller
+android.support.v4.widget.AutoScrollHelper$ScrollAnimationRunnable
 android.support.v4.widget.ContentLoadingProgressBar
 android.support.v4.widget.ContentLoadingProgressBar$1
 android.support.v4.widget.ContentLoadingProgressBar$2
@@ -1258,7 +1230,7 @@ android.support.v4.widget.DrawerLayout:
     private static final float TOUCH_SLOP_SENSITIVITY
     217:218:public DrawerLayout(android.content.Context)
     221:222:public DrawerLayout(android.content.Context,android.util.AttributeSet)
-    135:249:public DrawerLayout(android.content.Context,android.util.AttributeSet,int)
+    225:249:public DrawerLayout(android.content.Context,android.util.AttributeSet,int)
     265:275:public void setDrawerShadow(android.graphics.drawable.Drawable,int)
     285:286:public void setDrawerShadow(int,int)
     394:400:public void setDrawerLockMode(int,android.view.View)
@@ -1275,7 +1247,7 @@ android.support.v4.widget.DrawerLayout$LayoutParams:
     1509:1511:public DrawerLayout$LayoutParams(int,int,int)
 android.support.v4.widget.DrawerLayout$SimpleDrawerListener
 android.support.v4.widget.DrawerLayout$ViewDragCallback:
-    1327:1335:public DrawerLayout$ViewDragCallback(android.support.v4.widget.DrawerLayout,int)
+    1333:1335:public DrawerLayout$ViewDragCallback(android.support.v4.widget.DrawerLayout,int)
     1338:1339:public void setDragger(android.support.v4.widget.ViewDragHelper)
     1418:1440:private void peekDrawer()
     1323:1323:static synthetic void access$000(android.support.v4.widget.DrawerLayout$ViewDragCallback)
@@ -1391,7 +1363,7 @@ android.support.v4.widget.SlidingPaneLayout:
     private static final int MIN_FLING_VELOCITY
     244:245:public SlidingPaneLayout(android.content.Context)
     248:249:public SlidingPaneLayout(android.content.Context,android.util.AttributeSet)
-    107:267:public SlidingPaneLayout(android.content.Context,android.util.AttributeSet,int)
+    252:267:public SlidingPaneLayout(android.content.Context,android.util.AttributeSet,int)
     328:331:void dispatchOnPanelSlide(android.view.View)
     334:338:void dispatchOnPanelOpened(android.view.View)
     341:345:void dispatchOnPanelClosed(android.view.View)
@@ -1410,8 +1382,8 @@ android.support.v4.widget.SlidingPaneLayout:
 android.support.v4.widget.SlidingPaneLayout$AccessibilityDelegate
 android.support.v4.widget.SlidingPaneLayout$DragHelperCallback
 android.support.v4.widget.SlidingPaneLayout$LayoutParams:
-    1257:1278:public SlidingPaneLayout$LayoutParams(int,int)
-    1257:1291:public SlidingPaneLayout$LayoutParams(android.support.v4.widget.SlidingPaneLayout$LayoutParams)
+    1277:1278:public SlidingPaneLayout$LayoutParams(int,int)
+    1289:1291:public SlidingPaneLayout$LayoutParams(android.support.v4.widget.SlidingPaneLayout$LayoutParams)
 android.support.v4.widget.SlidingPaneLayout$PanelSlideListener:
     public abstract void onPanelSlide(android.view.View,float)
     public abstract void onPanelOpened(android.view.View)
@@ -1436,7 +1408,7 @@ android.support.v4.widget.ViewDragHelper:
     private static final int MAX_SETTLE_DURATION
     347:347:public static android.support.v4.widget.ViewDragHelper create(android.view.ViewGroup,android.support.v4.widget.ViewDragHelper$Callback)
     360:362:public static android.support.v4.widget.ViewDragHelper create(android.view.ViewGroup,float,android.support.v4.widget.ViewDragHelper$Callback)
-    115:392:private ViewDragHelper(android.content.Context,android.view.ViewGroup,android.support.v4.widget.ViewDragHelper$Callback)
+    373:392:private ViewDragHelper(android.content.Context,android.view.ViewGroup,android.support.v4.widget.ViewDragHelper$Callback)
     401:402:public void setMinVelocity(float)
     412:412:public float getMinVelocity()
     437:438:public void setEdgeTrackingEnabled(int)
@@ -1512,9 +1484,9 @@ android.support.v7.app.ActionBar$Callback:
     public abstract android.support.v4.app.FragmentManager getSupportFragmentManager()
 android.support.v7.app.ActionBar$DisplayOptions
 android.support.v7.app.ActionBar$LayoutParams:
-    1048:1062:public ActionBar$LayoutParams(int,int)
-    1048:1077:public ActionBar$LayoutParams(android.support.v7.app.ActionBar$LayoutParams)
-    1048:1081:public ActionBar$LayoutParams(android.view.ViewGroup$LayoutParams)
+    1060:1062:public ActionBar$LayoutParams(int,int)
+    1074:1077:public ActionBar$LayoutParams(android.support.v7.app.ActionBar$LayoutParams)
+    1080:1081:public ActionBar$LayoutParams(android.view.ViewGroup$LayoutParams)
 android.support.v7.app.ActionBar$NavigationMode
 android.support.v7.app.ActionBar$OnMenuVisibilityListener
 android.support.v7.app.ActionBar$Tab:
@@ -1956,10 +1928,11 @@ android.support.v7.internal.widget.AbsActionBarView:
     119:133:public void animateToVisibility(int)
 android.support.v7.internal.widget.AbsSpinnerICS:
     private android.graphics.Rect mTouchFrame
-    41:56:AbsSpinnerICS(android.content.Context)
+    54:56:AbsSpinnerICS(android.content.Context)
     59:60:AbsSpinnerICS(android.content.Context,android.util.AttributeSet)
     254:257:public void setSelection(int,boolean)
     275:282:void setSelectionInt(int,boolean)
+    abstract void layout(int,boolean)
     315:315:public int getCount()
     327:343:public int pointToPosition(int,int)
     34:34:public bridge synthetic void setAdapter(android.widget.Adapter)
@@ -2018,8 +1991,8 @@ android.support.v7.internal.widget.AdapterViewICS:
     android.support.v7.internal.widget.AdapterViewICS$OnItemLongClickListener mOnItemLongClickListener
     public static final int INVALID_POSITION
     public static final long INVALID_ROW_ID
-    67:229:AdapterViewICS(android.content.Context)
-    67:233:AdapterViewICS(android.content.Context,android.util.AttributeSet)
+    228:229:AdapterViewICS(android.content.Context)
+    232:233:AdapterViewICS(android.content.Context,android.util.AttributeSet)
     290:290:public final android.support.v7.internal.widget.AdapterViewICS$OnItemClickListener getOnItemClickListener()
     345:349:public void setOnItemLongClickListener(android.support.v7.internal.widget.AdapterViewICS$OnItemLongClickListener)
     356:356:public final android.support.v7.internal.widget.AdapterViewICS$OnItemLongClickListener getOnItemLongClickListener()
@@ -2163,7 +2136,7 @@ android.support.v7.widget.SearchView:
     private final android.widget.AdapterView$OnItemSelectedListener mOnItemSelectedListener
     private android.text.TextWatcher mTextWatcher
     254:255:public SearchView(android.content.Context)
-    152:1572:public SearchView(android.content.Context,android.util.AttributeSet)
+    258:345:public SearchView(android.content.Context,android.util.AttributeSet)
     348:355:private void addOnLayoutChangeListenerToDropDownAnchorSDK11()
     358:365:private void addOnLayoutChangeListenerToDropDownAnchorBase()
     542:552:public void setQuery(java.lang.CharSequence,boolean)
@@ -2253,8 +2226,45 @@ com.android.vending.billing.IInAppBillingService$Stub:
     static final int TRANSACTION_getPurchases
     static final int TRANSACTION_consumePurchase
     38:40:public IInAppBillingService$Stub()
+    58:58:public android.os.IBinder asBinder()
 com.android.vending.billing.IInAppBillingService$Stub$Proxy:
     186:186:public java.lang.String getInterfaceDescriptor()
+com.fortysevendeg.swipelistview.BuildConfig
+com.fortysevendeg.swipelistview.R:
+    9:33:public R()
+com.fortysevendeg.swipelistview.R$attr
+com.fortysevendeg.swipelistview.R$id
+com.fortysevendeg.swipelistview.R$styleable:
+    33:33:public R$styleable()
+com.fortysevendeg.swipelistview.SwipeListView:
+    public static final int SWIPE_MODE_DEFAULT
+    public static final int SWIPE_MODE_NONE
+    public static final int SWIPE_MODE_BOTH
+    public static final int SWIPE_MODE_RIGHT
+    public static final int SWIPE_MODE_LEFT
+    public static final int SWIPE_ACTION_REVEAL
+    public static final int SWIPE_ACTION_DISMISS
+    public static final int SWIPE_ACTION_CHOICE
+    public static final int SWIPE_ACTION_NONE
+    public static final java.lang.String SWIPE_DEFAULT_FRONT_VIEW
+    public static final java.lang.String SWIPE_DEFAULT_BACK_VIEW
+    private static final int TOUCH_STATE_REST
+    private static final int TOUCH_STATE_SCROLLING_X
+    private static final int TOUCH_STATE_SCROLLING_Y
+    267:269:public void recycle(android.view.View,int)
+    279:279:public boolean isChecked(int)
+    304:305:public void unselectedChoiceStates()
+    331:340:public void dismiss(int)
+    346:364:public void dismissSelected()
+    373:374:public void openAnimate(int)
+    756:757:public void closeOpenedItems()
+com.fortysevendeg.swipelistview.SwipeListViewTouchListener:
+    private static final int DISPLACE_CHOICE
+    182:182:public boolean isListViewMoving()
+    385:396:protected void unselectedChoiceStates()
+    402:411:protected int dismiss(int)
+    1106:1113:protected void handlerPendingDismisses(int)
+com.fortysevendeg.swipelistview.SwipeListViewTouchListener$10
 com.google.ads.AdRequest:
     public static final java.lang.String VERSION
     public static final java.lang.String LOGTAG
@@ -2319,6 +2329,7 @@ com.google.android.vending.licensing.ILicensingService$Stub:
     private static final java.lang.String DESCRIPTOR
     static final int TRANSACTION_checkLicense
     16:18:public ILicensingService$Stub()
+    36:36:public android.os.IBinder asBinder()
 com.google.android.vending.licensing.ILicensingService$Stub$Proxy:
     75:75:public java.lang.String getInterfaceDescriptor()
 com.google.android.vending.licensing.LicenseChecker:
@@ -2435,6 +2446,339 @@ com.ipaulpro.afilechooser.utils.FileUtils:
     399:399:public static android.graphics.Bitmap getThumbnail(android.content.Context,java.io.File)
     412:412:public static android.graphics.Bitmap getThumbnail(android.content.Context,android.net.Uri)
     429:468:public static android.graphics.Bitmap getThumbnail(android.content.Context,android.net.Uri,java.lang.String)
+com.nineoldandroids.animation.Animator:
+    72:72:public void end()
+    public abstract long getStartDelay()
+    public abstract void setStartDelay(long)
+    public abstract com.nineoldandroids.animation.Animator setDuration(long)
+    public abstract long getDuration()
+    public abstract void setInterpolator(android.view.animation.Interpolator)
+    public abstract boolean isRunning()
+    135:135:public boolean isStarted()
+    158:165:public void removeListener(com.nineoldandroids.animation.Animator$AnimatorListener)
+    174:174:public java.util.ArrayList getListeners()
+    183:187:public void removeAllListeners()
+    217:217:public void setupStartValues()
+    229:229:public void setupEndValues()
+    240:240:public void setTarget(java.lang.Object)
+com.nineoldandroids.animation.AnimatorInflater
+com.nineoldandroids.animation.AnimatorSet
+com.nineoldandroids.animation.AnimatorSet$1
+com.nineoldandroids.animation.AnimatorSet$AnimatorSetListener
+com.nineoldandroids.animation.AnimatorSet$Builder
+com.nineoldandroids.animation.AnimatorSet$Dependency
+com.nineoldandroids.animation.AnimatorSet$DependencyListener
+com.nineoldandroids.animation.AnimatorSet$Node
+com.nineoldandroids.animation.ArgbEvaluator
+com.nineoldandroids.animation.Keyframe:
+    140:140:public static com.nineoldandroids.animation.Keyframe ofObject(float,java.lang.Object)
+    156:156:public static com.nineoldandroids.animation.Keyframe ofObject(float)
+    167:167:public boolean hasValue()
+    public abstract void setValue(java.lang.Object)
+    201:202:public void setFraction(float)
+    232:232:public java.lang.Class getType()
+com.nineoldandroids.animation.Keyframe$FloatKeyframe:
+    347:351:public void setValue(java.lang.Object)
+com.nineoldandroids.animation.Keyframe$IntKeyframe:
+    303:307:public void setValue(java.lang.Object)
+com.nineoldandroids.animation.Keyframe$ObjectKeyframe
+com.nineoldandroids.animation.KeyframeSet:
+    85:111:public static varargs com.nineoldandroids.animation.KeyframeSet ofKeyframe(com.nineoldandroids.animation.Keyframe[])
+    116:127:public static varargs com.nineoldandroids.animation.KeyframeSet ofObject(java.lang.Object[])
+com.nineoldandroids.animation.ObjectAnimator
+com.nineoldandroids.animation.PreHoneycombCompat
+com.nineoldandroids.animation.PreHoneycombCompat$1
+com.nineoldandroids.animation.PreHoneycombCompat$10
+com.nineoldandroids.animation.PreHoneycombCompat$11
+com.nineoldandroids.animation.PreHoneycombCompat$12
+com.nineoldandroids.animation.PreHoneycombCompat$13
+com.nineoldandroids.animation.PreHoneycombCompat$14
+com.nineoldandroids.animation.PreHoneycombCompat$2
+com.nineoldandroids.animation.PreHoneycombCompat$3
+com.nineoldandroids.animation.PreHoneycombCompat$4
+com.nineoldandroids.animation.PreHoneycombCompat$5
+com.nineoldandroids.animation.PreHoneycombCompat$6
+com.nineoldandroids.animation.PreHoneycombCompat$7
+com.nineoldandroids.animation.PreHoneycombCompat$8
+com.nineoldandroids.animation.PreHoneycombCompat$9
+com.nineoldandroids.animation.PropertyValuesHolder:
+    139:144:private PropertyValuesHolder(com.nineoldandroids.util.Property)
+    165:165:public static varargs com.nineoldandroids.animation.PropertyValuesHolder ofInt(com.nineoldandroids.util.Property,int[])
+    187:187:public static varargs com.nineoldandroids.animation.PropertyValuesHolder ofFloat(com.nineoldandroids.util.Property,float[])
+    204:207:public static varargs com.nineoldandroids.animation.PropertyValuesHolder ofObject(java.lang.String,com.nineoldandroids.animation.TypeEvaluator,java.lang.Object[])
+    224:227:public static varargs com.nineoldandroids.animation.PropertyValuesHolder ofObject(com.nineoldandroids.util.Property,com.nineoldandroids.animation.TypeEvaluator,java.lang.Object[])
+    250:260:public static varargs com.nineoldandroids.animation.PropertyValuesHolder ofKeyframe(java.lang.String,com.nineoldandroids.animation.Keyframe[])
+    281:291:public static varargs com.nineoldandroids.animation.PropertyValuesHolder ofKeyframe(com.nineoldandroids.util.Property,com.nineoldandroids.animation.Keyframe[])
+    337:344:public varargs void setKeyframes(com.nineoldandroids.animation.Keyframe[])
+    360:362:public varargs void setObjectValues(java.lang.Object[])
+    381:440:private java.lang.reflect.Method getPropertyFunction(java.lang.Class,java.lang.String,java.lang.Class)
+    457:478:private java.lang.reflect.Method setupSetterOrGetter(java.lang.Class,java.util.HashMap,java.lang.String,java.lang.Class)
+    486:487:void setupSetter(java.lang.Class)
+    493:494:private void setupGetter(java.lang.Class)
+    507:541:void setupSetterAndGetter(java.lang.Object)
+    551:565:private void setupValue(java.lang.Object,com.nineoldandroids.animation.Keyframe)
+    576:577:void setupStartValue(java.lang.Object)
+    588:589:void setupEndValue(java.lang.Object)
+    614:627:void setAnimatedValue(java.lang.Object)
+    659:661:public void setEvaluator(com.nineoldandroids.animation.TypeEvaluator)
+    689:690:public void setPropertyName(java.lang.String)
+    701:702:public void setProperty(com.nineoldandroids.util.Property)
+    744:750:static java.lang.String getMethodName(java.lang.String,java.lang.String)
+    36:36:synthetic PropertyValuesHolder(com.nineoldandroids.util.Property,com.nineoldandroids.animation.PropertyValuesHolder$1)
+com.nineoldandroids.animation.PropertyValuesHolder$FloatPropertyValuesHolder:
+    private com.nineoldandroids.util.FloatProperty mFloatProperty
+    901:905:public PropertyValuesHolder$FloatPropertyValuesHolder(java.lang.String,com.nineoldandroids.animation.FloatKeyframeSet)
+    908:915:public PropertyValuesHolder$FloatPropertyValuesHolder(com.nineoldandroids.util.Property,com.nineoldandroids.animation.FloatKeyframeSet)
+    923:928:public varargs PropertyValuesHolder$FloatPropertyValuesHolder(com.nineoldandroids.util.Property,float[])
+    962:984:void setAnimatedValue(java.lang.Object)
+    988:1022:void setupSetter(java.lang.Class)
+com.nineoldandroids.animation.PropertyValuesHolder$IntPropertyValuesHolder:
+    private com.nineoldandroids.util.IntProperty mIntProperty
+    765:769:public PropertyValuesHolder$IntPropertyValuesHolder(java.lang.String,com.nineoldandroids.animation.IntKeyframeSet)
+    772:779:public PropertyValuesHolder$IntPropertyValuesHolder(com.nineoldandroids.util.Property,com.nineoldandroids.animation.IntKeyframeSet)
+    787:792:public varargs PropertyValuesHolder$IntPropertyValuesHolder(com.nineoldandroids.util.Property,int[])
+    826:848:void setAnimatedValue(java.lang.Object)
+    852:886:void setupSetter(java.lang.Class)
+com.nineoldandroids.animation.TimeAnimator
+com.nineoldandroids.animation.TimeAnimator$TimeListener
+com.nineoldandroids.animation.ValueAnimator:
+    private static final long DEFAULT_FRAME_DELAY
+    static final int ANIMATION_START
+    static final int ANIMATION_FRAME
+    static final int STOPPED
+    static final int RUNNING
+    static final int SEEKED
+    public static final int RESTART
+    public static final int REVERSE
+    public static final int INFINITE
+    329:331:public static varargs com.nineoldandroids.animation.ValueAnimator ofPropertyValuesHolder(com.nineoldandroids.animation.PropertyValuesHolder[])
+    352:355:public static varargs com.nineoldandroids.animation.ValueAnimator ofObject(com.nineoldandroids.animation.TypeEvaluator,java.lang.Object[])
+    433:445:public varargs void setObjectValues(java.lang.Object[])
+    476:476:public com.nineoldandroids.animation.PropertyValuesHolder[] getValues()
+    524:524:public long getDuration()
+    692:692:public long getStartDelay()
+    715:715:public static long getFrameDelay()
+    728:729:public static void setFrameDelay(long)
+    762:767:public java.lang.Object getAnimatedValue(java.lang.String)
+    780:781:public void setRepeatCount(int)
+    789:789:public int getRepeatCount()
+    800:801:public void setRepeatMode(int)
+    809:809:public int getRepeatMode()
+    830:835:public void removeAllUpdateListeners()
+    844:851:public void removeUpdateListener(com.nineoldandroids.animation.ValueAnimator$AnimatorUpdateListener)
+    878:878:public android.view.animation.Interpolator getInterpolator()
+    898:901:public void setEvaluator(com.nineoldandroids.animation.TypeEvaluator)
+    974:989:public void end()
+    993:993:public boolean isRunning()
+    998:998:public boolean isStarted()
+    1009:1018:public void reverse()
+    1239:1239:public static int getCurrentAnimationsCount()
+    1249:1252:public static void clearAllAnimations()
+    43:43:public bridge synthetic com.nineoldandroids.animation.Animator setDuration(long)
+com.nineoldandroids.util.FloatProperty
+com.nineoldandroids.util.IntProperty
+com.nineoldandroids.util.NoSuchPropertyException
+com.nineoldandroids.util.Property:
+    private final java.lang.String mName
+    private final java.lang.Class mType
+    55:55:public static com.nineoldandroids.util.Property of(java.lang.Class,java.lang.Class,java.lang.String)
+    61:64:public Property(java.lang.Class,java.lang.String)
+    76:76:public boolean isReadOnly()
+    85:85:public void set(java.lang.Object,java.lang.Object)
+    public abstract java.lang.Object get(java.lang.Object)
+    97:97:public java.lang.String getName()
+    104:104:public java.lang.Class getType()
+com.nineoldandroids.util.ReflectiveProperty
+com.nineoldandroids.view.ViewHelper:
+    9:9:private ViewHelper()
+    12:12:public static float getAlpha(android.view.View)
+    24:24:public static float getPivotX(android.view.View)
+    28:33:public static void setPivotX(android.view.View,float)
+    36:36:public static float getPivotY(android.view.View)
+    40:45:public static void setPivotY(android.view.View,float)
+    48:48:public static float getRotation(android.view.View)
+    52:57:public static void setRotation(android.view.View,float)
+    60:60:public static float getRotationX(android.view.View)
+    64:69:public static void setRotationX(android.view.View,float)
+    72:72:public static float getRotationY(android.view.View)
+    76:81:public static void setRotationY(android.view.View,float)
+    84:84:public static float getScaleX(android.view.View)
+    88:93:public static void setScaleX(android.view.View,float)
+    96:96:public static float getScaleY(android.view.View)
+    100:105:public static void setScaleY(android.view.View,float)
+    108:108:public static float getScrollX(android.view.View)
+    112:117:public static void setScrollX(android.view.View,int)
+    120:120:public static float getScrollY(android.view.View)
+    124:129:public static void setScrollY(android.view.View,int)
+    132:132:public static float getTranslationX(android.view.View)
+    144:144:public static float getTranslationY(android.view.View)
+    148:153:public static void setTranslationY(android.view.View,float)
+    160:165:public static void setX(android.view.View,float)
+    168:168:public static float getY(android.view.View)
+    172:177:public static void setY(android.view.View,float)
+com.nineoldandroids.view.ViewHelper$Honeycomb:
+    179:179:private ViewHelper$Honeycomb()
+    181:181:static float getAlpha(android.view.View)
+    189:189:static float getPivotX(android.view.View)
+    193:194:static void setPivotX(android.view.View,float)
+    197:197:static float getPivotY(android.view.View)
+    201:202:static void setPivotY(android.view.View,float)
+    205:205:static float getRotation(android.view.View)
+    209:210:static void setRotation(android.view.View,float)
+    213:213:static float getRotationX(android.view.View)
+    217:218:static void setRotationX(android.view.View,float)
+    221:221:static float getRotationY(android.view.View)
+    225:226:static void setRotationY(android.view.View,float)
+    229:229:static float getScaleX(android.view.View)
+    233:234:static void setScaleX(android.view.View,float)
+    237:237:static float getScaleY(android.view.View)
+    241:242:static void setScaleY(android.view.View,float)
+    245:245:static float getScrollX(android.view.View)
+    249:250:static void setScrollX(android.view.View,int)
+    253:253:static float getScrollY(android.view.View)
+    257:258:static void setScrollY(android.view.View,int)
+    261:261:static float getTranslationX(android.view.View)
+    269:269:static float getTranslationY(android.view.View)
+    273:274:static void setTranslationY(android.view.View,float)
+    281:282:static void setX(android.view.View,float)
+    285:285:static float getY(android.view.View)
+    289:290:static void setY(android.view.View,float)
+com.nineoldandroids.view.ViewPropertyAnimator:
+    public abstract long getDuration()
+    public abstract long getStartDelay()
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator setStartDelay(long)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator setInterpolator(android.view.animation.Interpolator)
+    public abstract void start()
+    public abstract void cancel()
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator x(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator xBy(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator y(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator yBy(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator rotation(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator rotationBy(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator rotationX(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator rotationXBy(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator rotationY(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator rotationYBy(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator translationXBy(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator translationY(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator translationYBy(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator scaleX(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator scaleXBy(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator scaleY(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator scaleYBy(float)
+    public abstract com.nineoldandroids.view.ViewPropertyAnimator alphaBy(float)
+com.nineoldandroids.view.ViewPropertyAnimatorHC:
+    private static final int NONE
+    private static final int TRANSLATION_X
+    private static final int TRANSLATION_Y
+    private static final int SCALE_X
+    private static final int SCALE_Y
+    private static final int ROTATION
+    private static final int ROTATION_X
+    private static final int ROTATION_Y
+    private static final int X
+    private static final int Y
+    private static final int ALPHA
+    private static final int TRANSFORM_MASK
+    237:242:public long getDuration()
+    248:253:public long getStartDelay()
+    259:265:public com.nineoldandroids.view.ViewPropertyAnimator setStartDelay(long)
+    270:272:public com.nineoldandroids.view.ViewPropertyAnimator setInterpolator(android.view.animation.Interpolator)
+    283:284:public void start()
+    288:301:public void cancel()
+    305:306:public com.nineoldandroids.view.ViewPropertyAnimator x(float)
+    311:312:public com.nineoldandroids.view.ViewPropertyAnimator xBy(float)
+    317:318:public com.nineoldandroids.view.ViewPropertyAnimator y(float)
+    323:324:public com.nineoldandroids.view.ViewPropertyAnimator yBy(float)
+    329:330:public com.nineoldandroids.view.ViewPropertyAnimator rotation(float)
+    335:336:public com.nineoldandroids.view.ViewPropertyAnimator rotationBy(float)
+    341:342:public com.nineoldandroids.view.ViewPropertyAnimator rotationX(float)
+    347:348:public com.nineoldandroids.view.ViewPropertyAnimator rotationXBy(float)
+    353:354:public com.nineoldandroids.view.ViewPropertyAnimator rotationY(float)
+    359:360:public com.nineoldandroids.view.ViewPropertyAnimator rotationYBy(float)
+    371:372:public com.nineoldandroids.view.ViewPropertyAnimator translationXBy(float)
+    377:378:public com.nineoldandroids.view.ViewPropertyAnimator translationY(float)
+    383:384:public com.nineoldandroids.view.ViewPropertyAnimator translationYBy(float)
+    389:390:public com.nineoldandroids.view.ViewPropertyAnimator scaleX(float)
+    395:396:public com.nineoldandroids.view.ViewPropertyAnimator scaleXBy(float)
+    401:402:public com.nineoldandroids.view.ViewPropertyAnimator scaleY(float)
+    407:408:public com.nineoldandroids.view.ViewPropertyAnimator scaleYBy(float)
+    419:420:public com.nineoldandroids.view.ViewPropertyAnimator alphaBy(float)
+    481:483:private void animatePropertyBy(int,float)
+com.nineoldandroids.view.ViewPropertyAnimatorICS:
+    private static final long RETURN_WHEN_NULL
+    36:40:public long getDuration()
+    45:49:public com.nineoldandroids.view.ViewPropertyAnimator setStartDelay(long)
+    54:58:public long getStartDelay()
+    63:67:public com.nineoldandroids.view.ViewPropertyAnimator setInterpolator(android.view.animation.Interpolator)
+    105:109:public void start()
+    113:117:public void cancel()
+    121:125:public com.nineoldandroids.view.ViewPropertyAnimator x(float)
+    130:134:public com.nineoldandroids.view.ViewPropertyAnimator xBy(float)
+    139:143:public com.nineoldandroids.view.ViewPropertyAnimator y(float)
+    148:152:public com.nineoldandroids.view.ViewPropertyAnimator yBy(float)
+    157:161:public com.nineoldandroids.view.ViewPropertyAnimator rotation(float)
+    166:170:public com.nineoldandroids.view.ViewPropertyAnimator rotationBy(float)
+    175:179:public com.nineoldandroids.view.ViewPropertyAnimator rotationX(float)
+    184:188:public com.nineoldandroids.view.ViewPropertyAnimator rotationXBy(float)
+    193:197:public com.nineoldandroids.view.ViewPropertyAnimator rotationY(float)
+    202:206:public com.nineoldandroids.view.ViewPropertyAnimator rotationYBy(float)
+    220:224:public com.nineoldandroids.view.ViewPropertyAnimator translationXBy(float)
+    229:233:public com.nineoldandroids.view.ViewPropertyAnimator translationY(float)
+    238:242:public com.nineoldandroids.view.ViewPropertyAnimator translationYBy(float)
+    247:251:public com.nineoldandroids.view.ViewPropertyAnimator scaleX(float)
+    256:260:public com.nineoldandroids.view.ViewPropertyAnimator scaleXBy(float)
+    265:269:public com.nineoldandroids.view.ViewPropertyAnimator scaleY(float)
+    274:278:public com.nineoldandroids.view.ViewPropertyAnimator scaleYBy(float)
+    292:296:public com.nineoldandroids.view.ViewPropertyAnimator alphaBy(float)
+com.nineoldandroids.view.ViewPropertyAnimatorPreHC:
+    private static final int NONE
+    private static final int TRANSLATION_X
+    private static final int TRANSLATION_Y
+    private static final int SCALE_X
+    private static final int SCALE_Y
+    private static final int ROTATION
+    private static final int ROTATION_X
+    private static final int ROTATION_Y
+    private static final int X
+    private static final int Y
+    private static final int ALPHA
+    private static final int TRANSFORM_MASK
+    244:249:public long getDuration()
+    255:260:public long getStartDelay()
+    266:272:public com.nineoldandroids.view.ViewPropertyAnimator setStartDelay(long)
+    277:279:public com.nineoldandroids.view.ViewPropertyAnimator setInterpolator(android.view.animation.Interpolator)
+    290:291:public void start()
+    295:308:public void cancel()
+    312:313:public com.nineoldandroids.view.ViewPropertyAnimator x(float)
+    318:319:public com.nineoldandroids.view.ViewPropertyAnimator xBy(float)
+    324:325:public com.nineoldandroids.view.ViewPropertyAnimator y(float)
+    330:331:public com.nineoldandroids.view.ViewPropertyAnimator yBy(float)
+    336:337:public com.nineoldandroids.view.ViewPropertyAnimator rotation(float)
+    342:343:public com.nineoldandroids.view.ViewPropertyAnimator rotationBy(float)
+    348:349:public com.nineoldandroids.view.ViewPropertyAnimator rotationX(float)
+    354:355:public com.nineoldandroids.view.ViewPropertyAnimator rotationXBy(float)
+    360:361:public com.nineoldandroids.view.ViewPropertyAnimator rotationY(float)
+    366:367:public com.nineoldandroids.view.ViewPropertyAnimator rotationYBy(float)
+    378:379:public com.nineoldandroids.view.ViewPropertyAnimator translationXBy(float)
+    384:385:public com.nineoldandroids.view.ViewPropertyAnimator translationY(float)
+    390:391:public com.nineoldandroids.view.ViewPropertyAnimator translationYBy(float)
+    396:397:public com.nineoldandroids.view.ViewPropertyAnimator scaleX(float)
+    402:403:public com.nineoldandroids.view.ViewPropertyAnimator scaleXBy(float)
+    408:409:public com.nineoldandroids.view.ViewPropertyAnimator scaleY(float)
+    414:415:public com.nineoldandroids.view.ViewPropertyAnimator scaleYBy(float)
+    426:427:public com.nineoldandroids.view.ViewPropertyAnimator alphaBy(float)
+    488:490:private void animatePropertyBy(int,float)
+com.nineoldandroids.view.animation.AnimatorProxy:
+    83:83:public float getPivotX()
+    86:92:public void setPivotX(float)
+    94:94:public float getPivotY()
+    97:103:public void setPivotY(float)
+    156:160:public int getScrollX()
+    163:167:public void setScrollX(int)
+    169:173:public int getScrollY()
+    176:180:public void setScrollY(int)
 com.ubertesters.common.BaseJavaScriptInterface
 com.ubertesters.common.BuildConfig
 com.ubertesters.common.Device
@@ -2469,7 +2813,7 @@ com.ubertesters.common.models.Issue:
     private java.util.List _attachments
     private com.ubertesters.common.models.DeviceEnvironment mState
     31:33:public Issue(int,int,java.lang.String,java.lang.String,java.util.List)
-    22:40:public Issue(int,int,java.lang.String,java.lang.String)
+    35:40:public Issue(int,int,java.lang.String,java.lang.String)
     43:43:public com.ubertesters.common.models.DeviceEnvironment getState()
     47:47:public boolean getIsAttached()
     51:52:public void setIsAttached(boolean)
@@ -2489,7 +2833,7 @@ com.ubertesters.common.models.Issue:
     107:107:public boolean isDescriptionEmpty()
     111:111:public java.util.List getAttachments()
     115:115:public boolean isAttachmentsEmpty()
-    119:122:public boolean isFull()
+    119:119:public boolean isFull()
     126:134:public void clear()
     138:160:public org.json.JSONObject serialize()
     164:178:public static com.ubertesters.common.models.Issue copyFrom(com.ubertesters.common.models.Issue)
@@ -2506,7 +2850,7 @@ com.ubertesters.common.models.PackageInfo:
     43:44:public void setOfflineModeEnabled(boolean)
     47:53:public void setAttachments(java.util.List)
     56:56:public java.util.ArrayList getAttachments()
-    100:106:public boolean isSamePackage(com.ubertesters.common.models.PackageInfo)
+    100:104:public boolean isSamePackage(com.ubertesters.common.models.PackageInfo)
 com.ubertesters.common.service.IHubService
 com.ubertesters.common.settings.Config
 com.ubertesters.common.transactions.TransactionConverter:
@@ -2541,7 +2885,7 @@ com.ubertesters.common.utils.DeviceInfo:
     33:33:public static java.lang.String getRealUdid(android.content.Context)
     39:41:private static java.lang.String getPhoneUdId(android.content.Context)
     47:49:private static java.lang.String getTabletUdId(android.content.Context)
-    54:56:private static boolean isTablet(android.content.Context)
+    54:54:private static boolean isTablet(android.content.Context)
 com.ubertesters.common.utils.DeviceState
 com.ubertesters.common.utils.FileUtility
 com.ubertesters.common.utils.IJsonSerializable
@@ -2682,8 +3026,8 @@ com.ubertesters.sdk.utility.CrashLogger:
     18:23:public static void disableCrashLogging()
     37:37:public static com.ubertesters.sdk.utility.CrashLogger getInstance()
 com.ubertesters.sdk.utility.GLRenderWrapper:
-    32:52:public GLRenderWrapper(android.opengl.GLSurfaceView,android.opengl.GLSurfaceView$Renderer,java.util.concurrent.CountDownLatch)
-    77:82:private boolean hasGL20Support(android.content.Context)
+    36:52:public GLRenderWrapper(android.opengl.GLSurfaceView,android.opengl.GLSurfaceView$Renderer,java.util.concurrent.CountDownLatch)
+    78:82:private boolean hasGL20Support(android.content.Context)
     133:134:public void setTakeScreenshot()
     137:138:public void setLatch(java.util.concurrent.CountDownLatch)
 com.ubertesters.sdk.utility.LockScreen:

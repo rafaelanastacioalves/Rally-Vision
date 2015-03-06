@@ -130,6 +130,18 @@ anastasoft.rallyvision.R$attr: int spinnerMode
 anastasoft.rallyvision.R$attr: int spinnerStyle
 anastasoft.rallyvision.R$attr: int subtitle
 anastasoft.rallyvision.R$attr: int subtitleTextStyle
+anastasoft.rallyvision.R$attr: int swipeActionLeft
+anastasoft.rallyvision.R$attr: int swipeActionRight
+anastasoft.rallyvision.R$attr: int swipeAnimationTime
+anastasoft.rallyvision.R$attr: int swipeBackView
+anastasoft.rallyvision.R$attr: int swipeCloseAllItemsWhenMoveList
+anastasoft.rallyvision.R$attr: int swipeDrawableChecked
+anastasoft.rallyvision.R$attr: int swipeDrawableUnchecked
+anastasoft.rallyvision.R$attr: int swipeFrontView
+anastasoft.rallyvision.R$attr: int swipeMode
+anastasoft.rallyvision.R$attr: int swipeOffsetLeft
+anastasoft.rallyvision.R$attr: int swipeOffsetRight
+anastasoft.rallyvision.R$attr: int swipeOpenOnLongPress
 anastasoft.rallyvision.R$attr: int textAllCaps
 anastasoft.rallyvision.R$attr: int textAppearanceLargePopupMenu
 anastasoft.rallyvision.R$attr: int textAppearanceListItem
@@ -307,6 +319,8 @@ anastasoft.rallyvision.R$drawable: int abc_textfield_searchview_holo_dark
 anastasoft.rallyvision.R$drawable: int abc_textfield_searchview_holo_light
 anastasoft.rallyvision.R$drawable: int abc_textfield_searchview_right_holo_dark
 anastasoft.rallyvision.R$drawable: int abc_textfield_searchview_right_holo_light
+anastasoft.rallyvision.R$drawable: int background_back
+anastasoft.rallyvision.R$drawable: int background_front
 anastasoft.rallyvision.R$drawable: int binding_dark
 anastasoft.rallyvision.R$drawable: int btn_black
 anastasoft.rallyvision.R$drawable: int btn_blue
@@ -317,6 +331,8 @@ anastasoft.rallyvision.R$drawable: int btn_white
 anastasoft.rallyvision.R$drawable: int btn_yellow
 anastasoft.rallyvision.R$drawable: int carbon_fibre
 anastasoft.rallyvision.R$drawable: int carbon_fibre_texture
+anastasoft.rallyvision.R$drawable: int choice_selected
+anastasoft.rallyvision.R$drawable: int choice_unselected
 anastasoft.rallyvision.R$drawable: int common_full_open_on_phone
 anastasoft.rallyvision.R$drawable: int common_ic_googleplayservices
 anastasoft.rallyvision.R$drawable: int common_signin_btn_icon_dark
@@ -344,9 +360,12 @@ anastasoft.rallyvision.R$drawable: int common_signin_btn_text_normal_light
 anastasoft.rallyvision.R$drawable: int common_signin_btn_text_pressed_dark
 anastasoft.rallyvision.R$drawable: int common_signin_btn_text_pressed_light
 anastasoft.rallyvision.R$drawable: int ic_action_alarms
+anastasoft.rallyvision.R$drawable: int ic_action_discard
 anastasoft.rallyvision.R$drawable: int ic_action_download
-anastasoft.rallyvision.R$drawable: int ic_action_edit
+anastasoft.rallyvision.R$drawable: int ic_action_edit_holo_dark
+anastasoft.rallyvision.R$drawable: int ic_action_edit_holo_light
 anastasoft.rallyvision.R$drawable: int ic_action_settings
+anastasoft.rallyvision.R$drawable: int ic_action_storage
 anastasoft.rallyvision.R$drawable: int ic_action_view_as_list
 anastasoft.rallyvision.R$drawable: int ic_chooser
 anastasoft.rallyvision.R$drawable: int ic_file
@@ -394,16 +413,20 @@ anastasoft.rallyvision.R$id: int action_mode_close_button
 anastasoft.rallyvision.R$id: int action_settings
 anastasoft.rallyvision.R$id: int action_slider_agendar_prova
 anastasoft.rallyvision.R$id: int action_slider_carregar_trecho
+anastasoft.rallyvision.R$id: int action_swipe_gerenciar_afericoes
 anastasoft.rallyvision.R$id: int activity_chooser_view_content
 anastasoft.rallyvision.R$id: int adjust_height
 anastasoft.rallyvision.R$id: int adjust_width
+anastasoft.rallyvision.R$id: int afericao_nao_pode_deletar
 anastasoft.rallyvision.R$id: int aluguel_estamos_carregando_mensagem_text_view
 anastasoft.rallyvision.R$id: int aluguel_lista_opcao
 anastasoft.rallyvision.R$id: int aluguel_mensagem__escolha_text_view
 anastasoft.rallyvision.R$id: int aluguel_titulo_activity
 anastasoft.rallyvision.R$id: int always
+anastasoft.rallyvision.R$id: int back
 anastasoft.rallyvision.R$id: int beginning
 anastasoft.rallyvision.R$id: int book_now
+anastasoft.rallyvision.R$id: int both
 anastasoft.rallyvision.R$id: int button_scan
 anastasoft.rallyvision.R$id: int buyButton
 anastasoft.rallyvision.R$id: int buy_now
@@ -411,6 +434,7 @@ anastasoft.rallyvision.R$id: int buy_with_google
 anastasoft.rallyvision.R$id: int change
 anastasoft.rallyvision.R$id: int check_license_button
 anastasoft.rallyvision.R$id: int checkbox
+anastasoft.rallyvision.R$id: int choice
 anastasoft.rallyvision.R$id: int classic
 anastasoft.rallyvision.R$id: int collapseActionView
 anastasoft.rallyvision.R$id: int config
@@ -419,15 +443,18 @@ anastasoft.rallyvision.R$id: int config_name
 anastasoft.rallyvision.R$id: int default_activity_button
 anastasoft.rallyvision.R$id: int dialog
 anastasoft.rallyvision.R$id: int disableHome
+anastasoft.rallyvision.R$id: int dismiss
 anastasoft.rallyvision.R$id: int donate_with_google
 anastasoft.rallyvision.R$id: int dropdown
 anastasoft.rallyvision.R$id: int edit_query
 anastasoft.rallyvision.R$id: int editar
 anastasoft.rallyvision.R$id: int end
+anastasoft.rallyvision.R$id: int example_swipe_lv_list
 anastasoft.rallyvision.R$id: int executar
 anastasoft.rallyvision.R$id: int expand_activities_button
 anastasoft.rallyvision.R$id: int expanded_menu
 anastasoft.rallyvision.R$id: int fonts_extra_data
+anastasoft.rallyvision.R$id: int front
 anastasoft.rallyvision.R$id: int grayscale
 anastasoft.rallyvision.R$id: int holo_dark
 anastasoft.rallyvision.R$id: int holo_light
@@ -437,6 +464,7 @@ anastasoft.rallyvision.R$id: int hybrid
 anastasoft.rallyvision.R$id: int icon
 anastasoft.rallyvision.R$id: int ifRoom
 anastasoft.rallyvision.R$id: int image
+anastasoft.rallyvision.R$id: int left
 anastasoft.rallyvision.R$id: int linearLayout
 anastasoft.rallyvision.R$id: int linearLayout1
 anastasoft.rallyvision.R$id: int listMode
@@ -457,10 +485,12 @@ anastasoft.rallyvision.R$id: int numTrechoMotoristaUsuarioDig3
 anastasoft.rallyvision.R$id: int paired_devices
 anastasoft.rallyvision.R$id: int production
 anastasoft.rallyvision.R$id: int progressBarMotoristaIdeal
-anastasoft.rallyvision.R$id: int progressBarMotoristaUsuário
+anastasoft.rallyvision.R$id: int progressBarMotoristaUsu‡rio
 anastasoft.rallyvision.R$id: int progress_circular
 anastasoft.rallyvision.R$id: int progress_horizontal
 anastasoft.rallyvision.R$id: int radio
+anastasoft.rallyvision.R$id: int reveal
+anastasoft.rallyvision.R$id: int right
 anastasoft.rallyvision.R$id: int sandbox
 anastasoft.rallyvision.R$id: int satellite
 anastasoft.rallyvision.R$id: int score_name_entry
@@ -484,6 +514,10 @@ anastasoft.rallyvision.R$id: int split_action_bar
 anastasoft.rallyvision.R$id: int status_text
 anastasoft.rallyvision.R$id: int strict_sandbox
 anastasoft.rallyvision.R$id: int submit_area
+anastasoft.rallyvision.R$id: int swipe_delete
+anastasoft.rallyvision.R$id: int swipe_edit
+anastasoft.rallyvision.R$id: int swipe_nome_afericao
+anastasoft.rallyvision.R$id: int swipe_ok
 anastasoft.rallyvision.R$id: int tabMode
 anastasoft.rallyvision.R$id: int terrain
 anastasoft.rallyvision.R$id: int textView
@@ -536,9 +570,11 @@ anastasoft.rallyvision.R$layout: int config_manual
 anastasoft.rallyvision.R$layout: int connect_button_green
 anastasoft.rallyvision.R$layout: int connect_button_orange
 anastasoft.rallyvision.R$layout: int connect_button_red
+anastasoft.rallyvision.R$layout: int custom_row_edita_lista_afericoes
 anastasoft.rallyvision.R$layout: int device_list
 anastasoft.rallyvision.R$layout: int escolha_aluguel
 anastasoft.rallyvision.R$layout: int file
+anastasoft.rallyvision.R$layout: int lista
 anastasoft.rallyvision.R$layout: int main
 anastasoft.rallyvision.R$layout: int support_simple_spinner_dropdown_item
 anastasoft.rallyvision.R$layout: int texto_lista_simples
@@ -561,6 +597,8 @@ anastasoft.rallyvision.R$string: int abc_shareactionprovider_share_with
 anastasoft.rallyvision.R$string: int abc_shareactionprovider_share_with_application
 anastasoft.rallyvision.R$string: int accept
 anastasoft.rallyvision.R$string: int action_settings
+anastasoft.rallyvision.R$string: int afericao_padrao_nao_pode_deletar
+anastasoft.rallyvision.R$string: int afericoes_editar
 anastasoft.rallyvision.R$string: int allow
 anastasoft.rallyvision.R$string: int aluguel_assinatura_erro_realizar_compra
 anastasoft.rallyvision.R$string: int aluguel_assinatura_erro_realizar_compra_autenticidade
@@ -633,6 +671,7 @@ anastasoft.rallyvision.R$string: int executar
 anastasoft.rallyvision.R$string: int internal_storage
 anastasoft.rallyvision.R$string: int invalido
 anastasoft.rallyvision.R$string: int invalido_jah_existe
+anastasoft.rallyvision.R$string: int lista_afericao_vazia
 anastasoft.rallyvision.R$string: int message_connected_to
 anastasoft.rallyvision.R$string: int message_connection_failed
 anastasoft.rallyvision.R$string: int message_device_has_no_BT
@@ -661,6 +700,7 @@ anastasoft.rallyvision.R$string: int ratio_key
 anastasoft.rallyvision.R$string: int ratio_key_list
 anastasoft.rallyvision.R$string: int ratio_key_list_name
 anastasoft.rallyvision.R$string: int ratio_name
+anastasoft.rallyvision.R$string: int realize_afericoes
 anastasoft.rallyvision.R$string: int reset_ratio_key
 anastasoft.rallyvision.R$string: int retry_button
 anastasoft.rallyvision.R$string: int scanning
@@ -696,6 +736,13 @@ anastasoft.rallyvision.R$string: int zera
 anastasoft.rallyvision.R$style: int AppBaseTheme
 anastasoft.rallyvision.R$style: int AppTheme
 anastasoft.rallyvision.R$style: int Dialog
+anastasoft.rallyvision.R$style: int MyListBackContent
+anastasoft.rallyvision.R$style: int MyListButtonAction
+anastasoft.rallyvision.R$style: int MyListFrontContent
+anastasoft.rallyvision.R$style: int MyListImage
+anastasoft.rallyvision.R$style: int MyListImageButtonAction
+anastasoft.rallyvision.R$style: int MyListTitle
+anastasoft.rallyvision.R$style: int MyListTitleChecked
 anastasoft.rallyvision.R$style: int TextAppearance_AppCompat_Base_CompactMenu_Dialog
 anastasoft.rallyvision.R$style: int TextAppearance_AppCompat_Base_SearchResult
 anastasoft.rallyvision.R$style: int TextAppearance_AppCompat_Base_SearchResult_Subtitle
@@ -844,12 +891,12 @@ anastasoft.rallyvision.R$style: int digitoNumTrecho
 anastasoft.rallyvision.R$style: int fileChooserName
 anastasoft.rallyvision.R$style: int letra_1
 anastasoft.rallyvision.R$style: int letra_1_sliders
-anastasoft.rallyvision.R$style: int letra_botão
-anastasoft.rallyvision.R$style: int letra_botão_amarelo
-anastasoft.rallyvision.R$style: int letra_botão_azul
-anastasoft.rallyvision.R$style: int letra_botão_laranja
-anastasoft.rallyvision.R$style: int letra_botão_red
-anastasoft.rallyvision.R$style: int letra_botão_verde
+anastasoft.rallyvision.R$style: int letra_bot‹o
+anastasoft.rallyvision.R$style: int letra_bot‹o_amarelo
+anastasoft.rallyvision.R$style: int letra_bot‹o_azul
+anastasoft.rallyvision.R$style: int letra_bot‹o_laranja
+anastasoft.rallyvision.R$style: int letra_bot‹o_red
+anastasoft.rallyvision.R$style: int letra_bot‹o_verde
 anastasoft.rallyvision.R$style: int painel
 anastasoft.rallyvision.R$style: int tipoTrecho
 anastasoft.rallyvision.R$style: int velocimetro_azul
@@ -987,6 +1034,19 @@ anastasoft.rallyvision.R$styleable: int Spinner_disableChildrenWhenDisabled
 anastasoft.rallyvision.R$styleable: int Spinner_popupPromptView
 anastasoft.rallyvision.R$styleable: int Spinner_prompt
 anastasoft.rallyvision.R$styleable: int Spinner_spinnerMode
+anastasoft.rallyvision.R$styleable: int[] SwipeListView
+anastasoft.rallyvision.R$styleable: int SwipeListView_swipeActionLeft
+anastasoft.rallyvision.R$styleable: int SwipeListView_swipeActionRight
+anastasoft.rallyvision.R$styleable: int SwipeListView_swipeAnimationTime
+anastasoft.rallyvision.R$styleable: int SwipeListView_swipeBackView
+anastasoft.rallyvision.R$styleable: int SwipeListView_swipeCloseAllItemsWhenMoveList
+anastasoft.rallyvision.R$styleable: int SwipeListView_swipeDrawableChecked
+anastasoft.rallyvision.R$styleable: int SwipeListView_swipeDrawableUnchecked
+anastasoft.rallyvision.R$styleable: int SwipeListView_swipeFrontView
+anastasoft.rallyvision.R$styleable: int SwipeListView_swipeMode
+anastasoft.rallyvision.R$styleable: int SwipeListView_swipeOffsetLeft
+anastasoft.rallyvision.R$styleable: int SwipeListView_swipeOffsetRight
+anastasoft.rallyvision.R$styleable: int SwipeListView_swipeOpenOnLongPress
 anastasoft.rallyvision.R$styleable: int[] Theme
 anastasoft.rallyvision.R$styleable: int Theme_actionDropDownStyle
 anastasoft.rallyvision.R$styleable: int Theme_dropdownListPreferredItemHeight
@@ -1035,6 +1095,8 @@ anastasoft.rallyvision.activity.customfontdemo.FontTextView
 anastasoft.rallyvision.activity.customfontdemo.FontTextView: FontTextView(android.content.Context)
 anastasoft.rallyvision.activity.customfontdemo.FontTextView: FontTextView(android.content.Context,android.util.AttributeSet)
 anastasoft.rallyvision.activity.customfontdemo.FontTextView: FontTextView(android.content.Context,android.util.AttributeSet,int)
+anastasoft.rallyvision.activity.swipelistview.ListaAfericoes
+anastasoft.rallyvision.activity.swipelistview.ListaAfericoes: ListaAfericoes()
 anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName: anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName[] values()
 anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName: anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName valueOf(java.lang.String)
 anastasoft.rallyvision.controller.Controller
@@ -2102,6 +2164,57 @@ android.support.v7.widget.SearchView$SearchAutoComplete: SearchView$SearchAutoCo
 android.support.v7.widget.SearchView$SearchAutoComplete: SearchView$SearchAutoComplete(android.content.Context,android.util.AttributeSet,int)
 android.support.v7.widget.SearchView$SearchAutoComplete: void setSearchView(android.support.v7.widget.SearchView)
 android.support.v7.widget.SearchView$SearchAutoComplete: void setThreshold(int)
+com.fortysevendeg.swipelistview.R$attr: int swipeActionLeft
+com.fortysevendeg.swipelistview.R$attr: int swipeActionRight
+com.fortysevendeg.swipelistview.R$attr: int swipeAnimationTime
+com.fortysevendeg.swipelistview.R$attr: int swipeBackView
+com.fortysevendeg.swipelistview.R$attr: int swipeCloseAllItemsWhenMoveList
+com.fortysevendeg.swipelistview.R$attr: int swipeDrawableChecked
+com.fortysevendeg.swipelistview.R$attr: int swipeDrawableUnchecked
+com.fortysevendeg.swipelistview.R$attr: int swipeFrontView
+com.fortysevendeg.swipelistview.R$attr: int swipeMode
+com.fortysevendeg.swipelistview.R$attr: int swipeOffsetLeft
+com.fortysevendeg.swipelistview.R$attr: int swipeOffsetRight
+com.fortysevendeg.swipelistview.R$attr: int swipeOpenOnLongPress
+com.fortysevendeg.swipelistview.R$id: int both
+com.fortysevendeg.swipelistview.R$id: int choice
+com.fortysevendeg.swipelistview.R$id: int dismiss
+com.fortysevendeg.swipelistview.R$id: int left
+com.fortysevendeg.swipelistview.R$id: int none
+com.fortysevendeg.swipelistview.R$id: int reveal
+com.fortysevendeg.swipelistview.R$id: int right
+com.fortysevendeg.swipelistview.R$styleable: int[] SwipeListView
+com.fortysevendeg.swipelistview.R$styleable: int SwipeListView_swipeActionLeft
+com.fortysevendeg.swipelistview.R$styleable: int SwipeListView_swipeActionRight
+com.fortysevendeg.swipelistview.R$styleable: int SwipeListView_swipeAnimationTime
+com.fortysevendeg.swipelistview.R$styleable: int SwipeListView_swipeBackView
+com.fortysevendeg.swipelistview.R$styleable: int SwipeListView_swipeCloseAllItemsWhenMoveList
+com.fortysevendeg.swipelistview.R$styleable: int SwipeListView_swipeDrawableChecked
+com.fortysevendeg.swipelistview.R$styleable: int SwipeListView_swipeDrawableUnchecked
+com.fortysevendeg.swipelistview.R$styleable: int SwipeListView_swipeFrontView
+com.fortysevendeg.swipelistview.R$styleable: int SwipeListView_swipeMode
+com.fortysevendeg.swipelistview.R$styleable: int SwipeListView_swipeOffsetLeft
+com.fortysevendeg.swipelistview.R$styleable: int SwipeListView_swipeOffsetRight
+com.fortysevendeg.swipelistview.R$styleable: int SwipeListView_swipeOpenOnLongPress
+com.fortysevendeg.swipelistview.SwipeListView
+com.fortysevendeg.swipelistview.SwipeListView: SwipeListView(android.content.Context,int,int)
+com.fortysevendeg.swipelistview.SwipeListView: SwipeListView(android.content.Context,android.util.AttributeSet)
+com.fortysevendeg.swipelistview.SwipeListView: SwipeListView(android.content.Context,android.util.AttributeSet,int)
+com.fortysevendeg.swipelistview.SwipeListView: java.util.List getPositionsSelected()
+com.fortysevendeg.swipelistview.SwipeListView: int getCountSelected()
+com.fortysevendeg.swipelistview.SwipeListView: void setAdapter(android.widget.ListAdapter)
+com.fortysevendeg.swipelistview.SwipeListView: void setSwipeListViewListener(com.fortysevendeg.swipelistview.SwipeListViewListener)
+com.fortysevendeg.swipelistview.SwipeListView: void setOffsetRight(float)
+com.fortysevendeg.swipelistview.SwipeListView: void setOffsetLeft(float)
+com.fortysevendeg.swipelistview.SwipeListView: void setSwipeCloseAllItemsWhenMoveList(boolean)
+com.fortysevendeg.swipelistview.SwipeListView: void setSwipeOpenOnLongPress(boolean)
+com.fortysevendeg.swipelistview.SwipeListView: void setSwipeMode(int)
+com.fortysevendeg.swipelistview.SwipeListView: int getSwipeActionLeft()
+com.fortysevendeg.swipelistview.SwipeListView: void setSwipeActionLeft(int)
+com.fortysevendeg.swipelistview.SwipeListView: int getSwipeActionRight()
+com.fortysevendeg.swipelistview.SwipeListView: void setSwipeActionRight(int)
+com.fortysevendeg.swipelistview.SwipeListView: void setAnimationTime(long)
+com.fortysevendeg.swipelistview.SwipeListView: void setAdapter(android.widget.Adapter)
 com.google.ads.AdRequest$ErrorCode: com.google.ads.AdRequest$ErrorCode[] values()
 com.google.ads.AdRequest$ErrorCode: com.google.ads.AdRequest$ErrorCode valueOf(java.lang.String)
 com.google.ads.AdRequest$Gender: com.google.ads.AdRequest$Gender[] values()
