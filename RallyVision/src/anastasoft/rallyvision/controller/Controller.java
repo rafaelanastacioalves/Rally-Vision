@@ -52,13 +52,13 @@ public class Controller extends Application {
 
     // Test switch
 
-    private boolean testON = false;
+    private boolean testON = true;
 
     private boolean uberON = false;
 
     private boolean licenseCheckON = false;
 
-    private boolean sliderON  = false;
+    private boolean sliderON  = true;
 
 
     private static final int  clockBasico = 500;

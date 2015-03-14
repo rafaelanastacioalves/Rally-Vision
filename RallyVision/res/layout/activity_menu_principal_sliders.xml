@@ -58,6 +58,7 @@
 
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
             android:id="@+id/ODdig05"
+
             style="@style/velocimetro_azul_sliders" />
 
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
@@ -208,6 +209,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/progressBarMotoristaIdeal"
+                android:progressDrawable="@drawable/progressbar_custom"
                 android:indeterminate="false"/>
 
         </LinearLayout>
@@ -253,6 +255,7 @@
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:progressDrawable="@drawable/progressbar_custom"
                 android:id="@+id/progressBarMotoristaUsuário"/>
 
         </LinearLayout>
