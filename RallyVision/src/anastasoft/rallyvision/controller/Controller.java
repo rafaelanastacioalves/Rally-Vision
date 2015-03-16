@@ -52,7 +52,7 @@ public class Controller extends Application {
 
     // Test switch
 
-    private boolean testON = true;
+    private boolean testON = false;
 
     private boolean uberON = false;
 

@@ -77,21 +77,22 @@
         <item name="android:background">@drawable/btn_black</item>
     </style>
 
-    <!-- altera todos os AVD: xx_normal nos modos port -->
+    <!-- altera todos os AVD: xx_normal nos modos port
+    + galaxy s4-->
 
     <style name="velocimetro_azul_sliders">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:bottomLeftRadius">30dp</item>
         <item name="android:bottomRightRadius">30dp</item>
-        <item name="android:padding">4dp</item>
+        <item name="android:padding">0dp</item>
         <item name="android:paddingBottom">2dp</item>
         <item name="android:paddingTop">2dp</item>
         <item name="android:text">0</item>
         <item name="android:layout_marginLeft">0dp</item>
         <item name="android:textColor">#ff00dbff</item>
         <item name="android:layout_marginRight">0dp</item>
-        <item name="android:textSize">55sp</item>
+        <item name="android:textSize">85sp</item>
         <item name="android:topLeftRadius">30dp</item>
         <item name="android:topRightRadius">30dp</item>
         <item name="android:typeface">normal</item>
@@ -124,7 +125,7 @@
 
     <style name="velocimetro_pequeno_sliders" parent="velocimetro_azul_sliders">
 
-        <item name="android:textSize">45sp</item>
+        <item name="android:textSize">67sp</item>
     </style>
 
     <style name="velocimetro_pequeno" parent="velocimetro_azul">
@@ -157,7 +158,6 @@
         <item name="android:inputType">text</item>
         <!--<item name="font">dig7Reg</item>-->
         <item name="android:text">-</item>
-        <item name="android:padding">0dp</item>
 
     </style>
 

@@ -26,7 +26,7 @@
 
     <style name="letra_1_sliders">
         <item name="android:textColor">@android:color/primary_text_dark</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">10sp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">2dp</item>
@@ -84,14 +84,14 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:bottomLeftRadius">30dp</item>
         <item name="android:bottomRightRadius">30dp</item>
-        <item name="android:padding">4dp</item>
-        <item name="android:paddingBottom">2dp</item>
-        <item name="android:paddingTop">2dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingTop">0dp</item>
         <item name="android:text">0</item>
         <item name="android:layout_marginLeft">0dp</item>
         <item name="android:textColor">#ff00dbff</item>
         <item name="android:layout_marginRight">0dp</item>
-        <item name="android:textSize">50sp</item>
+        <item name="android:textSize">115sp</item>
         <item name="android:topLeftRadius">30dp</item>
         <item name="android:topRightRadius">30dp</item>
         <item name="android:typeface">normal</item>
@@ -125,7 +125,7 @@
 
     <style name="velocimetro_pequeno_sliders" parent="velocimetro_azul_sliders">
 
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">22sp</item>
     </style>
 
     <style name="velocimetro_pequeno" parent="velocimetro_azul">
@@ -135,7 +135,7 @@
 
     <style name="tipoTrecho" parent="velocimetro_azul_sliders">
 
-        <item name="android:textSize">42sp</item>
+        <item name="android:textSize">39sp</item>
         <item name="android:inputType">text</item>
         <item name="font">dig7Reg</item>
 
@@ -144,11 +144,9 @@
     </style>
     <style name="digitoNumTrecho" parent="velocimetro_azul_sliders">
 
-        <item name="android:textSize">28sp</item>
+        <item name="android:textSize">26sp</item>
         <item name="android:inputType">text</item>
-        <item name="android:padding">0dp</item>
 
-        <!--<item name="font">dig7Reg</item>-->
         <item name="android:text">-</item>
     </style>
 

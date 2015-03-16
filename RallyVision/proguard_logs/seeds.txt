@@ -379,6 +379,7 @@ anastasoft.rallyvision.R$drawable: int ic_provider
 anastasoft.rallyvision.R$drawable: int ic_stat_notify
 anastasoft.rallyvision.R$drawable: int powered_by_google_dark
 anastasoft.rallyvision.R$drawable: int powered_by_google_light
+anastasoft.rallyvision.R$drawable: int progressbar_custom
 anastasoft.rallyvision.R$drawable: int wait
 anastasoft.rallyvision.R$id: int AVRGVelDig01
 anastasoft.rallyvision.R$id: int AVRGVelDig02

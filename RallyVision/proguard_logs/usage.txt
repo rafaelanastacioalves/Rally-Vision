@@ -24,7 +24,7 @@ anastasoft.rallyvision.R$raw
 anastasoft.rallyvision.R$string
 anastasoft.rallyvision.R$style
 anastasoft.rallyvision.R$styleable:
-    2563:2563:public R$styleable()
+    2553:2553:public R$styleable()
 anastasoft.rallyvision.R$xml
 anastasoft.rallyvision.Slider.Motorista:
     protected abstract void zeraTrocandoTrecho()
@@ -80,7 +80,6 @@ anastasoft.rallyvision.activity.SettingsActivity:
     115:125:private static void bindPreferenceSummaryToValue(android.preference.Preference)
     41:41:static synthetic void access$000(android.preference.Preference)
 anastasoft.rallyvision.activity.SettingsActivity$GeneralPreferenceFragment
-anastasoft.rallyvision.activity.customfontdemo.Led_text_view
 anastasoft.rallyvision.activity.customfontdemo.TypefaceManager:
     private static final java.lang.String TAG_FAMILY
     private static final java.lang.String TAG_NAMESET

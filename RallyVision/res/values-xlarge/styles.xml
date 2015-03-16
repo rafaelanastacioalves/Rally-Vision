@@ -53,14 +53,14 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:bottomLeftRadius">30dp</item>
         <item name="android:bottomRightRadius">30dp</item>
-        <item name="android:padding">4dp</item>
+        <item name="android:padding">2dp</item>
         <item name="android:paddingBottom">18dp</item>
         <item name="android:paddingTop">18dp</item>
         <item name="android:text">0</item>
         <item name="android:layout_marginLeft">0dp</item>
         <item name="android:textColor">#ff00dbff</item>
         <item name="android:layout_marginRight">0dp</item>
-        <item name="android:textSize">110sp</item>
+        <item name="android:textSize">180sp</item>
         <item name="android:topLeftRadius">30dp</item>
         <item name="android:topRightRadius">30dp</item>
         <item name="android:typeface">normal</item>

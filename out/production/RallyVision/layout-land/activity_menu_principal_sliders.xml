@@ -13,12 +13,106 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="anastasoft.rallyvision.activity.MenuPrincipal">
 
+    <RelativeLayout
+        android:id="@+id/RelativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentTop="false"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:id="@+id/vel_media"
+                style="@style/letra_1_sliders"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/vel_media"
+                android:layout_gravity="center_horizontal" />
+
+            <LinearLayout
+                android:id="@+id/LinearLayout02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/vel_media"
+                android:layout_below="@+id/vel_media"
+                style="@style/painel"
+
+                android:orientation="horizontal">
+
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/AVRGVelDig03"
+                    style="@style/velocimetro_pequeno_sliders" />
+
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/AVRGVelDig02"
+                    style="@style/velocimetro_pequeno_sliders" />
+
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/AVRGVelDig01"
+                    style="@style/velocimetro_pequeno_sliders" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentTop="false"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/vel_inst"
+                style="@style/letra_1_sliders"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/vel"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false" />
+
+            <LinearLayout
+                android:id="@+id/LinearLayout01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignTop="@+id/LinearLayout02"
+                style="@style/painel"
+
+                android:orientation="horizontal">
+
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/InstVelDig03"
+                    style="@style/velocimetro_pequeno_sliders" />
+
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/InstVelDig02"
+                    style="@style/velocimetro_pequeno_sliders" />
+
+                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                    android:id="@+id/InstVelDig01"
+                    style="@style/velocimetro_pequeno_sliders" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
     <Button
         android:id="@+id/zera"
 
         style="@style/letra_botão.azul"
         android:layout_alignBottom="@+id/editar"
-        android:layout_alignLeft="@+id/RelativeLayout2"
         android:text="@string/zera"
         android:layout_alignTop="@+id/editar"/>
 
@@ -65,89 +159,18 @@
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
             android:id="@+id/ODdig03"
 
-            style="@style/velocimetro_vermelho_sliders" />
+            style="@style/velocimetro_azul_sliders" />
 
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
             android:id="@+id/ODdig02"
 
-            style="@style/velocimetro_vermelho_sliders" />
+            style="@style/velocimetro_azul_sliders" />
 
         <anastasoft.rallyvision.activity.customfontdemo.FontTextView
             android:id="@+id/ODdig01"
 
-            style="@style/velocimetro_vermelho_sliders" />
+            style="@style/velocimetro_azul_sliders" />
     </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/RelativeLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <TextView
-            android:id="@+id/vel_inst"
-            style="@style/letra_1_sliders"
-            android:layout_alignBaseline="@+id/vel_media"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:text="@string/vel" />
-
-        <TextView
-            android:id="@+id/vel_media"
-            style="@style/letra_1_sliders"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:text="@string/vel_media" />
-
-        <LinearLayout
-            android:id="@+id/LinearLayout02"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/vel_media"
-            android:layout_below="@+id/vel_media"
-            style="@style/painel"
-
-            android:orientation="horizontal">
-
-            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                android:id="@+id/AVRGVelDig03"
-                style="@style/velocimetro_pequeno_sliders" />
-
-            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                android:id="@+id/AVRGVelDig02"
-                style="@style/velocimetro_pequeno_sliders" />
-
-            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                android:id="@+id/AVRGVelDig01"
-                style="@style/velocimetro_pequeno_sliders" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/LinearLayout01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignTop="@+id/LinearLayout02"
-            style="@style/painel"
-
-            android:orientation="horizontal">
-
-            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                android:id="@+id/InstVelDig03"
-                style="@style/velocimetro_pequeno_sliders" />
-
-            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                android:id="@+id/InstVelDig02"
-                style="@style/velocimetro_pequeno_sliders" />
-
-            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                android:id="@+id/InstVelDig01"
-                style="@style/velocimetro_pequeno_sliders" />
-        </LinearLayout>
-    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/slidersLayout"
@@ -155,16 +178,14 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
 
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_above="@+id/editar"
+        android:gravity="left">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="0dp"
             android:weightSum="1"
             android:baselineAligned="false"
             android:layout_below="@+id/linearLayout"
