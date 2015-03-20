@@ -24,54 +24,31 @@
     </style>
 
 
-    <style name="letra_1_sliders">
-        <item name="android:textColor">@android:color/primary_text_dark</item>
+    <style name="letra_1_sliders" parent="letra_parent">
         <item name="android:textSize">10sp</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginLeft">2dp</item>
-        <item name="android:layout_marginRight">2dp</item>
+
     </style>
-    <style name="letra_1">
-        <item name="android:textColor">@android:color/primary_text_dark</item>
+    <style name="letra_1" parent="letra_parent">
         <item name="android:textSize">14sp</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginLeft">2dp</item>
-        <item name="android:layout_marginRight">2dp</item>
+
     </style>
 
-    <style name="letra_botão">
+    <style name="letra_botão" parent="letra_parent">
 
-        <item name="android:textColor">@android:color/primary_text_dark</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">2dp</item>
         <item name="android:layout_marginRight">2dp</item>
         <item name="android:padding">20dp</item>
     </style>
-    <style name="letra_botão.amarelo" parent="letra_botão">
-        <item name="android:background">@drawable/btn_yellow</item>
 
-    </style>
 
-    <style name="letra_botão.verde" parent="letra_botão">
-        <item name="android:background">@drawable/btn_green</item>
-    </style>
+
 
     <style name="letra_botão.laranja" parent="letra_botão">
         <item name="android:background">@drawable/btn_orange</item>
     </style>
-    <style name="letra_botão.red" parent="letra_botão">
-        <item name="android:background">@drawable/btn_red</item>
-        <item name="android:textColor">@android:color/darker_gray</item>
 
-    </style>
 
-    <style name="letra_botão.azul" parent="letra_botão">
-        <item name="android:background">@drawable/btn_blue</item>
-    </style>
 
     <style name="painel">
         <item name="android:background">@drawable/btn_black</item>
@@ -79,44 +56,15 @@
 
     <!-- altera todos os AVD: xx_normal nos modos land -->
 
-    <style name="velocimetro_azul_sliders">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:bottomLeftRadius">30dp</item>
-        <item name="android:bottomRightRadius">30dp</item>
-        <item name="android:padding">0dp</item>
-        <item name="android:paddingBottom">0dp</item>
-        <item name="android:paddingTop">0dp</item>
-        <item name="android:text">0</item>
-        <item name="android:layout_marginLeft">0dp</item>
-        <item name="android:textColor">#ff00dbff</item>
-        <item name="android:layout_marginRight">0dp</item>
+    <style name="velocimetro_azul_sliders" parent="parent_velocimetro">
+
         <item name="android:textSize">115sp</item>
-        <item name="android:topLeftRadius">30dp</item>
-        <item name="android:topRightRadius">30dp</item>
-        <item name="android:typeface">normal</item>
-        <item name="android:inputType">number</item>
-        <item name="font">digdream</item>
 
     </style>
-    <style name="velocimetro_azul">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:bottomLeftRadius">30dp</item>
-        <item name="android:bottomRightRadius">30dp</item>
-        <item name="android:padding">4dp</item>
-        <item name="android:paddingBottom">2dp</item>
-        <item name="android:paddingTop">2dp</item>
-        <item name="android:text">0</item>
-        <item name="android:layout_marginLeft">0dp</item>
-        <item name="android:textColor">#ff00dbff</item>
-        <item name="android:layout_marginRight">0dp</item>
+    <style name="velocimetro_azul" parent="parent_velocimetro">
+
         <item name="android:textSize">50sp</item>
-        <item name="android:topLeftRadius">30dp</item>
-        <item name="android:topRightRadius">30dp</item>
-        <item name="android:typeface">normal</item>
-        <item name="android:inputType">number</item>
-        <item name="font">digdream</item>
+
 
     </style>
 
@@ -125,7 +73,7 @@
 
     <style name="velocimetro_pequeno_sliders" parent="velocimetro_azul_sliders">
 
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">42sp</item>
     </style>
 
     <style name="velocimetro_pequeno" parent="velocimetro_azul">
@@ -133,7 +81,7 @@
         <item name="android:textSize">24sp</item>
     </style>
 
-    <style name="tipoTrecho" parent="velocimetro_azul_sliders">
+    <style name="tipoTrecho" parent="parent_velocimetro">
 
         <item name="android:textSize">39sp</item>
         <item name="android:inputType">text</item>
@@ -142,7 +90,7 @@
         <item name="android:text">-</item>
 
     </style>
-    <style name="digitoNumTrecho" parent="velocimetro_azul_sliders">
+    <style name="digitoNumTrecho" parent="parent_velocimetro">
 
         <item name="android:textSize">26sp</item>
         <item name="android:inputType">text</item>
@@ -151,11 +99,11 @@
     </style>
 
 
-    <style name="velocimetro_vermelho_sliders" parent="velocimetro_azul_sliders">
+    <style name="velocimetro_vermelho_sliders" parent="parent_velocimetro">
         <item name="android:textColor">#f00</item>
         <item name="android:textColorHighlight">@color/abc_search_url_text_pressed</item>
     </style>
-    <style name="velocimetro_vermelho" parent="velocimetro_azul">
+    <style name="velocimetro_vermelho" parent="parent_velocimetro">
         <item name="android:textColor">#f00</item>
         <item name="android:textColorHighlight">@color/abc_search_url_text_pressed</item>
     </style>

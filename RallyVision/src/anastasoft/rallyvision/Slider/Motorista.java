@@ -12,8 +12,16 @@ public abstract class Motorista {
 //    protected float   deltaSTrechoTotal;
 //    protected float   deltaTacumuladoTrecho;
 
+    private int STATE;
+
+    public static final int STATE_ADIANTADO = 1;
+    public static final int STATE_OK = 0;
+    public static final int STATE_ATRASADO = -1;
+
+
     public Motorista(){
         percentualPercorrido = 0;
+        this.STATE = STATE_OK;
     }
 
     public int getNumTrecho(){
@@ -42,6 +50,19 @@ public abstract class Motorista {
     }
 
     protected abstract void setTrecho(Trecho trecho);
+
+    /**
+     * Retorna o Estado do motorista. Se for usuário, o estado dele em relação ao ideal.
+     * Se o método for chamado para o motorista ideal, retorna o contrário do resultado do mot. usuário.
+     * @return inteiro com o estado do motorista. @see STATE ...
+     */
+    public int getState(){
+        return STATE;
+    }
+
+    protected void setState(int aState){
+        this.STATE = aState;
+    }
 
 }
 

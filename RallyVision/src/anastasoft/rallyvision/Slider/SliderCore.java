@@ -80,6 +80,69 @@ public class SliderCore {
 
 
 
+
+
+
+    }
+
+    /**
+     * Atualiza o STATE do motorista ideal.
+     * Supõe-se que as mudanças sempre sejam positivas, para a frente.
+     */
+    private void updateStateMotIdeal() {
+            /*
+            * se os dois motoristas estavam ok, e o mot. ideal mudou de estado, é obvio que este passa
+            * a estar adiantado...
+            * */
+
+            if(aMotoristaIdeal.getState() == Motorista.STATE_OK){
+                aMotoristaIdeal.setState(Motorista.STATE_ADIANTADO);
+                aMotoristaUsuario.setState(Motorista.STATE_ATRASADO);
+            }
+            /*
+            * caso contrario, se o mot. ideal está atrasado e os trechos coincidem, é obvio que ele
+            * agora está ok com o outro motorista
+             */
+            else if(aMotoristaIdeal.getState() == Motorista.STATE_ATRASADO && aMotoristaIdeal.getNumTrecho() == aMotoristaUsuario.getNumTrecho()){
+
+                    aMotoristaIdeal.setState(Motorista.STATE_OK);
+                    aMotoristaUsuario.setState(Motorista.STATE_OK);
+                }
+            /*
+            *Caso contrario, o estado continua do jeito que está: ou o mot. ideal está adiantado ou está atrasado
+            * Nada se faz
+             */
+
+    }
+
+    /**
+     * Atualiza o STATE do motorista ideal.
+     * Supõe-se que as mudanças sempre sejam positivas, para a frente.
+     */
+    private void updateStateMotUsuario() {
+            /*
+            * se os dois motoristas estavam ok, e o mot. usuario mudou de estado, é obvio que este passa
+            * a estar adiantado...
+            * */
+
+        if(aMotoristaUsuario.getState() == Motorista.STATE_OK){
+            aMotoristaUsuario.setState(Motorista.STATE_ADIANTADO);
+            aMotoristaIdeal.setState(Motorista.STATE_ATRASADO);
+        }
+            /*
+            * caso contrario, se o mot. usuario está atrasado e os trechos coincidem, é obvio que ele
+            * agora está ok com o outro motorista
+             */
+        else if(aMotoristaUsuario.getState() == Motorista.STATE_ATRASADO && aMotoristaUsuario.getNumTrecho() == aMotoristaIdeal.getNumTrecho()){
+
+            aMotoristaUsuario.setState(Motorista.STATE_OK);
+            aMotoristaIdeal.setState(Motorista.STATE_OK);
+        }
+            /*
+            *Caso contrario, o estado continua do jeito que está: ou o mot. usuario está adiantado ou está atrasado
+            * Nada se faz
+             */
+
     }
 
     private void updateMotoristaIdeal(float dT) {
@@ -88,6 +151,7 @@ public class SliderCore {
         while (dT >= dTRemanescente){
             dT = dT - dTRemanescente;
             mudaTrecho(aMotoristaIdeal);
+            updateStateMotIdeal();
             dTRemanescente = aMotoristaIdeal.getDTRemanescente();
         }
 
@@ -104,6 +168,7 @@ public class SliderCore {
         while (dSTrechoRestante <= dS){
             dS = dS - dSTrechoRestante;
             mudaTrecho(aMotoristaUsuario);
+            updateStateMotUsuario();
             dSTrechoRestante =aMotoristaUsuario.getDSTrechoRestante();
         }
 

@@ -7,6 +7,9 @@ public class MotoristaUsuario extends Motorista {
 
     private float deltaSTrechoTotal;
     private float deltaSTrechoPercorrido;
+
+
+
     public MotoristaUsuario(){
         super();
         deltaSTrechoPercorrido =0;

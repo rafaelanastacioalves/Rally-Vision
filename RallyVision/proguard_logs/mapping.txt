@@ -224,26 +224,29 @@ anastasoft.rallyvision.R$styleable -> anastasoft.rallyvision.b:
 anastasoft.rallyvision.Slider.Motorista -> anastasoft.rallyvision.b.a:
     anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho trechoAtual -> a
     float percentualPercorrido -> b
+    int STATE -> c
     int getNumTrecho() -> a
     java.lang.String getTipoTrecho() -> b
     float getPercentPercorrido() -> c
     void setPercentualPercorrido(float) -> a
     void setTrecho(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho) -> a
+    int getState() -> d
+    void setState(int) -> a
 anastasoft.rallyvision.Slider.MotoristaIdeal -> anastasoft.rallyvision.b.b:
     float deltaTacumuladoTrecho -> c
     float deltaTTrechoTotal -> d
-    void zeraTrocandoTrecho() -> d
+    void zeraTrocandoTrecho() -> e
     void setTrecho(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho) -> a
-    float getDTRemanescente() -> e
+    float getDTRemanescente() -> f
     void incrementaDTacumuladoTrecho(float) -> b
-    float getDTacumuladoTrecho() -> f
-    float getDTtotalTrecho() -> g
+    float getDTacumuladoTrecho() -> g
+    float getDTtotalTrecho() -> h
 anastasoft.rallyvision.Slider.MotoristaUsuario -> anastasoft.rallyvision.b.c:
     float deltaSTrechoTotal -> c
     float deltaSTrechoPercorrido -> d
-    void zeraTrocandoTrecho() -> d
+    void zeraTrocandoTrecho() -> e
     void setTrecho(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho) -> a
-    float getDSTrechoRestante() -> e
+    float getDSTrechoRestante() -> f
     void atualizaDS(float) -> b
 anastasoft.rallyvision.Slider.Prova_Trecho.Prova -> anastasoft.rallyvision.b.a.a:
     java.util.ArrayList listaDeTrechos -> a
@@ -281,6 +284,8 @@ anastasoft.rallyvision.Slider.SliderCore -> anastasoft.rallyvision.b.d:
     java.util.ArrayList getStatus() -> a
     void carregarProva(android.database.Cursor) -> a
     void update(float,float) -> a
+    void updateStateMotIdeal() -> b
+    void updateStateMotUsuario() -> c
     void updateMotoristaIdeal(float) -> a
     void updateMotoristaUsuario(float) -> b
     void mudaTrecho(anastasoft.rallyvision.Slider.Motorista) -> a
@@ -353,6 +358,7 @@ anastasoft.rallyvision.activity.MenuPrincipal -> anastasoft.rallyvision.activity
     anastasoft.rallyvision.activity.SliderMotorista mSLDMotIdeal -> z
     int layoutResID -> A
     android.view.Menu aOptionsMenuPrincipal -> B
+    android.content.res.Resources res -> C
     void onCreate(android.os.Bundle) -> onCreate
     void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
     void onStart() -> onStart
@@ -379,8 +385,8 @@ anastasoft.rallyvision.activity.MenuPrincipal -> anastasoft.rallyvision.activity
     void zerar(android.view.View) -> zerar
     void editar(android.view.View) -> editar
     int getOdometerValue() -> b
-    void makeConnectBGreen() -> c
-    void makeConnectBRed() -> d
+    void makeConnectOn() -> c
+    void makeConnectOff() -> d
     void setupViews() -> o
     void displayResult(java.lang.String) -> a
     void update(java.util.ArrayList) -> a
@@ -394,6 +400,12 @@ anastasoft.rallyvision.activity.MenuPrincipal$2 -> anastasoft.rallyvision.activi
     anastasoft.rallyvision.activity.MenuPrincipal this$0 -> a
     boolean onLongClick(android.view.View) -> onLongClick
 anastasoft.rallyvision.activity.MenuPrincipal$3 -> anastasoft.rallyvision.activity.j:
+    anastasoft.rallyvision.activity.MenuPrincipal this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+anastasoft.rallyvision.activity.MenuPrincipal$4 -> anastasoft.rallyvision.activity.k:
+    anastasoft.rallyvision.activity.MenuPrincipal this$0 -> a
+    boolean onLongClick(android.view.View) -> onLongClick
+anastasoft.rallyvision.activity.MenuPrincipal$5 -> anastasoft.rallyvision.activity.l:
     java.lang.String val$result -> a
     anastasoft.rallyvision.activity.MenuPrincipal this$0 -> b
     void run() -> run
@@ -417,9 +429,9 @@ anastasoft.rallyvision.activity.SettingsActivity -> anastasoft.rallyvision.activ
     void onPause() -> onPause
     void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String) -> onSharedPreferenceChanged
     void updateRatioSummary(android.content.SharedPreferences,java.lang.String) -> a
-anastasoft.rallyvision.activity.SettingsActivity$1 -> anastasoft.rallyvision.activity.k:
+anastasoft.rallyvision.activity.SettingsActivity$1 -> anastasoft.rallyvision.activity.m:
     boolean onPreferenceChange(android.preference.Preference,java.lang.Object) -> onPreferenceChange
-anastasoft.rallyvision.activity.SliderMotorista -> anastasoft.rallyvision.activity.l:
+anastasoft.rallyvision.activity.SliderMotorista -> anastasoft.rallyvision.activity.n:
     android.widget.TextView TVSliderTipoTrecho -> a
     android.widget.TextView TVSliderNumTrechodig1 -> b
     android.widget.TextView TVSliderNumTrechodig2 -> c
@@ -511,7 +523,7 @@ anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment$1 -> anastasoft.
 anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment$2 -> anastasoft.rallyvision.activity.a.j:
     anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-anastasoft.rallyvision.activity.odometer -> anastasoft.rallyvision.activity.m:
+anastasoft.rallyvision.activity.odometer -> anastasoft.rallyvision.activity.o:
     android.widget.TextView TVdig1 -> a
     android.widget.TextView TVdig2 -> b
     android.widget.TextView TVdig3 -> c

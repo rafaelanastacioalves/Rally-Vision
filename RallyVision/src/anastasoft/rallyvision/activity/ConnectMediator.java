@@ -34,12 +34,12 @@ public class ConnectMediator {
 
             switch (appState) {
                 case APLICATION_DISCONECTED:
-                    ((MenuPrincipal)aActivity).makeConnectBRed();
+                    ((MenuPrincipal)aActivity).makeConnectOff();
                     break;
                 case APLICATION_CONNECTING:
                     break;
                 case APLICATION_CONNECTED:
-                    ((MenuPrincipal)aActivity).makeConnectBGreen();
+                    ((MenuPrincipal)aActivity).makeConnectOn();
 
                     break;
             }
@@ -57,13 +57,13 @@ public class ConnectMediator {
 
             switch (appState) {
                 case APLICATION_DISCONECTED:
-                    ((MenuPrincipal)aActivity).makeConnectBRed();
+                    ((MenuPrincipal)aActivity).makeConnectOff();
                     vb.vibrate(2000);
                     break;
                 case APLICATION_CONNECTING:
                     break;
                 case APLICATION_CONNECTED:
-                    ((MenuPrincipal)aActivity).makeConnectBGreen();
+                    ((MenuPrincipal)aActivity).makeConnectOn();
                     vb.vibrate(500);
 
                     break;

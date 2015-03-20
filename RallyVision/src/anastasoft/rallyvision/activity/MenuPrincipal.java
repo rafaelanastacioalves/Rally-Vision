@@ -9,6 +9,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -112,6 +113,7 @@ public class MenuPrincipal extends ActionBarActivity {
      */
     private static int layoutResID = R.layout.activity_menu_principal;
     private Menu aOptionsMenuPrincipal;
+    private Resources res;
 
 
     /***
@@ -134,6 +136,8 @@ public class MenuPrincipal extends ActionBarActivity {
         }
         setContentView(layoutResID);
         setupViews();
+        aConnectMediator.update();
+
 
 
 
@@ -207,6 +211,7 @@ public class MenuPrincipal extends ActionBarActivity {
 
         super.onResume();
         aController.decideScreenOn(this);
+        res = getResources();
         cmd = new VerificaAluguelStatusCommand(aController);
         cmd.Execute();
 
@@ -431,27 +436,30 @@ public class MenuPrincipal extends ActionBarActivity {
     }
 
     public void updateAvrgVel(Integer av) {
-        if (aController.isTestOn()) {
-            Log.e(TAG, " +++ updateAvrgVel +++ ");
+        if(mAVGveloc !=null){
+            if (aController.isTestOn()) {
+                Log.e(TAG, " +++ updateAvrgVel +++ ");
+            }
+
+            String number = String.valueOf(av);
+
+            switch (number.length()) {
+                case 1:
+                    number = "00" + number;
+                    break;
+                case 2:
+                    number = "0" + number;
+                    break;
+                default:
+                    break;
+            }
+            char[] digit = number.toCharArray();
+
+            mAVGveloc.TVdig1.setText(String.valueOf(digit[2]));
+            mAVGveloc.TVdig2.setText(String.valueOf(digit[1]));
+            mAVGveloc.TVdig3.setText(String.valueOf(digit[0]));
         }
 
-        String number = String.valueOf(av);
-
-        switch (number.length()) {
-            case 1:
-                number = "00" + number;
-                break;
-            case 2:
-                number = "0" + number;
-                break;
-            default:
-                break;
-        }
-        char[] digit = number.toCharArray();
-
-        mAVGveloc.TVdig1.setText(String.valueOf(digit[2]));
-        mAVGveloc.TVdig2.setText(String.valueOf(digit[1]));
-        mAVGveloc.TVdig3.setText(String.valueOf(digit[0]));
     }
 
     public void updateInstVel(Integer iv) {
@@ -551,7 +559,7 @@ public class MenuPrincipal extends ActionBarActivity {
         return mConnect;
     }
 
-    public void makeConnectBGreen(){
+    public void makeConnectOn(){
         LinearLayout mConnectLayout = (LinearLayout)findViewById(R.id.ConnecLayout);
 
         mConnectLayout.removeAllViews();
@@ -559,6 +567,13 @@ public class MenuPrincipal extends ActionBarActivity {
         // Create new LayoutInflater - this has to be done this way, as you can't directly inflate an XML without creating an inflater object first
         LayoutInflater inflater = getLayoutInflater();
         mConnectLayout.addView(inflater.inflate(R.layout.connect_button_green, null));
+        mConnectLayout.findViewById(R.id.executar).setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                stopCom(v);
+                return true;
+            }
+        });
 
     }
     public void makeConnectBOrange(){
@@ -571,13 +586,21 @@ public class MenuPrincipal extends ActionBarActivity {
         mConnectLayout.addView(inflater.inflate(R.layout.connect_button_orange, null));
 
     }
-    public void makeConnectBRed(){
+    public void makeConnectOff(){
        LinearLayout mConnectLayout = (LinearLayout)findViewById(R.id.ConnecLayout);
         mConnectLayout.removeAllViews();
 
         // Create new LayoutInflater - this has to be done this way, as you can't directly inflate an XML without creating an inflater object first
         LayoutInflater inflater = getLayoutInflater();
-        mConnectLayout.addView(inflater.inflate(R.layout.connect_button_red, null));
+        mConnectLayout.addView(inflater.inflate(R.layout.connect_button_green_escuro, null));
+        mConnectLayout.findViewById(R.id.executar).setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                startProcedure(v);
+
+                return true;
+            }
+        });
 
 
     }
@@ -588,7 +611,6 @@ public class MenuPrincipal extends ActionBarActivity {
 
             mOdom = new odometer();
             mINSTveloc = new INSTvelocimeter();
-            mAVGveloc = new AVRGvelocimeter();
 
             mSLDMotIdeal  = new SliderMotorista();
             mSLDMotUsr = new SliderMotorista();
@@ -608,9 +630,16 @@ public class MenuPrincipal extends ActionBarActivity {
             mINSTveloc.TVdig3 = (TextView) findViewById(R.id.InstVelDig03);
 
             // average velocimeter
-            mAVGveloc.TVdig1 = (TextView) findViewById(R.id.AVRGVelDig01);
-            mAVGveloc.TVdig2 = (TextView) findViewById(R.id.AVRGVelDig02);
-            mAVGveloc.TVdig3 = (TextView) findViewById(R.id.AVRGVelDig03);
+
+            if(!isSliderActive){
+                mAVGveloc = new AVRGvelocimeter();
+
+                mAVGveloc.TVdig1 = (TextView) findViewById(R.id.AVRGVelDig01);
+                mAVGveloc.TVdig2 = (TextView) findViewById(R.id.AVRGVelDig02);
+                mAVGveloc.TVdig3 = (TextView) findViewById(R.id.AVRGVelDig03);
+            }
+
+
 
             // Sliders
             mSLDMotUsr.TVSliderTipoTrecho =     (TextView) findViewById(R.id.tipoTrechoMotoristaUsuario);
@@ -725,6 +754,21 @@ public class MenuPrincipal extends ActionBarActivity {
                     .getTipoTrecho(),(motoristasStatus.get(MOTORISTA_USUARIO))
                     .getNumTrecho());
 
+
+            // decidindo a cor referente ao estado do motorista usuario
+        switch (((MotoristaUsuario)motoristasStatus.get(MOTORISTA_USUARIO)).
+                getState()){
+            case Motorista.STATE_OK:
+                mSLDMotUsr.PBSliderPercent.setProgressDrawable(res.getDrawable(R.drawable.progressbar_verde));
+                break;
+            case Motorista.STATE_ATRASADO:
+                mSLDMotUsr.PBSliderPercent.setProgressDrawable(res.getDrawable(R.drawable.progressbar_vermelho));
+                break;
+            case Motorista.STATE_ADIANTADO:
+                mSLDMotUsr.PBSliderPercent.setProgressDrawable(res.getDrawable(R.drawable.progressbar_vermelho));
+                break;
+
+        }
 
         progress =  (int)  (((float)(((MotoristaUsuario)motoristasStatus.get(MOTORISTA_USUARIO)).
                 getPercentPercorrido()))*100.0);

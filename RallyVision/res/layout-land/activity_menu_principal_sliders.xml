@@ -27,51 +27,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_alignParentTop="false"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true">
-
-            <TextView
-                android:id="@+id/vel_media"
-                style="@style/letra_1_sliders"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:text="@string/vel_media"
-                android:layout_gravity="center_horizontal" />
-
-            <LinearLayout
-                android:id="@+id/LinearLayout02"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignRight="@+id/vel_media"
-                android:layout_below="@+id/vel_media"
-                style="@style/painel"
-
-                android:orientation="horizontal">
-
-                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                    android:id="@+id/AVRGVelDig03"
-                    style="@style/velocimetro_pequeno_sliders" />
-
-                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                    android:id="@+id/AVRGVelDig02"
-                    style="@style/velocimetro_pequeno_sliders" />
-
-                <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-                    android:id="@+id/AVRGVelDig01"
-                    style="@style/velocimetro_pequeno_sliders" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_alignParentTop="false"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:gravity="center_vertical">
+            android:layout_alignParentStart="true">
 
             <TextView
                 android:id="@+id/vel_inst"
@@ -106,12 +65,46 @@
             </LinearLayout>
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/painel"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                android:id="@+id/ODdig05"
+                style="@style/velocimetro_azul_sliders" />
+
+            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                android:id="@+id/ODdig04"
+                style="@style/velocimetro_azul_sliders" />
+
+            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                android:id="@+id/ODdig03"
+
+                style="@style/velocimetro_azul_sliders" />
+
+            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                android:id="@+id/ODdig02"
+
+                style="@style/velocimetro_azul_sliders" />
+
+            <anastasoft.rallyvision.activity.customfontdemo.FontTextView
+                android:id="@+id/ODdig01"
+
+                style="@style/velocimetro_azul_sliders" />
+        </LinearLayout>
+
     </RelativeLayout>
 
     <Button
         android:id="@+id/zera"
 
-        style="@style/letra_botão.azul"
+        style="@style/letra_botão.red"
         android:layout_alignBottom="@+id/editar"
         android:text="@string/zera"
         android:layout_alignTop="@+id/editar"/>
@@ -127,7 +120,7 @@
 
         <include
             android:id="@+id/score_name_entry"
-            layout="@layout/connect_button_red" />
+            layout="@layout/connect_button_green_escuro" />
 
     </LinearLayout>
 
@@ -140,46 +133,14 @@
         android:text="@string/editar" />
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        style="@style/painel"
-        android:orientation="horizontal">
-
-        <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-            android:id="@+id/ODdig05"
-            style="@style/velocimetro_azul_sliders" />
-
-        <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-            android:id="@+id/ODdig04"
-            style="@style/velocimetro_azul_sliders" />
-
-        <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-            android:id="@+id/ODdig03"
-
-            style="@style/velocimetro_azul_sliders" />
-
-        <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-            android:id="@+id/ODdig02"
-
-            style="@style/velocimetro_azul_sliders" />
-
-        <anastasoft.rallyvision.activity.customfontdemo.FontTextView
-            android:id="@+id/ODdig01"
-
-            style="@style/velocimetro_azul_sliders" />
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/slidersLayout"
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
 
         android:layout_above="@+id/editar"
-        android:gravity="left">
+        android:gravity="left"
+        android:layout_marginBottom="1dp">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -222,7 +183,7 @@
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:progressDrawable="@drawable/progressbar_custom"
+                android:progressDrawable="@drawable/progressbar_verde"
                 android:id="@+id/progressBarMotoristaIdeal"/>
 
         </LinearLayout>
@@ -236,7 +197,8 @@
             android:baselineAligned="false"
             android:layout_below="@+id/linearLayout"
             android:layout_alignRight="@+id/linearLayout"
-            android:layout_alignEnd="@+id/linearLayout">
+            android:layout_alignEnd="@+id/linearLayout"
+            android:layout_marginTop="3dp">
 
             <LinearLayout
                 android:id="@+id/MotoristaUsuariolLayout"
@@ -268,7 +230,7 @@
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:progressDrawable="@drawable/progressbar_custom"
+                android:progressDrawable="@drawable/progressbar_verde"
                 android:id="@+id/progressBarMotoristaUsuário"/>
 
         </LinearLayout>

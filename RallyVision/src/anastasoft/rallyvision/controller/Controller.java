@@ -50,11 +50,11 @@ public class Controller extends Application {
             89
     };
 
-    // Test switch
+    // Configuration swith switch
 
     private boolean testON = false;
 
-    private boolean uberON = false;
+    private boolean uberON = true;
 
     private boolean licenseCheckON = false;
 

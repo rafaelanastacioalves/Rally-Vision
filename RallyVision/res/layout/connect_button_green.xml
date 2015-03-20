@@ -7,7 +7,6 @@
     android:layout_alignBaseline="@+id/editar"
     android:layout_alignBottom="@+id/editar"
     android:layout_alignRight="@+id/RelativeLayout2"
-    android:onClick="stopCom"
     android:text="@string/executar"
     android:textOff="@string/executar"
     android:textOn="@string/executar"

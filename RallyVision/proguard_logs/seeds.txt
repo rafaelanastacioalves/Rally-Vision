@@ -325,6 +325,7 @@ anastasoft.rallyvision.R$drawable: int binding_dark
 anastasoft.rallyvision.R$drawable: int btn_black
 anastasoft.rallyvision.R$drawable: int btn_blue
 anastasoft.rallyvision.R$drawable: int btn_green
+anastasoft.rallyvision.R$drawable: int btn_green_escuro
 anastasoft.rallyvision.R$drawable: int btn_orange
 anastasoft.rallyvision.R$drawable: int btn_red
 anastasoft.rallyvision.R$drawable: int btn_white
@@ -379,7 +380,9 @@ anastasoft.rallyvision.R$drawable: int ic_provider
 anastasoft.rallyvision.R$drawable: int ic_stat_notify
 anastasoft.rallyvision.R$drawable: int powered_by_google_dark
 anastasoft.rallyvision.R$drawable: int powered_by_google_light
-anastasoft.rallyvision.R$drawable: int progressbar_custom
+anastasoft.rallyvision.R$drawable: int progressbar_roxo
+anastasoft.rallyvision.R$drawable: int progressbar_verde
+anastasoft.rallyvision.R$drawable: int progressbar_vermelho
 anastasoft.rallyvision.R$drawable: int wait
 anastasoft.rallyvision.R$id: int AVRGVelDig01
 anastasoft.rallyvision.R$id: int AVRGVelDig02
@@ -569,6 +572,7 @@ anastasoft.rallyvision.R$layout: int change
 anastasoft.rallyvision.R$layout: int config
 anastasoft.rallyvision.R$layout: int config_manual
 anastasoft.rallyvision.R$layout: int connect_button_green
+anastasoft.rallyvision.R$layout: int connect_button_green_escuro
 anastasoft.rallyvision.R$layout: int connect_button_orange
 anastasoft.rallyvision.R$layout: int connect_button_red
 anastasoft.rallyvision.R$layout: int custom_row_edita_lista_afericoes
@@ -898,7 +902,10 @@ anastasoft.rallyvision.R$style: int letra_bot‹o_azul
 anastasoft.rallyvision.R$style: int letra_bot‹o_laranja
 anastasoft.rallyvision.R$style: int letra_bot‹o_red
 anastasoft.rallyvision.R$style: int letra_bot‹o_verde
+anastasoft.rallyvision.R$style: int letra_bot‹o_verde_escuro
+anastasoft.rallyvision.R$style: int letra_parent
 anastasoft.rallyvision.R$style: int painel
+anastasoft.rallyvision.R$style: int parent_velocimetro
 anastasoft.rallyvision.R$style: int tipoTrecho
 anastasoft.rallyvision.R$style: int velocimetro_azul
 anastasoft.rallyvision.R$style: int velocimetro_azul_sliders
