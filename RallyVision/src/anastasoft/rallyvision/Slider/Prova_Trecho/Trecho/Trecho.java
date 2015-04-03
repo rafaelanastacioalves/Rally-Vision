@@ -46,9 +46,11 @@ public abstract class Trecho {
 
     @Override
     public boolean equals(Object aTrecho){
-        if((this.getClass() == aTrecho.getClass()) ){
-            if(this.getNumTrecho() == ((Trecho)aTrecho).getNumTrecho()){
-                return true;
+        if(aTrecho !=null){
+            if ((this.getClass() == aTrecho.getClass())) {
+                if (this.getNumTrecho() == ((Trecho) aTrecho).getNumTrecho()) {
+                    return true;
+                }
             }
         }
 

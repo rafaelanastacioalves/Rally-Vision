@@ -14,8 +14,8 @@ import anastasoft.rallyvision.controller.Data.model.Afericao;
 
 public class PreferencesAdapter {
 
-    private static String RATIO;
     private static String SCREEN;
+
     private static int INDEX_CARSTATUS = 0;
     private static SharedPreferences sPreferences;
     private static String TAG;
@@ -36,8 +36,8 @@ public class PreferencesAdapter {
         res = aController.getResources();
         TAG = getClass().getName();
 
-        RATIO = res.getString(R.string.ratio_key);
         SCREEN = res.getString(R.string.descanso_key);
+
 
         this.dbHelper = aController.getDbHelper();
 
@@ -50,7 +50,7 @@ public class PreferencesAdapter {
         sPreferences = PreferenceManager
                 .getDefaultSharedPreferences(aController);
 
-        float ratio = Float.parseFloat((sPreferences.getString(RATIO,
+        float ratio = Float.parseFloat((sPreferences.getString(res.getString(R.string.ratio_key),
                 res.getString(R.string.pref_default_ratio_number))));
 //		Toast.makeText(aController.getCurrentActiviy(),
 //				"ratio = " + String.valueOf(ratio), Toast.LENGTH_SHORT).show();
@@ -62,7 +62,7 @@ public class PreferencesAdapter {
             float ratioAfericao;
 
             if(dbHelper.getAfericaoCount() >1){
-                ratioAfericao = Float.parseFloat((sPreferences.getString(RATIO,
+                ratioAfericao = Float.parseFloat((sPreferences.getString(res.getString(R.string.ratio_key),
                         res.getString(R.string.pref_default_ratio_number))));
                 if(ratio == ratioAfericao){
                     return ratioAfericao;
@@ -95,7 +95,7 @@ public class PreferencesAdapter {
         float currentRatio = getRatio();
 
         if (currentRatio != ratio) {
-            editor.putString(RATIO, String.valueOf(ratio));
+            editor.putString(res.getString(R.string.ratio_key), String.valueOf(ratio));
 
             editor.commit();
         }
@@ -112,8 +112,17 @@ public class PreferencesAdapter {
 
     public boolean getScreenOnStatus(){
         sPreferences = PreferenceManager.getDefaultSharedPreferences(aController);
-        return sPreferences.getBoolean(SCREEN, false);
+        return sPreferences.getBoolean(res.getString(R.string.descanso_key), false);
 
+    }
+
+    /**
+     * Informa se o usuário optou por ativar a funcionalidade do Sliders
+     * Usado para Beta Testing por enqunato
+     */
+    public boolean getSlidersPref(){
+        sPreferences = PreferenceManager.getDefaultSharedPreferences(aController);
+        return sPreferences.getBoolean(res.getString(R.string.sliders_key), false);
     }
 
     /**
@@ -141,5 +150,14 @@ public class PreferencesAdapter {
         }
 
         return aFericao;
+    }
+
+    public void setSliders(boolean sliderON) {
+        editor = sPreferences.edit();
+
+            editor.putBoolean(res.getString(R.string.sliders_key), sliderON );
+
+            editor.commit();
+
     }
 }

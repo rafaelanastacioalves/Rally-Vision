@@ -24,5 +24,17 @@
 
             />
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_beta"
+        android:summary="@string/pref_beta_ainda_teste"
+        >
+
+        <CheckBoxPreference
+            android:title="@string/pref_beta_sliders"
+            android:key="@string/sliders_key"
+            android:summary="@string/pred_sliders_ativa_sliders"
+            />
+
+    </PreferenceCategory>
+
 
 </PreferenceScreen>

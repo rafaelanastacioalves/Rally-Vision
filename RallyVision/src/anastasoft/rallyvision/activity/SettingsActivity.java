@@ -1,7 +1,9 @@
 package anastasoft.rallyvision.activity;
 
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.res.Configuration;
@@ -23,9 +25,11 @@ import java.util.List;
 
 import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.command.Command;
+import anastasoft.rallyvision.command.ResetarApplicationCommand;
 import anastasoft.rallyvision.command.SetRatioCommand;
 import anastasoft.rallyvision.controller.Controller;
 import anastasoft.rallyvision.controller.Data.model.Afericao;
+import anastasoft.rallyvision.controller.PreferencesAdapter;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On
@@ -48,6 +52,7 @@ public class SettingsActivity extends PreferenceActivity implements
      * shown on tablets.
      */
     private static final boolean ALWAYS_SIMPLE_PREFS = false;
+
     /**
      * A preference value change listener that updates the preference's summary
      * to reflect its new value.
@@ -136,6 +141,7 @@ public class SettingsActivity extends PreferenceActivity implements
         loadAfericaoList();
 
         initSummary(getPreferenceScreen());
+
 
     }
 
@@ -289,6 +295,7 @@ public class SettingsActivity extends PreferenceActivity implements
                 false);
 
 
+
     }
     @Override
     protected void onRestart(){
@@ -324,6 +331,8 @@ public class SettingsActivity extends PreferenceActivity implements
                 .unregisterOnSharedPreferenceChangeListener(this);
     }
 
+
+
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
                                           String key) {
@@ -354,6 +363,49 @@ public class SettingsActivity extends PreferenceActivity implements
 
 
         }
+        if(key.equals(res.getString(R.string.sliders_key))) {
+
+                final CheckBoxPreference pref = (CheckBoxPreference) findPreference(key);
+
+                AlertDialog alert = null;
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle(getString(R.string.dialog_set_slider_certeza));
+                builder.setMessage(getString(R.string.dialog_set_slider_necessario_reiniciar));
+                final AlertDialog finalAlert = alert;
+                builder.setNegativeButton(getString(R.string.cancelar),
+                        new DialogInterface.OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which) {
+                                // Cancel was clicked; do something
+
+                                PreferencesAdapter aPA = aController.getPrefAdapter();
+
+                                pref.setChecked(!pref.isChecked());
+                                finish();
+
+
+                            }
+                        });
+                builder.setPositiveButton(getString(R.string.reiniciar), new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // OK was clicked; do something
+                        // Close Activity
+                        Command c = new ResetarApplicationCommand(aController);
+                        c.Execute();
+                    }
+                });
+                alert = builder.create();
+
+                // Show the dialog
+                    alert.show();
+        }
+
+
+
     }
 
     private void updateRatioSummary(SharedPreferences sharedPreferences, String key) {

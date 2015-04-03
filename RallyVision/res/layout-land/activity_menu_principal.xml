@@ -16,7 +16,7 @@
     <Button
         android:id="@+id/zera"
 
-        style="@style/letra_botão.azul"
+        style="@style/letra_botão.red"
         android:layout_alignBaseline="@+id/editar"
         android:layout_alignBottom="@+id/editar"
         android:layout_alignLeft="@+id/RelativeLayout2"

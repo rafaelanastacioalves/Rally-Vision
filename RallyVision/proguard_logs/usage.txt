@@ -24,7 +24,7 @@ anastasoft.rallyvision.R$raw
 anastasoft.rallyvision.R$string
 anastasoft.rallyvision.R$style
 anastasoft.rallyvision.R$styleable:
-    2575:2575:public R$styleable()
+    2587:2587:public R$styleable()
 anastasoft.rallyvision.R$xml
 anastasoft.rallyvision.Slider.Motorista:
     public static final int RELATIVE_STATE_ADIANTADO
@@ -33,6 +33,8 @@ anastasoft.rallyvision.Slider.Motorista:
     public static final int ABSOLUTE_STATE_DONE
     public static final int ABSOLUTE_STATE_RUNNING
     protected abstract void zeraTrocandoTrecho()
+anastasoft.rallyvision.Slider.MotoristaUsuario:
+    private float dSpercorrido
 anastasoft.rallyvision.Slider.Prova_Trecho.Prova:
     private static final java.lang.String KEY_TIPO
     private static final java.lang.String KEY_NUM
@@ -48,9 +50,10 @@ anastasoft.rallyvision.Slider.SliderCore:
     private float dSFinal
     private float dTfinal
     private java.util.ArrayList prova
-    42:42:public anastasoft.rallyvision.Slider.MotoristaIdeal getStatusMotoristaIdeal()
-    46:46:public anastasoft.rallyvision.Slider.MotoristaUsuario getStatusMotoristaUsuario()
-    52:52:public void setPercentPercorrido()
+    public static final int INDEX_MOT_IDEAL
+    public static final int INDEX_MOT_USUARIO
+    46:46:public anastasoft.rallyvision.Slider.MotoristaIdeal getStatusMotoristaIdeal()
+    56:56:public void setPercentPercorrido()
 anastasoft.rallyvision.activity.ConnectMediator:
     private static final int APLICATION_DISCONECTED
     private static final int APLICATION_CONNECTING
@@ -83,8 +86,8 @@ anastasoft.rallyvision.activity.MenuPrincipal:
 anastasoft.rallyvision.activity.MenuPrincipal$6
 anastasoft.rallyvision.activity.SettingsActivity:
     private static final boolean ALWAYS_SIMPLE_PREFS
-    115:125:private static void bindPreferenceSummaryToValue(android.preference.Preference)
-    41:41:static synthetic void access$000(android.preference.Preference)
+    120:130:private static void bindPreferenceSummaryToValue(android.preference.Preference)
+    45:45:static synthetic void access$100(android.preference.Preference)
 anastasoft.rallyvision.activity.SettingsActivity$GeneralPreferenceFragment
 anastasoft.rallyvision.activity.customfontdemo.TypefaceManager:
     private static final java.lang.String TAG_FAMILY
@@ -115,6 +118,10 @@ anastasoft.rallyvision.activity.dialog.ZerarDialog$2
 anastasoft.rallyvision.command.CreateRatioCommand
 anastasoft.rallyvision.command.GeneralResetCommand
 anastasoft.rallyvision.command.ResetRatioCommand
+anastasoft.rallyvision.command.ResetarApplicationCommand:
+    private int hora
+    private int minuto
+    22:23:public ResetarApplicationCommand(android.content.Context)
 anastasoft.rallyvision.command.SetarInicioProvaSliderCommand:
     14:16:public SetarInicioProvaSliderCommand(android.app.Application)
     19:20:public SetarInicioProvaSliderCommand(android.content.Context)
@@ -148,11 +155,11 @@ anastasoft.rallyvision.controller.Controller:
     private static final int REQUEST_CONNECT_DEVICE
     private static final int REQUEST_ENABLE_BT
     private android.content.SharedPreferences preferences
-    234:253:private int toInt(byte[],int)
-    500:506:public void checkAccess()
-    512:516:public void resetRatio()
-    519:521:public void resetGeral()
-    641:641:public void setupOdometro()
+    235:254:private int toInt(byte[],int)
+    501:507:public void checkAccess()
+    513:517:public void resetRatio()
+    520:522:public void resetGeral()
+    642:642:public void setupOdometro()
 anastasoft.rallyvision.controller.Controller$1:
     long deltaT
 anastasoft.rallyvision.controller.Controller$CounterAndConverter:
@@ -301,8 +308,11 @@ anastasoft.rallyvision.controller.Observable:
     private static final java.lang.String TAG
     private static final int INDEX_CAR_STATUS
     private static final int INDEX_RELOGIO
-    63:71:public void setValues(java.util.List)
-    174:176:public void setValues(java.util.ArrayList)
+    65:73:public void setValues(java.util.List)
+    176:178:public void setValues(java.util.ArrayList)
+    207:207:public anastasoft.rallyvision.Slider.MotoristaUsuario getMotoristaUsuario()
+anastasoft.rallyvision.controller.PreferencesAdapter:
+    156:162:public void setSliders(boolean)
 anastasoft.rallyvision.controller.Relogio:
     private float dTTotalSlider
     89:89:public boolean isReady()
@@ -316,8 +326,8 @@ anastasoft.rallyvision.controller.SliderCoreographer.FileParser:
 anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer:
     private java.util.Calendar inicioProvaSlider
     private anastasoft.rallyvision.Slider.SliderCore sliderCore
-    72:74:public void setaSliderCore()
-    103:103:public void desactivate()
+    73:75:public void setaSliderCore()
+    104:104:public void desactivate()
 anastasoft.rallyvision.controller.TimeAdapter
 anastasoft.rallyvision.controller.VelocityEng:
     private static final int CAR_STATUS
@@ -3067,3 +3077,6 @@ com.ubertesters.sdk.utility.screenshot.IScreenshotProvider:
     public abstract void setFolderPath(java.lang.String)
 com.ubertesters.sdk.utility.screenshot.ScreenshotProvider:
     public abstract void takeScreenshot(java.lang.String,int)
+relogio.DigitalClock:
+    private static final java.lang.String m12
+    private static final java.lang.String m24

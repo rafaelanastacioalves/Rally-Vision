@@ -247,10 +247,14 @@ anastasoft.rallyvision.Slider.MotoristaIdeal -> anastasoft.rallyvision.b.b:
 anastasoft.rallyvision.Slider.MotoristaUsuario -> anastasoft.rallyvision.b.c:
     float deltaSTrechoTotal -> c
     float deltaSTrechoPercorrido -> d
+    boolean flag_novo_trecho_Ki_zero -> e
     void zeraTrocandoTrecho() -> f
     void setTrecho(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho) -> a
     float getDSTrechoRestante() -> g
     void atualizaDS(float) -> b
+    anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho getTrecho() -> h
+    boolean estaEmNovoTrechoKiZero() -> i
+    float getdSpercorrido() -> j
 anastasoft.rallyvision.Slider.Prova_Trecho.FimDeProvaException -> anastasoft.rallyvision.b.a.a:
 anastasoft.rallyvision.Slider.Prova_Trecho.Prova -> anastasoft.rallyvision.b.a.b:
     java.util.ArrayList listaDeTrechos -> a
@@ -289,17 +293,18 @@ anastasoft.rallyvision.Slider.SliderCore -> anastasoft.rallyvision.b.d:
     float percentual -> f
     java.util.ArrayList listaMotorista -> g
     void setProva(anastasoft.rallyvision.Slider.Prova_Trecho.Prova) -> a
-    void zerarContagem() -> a
-    java.util.ArrayList getStatus() -> b
+    anastasoft.rallyvision.Slider.MotoristaUsuario getStatusMotoristaUsuario() -> a
+    void zerarContagem() -> b
+    java.util.ArrayList getStatus() -> c
     void carregarProva(android.database.Cursor) -> a
     void update(float,float) -> a
     float getdSUntil(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho,float) -> a
-    void updateStateMotIdeal() -> d
-    void updateStateMotUsuario() -> e
+    void updateStateMotIdeal() -> e
+    void updateStateMotUsuario() -> f
     void updateMotoristaIdeal(float) -> a
     void updateMotoristaUsuario(float) -> b
     void mudaTrecho(anastasoft.rallyvision.Slider.Motorista) -> a
-    anastasoft.rallyvision.Slider.Prova_Trecho.Prova getProva() -> c
+    anastasoft.rallyvision.Slider.Prova_Trecho.Prova getProva() -> d
 anastasoft.rallyvision.activity.AVRGvelocimeter -> anastasoft.rallyvision.activity.a:
     android.widget.TextView TVdig1 -> a
     android.widget.TextView TVdig2 -> b
@@ -441,9 +446,17 @@ anastasoft.rallyvision.activity.SettingsActivity -> anastasoft.rallyvision.activ
     void onPause() -> onPause
     void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String) -> onSharedPreferenceChanged
     void updateRatioSummary(android.content.SharedPreferences,java.lang.String) -> a
+    anastasoft.rallyvision.controller.Controller access$000(anastasoft.rallyvision.activity.SettingsActivity) -> a
 anastasoft.rallyvision.activity.SettingsActivity$1 -> anastasoft.rallyvision.activity.m:
     boolean onPreferenceChange(android.preference.Preference,java.lang.Object) -> onPreferenceChange
-anastasoft.rallyvision.activity.SliderMotorista -> anastasoft.rallyvision.activity.n:
+anastasoft.rallyvision.activity.SettingsActivity$2 -> anastasoft.rallyvision.activity.n:
+    android.preference.CheckBoxPreference val$pref -> a
+    anastasoft.rallyvision.activity.SettingsActivity this$0 -> b
+    void onClick(android.content.DialogInterface,int) -> onClick
+anastasoft.rallyvision.activity.SettingsActivity$3 -> anastasoft.rallyvision.activity.o:
+    anastasoft.rallyvision.activity.SettingsActivity this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+anastasoft.rallyvision.activity.SliderMotorista -> anastasoft.rallyvision.activity.p:
     android.widget.TextView TVSliderTipoTrecho -> a
     android.widget.TextView TVSliderNumTrechodig1 -> b
     android.widget.TextView TVSliderNumTrechodig2 -> c
@@ -535,7 +548,7 @@ anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment$1 -> anastasoft.
 anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment$2 -> anastasoft.rallyvision.activity.a.j:
     anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment this$0 -> a
     void onClick(android.content.DialogInterface,int) -> onClick
-anastasoft.rallyvision.activity.odometer -> anastasoft.rallyvision.activity.o:
+anastasoft.rallyvision.activity.odometer -> anastasoft.rallyvision.activity.q:
     android.widget.TextView TVdig1 -> a
     android.widget.TextView TVdig2 -> b
     android.widget.TextView TVdig3 -> c
@@ -643,25 +656,27 @@ anastasoft.rallyvision.command.EditCommand -> anastasoft.rallyvision.c.d:
     void Execute() -> a
 anastasoft.rallyvision.command.EditaPosicaoSliderCommand -> anastasoft.rallyvision.c.e:
     anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer aSliderChoreographer -> b
-anastasoft.rallyvision.command.SetRatioCommand -> anastasoft.rallyvision.c.f:
+anastasoft.rallyvision.command.ResetarApplicationCommand -> anastasoft.rallyvision.c.f:
+    void Execute() -> a
+anastasoft.rallyvision.command.SetRatioCommand -> anastasoft.rallyvision.c.g:
     java.lang.String aFericaoNome -> b
     float aRatio -> c
     void Execute() -> a
-anastasoft.rallyvision.command.SetarInicioProvaSliderCommand -> anastasoft.rallyvision.c.g:
+anastasoft.rallyvision.command.SetarInicioProvaSliderCommand -> anastasoft.rallyvision.c.h:
     int hora -> b
     int minuto -> c
     void Execute() -> a
-anastasoft.rallyvision.command.StopAllCommand -> anastasoft.rallyvision.c.h:
+anastasoft.rallyvision.command.StopAllCommand -> anastasoft.rallyvision.c.i:
     void Execute() -> a
-anastasoft.rallyvision.command.VerificaAluguelStatusCommand -> anastasoft.rallyvision.c.i:
+anastasoft.rallyvision.command.VerificaAluguelStatusCommand -> anastasoft.rallyvision.c.j:
     void Execute() -> a
-anastasoft.rallyvision.command.Zerar -> anastasoft.rallyvision.c.j:
+anastasoft.rallyvision.command.Zerar -> anastasoft.rallyvision.c.k:
     void Execute() -> a
-anastasoft.rallyvision.command.startCommand -> anastasoft.rallyvision.c.k:
+anastasoft.rallyvision.command.startCommand -> anastasoft.rallyvision.c.l:
     int aOdomValue -> b
     android.app.Activity currActivity -> c
     void Execute() -> a
-anastasoft.rallyvision.command.stopCommunicationCommand -> anastasoft.rallyvision.c.l:
+anastasoft.rallyvision.command.stopCommunicationCommand -> anastasoft.rallyvision.c.m:
     void Execute() -> a
 anastasoft.rallyvision.controller.AnalyticsAdpater -> anastasoft.rallyvision.controller.a:
     anastasoft.rallyvision.controller.Controller aController -> b
@@ -704,7 +719,7 @@ anastasoft.rallyvision.controller.Controller -> anastasoft.rallyvision.controlle
     android.content.res.Resources aResource -> l
     java.lang.String RATIO -> m
     anastasoft.rallyvision.controller.PreferencesAdapter aPrefAdapter -> n
-    anastasoft.rallyvision.controller.Observable aObervable -> o
+    anastasoft.rallyvision.controller.Observable aObservable -> o
     anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer aSliderChoreographer -> p
     anastasoft.rallyvision.controller.Data.DBHelper dbHelper -> q
     anastasoft.rallyvision.BTManager.BTManager aBTManager -> b
@@ -748,12 +763,12 @@ anastasoft.rallyvision.controller.Controller -> anastasoft.rallyvision.controlle
     void deleteAfericao(anastasoft.rallyvision.controller.Data.model.Afericao) -> b
     java.util.List getListaAfericoesUsuario() -> q
     void persist(java.util.ArrayList) -> a
+    anastasoft.rallyvision.controller.PreferencesAdapter getPrefAdapter() -> r
     anastasoft.rallyvision.controller.Controller$CounterAndConverter access$000(anastasoft.rallyvision.controller.Controller) -> a
     boolean access$100(anastasoft.rallyvision.controller.Controller) -> b
     java.lang.String access$202(anastasoft.rallyvision.controller.Controller,java.lang.String) -> a
-    android.content.res.Resources access$300() -> r
+    android.content.res.Resources access$300() -> s
     java.lang.String access$200(anastasoft.rallyvision.controller.Controller) -> c
-    anastasoft.rallyvision.controller.Observable access$400() -> s
 anastasoft.rallyvision.controller.Controller$1 -> anastasoft.rallyvision.controller.d:
     int i -> a
     anastasoft.rallyvision.controller.Controller this$0 -> b
@@ -766,6 +781,7 @@ anastasoft.rallyvision.controller.Controller$CounterAndConverter -> anastasoft.r
     anastasoft.rallyvision.controller.Relogio aRelogioTemp -> f
     anastasoft.rallyvision.controller.Observable aObservable -> g
     anastasoft.rallyvision.Slider.SliderCore aSliderCore -> h
+    anastasoft.rallyvision.Slider.MotoristaUsuario aMotoristaUsuarioTemp -> i
     anastasoft.rallyvision.controller.Controller this$0 -> d
     void run() -> run
     void update(int) -> a
@@ -994,21 +1010,21 @@ anastasoft.rallyvision.controller.Observable -> anastasoft.rallyvision.controlle
     anastasoft.rallyvision.controller.CarStatus getCarStatus() -> d
     anastasoft.rallyvision.controller.Relogio getRelogio() -> e
 anastasoft.rallyvision.controller.PreferencesAdapter -> anastasoft.rallyvision.controller.h:
-    java.lang.String RATIO -> a
-    java.lang.String SCREEN -> b
-    int INDEX_CARSTATUS -> c
-    android.content.SharedPreferences sPreferences -> d
-    java.lang.String TAG -> e
-    android.content.res.Resources res -> f
-    anastasoft.rallyvision.controller.Controller aController -> g
-    android.content.SharedPreferences$Editor editor -> h
-    anastasoft.rallyvision.controller.Observable aObservable -> i
-    anastasoft.rallyvision.controller.Data.DBHelper dbHelper -> j
+    java.lang.String SCREEN -> a
+    int INDEX_CARSTATUS -> b
+    android.content.SharedPreferences sPreferences -> c
+    java.lang.String TAG -> d
+    android.content.res.Resources res -> e
+    anastasoft.rallyvision.controller.Controller aController -> f
+    android.content.SharedPreferences$Editor editor -> g
+    anastasoft.rallyvision.controller.Observable aObservable -> h
+    anastasoft.rallyvision.controller.Data.DBHelper dbHelper -> i
     float getRatio() -> a
     void setRatio(float) -> a
     void update() -> b
     boolean getScreenOnStatus() -> c
-    anastasoft.rallyvision.controller.Data.model.Afericao getAfericao() -> d
+    boolean getSlidersPref() -> d
+    anastasoft.rallyvision.controller.Data.model.Afericao getAfericao() -> e
 anastasoft.rallyvision.controller.Relogio -> anastasoft.rallyvision.controller.i:
     java.util.Date tInicialBasico -> a
     long clockBasico -> b
@@ -1071,6 +1087,8 @@ anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer -> anas
     void startProvaSlider() -> b
     anastasoft.rallyvision.Slider.SliderCore getSliderCore() -> c
     anastasoft.rallyvision.controller.Relogio getaRelogio() -> d
+    anastasoft.rallyvision.controller.CarStatus getCarStatus() -> e
+    anastasoft.rallyvision.controller.Observable getOBservable() -> f
 anastasoft.rallyvision.controller.VelocityEng -> anastasoft.rallyvision.controller.l:
     anastasoft.rallyvision.controller.CarStatus carStatusTemp -> b
     float deltaS -> c
@@ -35605,3 +35623,27 @@ com.ubertesters.sdk.utility.screenshot.IScreenshotProvider -> com.c.b.b.a.g:
 com.ubertesters.sdk.utility.screenshot.ScreenshotProvider -> com.c.b.b.a.h:
     com.ubertesters.sdk.utility.screenshot.IScreenshotListener mListener -> a
     void setListener(com.ubertesters.sdk.utility.screenshot.IScreenshotListener) -> a
+relogio.DigitalClock -> relogio.DigitalClock:
+    java.util.Calendar mCalendar -> a
+    relogio.DigitalClock$FormatChangeObserver mFormatChangeObserver -> c
+    java.lang.Runnable mTicker -> d
+    android.os.Handler mHandler -> e
+    boolean mTickerStopped -> f
+    java.lang.String mFormat -> b
+    void initClock() -> a
+    void onAttachedToWindow() -> onAttachedToWindow
+    void onDetachedFromWindow() -> onDetachedFromWindow
+    boolean get24HourMode() -> get24HourMode
+    void setFormat() -> b
+    void onInitializeAccessibilityEvent(android.view.accessibility.AccessibilityEvent) -> onInitializeAccessibilityEvent
+    void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo) -> onInitializeAccessibilityNodeInfo
+    boolean access$000(relogio.DigitalClock) -> a
+    java.lang.Runnable access$100(relogio.DigitalClock) -> b
+    android.os.Handler access$200(relogio.DigitalClock) -> c
+    void access$300(relogio.DigitalClock) -> d
+relogio.DigitalClock$1 -> relogio.a:
+    relogio.DigitalClock this$0 -> a
+    void run() -> run
+relogio.DigitalClock$FormatChangeObserver -> relogio.b:
+    relogio.DigitalClock this$0 -> a
+    void onChange(boolean) -> onChange

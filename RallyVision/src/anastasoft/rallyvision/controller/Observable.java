@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import anastasoft.rallyvision.Slider.Motorista;
+import anastasoft.rallyvision.Slider.MotoristaUsuario;
+import anastasoft.rallyvision.Slider.SliderCore;
 import anastasoft.rallyvision.activity.MenuPrincipal;
 import anastasoft.rallyvision.controller.Controller.CounterAndConverter;
 import anastasoft.rallyvision.controller.Data.DBHelper;
@@ -199,5 +201,9 @@ public class Observable {
 
     public Relogio getRelogio() {
         return (Relogio)listValues.get(INDEX_RELOGIO);
+    }
+
+    public MotoristaUsuario getMotoristaUsuario() {
+        return (MotoristaUsuario) motoristasStatus.get(SliderCore.INDEX_MOT_USUARIO);
     }
 }

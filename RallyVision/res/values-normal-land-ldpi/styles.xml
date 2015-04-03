@@ -32,6 +32,10 @@
         <item name="android:textSize">14sp</item>
 
     </style>
+    <style name="relogio_slider">
+        <item name="android:textSize">30sp</item>
+        <item name="android:padding">0sp</item>
+    </style>
 
     <style name="letra_botão" parent="letra_parent">
 

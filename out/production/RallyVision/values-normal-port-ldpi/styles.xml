@@ -62,6 +62,10 @@
 
 
     </style>
+    <style name="relogio_slider">
+        <item name="android:textSize">20sp</item>
+
+    </style>
     <style name="velocimetro_azul" parent="parent_velocimetro">
 
         <item name="android:textSize">55sp</item>

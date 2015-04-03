@@ -147,6 +147,15 @@
     <string name="lista_edit_pos_slider_kf">kf</string>
     <string name="slider_comece_primeiro">Comece a prova primeiro!</string>
     <string name="sp_swipe_et_Digite_deslocamento">Insira aqui</string>
+    <string name="pref_beta">Beta</string>
+    <string name="pref_beta_ainda_teste">Ainda em testes</string>
+    <string name="pref_beta_sliders">Sliders</string>
+    <string name="sliders_key">sliders</string>
+    <string name="pred_sliders_ativa_sliders">Ativa o Sliders</string>
+    <string name="dialog_sliders_tem_certeza">Tem certeza? O aplicativo será reiniciado.</string>
+    <string name="dialog_set_slider_certeza">Certeza?</string>
+    <string name="dialog_set_slider_necessario_reiniciar">Será necessário reiniciar o aplicativo</string>
+    <string name="reiniciar">Reiniciar</string>
 
 
 </resources>

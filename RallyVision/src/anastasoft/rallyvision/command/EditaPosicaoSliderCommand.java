@@ -5,6 +5,7 @@ import anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho;
 import anastasoft.rallyvision.Slider.SliderCore;
 import anastasoft.rallyvision.controller.CarStatus;
 import anastasoft.rallyvision.controller.Controller;
+import anastasoft.rallyvision.controller.Observable;
 import anastasoft.rallyvision.controller.Relogio;
 import anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer;
 
@@ -39,6 +40,9 @@ public class EditaPosicaoSliderCommand extends Command {
         Relogio aRelogio = aSliderChoreographer.getaRelogio();
         aRelogio.reSetarSlider();
         aSliderCore.update(0,dSMotoristaNovo);
+
+        Observable aObservable =  aSliderChoreographer.getOBservable();
+        aObservable.Notify();
 
     }
 }

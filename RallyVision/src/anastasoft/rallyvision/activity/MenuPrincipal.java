@@ -801,10 +801,11 @@ public class MenuPrincipal extends ActionBarActivity {
 
             mSLDMotIdeal.PBSliderPercent.setProgress(progress);
         }catch (Exception erro){
-            Toast.makeText(getApplicationContext(), "Erro em update: " +erro.toString(), Toast.LENGTH_SHORT).show();
 
             if (aController.isTestOn() && erro.getMessage() !=null) {
                 Log.e(TAG, erro.getMessage());
+                Toast.makeText(getApplicationContext(), "Erro em update: " +erro.toString(), Toast.LENGTH_SHORT).show();
+
             }
 
         }

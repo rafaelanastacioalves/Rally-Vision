@@ -90,15 +90,19 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="5dp">
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentTop="false">
 
         <LinearLayout
             android:orientation="vertical"
+            android:id="@+id/painelVelocimentro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:gravity="top"
+            android:layout_alignParentStart="false">
 
             <TextView
                 android:id="@+id/vel_inst"
@@ -135,6 +139,28 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            style="@style/painel"
+            android:layout_below="@+id/painelVelocimentro"
+            android:gravity="center_horizontal|bottom"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginTop="20dp">
+
+
+            <relogio.DigitalClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textClock"
+
+                style="@style/relogio_slider"/>
+
+        </LinearLayout>
+
+
     </RelativeLayout>
 
     <LinearLayout
@@ -144,7 +170,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/editar"
         android:layout_marginBottom="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/RelativeLayout2"
         android:gravity="center_vertical">
 

@@ -485,6 +485,7 @@ anastasoft.rallyvision.R$id: int numTrechoMotoristaIdealDig3
 anastasoft.rallyvision.R$id: int numTrechoMotoristaUsuarioDig1
 anastasoft.rallyvision.R$id: int numTrechoMotoristaUsuarioDig2
 anastasoft.rallyvision.R$id: int numTrechoMotoristaUsuarioDig3
+anastasoft.rallyvision.R$id: int painelVelocimentro
 anastasoft.rallyvision.R$id: int paired_devices
 anastasoft.rallyvision.R$id: int production
 anastasoft.rallyvision.R$id: int progressBarMotoristaIdeal
@@ -529,6 +530,7 @@ anastasoft.rallyvision.R$id: int swipe_nome_afericao
 anastasoft.rallyvision.R$id: int swipe_ok
 anastasoft.rallyvision.R$id: int tabMode
 anastasoft.rallyvision.R$id: int terrain
+anastasoft.rallyvision.R$id: int textClock
 anastasoft.rallyvision.R$id: int textView
 anastasoft.rallyvision.R$id: int textView2
 anastasoft.rallyvision.R$id: int timePickerAgendamentoSlider
@@ -672,6 +674,9 @@ anastasoft.rallyvision.R$string: int dialog_not_configured_message
 anastasoft.rallyvision.R$string: int dialog_not_configured_title
 anastasoft.rallyvision.R$string: int dialog_reset_ratio_text
 anastasoft.rallyvision.R$string: int dialog_reset_ratio_title_ask
+anastasoft.rallyvision.R$string: int dialog_set_slider_certeza
+anastasoft.rallyvision.R$string: int dialog_set_slider_necessario_reiniciar
+anastasoft.rallyvision.R$string: int dialog_sliders_tem_certeza
 anastasoft.rallyvision.R$string: int dialog_zerar_text
 anastasoft.rallyvision.R$string: int dialog_zerar_title
 anastasoft.rallyvision.R$string: int dont_allow
@@ -703,6 +708,10 @@ anastasoft.rallyvision.R$string: int obrigado
 anastasoft.rallyvision.R$string: int obrigado_utilizar
 anastasoft.rallyvision.R$string: int off
 anastasoft.rallyvision.R$string: int on
+anastasoft.rallyvision.R$string: int pred_sliders_ativa_sliders
+anastasoft.rallyvision.R$string: int pref_beta
+anastasoft.rallyvision.R$string: int pref_beta_ainda_teste
+anastasoft.rallyvision.R$string: int pref_beta_sliders
 anastasoft.rallyvision.R$string: int pref_comportamento
 anastasoft.rallyvision.R$string: int pref_comportamento_descanso
 anastasoft.rallyvision.R$string: int pref_comportamento_descanso_off
@@ -717,6 +726,7 @@ anastasoft.rallyvision.R$string: int ratio_key_list
 anastasoft.rallyvision.R$string: int ratio_key_list_name
 anastasoft.rallyvision.R$string: int ratio_name
 anastasoft.rallyvision.R$string: int realize_afericoes
+anastasoft.rallyvision.R$string: int reiniciar
 anastasoft.rallyvision.R$string: int reset_ratio_key
 anastasoft.rallyvision.R$string: int retry_button
 anastasoft.rallyvision.R$string: int scanning
@@ -734,6 +744,7 @@ anastasoft.rallyvision.R$string: int slider_carregar_prova
 anastasoft.rallyvision.R$string: int slider_carregar_prova_titulo
 anastasoft.rallyvision.R$string: int slider_comece_primeiro
 anastasoft.rallyvision.R$string: int slider_editar
+anastasoft.rallyvision.R$string: int sliders_key
 anastasoft.rallyvision.R$string: int sp_swipe_deslocamento_trecho
 anastasoft.rallyvision.R$string: int sp_swipe_et_Digite_deslocamento
 anastasoft.rallyvision.R$string: int storage_removed
@@ -921,6 +932,7 @@ anastasoft.rallyvision.R$style: int letra_bot‹o_verde_escuro
 anastasoft.rallyvision.R$style: int letra_parent
 anastasoft.rallyvision.R$style: int painel
 anastasoft.rallyvision.R$style: int parent_velocimetro
+anastasoft.rallyvision.R$style: int relogio_slider
 anastasoft.rallyvision.R$style: int tipoTrecho
 anastasoft.rallyvision.R$style: int velocimetro_azul
 anastasoft.rallyvision.R$style: int velocimetro_azul_sliders
@@ -34547,3 +34559,7 @@ com.ubertesters.sdk.model.LogLevel: com.ubertesters.sdk.model.LogLevel valueOf(j
 com.ubertesters.sdk.tools.Log$Priority: com.ubertesters.sdk.tools.Log$Priority[] values()
 com.ubertesters.sdk.tools.Log$Priority: com.ubertesters.sdk.tools.Log$Priority valueOf(java.lang.String)
 com.ubertesters.sdk.utility.LockScreen: void setListener(com.ubertesters.sdk.utility.LockScreen$OnBackPressed)
+relogio.DigitalClock
+relogio.DigitalClock: DigitalClock(android.content.Context)
+relogio.DigitalClock: DigitalClock(android.content.Context,android.util.AttributeSet)
+relogio.DigitalClock: boolean get24HourMode()

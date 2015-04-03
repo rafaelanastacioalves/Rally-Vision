@@ -5,13 +5,13 @@ Também é bom dar um "make project" antes de apertar "run"-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 
     package="anastasoft.rallyvision"
-    android:versionCode="42"
-    android:versionName="1.99913">
+    android:versionCode="43"
+    android:versionName="1.99914">
 
 
     <uses-sdk
         android:minSdkVersion="10"
-        android:targetSdkVersion="18" />
+        android:targetSdkVersion="22" />
 
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.BLUETOOTH" />

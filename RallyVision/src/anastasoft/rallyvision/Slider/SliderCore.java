@@ -27,6 +27,10 @@ public class SliderCore {
     private ArrayList<Trecho> prova;
 
 
+    public static final int INDEX_MOT_IDEAL =  1;
+    public static final int INDEX_MOT_USUARIO= 0;
+
+
     public void setProva(Prova aProva){
         this.aProva = aProva;
         for( Motorista aMotorista : listaMotorista){
