@@ -128,4 +128,8 @@ public class SliderChoreographer {
     public CarStatus getCarStatus() {
         return aObservable.getCarStatus();
     }
+
+    public Observable getOBservable() {
+        return aObservable;
+    }
 }

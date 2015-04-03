@@ -23,6 +23,7 @@ import java.util.List;
 
 import anastasoft.rallyvision.BTManager.BTManager;
 import anastasoft.rallyvision.R;
+import anastasoft.rallyvision.Slider.MotoristaUsuario;
 import anastasoft.rallyvision.Slider.SliderCore;
 import anastasoft.rallyvision.activity.ConnectMediator;
 import anastasoft.rallyvision.activity.DeviceListActivity;
@@ -100,7 +101,7 @@ public class Controller extends Application {
     private static Resources aResource;
     private static String RATIO = "example_ratio";
     private static PreferencesAdapter aPrefAdapter;
-    private static Observable aObervable;
+    private static Observable aObservable;
 
 
     private static SliderChoreographer aSliderChoreographer;
@@ -267,7 +268,7 @@ public class Controller extends Application {
             setupCountAndConverter();
         }
 
-        // if (isRatioDefault(aObervable.getRatio())){
+        // if (isRatioDefault(aObservable.getRatio())){
         // if(currentAct.getClass() == MenuPrincipal.class){
         // ((MenuPrincipal)currentAct).warnNotCalibrated();
         // }
@@ -353,10 +354,10 @@ public class Controller extends Application {
         Relogio aRelogio = new Relogio(clockBasico,this);
 
         // -------- other components --------//
-        if (aObervable == null) {
-            aObervable = new Observable(this, aRelogio);
-            aObervable.Attach(aRelogio);
-            aRelogio.setaObservable(aObervable);
+        if (aObservable == null) {
+            aObservable = new Observable(this, aRelogio);
+            aObservable.Attach(aRelogio);
+            aRelogio.setaObservable(aObservable);
 
 
         }
@@ -365,20 +366,20 @@ public class Controller extends Application {
                 //setup DBHelper
 
         if (dbHelper == null) {
-            dbHelper = new DBHelper( getApplicationContext(), aObervable);
-            aObervable.Attach(dbHelper);
+            dbHelper = new DBHelper( getApplicationContext(), aObservable);
+            aObservable.Attach(dbHelper);
             dbHelper.createAfericao(new Afericao(
                     getResources().getString(R.string.pref_default_ratio_name), Float.parseFloat(getString(R.string.pref_default_ratio_number))));
         }
 
         if (aPrefAdapter == null) {
-            aPrefAdapter = new PreferencesAdapter(this, aObervable);
+            aPrefAdapter = new PreferencesAdapter(this, aObservable);
 
         }
 
 
 
-        aObervable.Attach(aPrefAdapter);
+        aObservable.Attach(aPrefAdapter);
 
         if (aBTManager == null) {
             aBTManager = new BTManager(this, mHandler);
@@ -389,7 +390,7 @@ public class Controller extends Application {
 
 
         Afericao aFericao = aPrefAdapter.getAfericao();
-        aObervable.setAfericao(aFericao);
+        aObservable.setAfericao(aFericao);
 
 
         setupCountAndConverter();
@@ -399,7 +400,7 @@ public class Controller extends Application {
 
         // setup Menu Principal
         try {
-            ((MenuPrincipal) currentAct).setObservable(aObervable);
+            ((MenuPrincipal) currentAct).setObservable(aObservable);
         } catch (Exception erro) {
 
         }
@@ -424,7 +425,7 @@ public class Controller extends Application {
         if(aSliderChoreographer == null ){
             if(sliderON) {
                 try {
-                    aSliderChoreographer = new SliderChoreographer(this, (MenuPrincipal) getCurrentActiviy(), aCountConv, aObervable);
+                    aSliderChoreographer = new SliderChoreographer(this, (MenuPrincipal) getCurrentActiviy(), aCountConv, aObservable);
 
                 } catch (Exception erro) {
 
@@ -433,7 +434,7 @@ public class Controller extends Application {
         }
 
         if (FIRST_RUN == false) {
-            aObervable.Notify();
+            aObservable.Notify();
         }
         FIRST_RUN = false;
 
@@ -463,8 +464,8 @@ public class Controller extends Application {
 
         if (aCountConv == null) {
 
-            aCountConv = new CounterAndConverter(this, aObervable);
-            aObervable.Attach(aCountConv);
+            aCountConv = new CounterAndConverter(this, aObservable);
+            aObservable.Attach(aCountConv);
             if(aSliderChoreographer != null){
                 aSliderChoreographer.setupAConuntAndConverter(aCountConv);
             }
@@ -509,7 +510,7 @@ public class Controller extends Application {
 
 
         try {
-            aObervable.setAfericao(dbHelper.getAfericaoByName(aResource.getString(R.string.pref_default_ratio_name)));
+            aObservable.setAfericao(dbHelper.getAfericaoByName(aResource.getString(R.string.pref_default_ratio_name)));
         } catch (DBHelper.AfericaoExistenteException e) {
 
         }
@@ -521,11 +522,11 @@ public class Controller extends Application {
     }
 
     public void setOdometer(int value) {
-        aObervable.setOdometer(value);
+        aObservable.setOdometer(value);
     }
 
     public void zerar() {
-        aObervable.zerar();
+        aObservable.zerar();
     }
 
     public void enableBT(Activity currentAct) {
@@ -646,7 +647,7 @@ public class Controller extends Application {
 
             Afericao aFerTemp = new Afericao(nomeAfericao, ratio);
 
-                aObervable.setAfericao(aFerTemp);
+                aObservable.setAfericao(aFerTemp);
 
     }
 
@@ -686,10 +687,10 @@ public class Controller extends Application {
      * Usar somente quando você encerra a conexão com o Bluetooth
      */
     private void destroyACountAndConverterSafely() {
-        if(aCountConv != null && aObervable !=null){
+        if(aCountConv != null && aObservable !=null){
             aCountConv.cancel();
 
-            aObervable.Detach(aCountConv);
+            aObservable.Detach(aCountConv);
             aCountConv = null;
         }
     }
@@ -704,7 +705,7 @@ public class Controller extends Application {
             float ratioTemp;
             float ratioSis;
 
-            CarStatus carStatusTemp = aObervable.getCarStatus();
+            CarStatus carStatusTemp = aObservable.getCarStatus();
 
             // retrieving deltaS sistem
             deltaSSistema = carStatusTemp.getDeltaStot();
@@ -720,13 +721,13 @@ public class Controller extends Application {
             ratioSis = ratioSis * ratioTemp;
 
             try{
-                aObervable.setAfericao(new Afericao(afericaoNome, ratioSis));
+                aObservable.setAfericao(new Afericao(afericaoNome, ratioSis));
 
             }catch (DBHelper.AfericaoExistenteException e){
                 Toast.makeText(getApplicationContext(), aResource.getString(R.string.invalido) + " : " + e.getMessage(), Toast.LENGTH_SHORT);
             }
 
-            aObervable.zerar();
+            aObservable.zerar();
         } catch (ArithmeticException e) {
             Toast.makeText(getApplicationContext(),
                     aResource.getString(R.string.config_ratio_zero),
@@ -742,13 +743,13 @@ public class Controller extends Application {
 
     public List<Afericao> getListaAfericoes() {
         if(dbHelper == null){
-            dbHelper = new DBHelper(getApplicationContext(), aObervable);
+            dbHelper = new DBHelper(getApplicationContext(), aObservable);
         }
         return dbHelper.getTodasAfericoes();
     }
 
     public Afericao getAfericao() {
-        CarStatus carStatusTemp = aObervable.getCarStatus();
+        CarStatus carStatusTemp = aObservable.getCarStatus();
         return carStatusTemp.getAfericao();
     }
 
@@ -813,6 +814,9 @@ public class Controller extends Application {
         private Observable aObservable;
         private SliderCore aSliderCore;
 
+        // para quando precisar fazer consultas rapidas...
+        private MotoristaUsuario aMotoristaUsuarioTemp;
+
         public CounterAndConverter(Controller ac, Observable aObservable) {
 
             aController = ac;
@@ -843,7 +847,7 @@ public class Controller extends Application {
 
         @Override
         public void run() {
-            aRelogioTemp = aObervable.getRelogio();
+            aRelogioTemp = aObservable.getRelogio();
             long tempClockBasico = aRelogioTemp.getClockBasico();
             // redundant
             aRelogioTemp.beginBasicTimeCount();
@@ -897,11 +901,21 @@ public class Controller extends Application {
             // for slider
             if (aSliderCore !=null){
                 try{
+
+
+                    // essa verificacao gasta muito em processamnto...
+                    aMotoristaUsuarioTemp= aSliderCore.getStatusMotoristaUsuario();
+                    if(aMotoristaUsuarioTemp.estaEmNovoTrechoKiZero() ){
+                        aController.zerar();
+                        aController.setOdometer((int)aMotoristaUsuarioTemp.getdSpercorrido());
+
+
+                    }
                     aSliderCore.update(0, aVelEng.getDeltaS());
                 }catch (NullPointerException e){
                     if(testON){
                         Toast.makeText(getApplicationContext(), "Erro em " + "SliderCoreUpdate: " + e.toString(),Toast.LENGTH_SHORT ).show();
-
+                        throw  e;
                     }
 
                 }
@@ -923,7 +937,7 @@ public class Controller extends Application {
         }
 
         public void update() {
-            aVelEng.setValues(aObervable.getValues());
+            aVelEng.setValues(aObservable.getValues());
         }
 
 
