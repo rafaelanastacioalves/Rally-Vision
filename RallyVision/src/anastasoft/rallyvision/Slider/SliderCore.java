@@ -4,7 +4,9 @@ import android.database.Cursor;
 
 import java.util.ArrayList;
 
+import anastasoft.rallyvision.Slider.Prova_Trecho.FimDeProvaException;
 import anastasoft.rallyvision.Slider.Prova_Trecho.Prova;
+import anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho;
 
 /**
  * Created by rafaelanastacioalves on 20/01/15.
@@ -22,12 +24,17 @@ public class SliderCore {
     private float                   dTfinal;
     private float                   percentual;
     private  ArrayList<Motorista>    listaMotorista = new ArrayList<Motorista>(2);
+    private ArrayList<Trecho> prova;
 
 
     public void setProva(Prova aProva){
         this.aProva = aProva;
         for( Motorista aMotorista : listaMotorista){
-            aMotorista.setTrecho(aProva.getTrecho(1));
+            try {
+                aMotorista.setTrecho(aProva.getTrecho(1));
+            } catch (FimDeProvaException e) {
+                e.printStackTrace();
+            }
         };
     }
 
@@ -44,8 +51,21 @@ public class SliderCore {
 
     }
 
-    public void reset(){
+    /**
+     * Reseta o status dos motoristas. Mantém a Prova.
+     * Atualmente utilizado quando queremos setar uma nova posição para o motorista usuário.
+     * Requer reconfiguração externa do dS e dT desde o começo...
+     */
+    public void zerarContagem(){
+        aMotoristaIdeal = new MotoristaIdeal();
+        aMotoristaUsuario = new MotoristaUsuario();
 
+
+        listaMotorista.clear();
+        listaMotorista.add(aMotoristaUsuario);
+        listaMotorista.add(aMotoristaIdeal);
+
+        setProva(aProva);
     }
 
     public SliderCore (){
@@ -72,15 +92,36 @@ public class SliderCore {
 
         //atualizando status motorista usuario
 
-        updateMotoristaUsuario(dS);
+        if(aMotoristaUsuario.getAbsoluteSate() == Motorista.ABSOLUTE_STATE_RUNNING) {
+            updateMotoristaUsuario(dS);
+        }
 
         //atualizando status motorista ideal
 
-        updateMotoristaIdeal(dT);
+        if (aMotoristaIdeal.getAbsoluteSate() == Motorista.ABSOLUTE_STATE_RUNNING) {
+            updateMotoristaIdeal(dT);
+        }
 
 
 
 
+
+
+    }
+
+    public float getdSUntil(Trecho aTrecho, float dSLocal) {
+
+        float dS = 0;
+
+        for(Trecho aT : aProva.toList()){
+            if(aT.equals(aTrecho)){
+                dS = dS + dSLocal;
+                break;
+            }
+            dS = dS + aT.getDeltaStrecho();
+        }
+
+        return dS;
 
 
     }
@@ -95,19 +136,19 @@ public class SliderCore {
             * a estar adiantado...
             * */
 
-            if(aMotoristaIdeal.getState() == Motorista.STATE_OK){
-                aMotoristaIdeal.setState(Motorista.STATE_ADIANTADO);
-                aMotoristaUsuario.setState(Motorista.STATE_ATRASADO);
-            }
+        if(aMotoristaIdeal.getRelativeState() == Motorista.RELATIVE_STATE_OK){
+            aMotoristaIdeal.setRelativeState(Motorista.RELATIVE_STATE_ADIANTADO);
+            aMotoristaUsuario.setRelativeState(Motorista.RELATIVE_STATE_ATRASADO);
+        }
             /*
             * caso contrario, se o mot. ideal está atrasado e os trechos coincidem, é obvio que ele
             * agora está ok com o outro motorista
              */
-            else if(aMotoristaIdeal.getState() == Motorista.STATE_ATRASADO && aMotoristaIdeal.getNumTrecho() == aMotoristaUsuario.getNumTrecho()){
+        else if(aMotoristaIdeal.getRelativeState() == Motorista.RELATIVE_STATE_ATRASADO && aMotoristaIdeal.getNumTrecho() == aMotoristaUsuario.getNumTrecho()){
 
-                    aMotoristaIdeal.setState(Motorista.STATE_OK);
-                    aMotoristaUsuario.setState(Motorista.STATE_OK);
-                }
+            aMotoristaIdeal.setRelativeState(Motorista.RELATIVE_STATE_OK);
+            aMotoristaUsuario.setRelativeState(Motorista.RELATIVE_STATE_OK);
+        }
             /*
             *Caso contrario, o estado continua do jeito que está: ou o mot. ideal está adiantado ou está atrasado
             * Nada se faz
@@ -125,18 +166,18 @@ public class SliderCore {
             * a estar adiantado...
             * */
 
-        if(aMotoristaUsuario.getState() == Motorista.STATE_OK){
-            aMotoristaUsuario.setState(Motorista.STATE_ADIANTADO);
-            aMotoristaIdeal.setState(Motorista.STATE_ATRASADO);
+        if(aMotoristaUsuario.getRelativeState() == Motorista.RELATIVE_STATE_OK){
+            aMotoristaUsuario.setRelativeState(Motorista.RELATIVE_STATE_ADIANTADO);
+            aMotoristaIdeal.setRelativeState(Motorista.RELATIVE_STATE_ATRASADO);
         }
             /*
             * caso contrario, se o mot. usuario está atrasado e os trechos coincidem, é obvio que ele
             * agora está ok com o outro motorista
              */
-        else if(aMotoristaUsuario.getState() == Motorista.STATE_ATRASADO && aMotoristaUsuario.getNumTrecho() == aMotoristaIdeal.getNumTrecho()){
+        else if(aMotoristaUsuario.getRelativeState() == Motorista.RELATIVE_STATE_ATRASADO && aMotoristaUsuario.getNumTrecho() == aMotoristaIdeal.getNumTrecho()){
 
-            aMotoristaUsuario.setState(Motorista.STATE_OK);
-            aMotoristaIdeal.setState(Motorista.STATE_OK);
+            aMotoristaIdeal.setRelativeState(Motorista.RELATIVE_STATE_OK);
+            aMotoristaUsuario.setRelativeState(Motorista.RELATIVE_STATE_OK);
         }
             /*
             *Caso contrario, o estado continua do jeito que está: ou o mot. usuario está adiantado ou está atrasado
@@ -145,44 +186,67 @@ public class SliderCore {
 
     }
 
+
     private void updateMotoristaIdeal(float dT) {
         dTRemanescente = aMotoristaIdeal.getDTRemanescente();
 
-        while (dT >= dTRemanescente){
-            dT = dT - dTRemanescente;
-            mudaTrecho(aMotoristaIdeal);
-            updateStateMotIdeal();
-            dTRemanescente = aMotoristaIdeal.getDTRemanescente();
-        }
+        try {
+
+
+            while (dT >= dTRemanescente) {
+                dT = dT - dTRemanescente;
+                mudaTrecho(aMotoristaIdeal);
+                updateStateMotIdeal();
+                dTRemanescente = aMotoristaIdeal.getDTRemanescente();
+            }
+
 
 
         aMotoristaIdeal.incrementaDTacumuladoTrecho(dT);
 
         percentual = aMotoristaIdeal.getDTacumuladoTrecho()/aMotoristaIdeal.getDTtotalTrecho();
+        } catch (FimDeProvaException e) {
+            aMotoristaIdeal.setAbsoluteState(Motorista.ABSOLUTE_STATE_DONE);
+            percentual = 1;
+        }
         aMotoristaIdeal.setPercentualPercorrido(percentual);
     }
 
     private void updateMotoristaUsuario(float dS) {
         dSTrechoRestante = aMotoristaUsuario.getDSTrechoRestante();
 
-        while (dSTrechoRestante <= dS){
+        try{
+        while (dS>=  dSTrechoRestante ) {
             dS = dS - dSTrechoRestante;
             mudaTrecho(aMotoristaUsuario);
             updateStateMotUsuario();
-            dSTrechoRestante =aMotoristaUsuario.getDSTrechoRestante();
+            dSTrechoRestante = aMotoristaUsuario.getDSTrechoRestante();
         }
 
 
-        aMotoristaUsuario.atualizaDS(dS);
-    }
-
-    private void mudaTrecho(Motorista aMotorista) {
-        aMotorista.setTrecho(
-                aProva.getTrecho(
-                        aMotorista.getNumTrecho() + 1)
-        );
+        } catch (FimDeProvaException e) {
+            aMotoristaUsuario.setAbsoluteState(Motorista.ABSOLUTE_STATE_DONE);
+            dS = aMotoristaUsuario.getDSTrechoRestante();
+        }
+            aMotoristaUsuario.atualizaDS(dS);
 
     }
+
+    private void mudaTrecho(Motorista aMotorista) throws FimDeProvaException {
+
+            aMotorista.setTrecho(
+                    aProva.getTrecho(
+                            aMotorista.getNumTrecho() + 1)
+            );
+
+
+    }
+
+
+    public Prova getProva() {
+        return aProva;
+    }
+
 
 
 }

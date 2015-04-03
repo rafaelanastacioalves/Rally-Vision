@@ -41,4 +41,11 @@ public class MotoristaUsuario extends Motorista {
     }
 
 
+    public Trecho getTrecho() {
+        return trechoAtual;
+    }
+
+    public float getdSpercorrido() {
+        return deltaSTrechoPercorrido;
+    }
 }

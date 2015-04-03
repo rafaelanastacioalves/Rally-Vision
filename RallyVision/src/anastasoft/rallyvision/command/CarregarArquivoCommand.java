@@ -16,7 +16,7 @@ public class CarregarArquivoCommand extends Command {
 
     public CarregarArquivoCommand(Application aController, Uri aUri){
         super(aController);
-        this.aSliderChoreographer =((Controller) aController).getChoreographer();
+        this.aSliderChoreographer =((Controller) aController).getSliderChoreographer();
         this.aUri = aUri;
     }
 

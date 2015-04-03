@@ -22,7 +22,7 @@ public class ListaAfericoes extends Activity {
 	public static SwipeListView swipelistview;
 	Controller aController;
     private ArrayList<Afericao> itemData;
-    private ItemAdapter itAdapter;
+    private ListaAfericoes_ItemAdapter itAdapter;
 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +38,12 @@ public class ListaAfericoes extends Activity {
 		// Toast.makeText(this , String.valueOf(aController.getId() ),
 		// Toast.LENGTH_SHORT).show();
 
-        itemData = new ArrayList<Afericao>();
         itemData = (ArrayList<Afericao>) aController.getListaAfericoesUsuario();
         if(itemData.isEmpty()){
             Toast.makeText(this,getString(R.string.lista_afericao_vazia)+"! " + getString(R.string.realize_afericoes),Toast.LENGTH_SHORT).show();
             this.finish();
         }
-        itAdapter = new ItemAdapter(this, R.layout.custom_row_edita_lista_afericoes, itemData, swipelistview);
+        itAdapter = new ListaAfericoes_ItemAdapter(this, R.layout.custom_row_edita_lista_afericoes, itemData, swipelistview);
         swipelistview.setAdapter(itAdapter);
         itAdapter.notifyDataSetChanged();
 

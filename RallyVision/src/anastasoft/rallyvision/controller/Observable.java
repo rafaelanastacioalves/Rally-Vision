@@ -101,6 +101,7 @@ public class Observable {
             if (array_element != null) {
                 if (array_element.getClass() == MenuPrincipal.class) {
                     ((MenuPrincipal) array_element).update();
+                    Notify(motoristasStatus);
 
                 }
 
@@ -149,7 +150,7 @@ public class Observable {
         aCarStatus.setInstantVel(0);
 
         Relogio aRelogio = (Relogio)listValues.get(INDEX_RELOGIO);
-        aRelogio.reset();
+        aRelogio.resetBasico();
         listValues.set(INDEX_CAR_STATUS, aCarStatus);
         listValues.set(INDEX_RELOGIO,aRelogio);
             Notify();
@@ -192,7 +193,7 @@ public class Observable {
     }
 
     public CarStatus getCarStatus() {
-        return aCarStatus;
+        return (CarStatus)listValues.get(INDEX_CAR_STATUS);
     }
 
 

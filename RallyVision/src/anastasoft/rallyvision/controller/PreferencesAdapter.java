@@ -104,7 +104,7 @@ public class PreferencesAdapter {
 
     public void update() {
         if (aController.isTestOn())
-            Log.e(TAG, " +++ setState +++");
+            Log.e(TAG, " +++ setRelativeState +++");
         ArrayList<Object> tempArray =  aObservable.getValues();
         CarStatus carStatusTemp = (CarStatus)tempArray.get(INDEX_CARSTATUS);
         setRatio(carStatusTemp.getAfericao().getRatio());

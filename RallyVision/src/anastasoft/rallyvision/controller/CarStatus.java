@@ -9,6 +9,10 @@ public class CarStatus {
 
     private static float instantVel;
     private static float avrgVel;
+
+    /**
+     * em metros
+     */
     private static float deltaStot;
     private static Afericao afericao;
 
@@ -28,11 +32,15 @@ public class CarStatus {
         CarStatus.avrgVel = avrgVel;
     }
 
+    /**
+     * em metros
+     * @return
+     */
     public static float getDeltaStot() {
         return deltaStot;
     }
 
-    static void setDeltaStot(float deltaStot) {
+     public void setDeltaStot(float deltaStot) {
         CarStatus.deltaStot = deltaStot;
     }
 

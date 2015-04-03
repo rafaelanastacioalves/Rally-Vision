@@ -224,33 +224,38 @@ anastasoft.rallyvision.R$styleable -> anastasoft.rallyvision.b:
 anastasoft.rallyvision.Slider.Motorista -> anastasoft.rallyvision.b.a:
     anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho trechoAtual -> a
     float percentualPercorrido -> b
-    int STATE -> c
+    int RELATIVE_STATE -> c
+    int ABSOLUTE_STATE -> d
     int getNumTrecho() -> a
     java.lang.String getTipoTrecho() -> b
     float getPercentPercorrido() -> c
     void setPercentualPercorrido(float) -> a
     void setTrecho(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho) -> a
-    int getState() -> d
-    void setState(int) -> a
+    int getRelativeState() -> d
+    void setRelativeState(int) -> a
+    int getAbsoluteSate() -> e
+    void setAbsoluteState(int) -> b
 anastasoft.rallyvision.Slider.MotoristaIdeal -> anastasoft.rallyvision.b.b:
     float deltaTacumuladoTrecho -> c
     float deltaTTrechoTotal -> d
-    void zeraTrocandoTrecho() -> e
+    void zeraTrocandoTrecho() -> f
     void setTrecho(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho) -> a
-    float getDTRemanescente() -> f
+    float getDTRemanescente() -> g
     void incrementaDTacumuladoTrecho(float) -> b
-    float getDTacumuladoTrecho() -> g
-    float getDTtotalTrecho() -> h
+    float getDTacumuladoTrecho() -> h
+    float getDTtotalTrecho() -> i
 anastasoft.rallyvision.Slider.MotoristaUsuario -> anastasoft.rallyvision.b.c:
     float deltaSTrechoTotal -> c
     float deltaSTrechoPercorrido -> d
-    void zeraTrocandoTrecho() -> e
+    void zeraTrocandoTrecho() -> f
     void setTrecho(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho) -> a
-    float getDSTrechoRestante() -> f
+    float getDSTrechoRestante() -> g
     void atualizaDS(float) -> b
-anastasoft.rallyvision.Slider.Prova_Trecho.Prova -> anastasoft.rallyvision.b.a.a:
+anastasoft.rallyvision.Slider.Prova_Trecho.FimDeProvaException -> anastasoft.rallyvision.b.a.a:
+anastasoft.rallyvision.Slider.Prova_Trecho.Prova -> anastasoft.rallyvision.b.a.b:
     java.util.ArrayList listaDeTrechos -> a
     anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho getTrecho(int) -> a
+    java.util.ArrayList toList() -> a
 anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho -> anastasoft.rallyvision.b.a.a.a:
     int numero -> a
     float ki -> b
@@ -259,19 +264,22 @@ anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho -> anastasoft.rallyvisi
     float getDeltaStrecho() -> a
     float getdTTrecho() -> b
     int getNumTrecho() -> c
-    java.lang.String getTipo() -> d
+    float getKi() -> d
+    float getKf() -> e
+    java.lang.String getTipo() -> f
+    boolean equals(java.lang.Object) -> equals
 anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.TrechoD -> anastasoft.rallyvision.b.a.a.b:
     float dTTrecho -> e
     float getdTTrecho() -> b
-    java.lang.String getTipo() -> d
+    java.lang.String getTipo() -> f
 anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.TrechoN -> anastasoft.rallyvision.b.a.a.c:
     float dTTrecho -> e
     float getdTTrecho() -> b
-    java.lang.String getTipo() -> d
+    java.lang.String getTipo() -> f
 anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.TrechoV -> anastasoft.rallyvision.b.a.a.d:
     float vMedio -> e
     float getdTTrecho() -> b
-    java.lang.String getTipo() -> d
+    java.lang.String getTipo() -> f
 anastasoft.rallyvision.Slider.SliderCore -> anastasoft.rallyvision.b.d:
     anastasoft.rallyvision.Slider.MotoristaUsuario aMotoristaUsuario -> a
     anastasoft.rallyvision.Slider.MotoristaIdeal aMotoristaIdeal -> b
@@ -281,14 +289,17 @@ anastasoft.rallyvision.Slider.SliderCore -> anastasoft.rallyvision.b.d:
     float percentual -> f
     java.util.ArrayList listaMotorista -> g
     void setProva(anastasoft.rallyvision.Slider.Prova_Trecho.Prova) -> a
-    java.util.ArrayList getStatus() -> a
+    void zerarContagem() -> a
+    java.util.ArrayList getStatus() -> b
     void carregarProva(android.database.Cursor) -> a
     void update(float,float) -> a
-    void updateStateMotIdeal() -> b
-    void updateStateMotUsuario() -> c
+    float getdSUntil(anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho,float) -> a
+    void updateStateMotIdeal() -> d
+    void updateStateMotUsuario() -> e
     void updateMotoristaIdeal(float) -> a
     void updateMotoristaUsuario(float) -> b
     void mudaTrecho(anastasoft.rallyvision.Slider.Motorista) -> a
+    anastasoft.rallyvision.Slider.Prova_Trecho.Prova getProva() -> c
 anastasoft.rallyvision.activity.AVRGvelocimeter -> anastasoft.rallyvision.activity.a:
     android.widget.TextView TVdig1 -> a
     android.widget.TextView TVdig2 -> b
@@ -351,14 +362,15 @@ anastasoft.rallyvision.activity.MenuPrincipal -> anastasoft.rallyvision.activity
     anastasoft.rallyvision.controller.Observable aObervable -> a
     anastasoft.rallyvision.controller.Controller aController -> b
     anastasoft.rallyvision.command.Command cmd -> u
-    int NOTIFICATION_ID -> v
-    boolean isSliderActive -> w
-    boolean isAgendamentoInicioProvaSliderActive -> x
-    anastasoft.rallyvision.activity.SliderMotorista mSLDMotUsr -> y
-    anastasoft.rallyvision.activity.SliderMotorista mSLDMotIdeal -> z
-    int layoutResID -> A
-    android.view.Menu aOptionsMenuPrincipal -> B
-    android.content.res.Resources res -> C
+    long mBackPressed -> v
+    int NOTIFICATION_ID -> w
+    boolean isSliderActive -> x
+    boolean isAgendamentoInicioProvaSliderActive -> y
+    anastasoft.rallyvision.activity.SliderMotorista mSLDMotUsr -> z
+    anastasoft.rallyvision.activity.SliderMotorista mSLDMotIdeal -> A
+    int layoutResID -> B
+    android.view.Menu aOptionsMenuPrincipal -> C
+    android.content.res.Resources res -> D
     void onCreate(android.os.Bundle) -> onCreate
     void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
     void onStart() -> onStart
@@ -529,40 +541,59 @@ anastasoft.rallyvision.activity.odometer -> anastasoft.rallyvision.activity.o:
     android.widget.TextView TVdig3 -> c
     android.widget.TextView TVdig4 -> d
     android.widget.TextView TVdig5 -> e
-anastasoft.rallyvision.activity.swipelistview.ItemAdapter -> anastasoft.rallyvision.activity.swipelistview.a:
-    java.util.List data -> a
-    android.content.Context contextActivity -> b
-    int layoutResID -> c
-    anastasoft.rallyvision.controller.Controller aController -> d
-    anastasoft.rallyvision.controller.Data.model.Afericao itemdata -> f
-    com.fortysevendeg.swipelistview.SwipeListView aSwipeListView -> e
-    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-anastasoft.rallyvision.activity.swipelistview.ItemAdapter$1 -> anastasoft.rallyvision.activity.swipelistview.b:
-    int val$position -> a
-    anastasoft.rallyvision.activity.swipelistview.ItemAdapter this$0 -> b
-    void onClick(android.view.View) -> onClick
-anastasoft.rallyvision.activity.swipelistview.ItemAdapter$2 -> anastasoft.rallyvision.activity.swipelistview.c:
-    anastasoft.rallyvision.activity.swipelistview.ItemAdapter this$0 -> a
-    void onClick(android.view.View) -> onClick
-anastasoft.rallyvision.activity.swipelistview.ItemAdapter$3 -> anastasoft.rallyvision.activity.swipelistview.d:
-    anastasoft.rallyvision.activity.swipelistview.ItemAdapter this$0 -> a
-    void onClick(android.view.View) -> onClick
-anastasoft.rallyvision.activity.swipelistview.ItemAdapter$NewsHolder -> anastasoft.rallyvision.activity.swipelistview.e:
-    android.widget.EditText nomeAferi‹o -> a
-    android.widget.Button buttonOK -> b
-    android.widget.ImageButton buttonDelete -> c
-    android.widget.ImageButton buttonEdit -> d
-anastasoft.rallyvision.activity.swipelistview.ListaAfericoes -> anastasoft.rallyvision.activity.swipelistview.ListaAfericoes:
+anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider -> anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider:
     com.fortysevendeg.swipelistview.SwipeListView swipelistview -> a
     anastasoft.rallyvision.controller.Controller aController -> b
-    java.util.ArrayList itemData -> c
-    anastasoft.rallyvision.activity.swipelistview.ItemAdapter itAdapter -> d
+    java.util.ArrayList itemData -> d
+    anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider_ItemAdapter itAdapter -> e
+    int sliderOpeningTime -> f
+    android.os.Vibrator vb -> c
+    anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer aSliderChoreographer -> g
     void onCreate(android.os.Bundle) -> onCreate
     int convertDpToPixel(float) -> a
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
     void onStop() -> onStop
     void setSwipeListView() -> a
-anastasoft.rallyvision.activity.swipelistview.ListaAfericoes$1 -> anastasoft.rallyvision.activity.swipelistview.f:
+anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider$1 -> anastasoft.rallyvision.activity.swipelistview.a:
+    anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider this$0 -> a
+    void onOpened(int,boolean) -> a
+    void onClosed(int,boolean) -> b
+    void onListChanged() -> a
+    void onMove(int,float) -> a
+    void onStartOpen(int,int,boolean) -> a
+    void onStartClose(int,boolean) -> c
+    void onClickFrontView(int) -> a
+    void onClickBackView(int) -> b
+    void onDismiss(int[]) -> a
+anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider_ItemAdapter -> anastasoft.rallyvision.activity.swipelistview.b:
+    java.util.List data -> a
+    android.content.Context contextActivity -> b
+    int layoutResID -> c
+    anastasoft.rallyvision.controller.Controller aController -> d
+    anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho itemdata -> g
+    com.fortysevendeg.swipelistview.SwipeListView aSwipeListView -> e
+    android.os.Vibrator vb -> f
+    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider_ItemAdapter$1 -> anastasoft.rallyvision.activity.swipelistview.c:
+    anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider_ItemAdapter this$0 -> a
+    void onClick(android.view.View) -> onClick
+anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider_ItemAdapter$NewsHolder -> anastasoft.rallyvision.activity.swipelistview.d:
+    android.widget.TextView trecho -> a
+    android.widget.TextView Ki -> b
+    android.widget.TextView Kf -> c
+    android.widget.EditText metragem -> d
+    android.widget.Button buttonConfirma -> e
+anastasoft.rallyvision.activity.swipelistview.ListaAfericoes -> anastasoft.rallyvision.activity.swipelistview.ListaAfericoes:
+    com.fortysevendeg.swipelistview.SwipeListView swipelistview -> a
+    anastasoft.rallyvision.controller.Controller aController -> b
+    java.util.ArrayList itemData -> c
+    anastasoft.rallyvision.activity.swipelistview.ListaAfericoes_ItemAdapter itAdapter -> d
+    void onCreate(android.os.Bundle) -> onCreate
+    int convertDpToPixel(float) -> a
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    void onStop() -> onStop
+    void setSwipeListView() -> a
+anastasoft.rallyvision.activity.swipelistview.ListaAfericoes$1 -> anastasoft.rallyvision.activity.swipelistview.e:
     anastasoft.rallyvision.activity.swipelistview.ListaAfericoes this$0 -> a
     void onOpened(int,boolean) -> a
     void onClosed(int,boolean) -> b
@@ -573,6 +604,29 @@ anastasoft.rallyvision.activity.swipelistview.ListaAfericoes$1 -> anastasoft.ral
     void onClickFrontView(int) -> a
     void onClickBackView(int) -> b
     void onDismiss(int[]) -> a
+anastasoft.rallyvision.activity.swipelistview.ListaAfericoes_ItemAdapter -> anastasoft.rallyvision.activity.swipelistview.f:
+    java.util.List data -> a
+    android.content.Context contextActivity -> b
+    int layoutResID -> c
+    anastasoft.rallyvision.controller.Controller aController -> d
+    anastasoft.rallyvision.controller.Data.model.Afericao itemdata -> f
+    com.fortysevendeg.swipelistview.SwipeListView aSwipeListView -> e
+    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+anastasoft.rallyvision.activity.swipelistview.ListaAfericoes_ItemAdapter$1 -> anastasoft.rallyvision.activity.swipelistview.g:
+    int val$position -> a
+    anastasoft.rallyvision.activity.swipelistview.ListaAfericoes_ItemAdapter this$0 -> b
+    void onClick(android.view.View) -> onClick
+anastasoft.rallyvision.activity.swipelistview.ListaAfericoes_ItemAdapter$2 -> anastasoft.rallyvision.activity.swipelistview.h:
+    anastasoft.rallyvision.activity.swipelistview.ListaAfericoes_ItemAdapter this$0 -> a
+    void onClick(android.view.View) -> onClick
+anastasoft.rallyvision.activity.swipelistview.ListaAfericoes_ItemAdapter$3 -> anastasoft.rallyvision.activity.swipelistview.i:
+    anastasoft.rallyvision.activity.swipelistview.ListaAfericoes_ItemAdapter this$0 -> a
+    void onClick(android.view.View) -> onClick
+anastasoft.rallyvision.activity.swipelistview.ListaAfericoes_ItemAdapter$NewsHolder -> anastasoft.rallyvision.activity.swipelistview.j:
+    android.widget.EditText nomeAferi‹o -> a
+    android.widget.Button buttonOK -> b
+    android.widget.ImageButton buttonDelete -> c
+    android.widget.ImageButton buttonEdit -> d
 anastasoft.rallyvision.command.CarregarArquivoCommand -> anastasoft.rallyvision.c.a:
     android.net.Uri aUri -> b
     anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer aSliderChoreographer -> c
@@ -587,25 +641,27 @@ anastasoft.rallyvision.command.ConfigureRatioCommand -> anastasoft.rallyvision.c
 anastasoft.rallyvision.command.EditCommand -> anastasoft.rallyvision.c.d:
     int odomValue -> b
     void Execute() -> a
-anastasoft.rallyvision.command.SetRatioCommand -> anastasoft.rallyvision.c.e:
+anastasoft.rallyvision.command.EditaPosicaoSliderCommand -> anastasoft.rallyvision.c.e:
+    anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer aSliderChoreographer -> b
+anastasoft.rallyvision.command.SetRatioCommand -> anastasoft.rallyvision.c.f:
     java.lang.String aFericaoNome -> b
     float aRatio -> c
     void Execute() -> a
-anastasoft.rallyvision.command.SetarInicioProvaSliderCommand -> anastasoft.rallyvision.c.f:
+anastasoft.rallyvision.command.SetarInicioProvaSliderCommand -> anastasoft.rallyvision.c.g:
     int hora -> b
     int minuto -> c
     void Execute() -> a
-anastasoft.rallyvision.command.StopAllCommand -> anastasoft.rallyvision.c.g:
+anastasoft.rallyvision.command.StopAllCommand -> anastasoft.rallyvision.c.h:
     void Execute() -> a
-anastasoft.rallyvision.command.VerificaAluguelStatusCommand -> anastasoft.rallyvision.c.h:
+anastasoft.rallyvision.command.VerificaAluguelStatusCommand -> anastasoft.rallyvision.c.i:
     void Execute() -> a
-anastasoft.rallyvision.command.Zerar -> anastasoft.rallyvision.c.i:
+anastasoft.rallyvision.command.Zerar -> anastasoft.rallyvision.c.j:
     void Execute() -> a
-anastasoft.rallyvision.command.startCommand -> anastasoft.rallyvision.c.j:
+anastasoft.rallyvision.command.startCommand -> anastasoft.rallyvision.c.k:
     int aOdomValue -> b
     android.app.Activity currActivity -> c
     void Execute() -> a
-anastasoft.rallyvision.command.stopCommunicationCommand -> anastasoft.rallyvision.c.k:
+anastasoft.rallyvision.command.stopCommunicationCommand -> anastasoft.rallyvision.c.l:
     void Execute() -> a
 anastasoft.rallyvision.controller.AnalyticsAdpater -> anastasoft.rallyvision.controller.a:
     anastasoft.rallyvision.controller.Controller aController -> b
@@ -684,7 +740,7 @@ anastasoft.rallyvision.controller.Controller -> anastasoft.rallyvision.controlle
     void stopCommunication() -> l
     void destroyACountAndConverterSafely() -> w
     void configureRatio(int,java.lang.String) -> a
-    anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer getChoreographer() -> m
+    anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer getSliderChoreographer() -> m
     java.util.List getListaAfericoes() -> n
     anastasoft.rallyvision.controller.Data.model.Afericao getAfericao() -> o
     int getIndexDeAfericao(anastasoft.rallyvision.controller.Data.model.Afericao,java.util.List) -> a
@@ -924,6 +980,7 @@ anastasoft.rallyvision.controller.Observable -> anastasoft.rallyvision.controlle
     java.util.List aObservers -> b
     java.util.ArrayList listValues -> c
     anastasoft.rallyvision.controller.Controller aController -> d
+    java.util.ArrayList motoristasStatus -> e
     java.util.ArrayList getValues() -> a
     void setAfericao(anastasoft.rallyvision.controller.Data.model.Afericao) -> a
     void Attach(java.lang.Object) -> a
@@ -965,18 +1022,22 @@ anastasoft.rallyvision.controller.Relogio -> anastasoft.rallyvision.controller.i
     java.util.Calendar sliderTimeStampTemp -> j
     long deltaTSliderTemp -> k
     anastasoft.rallyvision.controller.Observable aObservable -> l
+    boolean sliderRodando -> m
     void beginBasicTimeCount() -> a
     long getDeltaT() -> b
-    long getDeltaTSlider() -> c
+    long getDeltaTslider() -> c
     long getDeltaTTotBasico() -> d
-    void reset() -> e
-    long getClockBasico() -> f
-    void setarAlarme(java.util.Calendar,anastasoft.rallyvision.Slider.SliderCore) -> a
+    boolean isSliderRunning() -> e
+    void resetBasico() -> f
+    long getClockBasico() -> g
+    void setarAlarmeSlider(java.util.Calendar,anastasoft.rallyvision.Slider.SliderCore) -> a
+    void reSetarSlider() -> h
     void comecarFuncionamentoComSliders(anastasoft.rallyvision.Slider.SliderCore) -> a
     void setaObservable(anastasoft.rallyvision.controller.Observable) -> a
     anastasoft.rallyvision.controller.Controller access$000(anastasoft.rallyvision.controller.Relogio) -> a
     void access$100(anastasoft.rallyvision.controller.Relogio,anastasoft.rallyvision.Slider.SliderCore) -> a
     anastasoft.rallyvision.controller.Observable access$200(anastasoft.rallyvision.controller.Relogio) -> b
+    boolean access$302(anastasoft.rallyvision.controller.Relogio,boolean) -> a
 anastasoft.rallyvision.controller.Relogio$1 -> anastasoft.rallyvision.controller.j:
     anastasoft.rallyvision.Slider.SliderCore val$aSliderCore -> a
     anastasoft.rallyvision.controller.Relogio this$0 -> b
@@ -1003,10 +1064,13 @@ anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer -> anas
     anastasoft.rallyvision.controller.Observable aObservable -> d
     anastasoft.rallyvision.Slider.SliderCore aSliderCore -> e
     anastasoft.rallyvision.controller.SliderCoreographer.FileParser aFileParser -> f
+    java.util.ArrayList getProva() -> a
     void setupAConuntAndConverter(anastasoft.rallyvision.controller.Controller$CounterAndConverter) -> a
     void carregarArquivoProva(android.net.Uri) -> a
     void setInicioProvaSlider(java.util.Calendar) -> a
-    void startProvaSlider() -> a
+    void startProvaSlider() -> b
+    anastasoft.rallyvision.Slider.SliderCore getSliderCore() -> c
+    anastasoft.rallyvision.controller.Relogio getaRelogio() -> d
 anastasoft.rallyvision.controller.VelocityEng -> anastasoft.rallyvision.controller.l:
     anastasoft.rallyvision.controller.CarStatus carStatusTemp -> b
     float deltaS -> c

@@ -89,7 +89,7 @@ public class BTManager {
 
             // Attempt to connect to the device
             connect(device);
-//            setState(STATE_CONNECTED);
+//            setRelativeState(STATE_CONNECTED);
 
         }
     }
@@ -108,10 +108,10 @@ public class BTManager {
      */
     private synchronized void setState(int state) {
         if (aController.isTestOn())
-            Log.d(TAG, "setState() " + mState + " -> " + state);
+            Log.d(TAG, "setRelativeState() " + mState + " -> " + state);
         mState = state;
 
-        // Give the new state to the Handler so the UI Activity can setState
+        // Give the new state to the Handler so the UI Activity can setRelativeState
         mHandler.obtainMessage(Controller.MESSAGE_STATE_CHANGE, state, -1)
                 .sendToTarget();
     }

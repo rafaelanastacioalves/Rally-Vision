@@ -139,6 +139,14 @@
     <string name="afericao_padrao_nao_pode_deletar">A aferição padrão não pode ser modificada!</string>
     <string name="lista_afericao_vazia">Sua lista de aferições está vazia</string>
     <string name="realize_afericoes">Realize ao menos uma aferição</string>
+    <string name="slider_editar">Editar Slider</string>
+    <string name="sp_swipe_deslocamento_trecho">Deslocamento:</string>
+    <string name="prova_nao_carregado">Prova Não Carregada!</string>
+    <string name="lista_edit_pos_slider_trecho">Trecho</string>
+    <string name="lista_edit_pos_slider_ki">Ki</string>
+    <string name="lista_edit_pos_slider_kf">kf</string>
+    <string name="slider_comece_primeiro">Comece a prova primeiro!</string>
+    <string name="sp_swipe_et_Digite_deslocamento">Insira aqui</string>
 
 
 </resources>

@@ -22,7 +22,7 @@ import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.controller.Controller;
 import anastasoft.rallyvision.controller.Data.model.Afericao;
 
-public class ItemAdapter extends ArrayAdapter<Afericao> {
+public class ListaAfericoes_ItemAdapter extends ArrayAdapter<Afericao> {
 
 	List<Afericao> data;
 	Context contextActivity;
@@ -31,8 +31,8 @@ public class ItemAdapter extends ArrayAdapter<Afericao> {
 	private Afericao itemdata;
     SwipeListView aSwipeListView;
 
-	public ItemAdapter(Context context, int layoutResourceId,
-                       List<Afericao> data, SwipeListView sListView) {
+	public ListaAfericoes_ItemAdapter(Context context, int layoutResourceId,
+                                      List<Afericao> data, SwipeListView sListView) {
 		super(context, layoutResourceId, data);
 
 		this.data = data;

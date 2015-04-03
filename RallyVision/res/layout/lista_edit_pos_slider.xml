@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:swipe="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+
+        style="@style/MyListFrontContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:text="@string/lista_edit_pos_slider_trecho"
+            style="@style/TextAppearance.AppCompat.Widget.Base.ActionMode.Title.Inverse"
+            android:id="@+id/sp_swipe_trecho"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:text="@string/lista_edit_pos_slider_ki"
+            style="@style/TextAppearance.AppCompat.Widget.Base.ActionMode.Title.Inverse"
+
+            android:id="@+id/sp_swipe_ki"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            style="@style/TextAppearance.AppCompat.Widget.Base.ActionMode.Title.Inverse"
+
+            android:text="@string/lista_edit_pos_slider_kf"
+            android:id="@+id/sp_swipe_kf"/>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+   <com.fortysevendeg.swipelistview.SwipeListView
+            android:id="@+id/example_swipe_lv_list"
+            android:listSelector="#00000000"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            swipe:swipeFrontView="@+id/front"
+            swipe:swipeBackView="@+id/back"
+            swipe:swipeDrawableChecked="@drawable/choice_selected"
+            swipe:swipeDrawableUnchecked="@drawable/choice_unselected"
+            swipe:swipeCloseAllItemsWhenMoveList="true"
+            swipe:swipeMode="both"
+            />
+
+</LinearLayout>

@@ -33,7 +33,7 @@ public class SetarInicioProvaSliderCommand extends Command {
             cal.set(Calendar.HOUR_OF_DAY,hora);
             cal.set(Calendar.MINUTE, minuto);
             cal.set(Calendar.SECOND, 00);
-            aController.getChoreographer().setInicioProvaSlider(cal);
+            aController.getSliderChoreographer().setInicioProvaSlider(cal);
     }
 
 }

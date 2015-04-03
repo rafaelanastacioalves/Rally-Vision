@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+        <RelativeLayout
+            android:id="@+id/back"
+            android:tag="back"
+            style="@style/MyListBackContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="right">
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sp_swipe_confirma"
+                android:src="@drawable/ic_action_edit_holo_light"
+                android:text="@string/OK"
+
+
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sp_swipe_deslocamento_trecho"
+                style="@style/TextAppearance.AppCompat.Widget.Base.ActionMode.Title.Inverse"
+
+                android:id="@+id/sp_swipe_tv_metragem"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/sp_swipe_confirma"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Widget.Base.ActionMode.Title.Inverse"
+
+                android:id="@+id/sp_swipe_et_valor_metragem"
+                android:inputType="number"
+                android:focusableInTouchMode="true"
+                android:focusable="true"
+                android:layout_gravity="right"
+                android:hint="@string/sp_swipe_et_Digite_deslocamento"
+                android:layout_toLeftOf="@+id/sp_swipe_confirma"
+                android:layout_below="@+id/sp_swipe_tv_metragem"
+                android:layout_centerVertical="true"/>
+
+
+        </RelativeLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/front"
+            android:tag="front"
+            style="@style/MyListFrontContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:id="@+id/sp_swipe_trecho"/>
+         <TextView
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:layout_gravity="center"
+             android:id="@+id/sp_swipe_ki"/>
+         <TextView
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:layout_gravity="center"
+             android:id="@+id/sp_swipe_kf"/>
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

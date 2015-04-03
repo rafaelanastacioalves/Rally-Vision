@@ -5,8 +5,8 @@ Também é bom dar um "make project" antes de apertar "run"-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 
     package="anastasoft.rallyvision"
-    android:versionCode="38"
-    android:versionName="1.99904">
+    android:versionCode="42"
+    android:versionName="1.99913">
 
 
     <uses-sdk
@@ -78,6 +78,13 @@ Também é bom dar um "make project" antes de apertar "run"-->
                 <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="PsiClass:MenuPrincipal" />
+        </activity>
+        <activity android:name="anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider"
+                  android:label="@string/slider_editar"
+                  android:parentActivityName="anastasoft.rallyvision.activity.MenuPrincipal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="PsiClass:MenuPrincipal" />
         </activity>
 
         <activity

@@ -1478,7 +1478,7 @@ public final class R {
         public static int Theme_Base_AppCompat_DialogWhenLarge = 0x7f0b0085;
         /**
          * As we have defined the theme in values-large (for compat) and values-large takes precedence
-         * over values-v14, we need to reset back to the Holo parent in values-large-v14. As the themes
+         * over values-v14, we need to resetBasico back to the Holo parent in values-large-v14. As the themes
          * in values-v14 & values-large-v14 are exactly the same, these "double base" themes can be
          * inherited from in both values-v14 and values-large-v14.
          */

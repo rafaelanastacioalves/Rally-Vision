@@ -380,7 +380,6 @@ anastasoft.rallyvision.R$drawable: int ic_provider
 anastasoft.rallyvision.R$drawable: int ic_stat_notify
 anastasoft.rallyvision.R$drawable: int powered_by_google_dark
 anastasoft.rallyvision.R$drawable: int powered_by_google_light
-anastasoft.rallyvision.R$drawable: int progressbar_roxo
 anastasoft.rallyvision.R$drawable: int progressbar_verde
 anastasoft.rallyvision.R$drawable: int progressbar_vermelho
 anastasoft.rallyvision.R$drawable: int wait
@@ -514,6 +513,12 @@ anastasoft.rallyvision.R$id: int showCustom
 anastasoft.rallyvision.R$id: int showHome
 anastasoft.rallyvision.R$id: int showTitle
 anastasoft.rallyvision.R$id: int slidersLayout
+anastasoft.rallyvision.R$id: int sp_swipe_confirma
+anastasoft.rallyvision.R$id: int sp_swipe_et_valor_metragem
+anastasoft.rallyvision.R$id: int sp_swipe_kf
+anastasoft.rallyvision.R$id: int sp_swipe_ki
+anastasoft.rallyvision.R$id: int sp_swipe_trecho
+anastasoft.rallyvision.R$id: int sp_swipe_tv_metragem
 anastasoft.rallyvision.R$id: int split_action_bar
 anastasoft.rallyvision.R$id: int status_text
 anastasoft.rallyvision.R$id: int strict_sandbox
@@ -576,10 +581,12 @@ anastasoft.rallyvision.R$layout: int connect_button_green_escuro
 anastasoft.rallyvision.R$layout: int connect_button_orange
 anastasoft.rallyvision.R$layout: int connect_button_red
 anastasoft.rallyvision.R$layout: int custom_row_edita_lista_afericoes
+anastasoft.rallyvision.R$layout: int custom_row_edita_pos_motorista
 anastasoft.rallyvision.R$layout: int device_list
 anastasoft.rallyvision.R$layout: int escolha_aluguel
 anastasoft.rallyvision.R$layout: int file
 anastasoft.rallyvision.R$layout: int lista
+anastasoft.rallyvision.R$layout: int lista_edit_pos_slider
 anastasoft.rallyvision.R$layout: int main
 anastasoft.rallyvision.R$layout: int support_simple_spinner_dropdown_item
 anastasoft.rallyvision.R$layout: int texto_lista_simples
@@ -677,6 +684,9 @@ anastasoft.rallyvision.R$string: int internal_storage
 anastasoft.rallyvision.R$string: int invalido
 anastasoft.rallyvision.R$string: int invalido_jah_existe
 anastasoft.rallyvision.R$string: int lista_afericao_vazia
+anastasoft.rallyvision.R$string: int lista_edit_pos_slider_kf
+anastasoft.rallyvision.R$string: int lista_edit_pos_slider_ki
+anastasoft.rallyvision.R$string: int lista_edit_pos_slider_trecho
 anastasoft.rallyvision.R$string: int message_connected_to
 anastasoft.rallyvision.R$string: int message_connection_failed
 anastasoft.rallyvision.R$string: int message_device_has_no_BT
@@ -700,6 +710,7 @@ anastasoft.rallyvision.R$string: int pref_comportamento_descanso_on
 anastasoft.rallyvision.R$string: int pref_default_ratio_name
 anastasoft.rallyvision.R$string: int pref_default_ratio_number
 anastasoft.rallyvision.R$string: int pref_title_ratio
+anastasoft.rallyvision.R$string: int prova_nao_carregado
 anastasoft.rallyvision.R$string: int quit_button
 anastasoft.rallyvision.R$string: int ratio_key
 anastasoft.rallyvision.R$string: int ratio_key_list
@@ -721,6 +732,10 @@ anastasoft.rallyvision.R$string: int slider_agendar_prova
 anastasoft.rallyvision.R$string: int slider_carregar_arquivo_invalido
 anastasoft.rallyvision.R$string: int slider_carregar_prova
 anastasoft.rallyvision.R$string: int slider_carregar_prova_titulo
+anastasoft.rallyvision.R$string: int slider_comece_primeiro
+anastasoft.rallyvision.R$string: int slider_editar
+anastasoft.rallyvision.R$string: int sp_swipe_deslocamento_trecho
+anastasoft.rallyvision.R$string: int sp_swipe_et_Digite_deslocamento
 anastasoft.rallyvision.R$string: int storage_removed
 anastasoft.rallyvision.R$string: int store_picture_message
 anastasoft.rallyvision.R$string: int store_picture_title
@@ -1103,6 +1118,8 @@ anastasoft.rallyvision.activity.customfontdemo.FontTextView
 anastasoft.rallyvision.activity.customfontdemo.FontTextView: FontTextView(android.content.Context)
 anastasoft.rallyvision.activity.customfontdemo.FontTextView: FontTextView(android.content.Context,android.util.AttributeSet)
 anastasoft.rallyvision.activity.customfontdemo.FontTextView: FontTextView(android.content.Context,android.util.AttributeSet,int)
+anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider
+anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider: EditaPosicaoSlider()
 anastasoft.rallyvision.activity.swipelistview.ListaAfericoes
 anastasoft.rallyvision.activity.swipelistview.ListaAfericoes: ListaAfericoes()
 anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName: anastasoft.rallyvision.controller.AnalyticsAdpater$TrackerName[] values()

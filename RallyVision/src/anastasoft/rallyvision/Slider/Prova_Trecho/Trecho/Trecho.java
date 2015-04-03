@@ -26,5 +26,33 @@ public abstract class Trecho {
         return numero;
     }
 
+    /**
+     * Fornece a quilometragem inicial do referido trecho, em metros
+     * @return
+     */
+    public float getKi(){
+        return ki;
+    }
+
+    /**
+     * Fornece a quilometragem final do referido trecho, em metros
+     * @return
+     */
+    public float getKf(){
+        return kf;
+    }
+
     public abstract String getTipo();
+
+    @Override
+    public boolean equals(Object aTrecho){
+        if((this.getClass() == aTrecho.getClass()) ){
+            if(this.getNumTrecho() == ((Trecho)aTrecho).getNumTrecho()){
+                return true;
+            }
+        }
+
+        return false;
+
+    }
 }

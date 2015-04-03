@@ -272,7 +272,7 @@ public class TypefaceManager
                                     // Don't override fonts (as defined by the
                                     if (!mFonts.containsKey(name))
                                         mFonts.put(name, font);
-                            // And reset the font for the next family
+                            // And resetBasico the font for the next family
                             font = null;
                         }
                         // Done reading a name for this family.

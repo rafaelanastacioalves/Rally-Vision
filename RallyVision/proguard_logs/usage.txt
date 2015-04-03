@@ -24,12 +24,14 @@ anastasoft.rallyvision.R$raw
 anastasoft.rallyvision.R$string
 anastasoft.rallyvision.R$style
 anastasoft.rallyvision.R$styleable:
-    2560:2560:public R$styleable()
+    2575:2575:public R$styleable()
 anastasoft.rallyvision.R$xml
 anastasoft.rallyvision.Slider.Motorista:
-    public static final int STATE_ADIANTADO
-    public static final int STATE_OK
-    public static final int STATE_ATRASADO
+    public static final int RELATIVE_STATE_ADIANTADO
+    public static final int RELATIVE_STATE_OK
+    public static final int RELATIVE_STATE_ATRASADO
+    public static final int ABSOLUTE_STATE_DONE
+    public static final int ABSOLUTE_STATE_RUNNING
     protected abstract void zeraTrocandoTrecho()
 anastasoft.rallyvision.Slider.Prova_Trecho.Prova:
     private static final java.lang.String KEY_TIPO
@@ -45,10 +47,10 @@ anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.TrechoV:
 anastasoft.rallyvision.Slider.SliderCore:
     private float dSFinal
     private float dTfinal
-    35:35:public anastasoft.rallyvision.Slider.MotoristaIdeal getStatusMotoristaIdeal()
-    39:39:public anastasoft.rallyvision.Slider.MotoristaUsuario getStatusMotoristaUsuario()
-    45:45:public void setPercentPercorrido()
-    49:49:public void reset()
+    private java.util.ArrayList prova
+    42:42:public anastasoft.rallyvision.Slider.MotoristaIdeal getStatusMotoristaIdeal()
+    46:46:public anastasoft.rallyvision.Slider.MotoristaUsuario getStatusMotoristaUsuario()
+    52:52:public void setPercentPercorrido()
 anastasoft.rallyvision.activity.ConnectMediator:
     private static final int APLICATION_DISCONECTED
     private static final int APLICATION_CONNECTING
@@ -67,16 +69,17 @@ anastasoft.rallyvision.activity.MenuPrincipal:
     private android.widget.ToggleButton mConnect
     private android.widget.TextView mStatusText
     private android.widget.Button mCheckLicenseButton
+    private static final int TIME_INTERVAL
     private static final int APLICATION_DISCONECTED
     private static final int APLICATION_CONNECTING
     private static final int APLICATION_CONNECTED
     private static final int REQUEST_CHOOSER
-    557:559:public android.widget.Button getConnectButton()
-    580:588:public void makeConnectBOrange()
-    694:696:public void askKeepRatio()
-    699:711:private void hideActionBar()
-    723:730:public void displayDialog(boolean)
-    60:60:static synthetic android.widget.Button access$000(anastasoft.rallyvision.activity.MenuPrincipal)
+    570:572:public android.widget.Button getConnectButton()
+    593:601:public void makeConnectBOrange()
+    707:709:public void askKeepRatio()
+    712:724:private void hideActionBar()
+    736:743:public void displayDialog(boolean)
+    61:61:static synthetic android.widget.Button access$000(anastasoft.rallyvision.activity.MenuPrincipal)
 anastasoft.rallyvision.activity.MenuPrincipal$6
 anastasoft.rallyvision.activity.SettingsActivity:
     private static final boolean ALWAYS_SIMPLE_PREFS
@@ -298,12 +301,11 @@ anastasoft.rallyvision.controller.Observable:
     private static final java.lang.String TAG
     private static final int INDEX_CAR_STATUS
     private static final int INDEX_RELOGIO
-    private java.util.ArrayList motoristasStatus
     63:71:public void setValues(java.util.List)
-    173:175:public void setValues(java.util.ArrayList)
+    174:176:public void setValues(java.util.ArrayList)
 anastasoft.rallyvision.controller.Relogio:
     private float dTTotalSlider
-    82:82:public boolean isReady()
+    89:89:public boolean isReady()
 anastasoft.rallyvision.controller.SliderCoreographer.FileParser:
     private static final java.lang.String KEY_TIPO
     private static final java.lang.String KEY_NUM
@@ -313,8 +315,9 @@ anastasoft.rallyvision.controller.SliderCoreographer.FileParser:
     private static final java.lang.String KEY_TI
 anastasoft.rallyvision.controller.SliderCoreographer.SliderChoreographer:
     private java.util.Calendar inicioProvaSlider
-    59:61:public void setaSliderCore()
-    90:90:public void desactivate()
+    private anastasoft.rallyvision.Slider.SliderCore sliderCore
+    72:74:public void setaSliderCore()
+    103:103:public void desactivate()
 anastasoft.rallyvision.controller.TimeAdapter
 anastasoft.rallyvision.controller.VelocityEng:
     private static final int CAR_STATUS

@@ -42,6 +42,7 @@ import anastasoft.rallyvision.activity.dialog.ConfigureDialog;
 import anastasoft.rallyvision.activity.dialog.EditDialog;
 import anastasoft.rallyvision.activity.dialog.KeepRatioDialog;
 import anastasoft.rallyvision.activity.dialog.TimePickerDialogFragment;
+import anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider;
 import anastasoft.rallyvision.activity.swipelistview.ListaAfericoes;
 import anastasoft.rallyvision.command.CarregarArquivoCommand;
 import anastasoft.rallyvision.command.Command;
@@ -84,14 +85,19 @@ public class MenuPrincipal extends ActionBarActivity {
     private TextView mStatusText;
     private Button mCheckLicenseButton;
 
+    //para quando apertar o BACK duas vezes
+
+    private static final int TIME_INTERVAL = 2000; // # milliseconds, desired time passed between two back presses.
+    private long mBackPressed;
+
 
     // Aplication State
     private static final int APLICATION_DISCONECTED = 0;
     private static final int APLICATION_CONNECTING = 1;
-    private static final int APLICATION_CONNECTED =2;
+    private static final int APLICATION_CONNECTED = 2;
 
     // Notification
-    private static       int NOTIFICATION_ID = 10;
+    private static int NOTIFICATION_ID = 10;
 
 
     //FileChooserRequest
@@ -100,7 +106,7 @@ public class MenuPrincipal extends ActionBarActivity {
 
     //Menu Reference
 
-    private boolean isSliderActive ;
+    private boolean isSliderActive;
     private boolean isAgendamentoInicioProvaSliderActive;
 
     private SliderMotorista mSLDMotUsr;
@@ -116,10 +122,11 @@ public class MenuPrincipal extends ActionBarActivity {
     private Resources res;
 
 
-    /***
+    /**
      * Chamado quando:
      * - O apliativo inicia;
      * - Quando a tela muda de orientação;
+     *
      * @param savedInstanceState
      */
     @Override
@@ -139,12 +146,6 @@ public class MenuPrincipal extends ActionBarActivity {
         aConnectMediator.update();
 
 
-
-
-
-
-
-
     }
 
     @Override
@@ -161,8 +162,7 @@ public class MenuPrincipal extends ActionBarActivity {
     }
 
 
-
-    /***
+    /**
      * Chamado quando:
      * - Retomamos o aplicativo;
      * - Voltamos das opções;
@@ -171,7 +171,7 @@ public class MenuPrincipal extends ActionBarActivity {
     protected void onStart() {
         super.onStart();
         cancelNotification();
-        if (aOptionsMenuPrincipal != null){
+        if (aOptionsMenuPrincipal != null) {
             onPrepareOptionsMenu(aOptionsMenuPrincipal);
 
         }
@@ -188,20 +188,19 @@ public class MenuPrincipal extends ActionBarActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-            MenuItem aMenuItem = menu.findItem(R.id.action_slider_carregar_trecho);
-            if(aMenuItem != null){
-                aMenuItem.setVisible(isSliderActive);
+        MenuItem aMenuItem = menu.findItem(R.id.action_slider_carregar_trecho);
+        if (aMenuItem != null) {
+            aMenuItem.setVisible(isSliderActive);
 
-            }
+        }
 
-            aMenuItem = menu.findItem(R.id.action_slider_agendar_prova);
-            if(aMenuItem != null){
+        aMenuItem = menu.findItem(R.id.action_slider_agendar_prova);
+        if (aMenuItem != null) {
 //                    aMenuItem.setVisible(true);
-                aMenuItem.setVisible(isAgendamentoInicioProvaSliderActive);
+            aMenuItem.setVisible(isAgendamentoInicioProvaSliderActive);
 
-            }
-            return super.onPrepareOptionsMenu(menu);
-
+        }
+        return super.onPrepareOptionsMenu(menu);
 
 
     }
@@ -214,9 +213,6 @@ public class MenuPrincipal extends ActionBarActivity {
         res = getResources();
         cmd = new VerificaAluguelStatusCommand(aController);
         cmd.Execute();
-
-
-
 
 
     }
@@ -236,13 +232,10 @@ public class MenuPrincipal extends ActionBarActivity {
 
                     final Uri uri = data.getData();
 
-                    new CarregarArquivoCommand(aController,uri).Execute();
+                    new CarregarArquivoCommand(aController, uri).Execute();
                 }
                 break;
         }
-
-
-
 
 
         aController.handleActivityResult(requestCode, resultCode, data);
@@ -265,7 +258,7 @@ public class MenuPrincipal extends ActionBarActivity {
             return true;
         }
 
-        if (id == R.id.action_slider_carregar_trecho){
+        if (id == R.id.action_slider_carregar_trecho) {
             // Use the GET_CONTENT intent from the utility class
             Intent target = FileUtils.createGetContentIntent();
             // Create the chooser Intent
@@ -279,13 +272,13 @@ public class MenuPrincipal extends ActionBarActivity {
             return true;
         }
 
-        if(id == R.id.action_slider_agendar_prova){
+        if (id == R.id.action_slider_agendar_prova) {
             TimePickerDialogFragment newFragment = new TimePickerDialogFragment();
-            newFragment.show(getSupportFragmentManager(),"timePicker");
+            newFragment.show(getSupportFragmentManager(), "timePicker");
             return true;
         }
 
-        if(id == R.id.action_swipe_gerenciar_afericoes){
+        if (id == R.id.action_swipe_gerenciar_afericoes) {
             Intent i = new Intent(this, ListaAfericoes.class);
             startActivity(i);
         }
@@ -294,7 +287,7 @@ public class MenuPrincipal extends ActionBarActivity {
 
     }
 
-    /***
+    /**
      * Chamado quando:
      * - muda a orientação da tela;
      * - quando aperta ESC;
@@ -303,17 +296,17 @@ public class MenuPrincipal extends ActionBarActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        if(aController.shouldCreateNotification()){
+        if (aController.shouldCreateNotification()) {
             createNotification();
 
         }
     }
 
-    /***
+    /**
      * Chamado quando:
      * - Mudamos a orientação da tela;
      * - Fechamos o aplicativo;
-     *TODO Se houver outro momento em que esta funcao eh chamada, anotar!
+     * TODO Se houver outro momento em que esta funcao eh chamada, anotar!
      */
     @Override
     public void onDestroy() {
@@ -329,14 +322,27 @@ public class MenuPrincipal extends ActionBarActivity {
     @Override
     public void onBackPressed() {
 
-        if(aController.shouldCreateNotification()){
-            createNotification();
 
+
+        if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis()) {
+
+            if (aController.shouldCreateNotification()) {
+                createNotification();
+
+            }
+            moveTaskToBack(true);
+
+
+            return;
+        } else {
+            Toast.makeText(getBaseContext(), "Tap back button in order to exit", Toast.LENGTH_SHORT).show();
         }
 
-        moveTaskToBack(true);
+        mBackPressed = System.currentTimeMillis();
 
     }
+
+
 
     private void createNotification() {
 
@@ -538,8 +544,15 @@ public class MenuPrincipal extends ActionBarActivity {
     }
 
     public void editar(View v) {
-        EditDialog dFrag = new EditDialog();
-        dFrag.show(getSupportFragmentManager(), "change");
+        if(isSliderActive){
+            Intent i = new Intent(this, EditaPosicaoSlider.class);
+            startActivity(i);
+
+        }else{
+            EditDialog dFrag = new EditDialog();
+            dFrag.show(getSupportFragmentManager(), "change");
+        }
+
     }
 
     public int getOdometerValue() {
@@ -601,7 +614,7 @@ public class MenuPrincipal extends ActionBarActivity {
                 return true;
             }
         });
-
+       
 
     }
 
@@ -740,7 +753,7 @@ public class MenuPrincipal extends ActionBarActivity {
 
 
 
-    public void update(ArrayList<Motorista> motoristasStatus) {
+    public synchronized void update(ArrayList<Motorista> motoristasStatus) {
 
         try{
 
@@ -757,31 +770,43 @@ public class MenuPrincipal extends ActionBarActivity {
 
             // decidindo a cor referente ao estado do motorista usuario
         switch (((MotoristaUsuario)motoristasStatus.get(MOTORISTA_USUARIO)).
-                getState()){
-            case Motorista.STATE_OK:
+                getRelativeState()){
+            case Motorista.RELATIVE_STATE_OK:
                 mSLDMotUsr.PBSliderPercent.setProgressDrawable(res.getDrawable(R.drawable.progressbar_verde));
+                mSLDMotIdeal.PBSliderPercent.setProgressDrawable(res.getDrawable(R.drawable.progressbar_verde));
                 break;
-            case Motorista.STATE_ATRASADO:
-                mSLDMotUsr.PBSliderPercent.setProgressDrawable(res.getDrawable(R.drawable.progressbar_vermelho));
+            case Motorista.RELATIVE_STATE_ADIANTADO:
+                mSLDMotUsr.PBSliderPercent.setProgressDrawable(res.getDrawable(R.drawable.progressbar_verde));
+                mSLDMotIdeal.PBSliderPercent.setProgressDrawable(res.getDrawable(R.drawable.progressbar_vermelho));
                 break;
-            case Motorista.STATE_ADIANTADO:
+            case Motorista.RELATIVE_STATE_ATRASADO:
                 mSLDMotUsr.PBSliderPercent.setProgressDrawable(res.getDrawable(R.drawable.progressbar_vermelho));
+                mSLDMotIdeal.PBSliderPercent.setProgressDrawable(res.getDrawable(R.drawable.progressbar_verde));
                 break;
 
         }
 
         progress =  (int)  (((float)(((MotoristaUsuario)motoristasStatus.get(MOTORISTA_USUARIO)).
                 getPercentPercorrido()))*100.0);
-        mSLDMotUsr.PBSliderPercent.setProgress(progress);
+
+            mSLDMotUsr.PBSliderPercent.setProgress(0); // este passo por causa de um bug em versões mais antigas de Android
+            mSLDMotUsr.PBSliderPercent.setProgress(progress);
 
 
         progress = (int)  (((float)(((MotoristaIdeal)motoristasStatus.get(MOTORISTA_IDEAL)).
                 getPercentPercorrido()))*100.0);
+
+
+             mSLDMotIdeal.PBSliderPercent.setProgress(0); // este passo por causa de um bug em versões mais antigas de Android
+
             mSLDMotIdeal.PBSliderPercent.setProgress(progress);
         }catch (Exception erro){
-            if (aController.isTestOn()) {
+            Toast.makeText(getApplicationContext(), "Erro em update: " +erro.toString(), Toast.LENGTH_SHORT).show();
+
+            if (aController.isTestOn() && erro.getMessage() !=null) {
                 Log.e(TAG, erro.getMessage());
             }
+
         }
 
     }

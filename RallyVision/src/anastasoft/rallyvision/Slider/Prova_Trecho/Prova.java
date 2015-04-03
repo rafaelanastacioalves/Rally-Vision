@@ -32,8 +32,24 @@ public class Prova {
      *@param numTrecho >= 1
      */
 
-    public Trecho getTrecho(int numTrecho) throws IndexOutOfBoundsException {
-        return listaDeTrechos.get(numTrecho -1);
+    public Trecho getTrecho(int numTrecho) throws FimDeProvaException {
+
+        try{
+
+
+            return listaDeTrechos.get(numTrecho -1);
+        }catch (RuntimeException e){
+            if(numTrecho - 1> listaDeTrechos.size() -1 ){
+                throw new FimDeProvaException();
+            }
+            return listaDeTrechos.get(listaDeTrechos.size() -1);
+
+        }
+
+
+    }
+    public ArrayList<Trecho> toList(){
+        return listaDeTrechos;
     }
 
     public Prova(Cursor c){

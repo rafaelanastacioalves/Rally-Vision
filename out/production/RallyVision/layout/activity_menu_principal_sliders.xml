@@ -192,7 +192,7 @@
                 android:layout_height="match_parent"
                 android:id="@+id/progressBarMotoristaIdeal"
                 android:progressDrawable="@drawable/progressbar_verde"
-                android:indeterminate="false"/>
+                />
 
         </LinearLayout>
         <LinearLayout

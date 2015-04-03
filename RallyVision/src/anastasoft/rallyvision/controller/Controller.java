@@ -52,9 +52,9 @@ public class Controller extends Application {
 
     // Configuration swith switch
 
-    private boolean testON = false;
+    private boolean testON = true;
 
-    private boolean uberON = true;
+    private boolean uberON = false;
 
     private boolean licenseCheckON = false;
 
@@ -417,7 +417,7 @@ public class Controller extends Application {
             }
 
         }
-//        mConnMediator.setState(this);
+//        mConnMediator.setRelativeState(this);
 
         // activating Slider
 
@@ -736,7 +736,7 @@ public class Controller extends Application {
 
     }
 
-    public SliderChoreographer getChoreographer() {
+    public SliderChoreographer getSliderChoreographer() {
         return aSliderChoreographer;
     }
 

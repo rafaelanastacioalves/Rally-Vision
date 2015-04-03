@@ -39,6 +39,7 @@ public class Relogio  {
     private Calendar sliderTimeStampTemp;
     private long deltaTSliderTemp;
     private Observable aObservable;
+    private boolean sliderRodando;
 
 
     public Relogio(long clockBasico, Controller aController) {
@@ -46,6 +47,7 @@ public class Relogio  {
         this.aController = aController;
         tInicialBasico = new Date();
         sliderTimeStampTemp = Calendar.getInstance();
+        sliderRodando = false;
     }
 
 
@@ -63,8 +65,13 @@ public class Relogio  {
     public long getDeltaT() {
         return this.clockBasico;
     }
-    
-    public long getDeltaTSlider(){
+
+    /**
+     * Usado internamente para ficar dando incrementos de dT corrigidos desde o momento referente
+     * ao horário de início da prova
+     * @return long referente ao incremento de dT a cada clock
+     */
+    public long getDeltaTslider(){
 
         sliderTimeStampTemp.setTimeInMillis(System.currentTimeMillis());
         deltaTSliderTemp = sliderTimeStampTemp.getTimeInMillis() - sliderTimeStamp.getTimeInMillis();
@@ -82,7 +89,11 @@ public class Relogio  {
         return (getDeltaT() >= clockBasico);
     }
 
-    public void reset() {
+    public boolean isSliderRunning(){
+        return sliderRodando;
+    }
+
+    public void resetBasico() {
         beginBasicTimeCount();
     }
 
@@ -90,9 +101,9 @@ public class Relogio  {
         return clockBasico;
     }
 
-    public void setarAlarme(Calendar horarioInicioSlider, final SliderCore aSliderCore){
-        this.horarioInicioSlider = horarioInicioSlider;
-        this.sliderTimeStamp = horarioInicioSlider;
+    public void setarAlarmeSlider(Calendar horarioInicioSlider, final SliderCore aSliderCore){
+        this.horarioInicioSlider = (Calendar)horarioInicioSlider.clone();
+        this.sliderTimeStamp = (Calendar) horarioInicioSlider.clone();
         this.aSliderCore = aSliderCore;
 
             // primeiro verificamos se essa hora já começou
@@ -105,7 +116,7 @@ public class Relogio  {
             br = new BroadcastReceiver() {
                 @Override
                 public void onReceive(Context c, Intent i) {
-                    aController.getChoreographer().startProvaSlider();
+                    aController.getSliderChoreographer().startProvaSlider();
                     if (aController.isTestOn()) {
                         Toast.makeText(aController.getApplicationContext(), "Relogio funcionando", Toast.LENGTH_SHORT).show();
                     }
@@ -131,20 +142,34 @@ public class Relogio  {
 
     }
 
+    /**
+     * Usado para quando editamos a posição no slider
+     */
+    public void reSetarSlider(){
+        aCountDownTimerSlider.cancel();
+        Calendar temp = horarioInicioSlider;
+        sliderTimeStampTemp = Calendar.getInstance();
+        setarAlarmeSlider(temp, aSliderCore);
+    }
+
     private void comecarFuncionamentoComSliders(final SliderCore aSliderCore) {
         aCountDownTimerSlider =  new CountDownTimer(2*24*3600*1000, clockBasico) {
 
             public void onTick(long millisUntilFinished) {
-                aSliderCore.update(getDeltaTSlider(),0);
+                aSliderCore.update(getDeltaTslider(),0);
                 aObservable.Notify(aSliderCore.getStatus());
 
             }
 
             public void onFinish() {
                 aController.stopCommunication();
+                sliderRodando = false;
             }
         }.start();
+        this.sliderRodando = true;
+
     }
+
 
 
     public void setaObservable(Observable aObservable) {

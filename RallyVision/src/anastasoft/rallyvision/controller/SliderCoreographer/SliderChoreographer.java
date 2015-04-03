@@ -5,13 +5,18 @@ import android.widget.Toast;
 
 import com.ipaulpro.afilechooser.utils.FileUtils;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import anastasoft.rallyvision.R;
+import anastasoft.rallyvision.Slider.Prova_Trecho.Prova;
+import anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho;
 import anastasoft.rallyvision.Slider.SliderCore;
 import anastasoft.rallyvision.activity.MenuPrincipal;
+import anastasoft.rallyvision.controller.CarStatus;
 import anastasoft.rallyvision.controller.Controller;
 import anastasoft.rallyvision.controller.Observable;
+import anastasoft.rallyvision.controller.Relogio;
 
 /**
  * Created by rafaelanastacioalves on 22/01/15.
@@ -25,6 +30,7 @@ public class SliderChoreographer {
     private SliderCore aSliderCore;
     private FileParser aFileParser;
     private Calendar inicioProvaSlider;
+    private SliderCore sliderCore;
 
     public  SliderChoreographer(Controller aController, MenuPrincipal aMenuPrincipal, Controller.CounterAndConverter aCounterandConverter, Observable aObservable){
 
@@ -45,12 +51,20 @@ public class SliderChoreographer {
 
         this.aObservable.Attach(this);
 
-
-
-
-
     }
 
+    /**
+     *
+     * @return um ArrayList se a prova tiver sido carregada. null se a prova não tiver sido carregada
+     */
+    public ArrayList<Trecho> getProva(){
+        Prova aProva = aSliderCore.getProva();
+        if(aProva !=null){
+            return aProva.toList();
+        }
+        else return null;
+
+    }
     public void setupAConuntAndConverter(Controller.CounterAndConverter aCounterandConverter) {
         this.aCounterandConverter = aCounterandConverter;
     }
@@ -90,7 +104,7 @@ public class SliderChoreographer {
     }
 
     public void setInicioProvaSlider(Calendar inicioProvaSlider) {
-        aObservable.getRelogio().setarAlarme(inicioProvaSlider, aSliderCore);
+        aObservable.getRelogio().setarAlarmeSlider(inicioProvaSlider, aSliderCore);
 
     }
 
@@ -103,4 +117,15 @@ public class SliderChoreographer {
 
     }
 
+    public SliderCore getSliderCore() {
+        return aSliderCore;
+    }
+
+    public Relogio getaRelogio() {
+        return aObservable.getRelogio();
+    }
+
+    public CarStatus getCarStatus() {
+        return aObservable.getCarStatus();
+    }
 }
