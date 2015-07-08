@@ -156,6 +156,7 @@
     <string name="dialog_set_slider_certeza">Certeza?</string>
     <string name="dialog_set_slider_necessario_reiniciar">Será necessário reiniciar o aplicativo</string>
     <string name="reiniciar">Reiniciar</string>
+    <string name="action_set_clock">Calibrar Hora</string>
 
 
 </resources>

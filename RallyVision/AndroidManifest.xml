@@ -21,6 +21,8 @@ Também é bom dar um "make project" antes de apertar "run"-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.SET_TIME"
+                     android:protectionLevel="signature|system"/>
 
 
 
@@ -29,6 +31,7 @@ Também é bom dar um "make project" antes de apertar "run"-->
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    
     <!-- Ubertesters library user-permissions -->
 
 <!--Mudar o nome do String do aplicativo se for assinatura! @see label-->

@@ -2,6 +2,7 @@ package anastasoft.rallyvision.activity;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
+import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -33,7 +34,9 @@ import android.widget.ToggleButton;
 import com.ipaulpro.afilechooser.utils.FileUtils;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
+import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.Slider.Motorista;
 import anastasoft.rallyvision.Slider.MotoristaIdeal;
 import anastasoft.rallyvision.Slider.MotoristaUsuario;
@@ -55,7 +58,6 @@ import anastasoft.rallyvision.controller.CarStatus;
 import anastasoft.rallyvision.controller.Controller;
 import anastasoft.rallyvision.controller.Data.DBHelper;
 import anastasoft.rallyvision.controller.Observable;
-import anastasoft.rallyvision.R;
 
 @SuppressLint("NewApi")
 public class MenuPrincipal extends ActionBarActivity {
@@ -281,6 +283,13 @@ public class MenuPrincipal extends ActionBarActivity {
         if (id == R.id.action_swipe_gerenciar_afericoes) {
             Intent i = new Intent(this, ListaAfericoes.class);
             startActivity(i);
+        }
+
+        if (id == R.id.action_set_clock){
+            Calendar c = Calendar.getInstance();
+            c.set(2010, 1, 1, 12, 00, 00);
+            AlarmManager am = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
+            am.setTime(c.getTimeInMillis());
         }
 
         return super.onOptionsItemSelected(item);
