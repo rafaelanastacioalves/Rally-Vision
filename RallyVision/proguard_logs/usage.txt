@@ -24,7 +24,7 @@ anastasoft.rallyvision.R$raw
 anastasoft.rallyvision.R$string
 anastasoft.rallyvision.R$style
 anastasoft.rallyvision.R$styleable:
-    2587:2587:public R$styleable()
+    2591:2591:public R$styleable()
 anastasoft.rallyvision.R$xml
 anastasoft.rallyvision.Slider.Motorista:
     public static final int RELATIVE_STATE_ADIANTADO
@@ -77,11 +77,11 @@ anastasoft.rallyvision.activity.MenuPrincipal:
     private static final int APLICATION_CONNECTING
     private static final int APLICATION_CONNECTED
     private static final int REQUEST_CHOOSER
-    570:572:public android.widget.Button getConnectButton()
-    593:601:public void makeConnectBOrange()
-    707:709:public void askKeepRatio()
-    712:724:private void hideActionBar()
-    736:743:public void displayDialog(boolean)
+    584:586:public android.widget.Button getConnectButton()
+    607:615:public void makeConnectBOrange()
+    721:723:public void askKeepRatio()
+    726:738:private void hideActionBar()
+    750:757:public void displayDialog(boolean)
     61:61:static synthetic android.widget.Button access$000(anastasoft.rallyvision.activity.MenuPrincipal)
 anastasoft.rallyvision.activity.MenuPrincipal$6
 anastasoft.rallyvision.activity.SettingsActivity:

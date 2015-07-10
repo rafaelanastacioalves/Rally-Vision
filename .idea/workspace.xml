@@ -83,16 +83,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8839844-7738-4770-8e51-df03ea1ce13e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-hdpi/Thumbs.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-mdpi/Thumbs.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-xhdpi/Thumbs.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-xxhdpi/Thumbs.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-hdpi/ic_action_time.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-mdpi/ic_action_time.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-xhdpi/ic_action_time.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-xxhdpi/ic_action_time.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/AVRGvelocimeter.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/AVRGvelocimeter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/dialog/BemVindoAluguelDialog.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/dialog/BemVindoAluguelDialog.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/INSTvelocimeter.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/INSTvelocimeter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/MenuPrincipal$1.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/MenuPrincipal$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/MenuPrincipal$2.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/MenuPrincipal$2.class" />
@@ -101,14 +92,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/MenuPrincipal$5.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/MenuPrincipal$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/MenuPrincipal$6.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/MenuPrincipal$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/MenuPrincipal.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/MenuPrincipal.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$drawable.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$drawable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/com/google/android/gms/R$drawable.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/com/google/android/gms/R$drawable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/com/ipaulpro/afilechooser/R$drawable.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/com/ipaulpro/afilechooser/R$drawable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$id.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$integer.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$integer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$layout.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$menu.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$raw.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$raw.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$string.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$string.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$style.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$style.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$styleable.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/R$styleable.class" />
@@ -116,11 +99,24 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/RallyVision.apk" afterPath="$PROJECT_DIR$/out/production/RallyVision/RallyVision.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/RallyVision.unaligned.apk" afterPath="$PROJECT_DIR$/out/production/RallyVision/RallyVision.unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/SliderMotorista.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/SliderMotorista.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RallyVision/res/drawable-hdpi/Thumbs.db" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-hdpi/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RallyVision/res/drawable-mdpi/Thumbs.db" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-mdpi/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RallyVision/res/drawable-xhdpi/Thumbs.db" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-xhdpi/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RallyVision/res/drawable-xxhdpi/Thumbs.db" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-xxhdpi/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/drawable-hdpi/Thumbs.db" afterPath="$PROJECT_DIR$/out/production/RallyVision/drawable-hdpi/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/drawable-mdpi/Thumbs.db" afterPath="$PROJECT_DIR$/out/production/RallyVision/drawable-mdpi/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/drawable-xhdpi/Thumbs.db" afterPath="$PROJECT_DIR$/out/production/RallyVision/drawable-xhdpi/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/drawable-xxhdpi/Thumbs.db" afterPath="$PROJECT_DIR$/out/production/RallyVision/drawable-xxhdpi/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RallyVision/res/drawable-hdpi/ic_action_time.png" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-hdpi/ic_action_time.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RallyVision/res/drawable-mdpi/ic_action_time.png" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-mdpi/ic_action_time.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RallyVision/res/drawable-xhdpi/ic_action_time.png" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-xhdpi/ic_action_time.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RallyVision/res/drawable-xxhdpi/ic_action_time.png" afterPath="$PROJECT_DIR$/RallyVision/res/drawable-xxhdpi/ic_action_time.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/drawable-hdpi/ic_action_time.png" afterPath="$PROJECT_DIR$/out/production/RallyVision/drawable-hdpi/ic_action_time.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/drawable-mdpi/ic_action_time.png" afterPath="$PROJECT_DIR$/out/production/RallyVision/drawable-mdpi/ic_action_time.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/drawable-xhdpi/ic_action_time.png" afterPath="$PROJECT_DIR$/out/production/RallyVision/drawable-xhdpi/ic_action_time.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/drawable-xxhdpi/ic_action_time.png" afterPath="$PROJECT_DIR$/out/production/RallyVision/drawable-xxhdpi/ic_action_time.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/odometer.class" afterPath="$PROJECT_DIR$/out/production/RallyVision/anastasoft/rallyvision/activity/odometer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RallyVision/AndroidManifest.xml" afterPath="$PROJECT_DIR$/RallyVision/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RallyVision/src/anastasoft/rallyvision/activity/MenuPrincipal.java" afterPath="$PROJECT_DIR$/RallyVision/src/anastasoft/rallyvision/activity/MenuPrincipal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RallyVision/res/menu/menu_principal.xml" afterPath="$PROJECT_DIR$/RallyVision/res/menu/menu_principal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/menu/menu_principal.xml" afterPath="$PROJECT_DIR$/out/production/RallyVision/menu/menu_principal.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RallyVision/res/values/strings.xml" afterPath="$PROJECT_DIR$/RallyVision/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/RallyVision/values/strings.xml" afterPath="$PROJECT_DIR$/out/production/RallyVision/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -163,15 +159,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RallyVision/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5405405">
+            <state vertical-scroll-proportion="0.0">
               <caret line="22" column="66" selection-start-line="22" selection-start-column="66" selection-end-line="22" selection-end-column="66" />
-              <folding>
-                <element signature="e#1742#1760#0" expanded="true" />
-                <element signature="e#4346#4367#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -180,29 +173,37 @@
         <entry file="file://$PROJECT_DIR$/RallyVision/src/anastasoft/rallyvision/activity/MenuPrincipal.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="288" column="12" selection-start-line="288" selection-start-column="12" selection-end-line="291" selection-end-column="44" />
+              <caret line="206" column="80" selection-start-line="206" selection-start-column="80" selection-end-line="206" selection-end-column="80" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#6705#6749#0" expanded="true" />
+                <element signature="e#8624#8672#0" expanded="true" />
+                <element signature="e#11410#11448#0" expanded="true" />
+                <element signature="e#11490#11527#0" expanded="true" />
+                <element signature="e#11569#11597#0" expanded="true" />
+                <element signature="e#11696#11735#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RallyVision/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.927203">
+              <caret line="159" column="111" selection-start-line="159" selection-start-column="111" selection-end-line="159" selection-end-column="111" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_menu_principal_sliders.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RallyVision/res/layout/activity_menu_principal_sliders.xml">
-          <provider editor-type-id="text-editor">
+      <file leaf-file-name="Toast.java" pinned="false" current-in-tab="false">
+        <entry file="file:///Applications/Android Developer SDK/sdk/sources/android-21/android/widget/Toast.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+              <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
               <folding />
             </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ic_stat_notify.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RallyVision/res/drawable-hdpi/ic_stat_notify.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -210,14 +211,8 @@
         <entry file="file://$PROJECT_DIR$/RallyVision/res/menu/menu_principal.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-              <folding>
-                <element signature="e#586#611#0" expanded="true" />
-                <element signature="e#878#909#0" expanded="true" />
-                <element signature="e#1056#1078#0" expanded="true" />
-                <element signature="e#1298#1328#0" expanded="true" />
-                <element signature="e#1546#1572#0" expanded="true" />
-              </folding>
+              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -264,9 +259,10 @@
         <option value="$PROJECT_DIR$/RallyVision/src/anastasoft/rallyvision/controller/Controller.java" />
         <option value="$PROJECT_DIR$/RallyVision/res/layout/activity_menu_principal.xml" />
         <option value="$PROJECT_DIR$/RallyVision/res/layout-land/activity_menu_principal.xml" />
+        <option value="$PROJECT_DIR$/RallyVision/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/RallyVision/res/menu/menu_principal.xml" />
         <option value="$PROJECT_DIR$/RallyVision/src/anastasoft/rallyvision/activity/MenuPrincipal.java" />
-        <option value="$PROJECT_DIR$/RallyVision/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/RallyVision/res/values/strings.xml" />
       </list>
     </option>
   </component>
@@ -430,7 +426,6 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -534,6 +529,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -599,7 +595,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="625" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
-    <property name="SearchEverywhereHistoryKey" value="manife&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/AndroidManifest.xml&#10;menu&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/activity/MenuPrincipal.java&#10;ma&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/aFileChooser/AndroidManifest.xml&#10;manifes&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/aFileChooser/AndroidManifest.xml&#10;contro&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Controller.java&#10;mani&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/AndroidManifest.xml&#10;controller&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Controller.java&#10;search&#9;ACTION&#9;SearchEverywhere&#10;control&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Controller.java&#10;sett&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/activity/SettingsActivity.java&#10;controo&#9;PSI&#9;JAVA://com.google.android.gms.games.internal.GamesClientImpl.ConnectedToRoomNotifier&#10;dialog&#9;PSI&#9;JAVA://anastasoft.rallyvision.activity.dialog.ConfigureDialog&#10;controll&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Controller.java&#10;activity&#9;PSI&#9;JAVA://anastasoft.rallyvision.activity.SettingsActivity&#10;preferen&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/PreferencesAdapter.java&#10;relog&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Relogio.java&#10;update&#9;PSI&#9;JAVA://anastasoft.rallyvision.controller.Controller.CounterAndConverter#update&#10;UPDATE&#9;PSI&#9;JAVA://anastasoft.rallyvision.Slider.SliderCore#update&#10;ob&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Observable.java&#10;equals&#9;PSI&#9;JAVA://anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho#equals&#10;mo&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/Slider/Motorista.java&#10;core&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/Slider/SliderCore.java&#10;moto&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/Slider/MotoristaUsuario.java&#10;slider&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/SliderCoreographer/SliderChoreographer.java&#10;manif&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/AndroidManifest.xml&#10;cou&#9;PSI&#9;JAVA://anastasoft.rallyvision.controller.Controller.CounterAndConverter&#10;sliderCore&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/Slider/SliderCore.java&#10;count&#9;PSI&#9;JAVA://anastasoft.rallyvision.controller.Controller.CounterAndConverter&#10;tre&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/Slider/Prova_Trecho/Trecho/Trecho.java&#10;motoris&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/Slider/MotoristaUsuario.java&#10;contr&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Controller.java&#10;obs&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Observable.java&#10;men&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/activity/MenuPrincipal.java&#10;edita&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/activity/swipelistview/EditaPosicaoSlider.java&#10;mediato&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/activity/ConnectMediator.java&#10;vibration&#9;PSI&#9;JAVA://com.android.server.VibratorService.Vibration&#10;choreo&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/SliderCoreographer/SliderChoreographer.java&#10;manifest&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/AndroidManifest.xml&#10;man&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/AndroidManifest.xml&#10;stop&#9;PSI&#9;JAVA://anastasoft.rallyvision.command.stopCommunicationCommand&#10;cont&#9;FILE&#9;file:///Users/rafaelanastacioalves/Desktop/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Controller.java&#10;fontt&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/activity/customfontdemo/FontTextView.java&#10;ite&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/activity/swipelistview/ItemAdapter.java&#10;adapter&#9;PSI&#9;JAVA://anastasoft.rallyvision.controller.PreferencesAdapter&#10;setting&#9;PSI&#9;JAVA://anastasoft.rallyvision.activity.SettingsActivity&#10;settin&#9;PSI&#9;JAVA://anastasoft.rallyvision.activity.SettingsActivity&#10;stri&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/res/values/strings.xml&#10;lista&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/res/layout/custom_row_edita_lista_afericoes.xml&#10;db&#9;PSI&#9;JAVA://anastasoft.rallyvision.controller.Data.DBHelper&#10;controlle&#9;FILE&#9;file://C:/Users/Rafael_2/Documents/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Controller.java" />
+    <property name="SearchEverywhereHistoryKey" value="menu&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/res/menu/menu_principal.xml&#10;manife&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/AndroidManifest.xml&#10;ma&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/aFileChooser/AndroidManifest.xml&#10;manifes&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/aFileChooser/AndroidManifest.xml&#10;contro&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Controller.java&#10;mani&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/AndroidManifest.xml&#10;controller&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Controller.java&#10;search&#9;ACTION&#9;SearchEverywhere&#10;control&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Controller.java&#10;sett&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/activity/SettingsActivity.java&#10;controo&#9;PSI&#9;JAVA://com.google.android.gms.games.internal.GamesClientImpl.ConnectedToRoomNotifier&#10;dialog&#9;PSI&#9;JAVA://anastasoft.rallyvision.activity.dialog.ConfigureDialog&#10;controll&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Controller.java&#10;activity&#9;PSI&#9;JAVA://anastasoft.rallyvision.activity.SettingsActivity&#10;preferen&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/PreferencesAdapter.java&#10;relog&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Relogio.java&#10;update&#9;PSI&#9;JAVA://anastasoft.rallyvision.controller.Controller.CounterAndConverter#update&#10;UPDATE&#9;PSI&#9;JAVA://anastasoft.rallyvision.Slider.SliderCore#update&#10;ob&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Observable.java&#10;equals&#9;PSI&#9;JAVA://anastasoft.rallyvision.Slider.Prova_Trecho.Trecho.Trecho#equals&#10;mo&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/Slider/Motorista.java&#10;core&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/Slider/SliderCore.java&#10;moto&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/Slider/MotoristaUsuario.java&#10;slider&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/SliderCoreographer/SliderChoreographer.java&#10;manif&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/AndroidManifest.xml&#10;cou&#9;PSI&#9;JAVA://anastasoft.rallyvision.controller.Controller.CounterAndConverter&#10;sliderCore&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/Slider/SliderCore.java&#10;count&#9;PSI&#9;JAVA://anastasoft.rallyvision.controller.Controller.CounterAndConverter&#10;tre&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/Slider/Prova_Trecho/Trecho/Trecho.java&#10;motoris&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/Slider/MotoristaUsuario.java&#10;contr&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Controller.java&#10;obs&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Observable.java&#10;men&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/activity/MenuPrincipal.java&#10;edita&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/activity/swipelistview/EditaPosicaoSlider.java&#10;mediato&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/activity/ConnectMediator.java&#10;vibration&#9;PSI&#9;JAVA://com.android.server.VibratorService.Vibration&#10;choreo&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/SliderCoreographer/SliderChoreographer.java&#10;manifest&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/AndroidManifest.xml&#10;man&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/AndroidManifest.xml&#10;stop&#9;PSI&#9;JAVA://anastasoft.rallyvision.command.stopCommunicationCommand&#10;cont&#9;FILE&#9;file:///Users/rafaelanastacioalves/Desktop/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Controller.java&#10;fontt&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/activity/customfontdemo/FontTextView.java&#10;ite&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/activity/swipelistview/ItemAdapter.java&#10;adapter&#9;PSI&#9;JAVA://anastasoft.rallyvision.controller.PreferencesAdapter&#10;setting&#9;PSI&#9;JAVA://anastasoft.rallyvision.activity.SettingsActivity&#10;settin&#9;PSI&#9;JAVA://anastasoft.rallyvision.activity.SettingsActivity&#10;stri&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/res/values/strings.xml&#10;lista&#9;FILE&#9;file:///Users/rafaelanastacioalves/GitHub/Rally-Vision/RallyVision/res/layout/custom_row_edita_lista_afericoes.xml&#10;db&#9;PSI&#9;JAVA://anastasoft.rallyvision.controller.Data.DBHelper&#10;controlle&#9;FILE&#9;file://C:/Users/Rafael_2/Documents/GitHub/Rally-Vision/RallyVision/src/anastasoft/rallyvision/controller/Controller.java" />
     <property name="DEBUGGABLE_DEVICE" value="md_normal [emulator-5554]" />
     <property name="DEBUGGABLE_PROCESS" value="anastasoft.rallyvision" />
     <property name="SHOW_ALL_PROCESSES" value="true" />
@@ -627,15 +623,15 @@
       <recent name="anastasoft.rallyvision.Slider.Prova_Trecho" />
       <recent name="anastasoft.rallyvision.activity.views" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="anastasoft.rallyvision" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/RallyVision/src/relogio" />
       <recent name="$PROJECT_DIR$/RallyVision/src" />
       <recent name="$PROJECT_DIR$/RallyVision/res/layout" />
       <recent name="$PROJECT_DIR$/RallyVision/src/com/android/vending/billing" />
       <recent name="$PROJECT_DIR$/RallyVision/src/com/google/android/vending/licensing" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="anastasoft.rallyvision" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.RallyVision Emulador">
@@ -892,13 +888,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15307583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5552408" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5552408" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13166398" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3300248" sideWeight="0.22889842" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5521092" sideWeight="0.7453505" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21244635" sideWeight="0.14888337" order="4" side_tool="true" content_ui="tabs" />
@@ -906,12 +902,12 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14949928" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5673077" sideWeight="0.5010846" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34560907" sideWeight="0.3004292" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.60764873" sideWeight="0.2546495" order="15" side_tool="false" content_ui="tabs" x="491" y="22" width="922" height="481" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27903682" sideWeight="0.2546495" order="15" side_tool="false" content_ui="tabs" x="491" y="22" width="922" height="481" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32754344" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17851374" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21728595" sideWeight="0.8511166" order="1" side_tool="false" content_ui="combo" x="0" y="22" width="720" height="775" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21728595" sideWeight="0.8511166" order="1" side_tool="false" content_ui="combo" x="0" y="22" width="720" height="775" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28470254" sideWeight="0.5937053" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.3297568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="100" y="122" width="1240" height="540" />
       <window_info id="Changes" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32904148" sideWeight="0.5" order="10" side_tool="false" content_ui="combo" x="21" y="320" width="1398" height="260" />
@@ -1070,13 +1066,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Applications/Android Developer SDK/sdk/sources/android-21/android/widget/Toast.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RallyVision/src/anastasoft/rallyvision/command/CarregarArquivoCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1085,31 +1074,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RallyVision/res/layout/lista_edit_pos_slider.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RallyVision/res/layout/custom_row_edita_pos_motorista.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RallyVision/res/layout/custom_row_edita_pos_motorista.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RallyVision/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="148" column="62" selection-start-line="148" selection-start-column="62" selection-end-line="148" selection-end-column="62" />
           <folding />
         </state>
       </provider>
@@ -1244,14 +1225,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RallyVision/res/layout-land/activity_menu_principal_sliders.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.137932">
           <caret line="122" column="23" selection-start-line="103" selection-start-column="8" selection-end-line="122" selection-end-column="23" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RallyVision/res/values-normal-port-ldpi/styles.xml">
@@ -1301,61 +1282,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1473" column="0" selection-start-line="1473" selection-start-column="0" selection-end-line="1473" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#94092#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#2982#2983#0" expanded="false" />
-            <element signature="e#3028#3029#0" expanded="false" />
-            <element signature="e#11406#11407#0" expanded="false" />
-            <element signature="e#11436#11437#0" expanded="false" />
-            <element signature="e#12353#12354#0" expanded="false" />
-            <element signature="e#12404#12405#0" expanded="false" />
-            <element signature="e#16301#16302#0" expanded="false" />
-            <element signature="e#16377#16378#0" expanded="false" />
-            <element signature="e#22538#22539#0" expanded="false" />
-            <element signature="e#22566#22567#0" expanded="false" />
-            <element signature="e#25365#25366#0" expanded="false" />
-            <element signature="e#25418#25419#0" expanded="false" />
-            <element signature="e#33641#33642#0" expanded="false" />
-            <element signature="e#33700#33701#0" expanded="false" />
-            <element signature="e#35287#35288#0" expanded="false" />
-            <element signature="e#35344#35345#0" expanded="false" />
-            <element signature="e#74831#74832#0" expanded="false" />
-            <element signature="e#74879#74880#0" expanded="false" />
-            <element signature="e#93110#93111#0" expanded="false" />
-            <element signature="e#93163#93164#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RallyVision/res/layout/activity_menu_principal.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RallyVision/res/drawable-hdpi/btn_red.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RallyVision/res/layout/connect_button_red.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RallyVision/res/values/styles.xml">
@@ -1367,64 +1323,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RallyVision/res/layout-land/activity_menu_principal.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aFileChooser/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RallyVision/res/layout/activity_menu_principal_sliders.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RallyVision/res/drawable-hdpi/ic_stat_notify.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RallyVision/res/menu/menu_principal.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-          <folding>
-            <element signature="e#586#611#0" expanded="true" />
-            <element signature="e#878#909#0" expanded="true" />
-            <element signature="e#1056#1078#0" expanded="true" />
-            <element signature="e#1298#1328#0" expanded="true" />
-            <element signature="e#1546#1572#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RallyVision/res/drawable-hdpi/ic_action_time.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RallyVision/src/anastasoft/rallyvision/activity/MenuPrincipal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="288" column="12" selection-start-line="288" selection-start-column="12" selection-end-line="291" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1438,12 +1350,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RallyVision/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5405405">
+        <state vertical-scroll-proportion="0.0">
           <caret line="22" column="66" selection-start-line="22" selection-start-column="66" selection-end-line="22" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RallyVision/res/drawable-hdpi/ic_action_time.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RallyVision/res/layout/activity_menu_principal_sliders.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RallyVision/res/drawable-hdpi/ic_stat_notify.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RallyVision/res/menu/menu_principal.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Android Developer SDK/sdk/sources/android-21/android/widget/Toast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RallyVision/src/anastasoft/rallyvision/activity/MenuPrincipal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="206" column="80" selection-start-line="206" selection-start-column="80" selection-end-line="206" selection-end-column="80" />
           <folding>
-            <element signature="e#1742#1760#0" expanded="true" />
-            <element signature="e#4346#4367#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#6705#6749#0" expanded="true" />
+            <element signature="e#8624#8672#0" expanded="true" />
+            <element signature="e#11410#11448#0" expanded="true" />
+            <element signature="e#11490#11527#0" expanded="true" />
+            <element signature="e#11569#11597#0" expanded="true" />
+            <element signature="e#11696#11735#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RallyVision/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.927203">
+          <caret line="159" column="111" selection-start-line="159" selection-start-column="111" selection-end-line="159" selection-end-column="111" />
+          <folding />
         </state>
       </provider>
     </entry>

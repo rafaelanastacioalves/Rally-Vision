@@ -367,6 +367,7 @@ anastasoft.rallyvision.R$drawable: int ic_action_edit_holo_dark
 anastasoft.rallyvision.R$drawable: int ic_action_edit_holo_light
 anastasoft.rallyvision.R$drawable: int ic_action_settings
 anastasoft.rallyvision.R$drawable: int ic_action_storage
+anastasoft.rallyvision.R$drawable: int ic_action_time
 anastasoft.rallyvision.R$drawable: int ic_action_view_as_list
 anastasoft.rallyvision.R$drawable: int ic_chooser
 anastasoft.rallyvision.R$drawable: int ic_file
@@ -413,6 +414,7 @@ anastasoft.rallyvision.R$id: int action_context_bar
 anastasoft.rallyvision.R$id: int action_menu_divider
 anastasoft.rallyvision.R$id: int action_menu_presenter
 anastasoft.rallyvision.R$id: int action_mode_close_button
+anastasoft.rallyvision.R$id: int action_set_clock
 anastasoft.rallyvision.R$id: int action_settings
 anastasoft.rallyvision.R$id: int action_slider_agendar_prova
 anastasoft.rallyvision.R$id: int action_slider_carregar_trecho
@@ -610,6 +612,7 @@ anastasoft.rallyvision.R$string: int abc_searchview_description_voice
 anastasoft.rallyvision.R$string: int abc_shareactionprovider_share_with
 anastasoft.rallyvision.R$string: int abc_shareactionprovider_share_with_application
 anastasoft.rallyvision.R$string: int accept
+anastasoft.rallyvision.R$string: int action_set_clock
 anastasoft.rallyvision.R$string: int action_settings
 anastasoft.rallyvision.R$string: int afericao_padrao_nao_pode_deletar
 anastasoft.rallyvision.R$string: int afericoes_editar
@@ -750,6 +753,7 @@ anastasoft.rallyvision.R$string: int sp_swipe_et_Digite_deslocamento
 anastasoft.rallyvision.R$string: int storage_removed
 anastasoft.rallyvision.R$string: int store_picture_message
 anastasoft.rallyvision.R$string: int store_picture_title
+anastasoft.rallyvision.R$string: int time_settings_not_manual
 anastasoft.rallyvision.R$string: int title_BT_not_connected
 anastasoft.rallyvision.R$string: int title_connected
 anastasoft.rallyvision.R$string: int title_connecting

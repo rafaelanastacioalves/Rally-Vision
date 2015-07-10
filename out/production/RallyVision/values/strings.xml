@@ -157,6 +157,7 @@
     <string name="dialog_set_slider_necessario_reiniciar">Será necessário reiniciar o aplicativo</string>
     <string name="reiniciar">Reiniciar</string>
     <string name="action_set_clock">Calibrar Hora</string>
+    <string name="time_settings_not_manual">Recomendamos que sete as horas manualmente, de acordo com a prova. Clique no reloginho para setar manualmente.</string>
 
 
 </resources>

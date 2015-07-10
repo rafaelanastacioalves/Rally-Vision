@@ -2,7 +2,6 @@ package anastasoft.rallyvision.activity;
 
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
-import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -34,7 +33,6 @@ import android.widget.ToggleButton;
 import com.ipaulpro.afilechooser.utils.FileUtils;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.Slider.Motorista;
@@ -202,6 +200,16 @@ public class MenuPrincipal extends ActionBarActivity {
             aMenuItem.setVisible(isAgendamentoInicioProvaSliderActive);
 
         }
+
+        // verifica se o horário está no manual
+
+        if (Integer.valueOf(android.os.Build.VERSION.SDK) <17 && android.provider.Settings.System.getInt(getContentResolver(), android.provider.Settings.System.AUTO_TIME, 0)==1 ){
+            Toast.makeText(getBaseContext(),getString(R.string.time_settings_not_manual),Toast.LENGTH_LONG).show();
+        }else if (Integer.valueOf(android.os.Build.VERSION.SDK) >=17 && android.provider.Settings.Global.getInt(getContentResolver(), android.provider.Settings.Global.AUTO_TIME, 0) ==1 ){
+            Toast.makeText(getBaseContext(),getString(R.string.time_settings_not_manual),Toast.LENGTH_LONG).show();
+
+        }
+
         return super.onPrepareOptionsMenu(menu);
 
 
@@ -286,10 +294,7 @@ public class MenuPrincipal extends ActionBarActivity {
         }
 
         if (id == R.id.action_set_clock){
-            Calendar c = Calendar.getInstance();
-            c.set(2010, 1, 1, 12, 00, 00);
-            AlarmManager am = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
-            am.setTime(c.getTimeInMillis());
+            startActivity(new Intent(android.provider.Settings.ACTION_DATE_SETTINGS));
         }
 
         return super.onOptionsItemSelected(item);
