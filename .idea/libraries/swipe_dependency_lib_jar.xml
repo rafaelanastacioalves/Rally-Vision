@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="swipe_dependency_lib_jar">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/swipelistview/libs/nineoldandroids-2.4.0.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
