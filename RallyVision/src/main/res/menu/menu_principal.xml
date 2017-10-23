@@ -7,19 +7,19 @@
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        android:icon="@drawable/ic_action_settings"
+        android:icon="@drawable/ic_settings_white"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_slider_carregar_trecho"
         android:orderInCategory="99"
-        android:icon="@drawable/ic_action_download"
+        android:icon="@drawable/ic_file_download_white"
         android:title="@string/slider_carregar_prova"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_config"
         android:orderInCategory="98"
         android:title="@string/config_ratio"
-        android:icon="@drawable/ic_action_edit_holo_dark"
+        android:icon="@drawable/ic_mode_edit_white"
 
         app:showAsAction="never" />
 
@@ -27,14 +27,14 @@
         android:id="@+id/action_slider_agendar_prova"
         android:orderInCategory="97"
         android:title="@string/slider_agendar_prova"
-        android:icon="@drawable/ic_action_alarms"
+        android:icon="@drawable/ic_alarm_white"
         app:showAsAction="ifRoom" />
     <item
 
         android:id="@+id/action_swipe_gerenciar_afericoes"
         android:orderInCategory="101"
         android:title="@string/afericoes_editar"
-        android:icon="@drawable/ic_action_storage"
+        android:icon="@drawable/ic_storage_white"
 
 
 

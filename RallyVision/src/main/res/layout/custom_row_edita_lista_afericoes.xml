@@ -17,7 +17,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/swipe_delete"
-                android:src= "@drawable/ic_action_discard"
+                android:src= "@drawable/ic_delete_white"
                 style="@style/MyListImageButtonAction"/>
         
                
@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/swipe_edit"
                 style="@style/MyListImageButtonAction"
-                android:src="@drawable/ic_action_edit_holo_light"
+                android:src="@drawable/ic_mode_edit_white"
                 />
 
     </LinearLayout>

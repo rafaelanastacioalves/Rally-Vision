@@ -5,7 +5,6 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
         classpath 'com.android.tools.build:gradle:2.3.3'
         classpath 'com.google.gms:google-services:3.0.0'
 
@@ -19,6 +18,14 @@ allprojects {
         jcenter()
         maven {
             url "https://maven.google.com"
+
         }
     }
+
+ext {
+    targetSdkVersionExt = 26
+    minSdkVersionExt = 14
+    compileSdkVersionExt = 26
+    buildToolsVersionExt = '26.0.2'
+}
 }

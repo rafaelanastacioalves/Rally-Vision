@@ -19,7 +19,7 @@
             android:layout_weight="1"
             android:layout_gravity="center"
             android:text="@string/lista_edit_pos_slider_trecho"
-            style="@style/TextAppearance.AppCompat.Widget.Base.ActionMode.Title.Inverse"
+            style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
             android:id="@+id/sp_swipe_trecho"/>
         <TextView
             android:layout_width="0dp"
@@ -27,7 +27,7 @@
             android:layout_weight="1"
             android:layout_gravity="center"
             android:text="@string/lista_edit_pos_slider_ki"
-            style="@style/TextAppearance.AppCompat.Widget.Base.ActionMode.Title.Inverse"
+            style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
 
             android:id="@+id/sp_swipe_ki"/>
         <TextView
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
-            style="@style/TextAppearance.AppCompat.Widget.Base.ActionMode.Title.Inverse"
+            style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
 
             android:text="@string/lista_edit_pos_slider_kf"
             android:id="@+id/sp_swipe_kf"/>

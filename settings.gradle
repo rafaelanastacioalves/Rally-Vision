@@ -1,1 +1,1 @@
-include ':RallyVision'
+include ':RallyVision', 'swipelistview'

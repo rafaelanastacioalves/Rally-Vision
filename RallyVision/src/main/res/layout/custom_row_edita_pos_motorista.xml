@@ -17,7 +17,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/sp_swipe_confirma"
-                android:src="@drawable/ic_action_edit_holo_light"
                 android:text="@string/OK"
 
 
@@ -28,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sp_swipe_deslocamento_trecho"
-                style="@style/TextAppearance.AppCompat.Widget.Base.ActionMode.Title.Inverse"
+                style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
 
                 android:id="@+id/sp_swipe_tv_metragem"
                 android:layout_alignParentTop="true"
@@ -37,7 +36,7 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/TextAppearance.AppCompat.Widget.Base.ActionMode.Title.Inverse"
+                style="@style/TextAppearance.AppCompat.Widget.ActionMode.Title.Inverse"
 
                 android:id="@+id/sp_swipe_et_valor_metragem"
                 android:inputType="number"

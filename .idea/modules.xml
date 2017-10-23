@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Rally-Vision.iml" filepath="$PROJECT_DIR$/Rally-Vision.iml" />
       <module fileurl="file://$PROJECT_DIR$/RallyVision/RallyVision.iml" filepath="$PROJECT_DIR$/RallyVision/RallyVision.iml" />
-      <module fileurl="file://$PROJECT_DIR$/rally-vision.iml" filepath="$PROJECT_DIR$/rally-vision.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swipelistview/swipelistview.iml" filepath="$PROJECT_DIR$/swipelistview/swipelistview.iml" />
     </modules>
   </component>
 </project>
