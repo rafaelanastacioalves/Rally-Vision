@@ -73,7 +73,7 @@
         <item name="android:topRightRadius">30dp</item>
         <item name="android:typeface">normal</item>
         <item name="android:inputType">number</item>
-        <item name="font">digdream</item>
+        <item name="font_name">digdream</item>
 
     </style>
 
@@ -94,7 +94,7 @@
         <item name="android:topRightRadius">30dp</item>
         <item name="android:typeface">normal</item>
         <item name="android:inputType">number</item>
-        <item name="font">digdream</item>
+        <item name="font_name">digdream</item>
 
     </style>
 
@@ -112,7 +112,7 @@
 
         <item name="android:textSize">60sp</item>
         <item name="android:inputType">text</item>
-        <item name="font">dig7Reg</item>
+        <item name="font_name">dig7Reg</item>
 
         <item name="android:text">-</item>
     </style>

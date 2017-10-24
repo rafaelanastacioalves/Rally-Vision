@@ -55,13 +55,13 @@ public class TypefaceManager
     private final Context mContext;
     /** The xml file in which the fonts are defined. */
     private final int mXmlResource;
-    /** The mapping of font names to Font objects as defined in the xml file. */
+    /** The mapping of font_name names to Font objects as defined in the xml file. */
     private final Map<String, Font> mFonts;
 
     static
     {
         // Initialize the style map
-        // The style map is used to determine which font style must be used if
+        // The style map is used to determine which font_name style must be used if
         // the requested style is not available.
         styleMap = new HashMap<Byte, List<Byte>>();
         styleMap.put(REGULAR, Arrays.asList(BOLD, ITALIC, BOLD_ITALIC));
@@ -78,7 +78,7 @@ public class TypefaceManager
 
     /**
      * Initializes the singleton instance of the TypefaceManager. It will read
-     * the given xml font file pointed to by xmlResource, but doesn't yet load
+     * the given xml font_name file pointed to by xmlResource, but doesn't yet load
      * the fonts.
      */
     public static synchronized void initialize(Context context, int xmlResource)
@@ -87,7 +87,7 @@ public class TypefaceManager
             INSTANCE = new TypefaceManager(context, xmlResource);
         if (INSTANCE.mXmlResource != xmlResource)
             Log.w(TAG, "Singleton instance of TypefaceManager was initialized" +
-                    " with a different xml font file previously. " +
+                    " with a different xml font_name file previously. " +
                     "Re-initialization will not occur.");
         if (!INSTANCE.mContext.equals(context))
             Log.w(TAG, "Singleton instance of TypefaceManager was initialized" +
@@ -113,14 +113,14 @@ public class TypefaceManager
     }
 
     /**
-     * Initializes the typeface manager with the given xml font file.
+     * Initializes the typeface manager with the given xml font_name file.
      *
-     * @param context A context with which the xml font file and the assets can
+     * @param context A context with which the xml font_name file and the assets can
      *        be accessed.
      * @param xmlResource The resource id of an xml file that specifies the
      *        fonts that are present in the assets.
-     * @return The number of unique font files in the xml file that exist. The
-     *         font files are not yet opened or verified, it only means that
+     * @return The number of unique font_name files in the xml file that exist. The
+     *         font_name files are not yet opened or verified, it only means that
      *         they exist.
      */
     private TypefaceManager(Context context, int xmlResource)
@@ -132,8 +132,8 @@ public class TypefaceManager
     }
 
     /**
-     * Returns the typeface identified by the given font name and style. The
-     * font must be a name defined in any nameset in the font xml file. The
+     * Returns the typeface identified by the given font_name name and style. The
+     * font_name must be a name defined in any nameset in the font_name xml file. The
      * style must be one of the constants defined by {@link Typeface}.
      *
      * @param name
@@ -145,8 +145,8 @@ public class TypefaceManager
     }
 
     /**
-     * Returns the typeface identified by the given font name and style. The
-     * font must be a name defined in any nameset in the font xml file. The
+     * Returns the typeface identified by the given font_name name and style. The
+     * font_name must be a name defined in any nameset in the font_name xml file. The
      * style must be one of the constants defined by {@link Typeface}.
      *
      * @param name
@@ -161,7 +161,7 @@ public class TypefaceManager
         {
             if (!mCache.containsKey(file))
             {
-                Log.i(TAG, String.format("Inflating font %s (style %d) with " +
+                Log.i(TAG, String.format("Inflating font_name %s (style %d) with " +
                         "file %s", name, style, file));
                 Typeface t = Typeface.createFromAsset(mContext.getAssets(),
                         String.format("fonts/%s", file));
@@ -172,15 +172,15 @@ public class TypefaceManager
     }
 
     /**
-     * Convenience method to set the typeface of the target view to the font
+     * Convenience method to set the typeface of the target view to the font_name
      * identified by fontName. The text style that will be used is {@code
-     * Typeface#NORMAL}. Returns false if the font wasn't found or couldn't be
+     * Typeface#NORMAL}. Returns false if the font_name wasn't found or couldn't be
      * loaded, returns true otherwise.
      *
-     * @param target A TextView in which the font must be used.
-     * @param fontName The name of the font. Must match a name defined in a name
-     *        tag in the xml font file.
-     * @return {@code true} if the font could was set in the target, {@code
+     * @param target A TextView in which the font_name must be used.
+     * @param fontName The name of the font_name. Must match a name defined in a name
+     *        tag in the xml font_name file.
+     * @return {@code true} if the font_name could was set in the target, {@code
      *         false} otherwise.
      */
     public boolean setTypeface(TextView target, String fontName)
@@ -189,16 +189,16 @@ public class TypefaceManager
     }
 
     /**
-     * Convenience method to set the typeface of the target view to the font
+     * Convenience method to set the typeface of the target view to the font_name
      * identified by fontName using the textStyle. The textStyle must be one of
-     * the constants defined by {@code Typeface}. Returns false if the font
+     * the constants defined by {@code Typeface}. Returns false if the font_name
      * wasn't found or couldn't be loaded, returns true otherwise.
      *
-     * @param target A TextView in which the font must be used.
-     * @param fontName The name of the font. Must match a name defined in a name
-     *        tag in the xml font file.
+     * @param target A TextView in which the font_name must be used.
+     * @param fontName The name of the font_name. Must match a name defined in a name
+     *        tag in the xml font_name file.
      * @param textStyle A text style: normal, bold, italic or bold_italic.
-     * @return {@code true} if the font could was set in the target, {@code
+     * @return {@code true} if the font_name could was set in the target, {@code
      *         false} otherwise.
      */
     public boolean setTypeface(TextView target, String fontName, int textStyle)
@@ -219,9 +219,9 @@ public class TypefaceManager
     }
 
     /**
-     * Parses the xml font file. After this method, {@link #mFonts} will contain
-     * all fonts encountered in the xml font file for which at least one of the
-     * defined font file(s) exist.
+     * Parses the xml font_name file. After this method, {@link #mFonts} will contain
+     * all fonts encountered in the xml font_name file for which at least one of the
+     * defined font_name file(s) exist.
      */
     private void parse()
     {
@@ -244,17 +244,17 @@ public class TypefaceManager
                 switch (eventType)
                 {
                     case XmlPullParser.START_TAG:
-                        // One of the font-families.
+                        // One of the font_name-families.
                         if (tag.equals(TAG_FAMILY))
                             font = new Font();
                         else if (tag.equals(TAG_NAMESET))
                             ; // nothing to do for namesets
                         else if (tag.equals(TAG_FILESET))
                             style = NONE;
-                            // A name that maps to this font-family.
+                            // A name that maps to this font_name-family.
                         else if (tag.equals(TAG_NAME))
                             isName = true;
-                            // A font file to be used for this font-family.
+                            // A font_name file to be used for this font_name-family.
                         else if (tag.equals(TAG_FILE))
                             isFile = true;
                         break;
@@ -265,20 +265,20 @@ public class TypefaceManager
                             // Family is fully defined, process it.
                             // Add all missing style mappings
                             addMissingStyles(font);
-                            // Add all the font names to the lookup tbl,
-                            // but only if any font files were defined.
+                            // Add all the font_name names to the lookup tbl,
+                            // but only if any font_name files were defined.
                             if (!font.styles.isEmpty())
                                 for (String name : font.names)
                                     // Don't override fonts (as defined by the
                                     if (!mFonts.containsKey(name))
                                         mFonts.put(name, font);
-                            // And resetBasico the font for the next family
+                            // And resetBasico the font_name for the next family
                             font = null;
                         }
                         // Done reading a name for this family.
                         else if (tag.equals(TAG_NAME))
                             isName = false;
-                            // Done reading a font file for this family.
+                            // Done reading a font_name file for this family.
                         else if (tag.equals(TAG_FILE))
                             isFile = false;
                         else if (tag.equals(TAG_FILESET))
@@ -289,18 +289,18 @@ public class TypefaceManager
                         String text = parser.getText();
                         if (isName)
                         {
-                            // Value is a font name
+                            // Value is a font_name name
                             font.names.add(text.toLowerCase());
                         }
                         else if (isFile)
                         {
-                            // Value is a font file
+                            // Value is a font_name file
                             String ttf = text;
                             // Determine which style file this is
                             style = next(style);
                             // Check if the file exists
                             if (Arrays.binarySearch(fontAssets, ttf) < 0)
-                                Log.w(TAG, "Couldn't find font in the assets: "+
+                                Log.w(TAG, "Couldn't find font_name in the assets: "+
                                         ttf);
                                 // Add the style
                             else
@@ -314,11 +314,11 @@ public class TypefaceManager
         }
         catch (XmlPullParserException e)
         {
-            throw new InflateException("Error inflating font XML", e);
+            throw new InflateException("Error inflating font_name XML", e);
         }
         catch (IOException e)
         {
-            throw new InflateException("Error inflating font XML", e);
+            throw new InflateException("Error inflating font_name XML", e);
         }
         finally
         {
@@ -329,7 +329,7 @@ public class TypefaceManager
 
     /**
      * Returns the style that comes after the given style in a fileset in the
-     * font xml file. This order is defined by Android in the definition of the
+     * font_name xml file. This order is defined by Android in the definition of the
      * system fonts and vendor fonts (see https://github.com/android/platform_frameworks_base/blob/master/data/fonts/vendor_fonts.xml).
      *
      * @param style
@@ -367,8 +367,8 @@ public class TypefaceManager
     }
 
     /**
-     * Adds style mappings for all styles that are not loaded in the given font.
-     * A font may be defined without all four styles regular, bold, italic and
+     * Adds style mappings for all styles that are not loaded in the given font_name.
+     * A font_name may be defined without all four styles regular, bold, italic and
      * bold-italic. In that case, the missing styles will be mapped to the most
      * preferred style that is present.
      *
@@ -427,7 +427,7 @@ public class TypefaceManager
     }
 
     /**
-     * Applies the font and all related custom properties found in the
+     * Applies the font_name and all related custom properties found in the
      * attributes of the given AttributeSet or the default style to the given
      * target. Typically, the AttributeSet consists of the attributes contained
      * in the xml tag that defined the target. The target can be any TextView or
@@ -456,7 +456,7 @@ public class TypefaceManager
             data = new ExtraFontData();
             target.setTag(R.id.fonts_extra_data, data);
 
-            // By default, the font is not changed
+            // By default, the font_name is not changed
             data.font = null;
             // By default, we apply a regular typeface
             data.style = Typeface.NORMAL;
@@ -466,32 +466,32 @@ public class TypefaceManager
             data.borderColor = Color.BLACK;
         }
 
-        // First get the font attribute from the textAppearance:
+        // First get the font_name attribute from the textAppearance:
         Theme theme = target.getContext().getTheme();
         // Get the text appearance that's currently in use
         TypedArray a = theme.obtainStyledAttributes(attrs,
                 new int[] {android.R.attr.textAppearance}, defStyle, 0);
         int textAppearanceStyle = a.getResourceId(0, -1);
         a.recycle();
-        // Get the font and style defined in the text appearance
+        // Get the font_name and style defined in the text appearance
         TypedArray appearance = null;
         if (textAppearanceStyle != -1)
             appearance = theme.obtainStyledAttributes(textAppearanceStyle,
                     R.styleable.Fonts);
         getAttributes(appearance, data);
 
-        // Then get the font attribute from the FontTextView itself:
+        // Then get the font_name attribute from the FontTextView itself:
         a = theme.obtainStyledAttributes(attrs, R.styleable.Fonts, defStyle, 0);
         getAttributes(a, data);
 
-        // Now we have the font, apply it
+        // Now we have the font_name, apply it
         if (data.font != null) {
             getInstance().setTypeface(target, data.font, data.style);
         }
     }
 
     /**
-     * Fetches the font attributes from the given typed array and overrides all
+     * Fetches the font_name attributes from the given typed array and overrides all
      * properties in the given data holder that are present in the typed array.
      *
      * @param a A TypedArray from which the attributes will be fetched. It will

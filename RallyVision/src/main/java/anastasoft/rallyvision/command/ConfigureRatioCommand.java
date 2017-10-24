@@ -25,7 +25,7 @@ public class ConfigureRatioCommand extends Command {
         Afericao afericaoTemp = new Afericao(afericaoNome, afericaoValor);
         if (aController.jaExiste(afericaoTemp)) {
             String text = aController.getResources()
-                    .getString(R.string.invalido_jah_existe)+ " " +"<font color=#00DBFF>"+ afericaoTemp.getName()+ "</font>" ;
+                    .getString(R.string.invalido_jah_existe)+ " " +"<font_name color=#00DBFF>"+ afericaoTemp.getName()+ "</font_name>" ;
             Toast.makeText(aController.getApplicationContext(), Html.fromHtml(text), Toast.LENGTH_SHORT).show();
         } else {
             aController.configureRatio(afericaoValor, afericaoNome);

@@ -2,7 +2,7 @@
 <resources>
 
     <declare-styleable name="Fonts">
-        <attr name="font" format="string|reference" />
+        <attr name="font_name" format="string|reference" />
         <attr name="android:textStyle" />
         <attr name="borderColor" format="color|reference" />
         <attr name="borderWidth" format="dimension|reference" />
