@@ -27,5 +27,6 @@ ext {
     minSdkVersionExt = 14
     compileSdkVersionExt = 26
     buildToolsVersionExt = '26.0.2'
+    supportLibrariesVersionExt = '26.0.1'
 }
 }

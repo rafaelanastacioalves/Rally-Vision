@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Rally-Vision.iml" filepath="$PROJECT_DIR$/Rally-Vision.iml" />
       <module fileurl="file://$PROJECT_DIR$/RallyVision/RallyVision.iml" filepath="$PROJECT_DIR$/RallyVision/RallyVision.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aFileChooser/aFileChooser.iml" filepath="$PROJECT_DIR$/aFileChooser/aFileChooser.iml" />
       <module fileurl="file://$PROJECT_DIR$/swipelistview/swipelistview.iml" filepath="$PROJECT_DIR$/swipelistview/swipelistview.iml" />
     </modules>
   </component>

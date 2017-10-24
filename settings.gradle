@@ -1,1 +1,3 @@
-include ':RallyVision', 'swipelistview'
+include ':RallyVision'
+include ':swipelistview'
+include ':aFileChooser'

@@ -15,7 +15,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.NotificationCompat;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -55,10 +55,9 @@ import anastasoft.rallyvision.controller.CarStatus;
 import anastasoft.rallyvision.controller.Controller;
 import anastasoft.rallyvision.controller.Data.DBHelper;
 import anastasoft.rallyvision.controller.Observable;
-import anastasoft.rallyvision.R;
 
 @SuppressLint("NewApi")
-public class MenuPrincipal extends ActionBarActivity {
+public class MenuPrincipal extends AppCompatActivity {
 
     private static final int RESULT_SETTINGS = 1;
 
