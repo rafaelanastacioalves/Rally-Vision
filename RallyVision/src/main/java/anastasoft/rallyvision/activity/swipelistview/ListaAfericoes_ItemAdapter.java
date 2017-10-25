@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import com.fortysevendeg.swipelistview.SwipeListView;
+import com.fortysevendeg.android.swipelistview.SwipeListView;
 
 import java.util.List;
 

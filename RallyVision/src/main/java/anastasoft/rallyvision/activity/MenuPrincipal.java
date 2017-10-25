@@ -34,6 +34,7 @@ import com.ipaulpro.afilechooser.utils.FileUtils;
 
 import java.util.ArrayList;
 
+import anastasoft.rallyvision.R;
 import anastasoft.rallyvision.Slider.Motorista;
 import anastasoft.rallyvision.Slider.MotoristaIdeal;
 import anastasoft.rallyvision.Slider.MotoristaUsuario;

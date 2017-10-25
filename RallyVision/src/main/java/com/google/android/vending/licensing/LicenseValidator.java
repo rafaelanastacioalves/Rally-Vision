@@ -16,11 +16,11 @@
 
 package com.google.android.vending.licensing;
 
-import android.text.TextUtils;
-import android.util.Log;
-
 import com.google.android.vending.licensing.util.Base64;
 import com.google.android.vending.licensing.util.Base64DecoderException;
+
+import android.text.TextUtils;
+import android.util.Log;
 
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -94,6 +94,13 @@ class LicenseValidator {
                 responseCode == LICENSED_OLD_KEY) {
             // Verify signature.
             try {
+                if (TextUtils.isEmpty(signedData)) {
+                    Log.e(TAG, "Signature verification failed: signedData is empty. " +
+                            "(Device not signed-in to any Google accounts?)");
+                    handleInvalidResponse();
+                    return;
+                }
+
                 Signature sig = Signature.getInstance(SIGNATURE_ALGORITHM);
                 sig.initVerify(publicKey);
                 sig.update(signedData.getBytes());

@@ -8,8 +8,8 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.fortysevendeg.swipelistview.BaseSwipeListViewListener;
-import com.fortysevendeg.swipelistview.SwipeListView;
+import com.fortysevendeg.android.swipelistview.BaseSwipeListViewListener;
+import com.fortysevendeg.android.swipelistview.SwipeListView;
 
 import java.util.ArrayList;
 
