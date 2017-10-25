@@ -512,7 +512,7 @@ public class TypefaceManager
                 int attr = a.getIndex(i);
                 switch (attr)
                 {
-                    case R.styleable.Fonts_font:
+                    case R.styleable.Fonts_font_name:
                         data.font = a.getString(attr);
                         break;
 
