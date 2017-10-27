@@ -11,7 +11,9 @@ android {
         applicationId "anastasoft.rallyvision"
         targetSdkVersion rootProject.targetSdkVersionExt
         minSdkVersion rootProject.minSdkVersionExt
+        vectorDrawables.useSupportLibrary = true
     }
+
 
 }
 
@@ -19,8 +21,12 @@ dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
     compile "com.android.support:appcompat-v7:$rootProject.supportLibrariesVersionExt"
     compile "com.android.support:preference-v7:$rootProject.supportLibrariesVersionExt"
-    compile project(path:':swipelistview')
-    compile project(path:':aFileChooser')
+    compile project(path: ':swipelistview')
+    compile project(path: ':aFileChooser')
     compile "com.google.android.gms:play-services-analytics:$rootProject.playServicesVersionExt"
+    compile "com.android.support:support-v4:$rootProject.supportLibrariesVersionExt"
+    compile "com.android.support:support-vector-drawable:$rootProject.supportLibrariesVersionExt"
 }
+
+
 
