@@ -89,7 +89,6 @@ public class BTManager {
 
             // Attempt to connect to the device
             connect(device);
-//            setRelativeState(STATE_CONNECTED);
 
         }
     }
