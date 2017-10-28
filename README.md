@@ -15,4 +15,8 @@ A app to measure rally racers offset between set control points. It was built to
 2. Connect to the [hardware](https://www.facebook.com/pg/RallyTech/about/?ref=page_internal) or to the [bluetooth terminal](https://play.google.com/store/apps/details?id=jp.side2.apps.btterm&rdid=jp.side2.apps.btterm);
 3. Accelerate your car that contains your hardware setted or send the 'Q' char via bluetooth terminal;
 
+## Download (Play Store)
+
+Instead of building, you can [download it](https://play.google.com/store/apps/details?id=anastasoft.rallyvisionaluguel&hl=en%5C&rdid=anastasoft.rallyvisionaluguel) the paid version.
+
 
