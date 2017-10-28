@@ -17,6 +17,6 @@ A app to measure rally racers offset between set control points. It was built to
 
 ## Download (Play Store)
 
-Instead of building, you can [download it](https://play.google.com/store/apps/details?id=anastasoft.rallyvisionaluguel&hl=en%5C&rdid=anastasoft.rallyvisionaluguel) the paid version.
+Instead of building, you can [download](https://play.google.com/store/apps/details?id=anastasoft.rallyvisionaluguel&hl=en%5C&rdid=anastasoft.rallyvisionaluguel) the paid version.
 
 
