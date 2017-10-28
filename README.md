@@ -1,6 +1,7 @@
 # Rally-Vision
 
 A app to measure rally racers offset between set control points. It was built to connect and function with this [hardware](https://www.facebook.com/pg/RallyTech/about/?ref=page_internal).
+<img src="/photos/device-2017-10-28-152616.png" width="200"> <img src="/photos/device-2017-10-28-152655.png" width="200">
 
 ## Setup
 
