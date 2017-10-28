@@ -1,11 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-Ao mudar o package, renomeie colocando para procurar por comments e stringd
-Também é bom dar um "make project" antes de apertar "run"
--->
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Ao mudar o package, renomeie colocando para procurar por comments e stringd
+Também é bom dar um "make project" antes de apertar "run"-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
     package="anastasoft.rallyvision"
     android:versionCode="43"
     android:versionName="1.99914">
+
+
+
 
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -16,27 +20,31 @@ Também é bom dar um "make project" antes de apertar "run"
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="com.android.vending.BILLING" />
 
+
+
+
     <!-- Ubertesters library user-permissions -->
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
     <!-- Ubertesters library user-permissions -->
-    <!-- Mudar o nome do String do aplicativo se for assinatura! @see label -->
+
+<!--Mudar o nome do String do aplicativo se for assinatura! @see label-->
     <application
-        android:name=".controller.Controller"
+        android:name="anastasoft.rallyvision.controller.Controller"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppBaseTheme">
-        <meta-data
-            android:name="ubertesters_organization_token"
-            android:value="d9211398-85ac-11e4-983a-22000ac44c54" />
+
+        <meta-data android:name="ubertesters_organization_token" android:value="d9211398-85ac-11e4-983a-22000ac44c54"/>
 
         <activity
-            android:name=".activity.MenuPrincipal"
+            android:name="anastasoft.rallyvision.activity.MenuPrincipal"
+            android:launchMode="singleTop"
             android:configChanges="orientation|screenSize"
-            android:launchMode="singleTop">
+            >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,45 +52,45 @@ Também é bom dar um "make project" antes de apertar "run"
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.SettingsActivity"
+            android:name="anastasoft.rallyvision.activity.SettingsActivity"
             android:label="@string/settings_title_main"
-            android:parentActivityName=".activity.MenuPrincipal">
+            android:parentActivityName="anastasoft.rallyvision.activity.MenuPrincipal">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="PsiClass:MenuPrincipal" />
         </activity>
         <activity
-            android:name=".activity.DeviceListActivity"
+            android:name="anastasoft.rallyvision.activity.DeviceListActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/select_device"
             android:theme="@style/Dialog" />
         <activity
-            android:name=".activity.EscolheAluguel"
+            android:name="anastasoft.rallyvision.activity.EscolheAluguel"
             android:configChanges="orientation|keyboardHidden"
             android:launchMode="singleTop"
+
             android:theme="@style/Dialog" />
-        <activity
-            android:name=".activity.swipelistview.ListaAfericoes"
-            android:label="@string/afericoes_editar"
-            android:parentActivityName=".activity.MenuPrincipal">
+        <activity android:name="anastasoft.rallyvision.activity.swipelistview.ListaAfericoes"
+                  android:label="@string/afericoes_editar"
+                  android:parentActivityName="anastasoft.rallyvision.activity.MenuPrincipal">
+                <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="PsiClass:MenuPrincipal" />
+        </activity>
+        <activity android:name="anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider"
+                  android:label="@string/slider_editar"
+                  android:parentActivityName="anastasoft.rallyvision.activity.MenuPrincipal">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="PsiClass:MenuPrincipal" />
         </activity>
-        <activity
-            android:name=".activity.swipelistview.EditaPosicaoSlider"
-            android:label="@string/slider_editar"
-            android:parentActivityName=".activity.MenuPrincipal">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="PsiClass:MenuPrincipal" />
-        </activity>
+
         <activity
             android:name="com.ipaulpro.afilechooser.FileChooserActivity"
+            android:icon="@drawable/ic_chooser"
             android:enabled="@bool/use_activity"
             android:exported="true"
-            android:icon="@drawable/ic_chooser"
-            android:label="@string/choose_file">
+            android:label="@string/choose_file" >
             <intent-filter>
                 <action android:name="android.intent.action.GET_CONTENT" />
 
@@ -92,14 +100,7 @@ Também é bom dar um "make project" antes de apertar "run"
                 <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.SettingsActivity2"
-            android:label="@string/title_activity_settings2"
-            android:parentActivityName=".activity.MenuPrincipal">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="anastasoft.rallyvision.activity.MenuPrincipal" />
-        </activity>
+
     </application>
 
 </manifest>
