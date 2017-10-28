@@ -70,19 +70,21 @@ Também é bom dar um "make project" antes de apertar "run"-->
             android:launchMode="singleTop"
 
             android:theme="@style/Dialog" />
-        <activity android:name="anastasoft.rallyvision.activity.swipelistview.ListaAfericoes"
-                  android:label="@string/afericoes_editar"
-                  android:parentActivityName="anastasoft.rallyvision.activity.MenuPrincipal">
-                <meta-data
-                    android:name="android.support.PARENT_ACTIVITY"
-                    android:value="PsiClass:MenuPrincipal" />
+
+        <activity
+            android:name=".activity.swipelistview.ListaAfericoes"
+            android:label="@string/afericoes_editar"
+            android:parentActivityName=".activity.MenuPrincipal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="anastasoft.rallyvision.activity.MenuPrincipal" />
         </activity>
         <activity android:name="anastasoft.rallyvision.activity.swipelistview.EditaPosicaoSlider"
                   android:label="@string/slider_editar"
                   android:parentActivityName="anastasoft.rallyvision.activity.MenuPrincipal">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="PsiClass:MenuPrincipal" />
+                android:value="anastasoft.rallyvision.activity.MenuPrincipal" />
         </activity>
 
         <activity
