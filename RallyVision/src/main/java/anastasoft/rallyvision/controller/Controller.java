@@ -55,7 +55,7 @@ public class Controller extends Application {
 
     private boolean testON = false;
 
-    private boolean uberON = true;
+    private boolean uberON = false;
 
     private boolean licenseCheckON = false;
 
